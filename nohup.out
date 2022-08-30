@@ -1,0 +1,157 @@
+[I 16:41:32.567 NotebookApp] [nb_conda_kernels] enabled, 3 kernels found
+[I 16:41:33.378 NotebookApp] [jupyter_nbextensions_configurator] enabled 0.4.1
+[W 2022-08-27 16:41:33.825 LabApp] Config option `kernel_spec_manager_class` not recognized by `LabApp`.
+[W 2022-08-27 16:41:33.827 LabApp] Config option `kernel_spec_manager_class` not recognized by `LabApp`.
+[I 2022-08-27 16:41:33.832 LabApp] JupyterLab extension loaded from /opt/anaconda/lib/python3.8/site-packages/jupyterlab
+[I 2022-08-27 16:41:33.832 LabApp] JupyterLab application directory is /opt/anaconda/share/jupyter/lab
+[I 16:41:33.839 NotebookApp] [nb_conda] enabled
+[I 16:41:33.840 NotebookApp] Serving notebooks from local directory: /home/guan/Desktop/hypergraph
+[I 16:41:33.840 NotebookApp] Jupyter Notebook 6.3.0 is running at:
+[I 16:41:33.840 NotebookApp] http://localhost:8888/?token=de02422c4bd6959c13be6f2545a133e7bac88c594401ad0d
+[I 16:41:33.840 NotebookApp]  or http://127.0.0.1:8888/?token=de02422c4bd6959c13be6f2545a133e7bac88c594401ad0d
+[I 16:41:33.840 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 16:41:33.870 NotebookApp] 
+    
+    To access the notebook, open this file in a browser:
+        file:///home/guan/.local/share/jupyter/runtime/nbserver-3905-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8888/?token=de02422c4bd6959c13be6f2545a133e7bac88c594401ad0d
+     or http://127.0.0.1:8888/?token=de02422c4bd6959c13be6f2545a133e7bac88c594401ad0d
+[0827/164134.278758:ERROR:file_io_posix.cc(152)] open /home/guan/.config/google-chrome/Crash Reports/pending/c10695ea-fa5c-4a34-8f46-16d8050316ae.lock: File exists (17)
+[3974:3974:0827/164134.624152:ERROR:vaapi_wrapper.cc(1131)] vaQuerySurfaceAttributes failed, VA error: invalid parameter
+[3974:3974:0827/164134.624321:ERROR:vaapi_wrapper.cc(1078)] FillProfileInfo_Locked failed for va_profile VAProfileH264Main and entrypoint VAEntrypointVLD
+[3974:3974:0827/164134.624590:ERROR:vaapi_wrapper.cc(1131)] vaQuerySurfaceAttributes failed, VA error: invalid parameter
+[3974:3974:0827/164134.624744:ERROR:vaapi_wrapper.cc(1078)] FillProfileInfo_Locked failed for va_profile VAProfileH264High and entrypoint VAEntrypointVLD
+[3974:3974:0827/164134.735909:ERROR:gpu_memory_buffer_support_x11.cc(44)] dri3 extension not supported.
+[3975:3980:0827/164137.908932:ERROR:ssl_client_socket_impl.cc(999)] handshake failed; returned -1, SSL error code 1, net_error -101
+[3975:3980:0827/164137.909930:ERROR:ssl_client_socket_impl.cc(999)] handshake failed; returned -1, SSL error code 1, net_error -100
+[3975:3980:0827/164137.914514:ERROR:ssl_client_socket_impl.cc(999)] handshake failed; returned -1, SSL error code 1, net_error -100
+[3975:3980:0827/164137.915547:ERROR:ssl_client_socket_impl.cc(999)] handshake failed; returned -1, SSL error code 1, net_error -100
+[3975:3980:0827/164139.411402:ERROR:ssl_client_socket_impl.cc(999)] handshake failed; returned -1, SSL error code 1, net_error -100
+[3975:3980:0827/164139.412063:ERROR:ssl_client_socket_impl.cc(999)] handshake failed; returned -1, SSL error code 1, net_error -100
+[I 16:42:09.276 NotebookApp] Creating new notebook in 
+[W 16:42:09.663 NotebookApp] Config option `template_path` not recognized by `ExporterCollapsibleHeadings`.  Did you mean one of: `extra_template_paths, template_name, template_paths`?
+[W 16:42:09.672 NotebookApp] Config option `template_path` not recognized by `ExporterCollapsibleHeadings`.  Did you mean one of: `extra_template_paths, template_name, template_paths`?
+[W 16:42:09.690 NotebookApp] Config option `template_path` not recognized by `TocExporter`.  Did you mean one of: `extra_template_paths, template_name, template_paths`?
+[W 16:42:09.695 NotebookApp] Config option `template_path` not recognized by `TocExporter`.  Did you mean one of: `extra_template_paths, template_name, template_paths`?
+[W 16:42:09.704 NotebookApp] Config option `template_path` not recognized by `LenvsHTMLExporter`.  Did you mean one of: `extra_template_paths, template_name, template_paths`?
+[W 16:42:09.712 NotebookApp] Config option `template_path` not recognized by `LenvsHTMLExporter`.  Did you mean one of: `extra_template_paths, template_name, template_paths`?
+[W 16:42:09.722 NotebookApp] Config option `template_path` not recognized by `LenvsTocHTMLExporter`.  Did you mean one of: `extra_template_paths, template_name, template_paths`?
+[W 16:42:09.729 NotebookApp] Config option `template_path` not recognized by `LenvsTocHTMLExporter`.  Did you mean one of: `extra_template_paths, template_name, template_paths`?
+[W 16:42:09.757 NotebookApp] Config option `template_path` not recognized by `LenvsLatexExporter`.  Did you mean one of: `extra_template_paths, template_name, template_paths`?
+[W 16:42:09.762 NotebookApp] Config option `template_path` not recognized by `LenvsLatexExporter`.  Did you mean one of: `extra_template_paths, template_name, template_paths`?
+[W 16:42:09.908 NotebookApp] Config option `template_path` not recognized by `LenvsSlidesExporter`.  Did you mean one of: `extra_template_paths, template_name, template_paths`?
+[W 16:42:09.914 NotebookApp] Config option `template_path` not recognized by `LenvsSlidesExporter`.  Did you mean one of: `extra_template_paths, template_name, template_paths`?
+[W 16:42:09.989 NotebookApp] Config option `template_path` not recognized by `ExporterCollapsibleHeadings`.  Did you mean one of: `extra_template_paths, template_name, template_paths`?
+[W 16:42:09.995 NotebookApp] Config option `template_path` not recognized by `ExporterCollapsibleHeadings`.  Did you mean one of: `extra_template_paths, template_name, template_paths`?
+[W 16:42:10.012 NotebookApp] Config option `template_path` not recognized by `TocExporter`.  Did you mean one of: `extra_template_paths, template_name, template_paths`?
+[W 16:42:10.017 NotebookApp] Config option `template_path` not recognized by `TocExporter`.  Did you mean one of: `extra_template_paths, template_name, template_paths`?
+[W 16:42:10.023 NotebookApp] Config option `template_path` not recognized by `LenvsHTMLExporter`.  Did you mean one of: `extra_template_paths, template_name, template_paths`?
+[W 16:42:10.030 NotebookApp] Config option `template_path` not recognized by `LenvsHTMLExporter`.  Did you mean one of: `extra_template_paths, template_name, template_paths`?
+[W 16:42:10.039 NotebookApp] Config option `template_path` not recognized by `LenvsTocHTMLExporter`.  Did you mean one of: `extra_template_paths, template_name, template_paths`?
+[W 16:42:10.048 NotebookApp] Config option `template_path` not recognized by `LenvsTocHTMLExporter`.  Did you mean one of: `extra_template_paths, template_name, template_paths`?
+[W 16:42:10.075 NotebookApp] Config option `template_path` not recognized by `LenvsLatexExporter`.  Did you mean one of: `extra_template_paths, template_name, template_paths`?
+[W 16:42:10.080 NotebookApp] Config option `template_path` not recognized by `LenvsLatexExporter`.  Did you mean one of: `extra_template_paths, template_name, template_paths`?
+[W 16:42:10.200 NotebookApp] Config option `template_path` not recognized by `LenvsSlidesExporter`.  Did you mean one of: `extra_template_paths, template_name, template_paths`?
+[W 16:42:10.205 NotebookApp] Config option `template_path` not recognized by `LenvsSlidesExporter`.  Did you mean one of: `extra_template_paths, template_name, template_paths`?
+[I 16:42:10.670 NotebookApp] Kernel started: 645f3cab-b2da-4f38-b3a5-808d25e33901, name: mygraph
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: 728b9f9c-c41b-4bb4-9cd9-4bc991116a64
+[I 16:42:21.111 NotebookApp] Saving file at /Untitled.ipynb
+[I 16:42:22.808 NotebookApp] Saving file at /Untitled.ipynb
+[I 16:42:24.443 NotebookApp] Saving file at /Untitled.ipynb
+[I 16:43:39.172 NotebookApp] Saving file at /Untitled.ipynb
+[I 16:44:10.631 NotebookApp] Saving file at /Untitled.ipynb
+[I 16:44:22.620 NotebookApp] Saving file at /Untitled.ipynb
+[I 16:44:31.548 NotebookApp] Saving file at /Untitled.ipynb
+[I 16:44:51.903 NotebookApp] Saving file at /Untitled.ipynb
+[I 16:45:04.918 NotebookApp] Saving file at /Untitled.ipynb
+[I 16:45:11.701 NotebookApp] Saving file at /Untitled.ipynb
+[I 16:45:21.894 NotebookApp] Saving file at /Untitled.ipynb
+[I 16:45:28.641 NotebookApp] Saving file at /Untitled.ipynb
+[I 16:45:38.274 NotebookApp] Saving file at /Untitled.ipynb
+[I 16:46:05.467 NotebookApp] Saving file at /Untitled.ipynb
+[I 16:46:10.613 NotebookApp] Saving file at /Untitled.ipynb
+[I 16:46:35.448 NotebookApp] Saving file at /Untitled.ipynb
+[I 16:47:34.154 NotebookApp] Saving file at /Untitled.ipynb
+[I 16:48:10.631 NotebookApp] Saving file at /Untitled.ipynb
+[I 16:48:13.844 NotebookApp] Saving file at /Untitled.ipynb
+[I 16:48:22.883 NotebookApp] Saving file at /Untitled.ipynb
+[I 16:48:32.116 NotebookApp] Saving file at /Untitled.ipynb
+[I 16:48:39.191 NotebookApp] Saving file at /Untitled.ipynb
+[I 16:48:50.322 NotebookApp] Saving file at /Untitled.ipynb
+[I 16:48:54.948 NotebookApp] Saving file at /Untitled.ipynb
+[I 16:50:10.620 NotebookApp] Saving file at /Untitled.ipynb
+[3975:3980:0827/165054.714327:ERROR:ssl_client_socket_impl.cc(999)] handshake failed; returned -1, SSL error code 1, net_error -101
+[3975:3980:0827/165059.715883:ERROR:ssl_client_socket_impl.cc(999)] handshake failed; returned -1, SSL error code 1, net_error -101
+[3930:3958:0827/165059.716077:ERROR:connection_factory_impl.cc(425)] Failed to connect to MCS endpoint with error -101
+[0827/165134.280237:ERROR:file_io_posix.cc(152)] open /home/guan/.config/google-chrome/Crash Reports/pending/c10695ea-fa5c-4a34-8f46-16d8050316ae.lock: File exists (17)
+[0827/165134.281820:ERROR:filesystem_posix.cc(102)] unlink /home/guan/.config/google-chrome/Crash Reports/pending/c10695ea-fa5c-4a34-8f46-16d8050316ae.meta: No such file or directory (2)
+[I 16:54:10.614 NotebookApp] Saving file at /Untitled.ipynb
+[I 16:54:46.207 NotebookApp] Saving file at /Untitled.ipynb
+[I 16:55:04.287 NotebookApp] Saving file at /Untitled.ipynb
+[I 16:55:12.040 NotebookApp] Saving file at /Untitled.ipynb
+[I 16:55:46.367 NotebookApp] Saving file at /Untitled.ipynb
+[I 16:55:52.142 NotebookApp] Saving file at /Untitled.ipynb
+[I 16:55:57.070 NotebookApp] Kernel interrupted: 645f3cab-b2da-4f38-b3a5-808d25e33901
+[I 16:56:03.882 NotebookApp] Kernel interrupted: 645f3cab-b2da-4f38-b3a5-808d25e33901
+[I 16:56:10.618 NotebookApp] Saving file at /Untitled.ipynb
+[I 16:57:11.794 NotebookApp] Saving file at /Untitled.ipynb
+[I 16:57:36.309 NotebookApp] Saving file at /Untitled.ipynb
+[I 16:57:49.269 NotebookApp] Saving file at /Untitled.ipynb
+[I 16:58:10.629 NotebookApp] Saving file at /Untitled.ipynb
+[I 16:59:09.738 NotebookApp] Saving file at /Untitled.ipynb
+[3975:3980:0827/165933.539643:ERROR:ssl_client_socket_impl.cc(999)] handshake failed; returned -1, SSL error code 1, net_error -101
+[3975:3980:0827/165938.541416:ERROR:ssl_client_socket_impl.cc(999)] handshake failed; returned -1, SSL error code 1, net_error -101
+[3930:3958:0827/165938.541588:ERROR:connection_factory_impl.cc(425)] Failed to connect to MCS endpoint with error -101
+[I 17:00:10.610 NotebookApp] Saving file at /Untitled.ipynb
+[I 17:00:41.276 NotebookApp] Saving file at /Untitled.ipynb
+[I 17:00:52.532 NotebookApp] Saving file at /Untitled.ipynb
+[I 17:01:18.875 NotebookApp] Saving file at /Untitled.ipynb
+[I 17:01:37.342 NotebookApp] Saving file at /Untitled.ipynb
+[I 17:01:38.709 NotebookApp] Kernel interrupted: 645f3cab-b2da-4f38-b3a5-808d25e33901
+[3975:3980:0827/170142.363060:ERROR:ssl_client_socket_impl.cc(999)] handshake failed; returned -1, SSL error code 1, net_error -100
+[I 17:01:59.206 NotebookApp] Saving file at /Untitled.ipynb
+[I 17:02:01.325 NotebookApp] Saving file at /Untitled.ipynb
+[I 17:02:02.835 NotebookApp] Kernel interrupted: 645f3cab-b2da-4f38-b3a5-808d25e33901
+[I 17:02:10.614 NotebookApp] Saving file at /Untitled.ipynb
+[I 17:02:13.136 NotebookApp] Saving file at /Untitled.ipynb
+[I 17:03:43.628 NotebookApp] Saving file at /Untitled.ipynb
+[I 17:03:46.084 NotebookApp] Saving file at /Untitled.ipynb
+[I 17:03:48.955 NotebookApp] Saving file at /Untitled.ipynb
+[I 17:03:53.691 NotebookApp] Saving file at /Untitled.ipynb
+[I 17:04:04.646 NotebookApp] Saving file at /Untitled.ipynb
+[I 17:04:10.631 NotebookApp] Saving file at /Untitled.ipynb
+[I 17:04:19.563 NotebookApp] Saving file at /Untitled.ipynb
+[I 17:04:23.496 NotebookApp] Saving file at /Untitled.ipynb
+[I 17:04:55.100 NotebookApp] Saving file at /Untitled.ipynb
+[I 17:04:57.395 NotebookApp] Kernel interrupted: 645f3cab-b2da-4f38-b3a5-808d25e33901
+[I 17:05:01.014 NotebookApp] Kernel interrupted: 645f3cab-b2da-4f38-b3a5-808d25e33901
+[I 17:05:22.027 NotebookApp] Saving file at /Untitled.ipynb
+[I 17:05:31.327 NotebookApp] Saving file at /Untitled.ipynb
+[I 17:05:59.969 NotebookApp] Saving file at /Untitled.ipynb
+[I 17:06:10.630 NotebookApp] Saving file at /Untitled.ipynb
+[I 17:08:10.611 NotebookApp] Saving file at /Untitled.ipynb
+[I 17:09:46.576 NotebookApp] Saving file at /Untitled.ipynb
+[I 17:10:10.619 NotebookApp] Saving file at /Untitled.ipynb
+[3975:3980:0827/180950.238698:ERROR:ssl_client_socket_impl.cc(999)] handshake failed; returned -1, SSL error code 1, net_error -101
+[3975:3980:0827/180955.240482:ERROR:ssl_client_socket_impl.cc(999)] handshake failed; returned -1, SSL error code 1, net_error -101
+[3930:3958:0827/180955.240617:ERROR:connection_factory_impl.cc(425)] Failed to connect to MCS endpoint with error -101
+[3930:3958:0827/181150.756124:ERROR:connection_factory_impl.cc(425)] Failed to connect to MCS endpoint with error -7
+[3975:3980:0827/183644.176195:ERROR:ssl_client_socket_impl.cc(999)] handshake failed; returned -1, SSL error code 1, net_error -101
+[3975:3980:0827/184144.179601:ERROR:ssl_client_socket_impl.cc(999)] handshake failed; returned -1, SSL error code 1, net_error -101
+[3975:3980:0827/185229.006141:ERROR:ssl_client_socket_impl.cc(999)] handshake failed; returned -1, SSL error code 1, net_error -101
+[3975:3980:0827/185234.008497:ERROR:ssl_client_socket_impl.cc(999)] handshake failed; returned -1, SSL error code 1, net_error -101
+[3930:3958:0827/185234.008714:ERROR:connection_factory_impl.cc(425)] Failed to connect to MCS endpoint with error -101
+[3975:3980:0827/190144.134724:ERROR:ssl_client_socket_impl.cc(999)] handshake failed; returned -1, SSL error code 1, net_error -100
+[3975:3980:0827/191640.125478:ERROR:ssl_client_socket_impl.cc(999)] handshake failed; returned -1, SSL error code 1, net_error -101
+[3975:3980:0827/200142.273360:ERROR:ssl_client_socket_impl.cc(999)] handshake failed; returned -1, SSL error code 1, net_error -100
+[3975:3980:0827/201642.293852:ERROR:ssl_client_socket_impl.cc(999)] handshake failed; returned -1, SSL error code 1, net_error -100
+[3975:3980:0827/204142.455026:ERROR:ssl_client_socket_impl.cc(999)] handshake failed; returned -1, SSL error code 1, net_error -100
+X connection to :0 broken (explicit kill or server shutdown).
+[3974:4099:0827/211251.690995:ERROR:connection.cc(46)] X connection error received.
+[I 21:12:51.755 NotebookApp] Starting buffering for 645f3cab-b2da-4f38-b3a5-808d25e33901:926c61aabcc14b088d13f0f0c6ea6351
+[C 21:12:52.004 NotebookApp] received signal 15, stopping
+[I 21:12:52.005 NotebookApp] Shutting down 1 kernel
+[I 21:12:52.107 NotebookApp] Kernel shutdown: 645f3cab-b2da-4f38-b3a5-808d25e33901
+[I 21:12:52.107 NotebookApp] Shutting down 0 terminals

@@ -19,6 +19,6 @@ def vertex_stream(): #流节点迭代器,实例化后每次使用next获得下�
 分区算法
 ### 接口列表
 ```python
-def hypergraph_information():# 将数据流一次获得统计信息
+def hypergraph_information():# 将数据流一次获得超边:超边包含的节点
 # return: dic超边度数字典
 ```

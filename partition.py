@@ -2,6 +2,7 @@ from numpy import Inf
 import data as Data
 import random as rand
 from queue import PriorityQueue
+import pickle as pkl
 
 class Node:
     def __init__(self,id,degree,edges):
@@ -110,6 +111,10 @@ if __name__ == '__main__':                  # test code
         for i in edges:
             if partition_edge[par_id].get(i) != None : partition_edge[par_id][i] -= 1
             else : partition_edge[par_id][i] = edge_degree[i]
+
+    with open("./data/partition_result.txt","wb") as f:
+        pkl.dump((partition_node,partition_edge),f)
+
     
     for i in range(len(partition_node)):
         print("partition of vertex"+str(i)+":")

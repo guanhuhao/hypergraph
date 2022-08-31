@@ -30,7 +30,11 @@ def Eval(partition_node,partition_edge):
     print("hyperedge without cross:" +str(no_cross))
 
 if __name__ == '__main__':
-    with open('./data/partition_result.txt',"rb") as f:
-        partition_node,partition_edge = pkl.load(f)
-        Eval(partition_node,partition_edge)
+    dic = {1:0}
+    for i,j in dic.items():
+        print(i)
+        print(j)
+    # with open('./data/partition_result.txt',"rb") as f:
+    #     partition_node,partition_edge = pkl.load(f)
+    #     Eval(partition_node,partition_edge)
         

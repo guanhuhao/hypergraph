@@ -25,8 +25,8 @@ def hypergraph_information():
         id,degree,edges = next(data)
         if id == None : break
         for i in edges:
-            if edge_degree.get(i) == None : edge_degree[i] = 0
-            edge_degree[i] += 1
+            if edge_degree.get(i) == None : edge_degree[i] = []
+            edge_degree[i].append(id)
     return edge_degree
 
 def cal_cost(node,core_edge,edge_degree):
@@ -44,6 +44,7 @@ def random_core_set(node_list,core_size,edge_degree):
     core_node = []
 
     seed = rand.choice(node_list)
+    node_list.remove(seed)
     core_node.append(seed)
     for i in seed.edges : core_edge[i] = edge_degree[i]
 
@@ -56,7 +57,9 @@ def random_core_set(node_list,core_size,edge_degree):
             topk.put((-cost,i))
 
         for i in range(k):
-            core_node.append(topk.get())
+            pri,node = topk.get()
+            core_node.append(node)
+            node_list.remove(node)
             # print(core_node)
     return core_node,core_edge
 
@@ -73,7 +76,7 @@ if __name__ == '__main__':                  # test code
     buffer_nodes = []       # 样本图节点
     buffer_edges = {}       # 样本图边集
 
-    edge_degree = hypergraph_information()
+    edge_degree = {i:len(j)for i,j in hypergraph_information().items()}
     data = Data.vertex_stream()
 
     partition_node = []
@@ -90,6 +93,7 @@ if __name__ == '__main__':                  # test code
         core_node, core_edge = random_core_set(buffer_nodes,0.25*buffer_size,edge_degree)
         partition_node.append(core_node)
         partition_edge.append(core_edge)
+
 
     while True :
         id,degree,edges = next(data)

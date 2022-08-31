@@ -20,5 +20,11 @@ def vertex_stream(): #流节点迭代器,实例化后每次使用next获得下�
 ### 接口列表
 ```python
 def hypergraph_information():# 将数据流一次获得超边:超边包含的节点
-# return: dic超边度数字典
+# return: 超边id:[超边包含的节点]
+
+def cal_cost(node,core_edge,edge_degree):# 计算给定节点加入core_edge的代价
+# return: 对应的代价
+
+def random_core_set(node_list,core_size,edge_degree): # 对于给定节点序列,以及生成core_size的大小,随机生成core_set,需要使用超边度数作为代价计算的依据
+# return: (core_node,core_edge) 核心集顶点列表[],定点集超边字典{}
 ```

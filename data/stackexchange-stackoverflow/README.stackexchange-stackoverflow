@@ -1,0 +1,69 @@
+Stack Overflow network, part of the Koblenz Network Collection
+===========================================================================
+
+This directory contains the TSV and related files of the stackexchange-stackoverflow network: This is the bipartite Stack Overflow favorite network. Stack Overflow is the main question and answer website of the Stack Exchange Network. The nodes represent users and posts. An undirected, unweighted edge denotes that a user has marked a post as a favorite.
+
+
+More information about the network is provided here: 
+http://konect.cc/networks/stackexchange-stackoverflow
+
+Files: 
+    meta.stackexchange-stackoverflow -- Metadata about the network 
+    out.stackexchange-stackoverflow -- The adjacency matrix of the network in whitespace-separated values format, with one edge per line
+      The meaning of the columns in out.stackexchange-stackoverflow are: 
+        First column: ID of from node 
+        Second column: ID of to node
+        Third column (if present): weight or multiplicity of edge
+        Fourth column (if present):  timestamp of edges Unix time
+        Fourth column: timestamp of the edge
+
+
+Use the following References for citation:
+
+@MISC{konect:2017:stackexchange-stackoverflow,
+    title = {Stack Overflow network dataset -- {KONECT}},
+    month = oct,
+    year = {2017},
+    url = {http://konect.cc/networks/stackexchange-stackoverflow}
+}
+
+@misc{konect:stackexchange,
+	title = {Stack Exchange Data Explorer},
+	author = {{Stack Exchange Inc.}},
+	year = {2011},
+	howpublished = {\url{http://data.stackexchange.com/}},
+}
+
+@misc{konect:stackexchange,
+	title = {Stack Exchange Data Explorer},
+	author = {{Stack Exchange Inc.}},
+	year = {2011},
+	howpublished = {\url{http://data.stackexchange.com/}},
+}
+
+
+@inproceedings{konect,
+	title = {{KONECT} -- {The} {Koblenz} {Network} {Collection}},
+	author = {Jérôme Kunegis},
+	year = {2013},
+	booktitle = {Proc. Int. Conf. on World Wide Web Companion},
+	pages = {1343--1350},
+	url = {http://dl.acm.org/citation.cfm?id=2488173},
+	url_presentation = {https://www.slideshare.net/kunegis/presentationwow},
+	url_web = {http://konect.cc/},
+	url_citations = {https://scholar.google.com/scholar?cites=7174338004474749050},
+}
+
+@inproceedings{konect,
+	title = {{KONECT} -- {The} {Koblenz} {Network} {Collection}},
+	author = {Jérôme Kunegis},
+	year = {2013},
+	booktitle = {Proc. Int. Conf. on World Wide Web Companion},
+	pages = {1343--1350},
+	url = {http://dl.acm.org/citation.cfm?id=2488173},
+	url_presentation = {https://www.slideshare.net/kunegis/presentationwow},
+	url_web = {http://konect.cc/},
+	url_citations = {https://scholar.google.com/scholar?cites=7174338004474749050},
+}
+
+

@@ -31,8 +31,8 @@ def preprocess_raw_data(shuffle = True): # preprocess raw data
             for edge in hyper_node[i]: line += " "+str(edge)
             f.write(line+"\n")
 
-def vertex_stream():
-    with open("./data/vertex_stream.txt",'r') as f:
+def vertex_stream(path = "./data/vertex_stream.txt"):
+    with open(path,'r') as f:
         for line in f:
             if(line[0]=='#' or line=='\n') : continue
             data = [int(i) for i in line[0:-1].split(" ")]
@@ -42,7 +42,7 @@ def vertex_stream():
 
 
 if __name__ == '__main__':                  # test code
-    preprocess_raw_data(shuffle = False)
+    preprocess_raw_data(shuffle = True)
 
-    f = vertex_stream()
-    print(next(f))
+    # f = vertex_stream()
+    # print(next(f))

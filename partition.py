@@ -3,6 +3,10 @@ import data as Data
 import random as rand
 from queue import PriorityQueue
 import pickle as pkl
+import eval
+import os,sys
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(os.path.dirname(SCRIPT_DIR))
 
 class Node:
     def __init__(self,id,degree,edges):
@@ -143,6 +147,7 @@ class Partition_2:
         while len(core_node) < coreset_size and len(ls) != 0:
             # print(ls)
             edge_id = ls[-1][0] 
+            # print(ls[-1][1])
             del ls[-1]
             core_edge.add(edge_id)
             for node in buffer_edges[edge_id]:
@@ -161,24 +166,28 @@ class Partition_2:
     def partition_2(self):
         p = 10                  # 分区数量
         data_size = 4125
-        max_capacity = 100
-        buffer_size = 20       # 样本图大小
+        max_capacity = 1000
+        buffer_size = 200       # 样本图大小
         buffer_nodes = []       # 样本图节点
         buffer_edges = {}       # 样本图边集
 
-        data = Data.vertex_stream()
+        data = Data.vertex_stream("./data/github/vertex_stream.txt")
+        # data = Data.vertex_stream("./data/vertex_stream.txt")
+        partition_node = [[] for i in range(p)]
+        partition_edge = [[] for i in range(p)]
 
-        partition_node = [[]]
-        partition_edge = [[]]
-
-        while True :
+        read_over = False
+        while read_over == False :
             # print("----------")
+            
             while len(buffer_nodes) < buffer_size:
                 id,degree,edges = next(data)
                 a = Node(id,degree,edges)
 
                 distributed = False
-                if id == None : break
+                if id == None : 
+                    read_over = True
+                    break
                 for i in range(len(partition_edge)):
                     set_a = set(partition_edge[i])
                     set_b = set(edges)
@@ -194,26 +203,31 @@ class Partition_2:
                     if buffer_edges.get(edge) == None: buffer_edges[edge] = []
                     buffer_edges[edge].append(a)
 
-            core_node, core_edge = self.select_core_set(buffer_nodes,buffer_edges,0.25*buffer_size)
-
+            core_node, core_edge = self.select_core_set(buffer_nodes,buffer_edges,buffer_size*0.25)
+            # core_node, core_edge = self.select_core_set(buffer_nodes,buffer_edges,1)
+            
             # print(buffer_nodes)
             # print(core_node)
 
             min_id = 0
             for i in range(0,len(partition_node)):
                 if len(partition_node[i]) < len(partition_node[min_id]) : min_id = i
-            
-            if len(partition_node[min_id]) > 0.2*max_capacity : 
-                if len(partition_node) == p : break
-                partition_node.append([])
-                partition_edge.append([])
-                min_id = len(partition_node)-1
 
+            # print()
+            
+            if len(partition_node[min_id]) > 200 : 
+                break
+
+            # print("min_id:"+str(min_id)+" add node:"+str(len(core_node)))
             partition_node[min_id] += core_node
             partition_edge[min_id] += core_edge
+            # for edge in core_edge : del buffer_edges[edge] 
 
             for node in core_node:
                 buffer_nodes.remove(node)
+
+        for i in range(len(partition_edge)):
+            print("part "+str(i) +" lenth:" +str(len(partition_edge[i])))
         
         while True:
             id,degree,edges = next(data)
@@ -240,6 +254,7 @@ class Partition_2:
                 for edge in node.edges:
                     partition_edge[part][edge] = 0
 
+
         with open("./data/partition_result.txt","wb") as f:
             pkl.dump((partition_node,partition_edge),f)
 
@@ -249,6 +264,8 @@ class Partition_2:
             print(len(partition_node[i]))
 
         print("\n\n")
+
+        return partition_node,partition_edge
         # for i in range(len(partition_edge)):
         #     print("partition of edge"+str(i)+":")
         #     # print(partition_edge[i])
@@ -259,7 +276,8 @@ class Partition_2:
 
 
 if __name__ == '__main__':                  # test code
-    Partition_2.partition_2()
+    partition_node,partition_edge = Partition_2.partition_2()
+    eval.Eval(partition_node,partition_edge)
 
         
 

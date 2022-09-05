@@ -1,4 +1,6 @@
-import pickle as pkl 
+import pickle as pkl
+
+from numpy import partition 
 
 
 class Node:
@@ -27,7 +29,16 @@ def Eval(partition_node,partition_edge):
     no_cross = 0
     for i in dic.values(): 
         if i == 1 : no_cross += 1
-    print("hyperedge without cross:" +str(no_cross))
+    print("Hyperedges cut:" +str(len(dic) - no_cross))
+
+    mini = min([len(i) for i in partition_node])
+    maxi = max([len(i) for i in partition_node])
+    print("vertex balancing:"+str((maxi-mini)/maxi))
+
+    mini = min([len(i) for i in partition_edge])
+    maxi = max([len(i) for i in partition_edge])
+    print("edge balancing:"+str((maxi-mini)/maxi))
+
 
 if __name__ == '__main__':
     # dic = {1:0}

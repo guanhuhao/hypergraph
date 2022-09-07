@@ -24,6 +24,7 @@ def Eval(partition_node,partition_edge):
             if dic.get(edge) == None : dic[edge] = 0
             dic[edge] += 1
     print("total hyperedge: "+str(len(dic)))
+    print("total vertex:"+str(sum([len(par) for par in partition_node])))
     print("k-1: " + str(sum(dic.values())-len(dic)))
 
     no_cross = 0

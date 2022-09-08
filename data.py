@@ -36,7 +36,7 @@ def vertex_stream(path = "./data/vertex_stream.txt"):
         for line in f:
             if(line[0]=='#' or line=='\n') : continue
             data = [int(i) for i in line[0:-1].split(" ")]
-            yield data[0],data[1],data[2:]
+            yield data[0],data[1],set(data[2:])
     while True :
         yield None,None,None
 

@@ -305,13 +305,14 @@ class Partition_3:
                 continue
             hash_par.add(self.assigned_node[node])
 
-        hash_par = list(hash_par)
-        hash_par.sort()
-        # print(hash_par)
+
         for par in hash_par:
             if self.res_capacity[par] >= self.edges_degree[edge_id] : 
                 return par,core_node,core_edge
 
+        for par in range(self.p) : # maybe not used
+            if self.res_capacity[par] >= self.edges_degree[edge_id]:
+                return par,core_node,core_edge
         return -1,core_node,core_edge
 
     def hypergraph_information(self,path): # return dic{edge_id:degree},number of vertexs, number of edges
@@ -341,6 +342,8 @@ class Partition_3:
 
         read_over = False
         cnt = 0
+        cnt_free = 0
+        cnt_edge = 0
         while read_over != True or len(buffer_nodes) != 0:
             
             while read_over == False and len(buffer_nodes) < buffer_size:
@@ -353,7 +356,7 @@ class Partition_3:
                 if id == None : 
                     read_over = True
                     break
-                # print("buffer add node:"+str(id))
+                # if id == 1575: print("buffer add node:"+str(id))
                 for i in range(self.p):
                     set_a = self.core_edges[i]
                     set_b = edges
@@ -377,34 +380,47 @@ class Partition_3:
                     buffer_edges[edge].append(a)
             # print("test:"+str(self.edges_degree[900]))
             par, core_node, core_edge = self.select_core_set(buffer_nodes,buffer_edges) # get core set
+            cnt_edge += 1
+            if cnt_edge % 1000 == 0: print("solve edge:%d buffer edge:%d"%(cnt_edge,len(buffer_edges)))
             
             if par == -1:
                 par,capacity = max([(i,self.res_capacity[i]) for i in range(self.p)],key = lambda x:x[1])
             
-            if  len(buffer_edges) == 0 or self.res_capacity[par] - self.edges_degree[core_edge] < 0 :
+            # if len(core_node) != 0 :
+            #     print("add node:",end="")
+            #     for i in core_node:
+            #         print(i.id,end=" ")
+            #     print()
+            # print("edge_id:"+str(core_edge)+" degree:"+str(self.edges_degree[core_edge])+" add partition:"+str(par)+" res_capacity:"+str(self.res_capacity[par])+" cur_capcity:"+str(len(self.partition_node[par]))) 
+
+            if  len(buffer_edges) == 0  :
+                # print(123)
                 remove_list = []
                 for node in buffer_nodes:
                     edges = node.edges
                     for par in range(self.p):
                         if (self.core_edges[par] & edges) != set():
-                            print(123)
                             remove_list.append((node,par))
                             self.res_capacity[par] -= 1
-                # print("remove:"+str(len(remove_list)))
+                print("remove:"+str(len(remove_list)))
                 # print(len(buffer_edges))
                 # print(len(buffer_nodes))
                 # print("rec_capacity:"+str(self.res_capacity))
                 # print("core_edge"+str(self.core_edges))
 
                         
-                if len(remove_list) == 0:
-                    # free_size = math.ceil(0.1 * buffer_size)
-                    print(123)
-                    free_size =10
-                    for i in range(int(free_size)):
-                        id,value = max([(i,self.res_capacity[i]) for i in range(self.p)],key = lambda x:x[1])
-                        self.res_capacity[id] -= 1
-                        remove_list.append((buffer_nodes[i],id))
+                # if len(remove_list) == 0:
+                #     free_size = min(len(buffer_nodes),math.ceil(0.1 * buffer_size))
+                #     # print(123)
+                #     # free_size =math.min(10)
+                #     cnt_free += free_size
+                #     for i in range(int(free_size)):
+                #         id,value = max([(i,self.res_capacity[i]) for i in range(self.p)],key = lambda x:x[1])
+                #         self.res_capacity[id] -= 1
+                #         remove_list.append((buffer_nodes[i],id))
+
+                    # for node,id in remove_list:
+                    #     print("random remmove:%d partition:%d"%(node.id,id))
 
                     
                     # for 
@@ -440,7 +456,6 @@ class Partition_3:
             #     print("add node:"," ")
             #     for i in core_node:
             #         print(i.id," ")
-            # print("edge_id:"+str(core_edge)+" degree:"+str(self.edges_degree[core_edge])+" add partition:"+str(par)+" res_capacity:"+str(self.res_capacity[par])+" cur_capcity:"+str(len(self.partition_node[par]))) 
 
                 
 
@@ -461,23 +476,25 @@ class Partition_3:
             print("partition %2d: vertex:%5d| edge:%d| core_edge:%5d| res_capacity:%5d| "%(i,len(self.partition_node[i]),len(partition_edge[i]),len(self.core_edges[i]),self.res_capacity[i]))
 
             # print(len(partition_node[i]))
-
+        print("free_size:%d"%cnt_free)
         print("\n\n")
 
+        # for node,par in self.assigned_node.items():
+        #     if self.assigned_node[node] != 0:
+        #         for edge in node.edges:
+        #             if self.assigned_edge.get(edge) == None : continue
+        #             if self.assigned_edge[edge] == 0:
+        #                 print("node:%d assigned:%d"%(node.id,self.assigned_node[node]))
+
+
         return self.partition_node,partition_edge
-        # for i in range(len(partition_edge)):
-        #     print("partition of edge"+str(i)+":")
-        #     # print(partition_edge[i])
-        #     sum = 0
-        #     for j in partition_edge[i].values():
-        #         sum += j
-        #     print("sum:"+str(sum))
+
 
 
 if __name__ == '__main__':                  # test code
-    # par = Partition_3(path = "./data/github/vertex_stream.txt",p = 10,buffer_size = 1000)
-    par = Partition_3(path = "./data/wiki/vertex_stream.txt",p = 10,buffer_size = 4100)
-    # par = Partition_3(path = "./data/wiki/vertex_stream_mini.txt",p = 2,buffer_size = 2)
+    par = Partition_3(path = "./data/github/vertex_stream.txt",p = 10,buffer_size = 2000)
+    # par = Partition_3(path = "./data/wiki/vertex_stream.txt",p = 10,buffer_size = 4100)
+    # par = Partition_3(path = "./data/wiki/vertex_stream_mini.txt",p = 3,buffer_size = 2)
     partition_node,partition_edge = par.partition()
     eval.Eval(partition_node,partition_edge)
 

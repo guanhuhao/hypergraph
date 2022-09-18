@@ -1,5 +1,3 @@
-# node_id | number of coverd hyper edge| hyper edge id|
-
 7092 2 7223 23315
 34582 1 56721
 48310 1 40

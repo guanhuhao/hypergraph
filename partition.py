@@ -78,9 +78,15 @@ class Partition_3:
             if self.res_capacity[par] >= self.edges_degree[edge_id] : 
                 return par,core_node,core_edge
 
+        
+        rand_ls = []
         for par in range(self.p) : # maybe not used
             if self.res_capacity[par] >= self.edges_degree[edge_id]:
-                return par,core_node,core_edge
+                rand_ls.append(par)
+
+        if len(rand_ls) != 0 : 
+            par = rand.choice(rand_ls)
+            return par,core_node,core_edge
         return -1,core_node,core_edge
 
     def hypergraph_information(self,path): # return dic{edge_id:degree},number of vertexs, number of edges
@@ -152,10 +158,10 @@ class Partition_3:
             
             if par == -1:
                 par,capacity = max([(i,self.res_capacity[i]) for i in range(self.p)],key = lambda x:x[1])
-                if par == 0: 
-                    for i in range(self.p):
-                        print("partition:",i," res_capacity:",self.res_capacity[i])
-                    print("partition:",par," capacity:",capacity," degree:",self.edges_degree[core_edge]," after:",self.res_capacity[par]-self.edges_degree[core_edge])
+                # if par == 0: 
+                #     for i in range(self.p):
+                #         print("partition:",i," res_capacity:",self.res_capacity[i])
+                #     print("partition:",par," capacity:",capacity," degree:",self.edges_degree[core_edge]," after:",self.res_capacity[par]-self.edges_degree[core_edge])
 
 
             self.res_capacity[par] -= self.edges_degree[core_edge] # add ghh 
@@ -202,8 +208,8 @@ class Partition_3:
 
 
 if __name__ == '__main__':                  # test code
-    par = Partition_3(path = "./data/github/vertex_stream_2.txt",p = 10,buffer_size = 50000)
-    # par = Partition_3(path = "./data/wiki/vertex_stream.txt",p = 10,buffer_size = 4100)
+    # par = Partition_3(path = "./data/github/vertex_stream.txt",p = 10,buffer_size = 50000)
+    par = Partition_3(path = "./data/wiki/vertex_stream.txt",p = 10,buffer_size = 4100)
     # par = Partition_3(path = "./data/wiki/vertex_stream_mini.txt",p = 3,buffer_size = 2)
     partition_node,partition_edge = par.partition()
     eval.Eval(partition_node,partition_edge)

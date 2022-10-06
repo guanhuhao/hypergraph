@@ -53,9 +53,10 @@ class Partition_3:
 
     def select_core_set(self,top_k,buffer_edges):
         if len(buffer_edges) == 0 : return -1,None,None
-        # edge_id,test_degree = min([(i,self.fix_degree[i]) for i,j in buffer_edges.items()],key = lambda x:x[1])
+        edge_id,test_degree = min([(i,self.fix_degree[i]) for i in top_k],key = lambda x:x[1])
         # edge_id,test_degree = min([(i,self.edges_degree[i]) for i,j in buffer_edges.items()],key = lambda x:x[1])
-        edge_id,test_degree = min([(i,self.edges_degree[i]) for i in top_k],key = lambda x:x[1])
+        # edge_id,test_degree = min([(i,self.edges_degree[i]) for i in top_k],key = lambda x:x[1])
+        print("assign %4d degree:%4d"%(edge_id,test_degree))
         # if self.edges_degree[edge_id]>100:
         #     print("len:",len(top_k),"test:",end="")
         #     print([(i,self.edges_degree[i]) for i in top_k])
@@ -82,6 +83,7 @@ class Partition_3:
         rand_ls = []
         for par in range(self.p) : # maybe not used
             if self.res_capacity[par] >= self.edges_degree[edge_id]:
+                return par,core_node,core_edge
                 rand_ls.append(par)
 
         if len(rand_ls) != 0 : 
@@ -209,7 +211,7 @@ class Partition_3:
 
 if __name__ == '__main__':                  # test code
     # par = Partition_3(path = "./data/github/vertex_stream.txt",p = 10,buffer_size = 50000)
-    par = Partition_3(path = "./data/wiki/vertex_stream.txt",p = 10,buffer_size = 4100)
+    par = Partition_3(path = "./data/wiki/vertex_stream.txt",p = 16,buffer_size = 1000)
     # par = Partition_3(path = "./data/wiki/vertex_stream_mini.txt",p = 3,buffer_size = 2)
     partition_node,partition_edge = par.partition()
     eval.Eval(partition_node,partition_edge)

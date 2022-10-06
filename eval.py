@@ -41,6 +41,9 @@ def Eval(partition_node,partition_edge):
     print("edge balancing:"+str((maxi-mini)/maxi))
 
 
+def 
+
+
 if __name__ == '__main__':
     # dic = {1:0}
     # for i,j in dic.items():

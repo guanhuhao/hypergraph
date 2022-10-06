@@ -30,7 +30,6 @@ std::map<int,int> MinMax(std::string filename,int K,int s){
         // if(turn%100 == 0){
         //     std::cerr<<"turn:"<<turn<<std::endl;
         // }
-        // std::set<int> nets;
         
         int saved = -1;
         int p = 0;
@@ -42,15 +41,12 @@ std::map<int,int> MinMax(std::string filename,int K,int s){
                     cnt++;
                 }
             }
-            if(cnt>saved){
+            if(cnt>=saved){
                 saved = cnt;
                 p = i;
             }
         }
-        for(auto &x:nets[turn]) {
-            // if(part_edge[p].find(x) == part_edge[p].end())
-            part_edge[p].insert(x);
-        }
+        for(auto &x:nets[turn]) part_edge[p].insert(x);
         
         V[p]++;
         n2p[id] = p;
@@ -64,7 +60,7 @@ std::map<int,int> MinMax(std::string filename,int K,int s){
     clock_t end = std::clock();
     std::cerr<<"runtime:"<<(end-beg)*1000/CLOCKS_PER_SEC<<std::endl;   
     for(int i=0;i<K;i++){
-        std::cerr<<"par:"<<i<<" size:"<<V[i]<<std::endl;
+        std::cerr<<"par:"<<i<<" size:"<<V[i]<<" edge:"<<part_edge[i].size()<<std::endl;
     }
     return n2p;
 }
@@ -93,10 +89,11 @@ int main(){
     std::ios::sync_with_stdio(false);
     std::map<int,int> n2p;
     // std::map<int,std::vector<int> > e2n;
+    // std::string filename = "../data/github/vertex_stream.txt";
     std::string filename = "../data/github/vertex_stream.txt";
 
     clock_t beg = std::clock();
-    n2p = MinMax(filename,2,80);
+    n2p = MinMax(filename,8,100);
     clock_t end = std::clock();
 
     std::map<int,std::vector<int> > e2n = E2N(filename);

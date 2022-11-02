@@ -93,7 +93,7 @@ int main(){
     std::string filename = "../data/github/vertex_stream.txt";
 
     clock_t beg = std::clock();
-    n2p = MinMax(filename,8,100);
+    n2p = MinMax(filename,10,100);
     clock_t end = std::clock();
 
     std::map<int,std::vector<int> > e2n = E2N(filename);

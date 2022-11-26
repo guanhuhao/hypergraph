@@ -1,4 +1,7 @@
 import heapq
+import matplotlib.pyplot as plt # 画曲线图
+import numpy as np #拟合直线
+
 class HyperNode:
     def __init__(self,id,degree,edges):
         self.id = id
@@ -60,54 +63,6 @@ class Heap:
         self.heap = ls
 #         print("after:",self.heap)
 
-# return: mp_node,mp_edge
-def load_data(path):
-    # input:
-    # path: data set path
-    
-    # return: 
-    # mp_node: dict of partition node n_id:HyperNode
-    # mp_edge: dict of partition edge e_id:HyperEdge
-    
-    mp_node = {}
-    mp_edge = {}
-    with open(path,'r') as f:
-        for line in f:
-#             print(line[0:-1].split(" "))
-            n_id,e_id = line[0:-1].split(" ")
-            if mp_node.get(n_id) == None : 
-                mp_node[n_id] = HyperNode(n_id,0,set())
-            if mp_edge.get(e_id) == None :
-                mp_edge[e_id] = HyperEdge(e_id,0,set())
-                
-            mp_node[n_id].degree += 1
-            mp_edge[e_id].degree += 1
-            mp_node[n_id].edges.add(e_id)
-            mp_edge[e_id].nodes.add(n_id)
-    return mp_node,mp_edge    
-
-
-# return: None
-def recoder(part_node,mp_node,mp_edge,path):
-    # input:
-    # part_node: result of partition nodemp_eval[node.id] - node.degree
-    # mp_node: dictionary of hyper node 
-    # mp_edge: dictionary of hyper edge
-    # path: path to save record result
-    
-    dic = {}
-    tot = 0
-    for par in part_node:
-        for node in par:
-            dic[node.id] = len(dic)
-
-    print(path+"/record.txt")
-    with open(path+"/record.txt",'w') as f:
-        for par in part_node:
-            for node in par:
-                for edge in node.edges:
-                    f.write(str(dic[node.id])+" "+str(edge)+"\n")
-
 
 class K_core:
     def __init__(self,path):
@@ -161,4 +116,97 @@ class K_core:
                     ret.add(node)
         return ret
             
+
+# return: mp_node,mp_edge
+def load_data(path):
+    # input:
+    # path: data set path
+    
+    # return: 
+    # mp_node: dict of partition node n_id:HyperNode
+    # mp_edge: dict of partition edge e_id:HyperEdge
+    
+    mp_node = {}
+    mp_edge = {}
+    with open(path,'r') as f:
+        for line in f:
+#             print(line[0:-1].split(" "))
+            n_id,e_id = line[0:-1].split(" ")
+            if mp_node.get(n_id) == None : 
+                mp_node[n_id] = HyperNode(n_id,0,set())
+            if mp_edge.get(e_id) == None :
+                mp_edge[e_id] = HyperEdge(e_id,0,set())
+                
+            mp_node[n_id].degree += 1
+            mp_edge[e_id].degree += 1
+            mp_node[n_id].edges.add(e_id)
+            mp_edge[e_id].nodes.add(n_id)
+    return mp_node,mp_edge    
+
+
+# return: None
+def recoder(part_node,mp_node,mp_edge,path):
+    # input:
+    # part_node: result of partition nodemp_eval[node.id] - node.degree
+    # mp_node: dictionary of hyper node 
+    # mp_edge: dictionary of hyper edge
+    # path: path to save record result
+    
+    dic = {}
+    tot = 0
+    for par in part_node:
+        for node in par:
+            dic[node.id] = len(dic)
+
+    print(path+"/record.txt")
+    with open(path+"/record.txt",'w') as f:
+        for par in part_node:
+            for node in par:
+                for edge in node.edges:
+                    f.write(str(dic[node.id])+" "+str(edge)+"\n")
+
             
+
+def degree_distribute(mp_node,show = True,logx=True,logy=True,coeff = True,cumulation = True): # draw degree distribute graph 
+    degree = mp_node
+    dic = {j.degree:0 for i,j in degree.items()}
+    
+    for i,j in degree.items(): dic[j.degree] += 1
+    
+    ls = sorted(dic.items(), key = lambda x:(x[0],x[1]))
+        
+    x = [i[0] for i in ls]
+    y = [i[1] for i in ls]
+
+    if x[0] == 0:
+        x = x[1:-1]
+        y = y[1:-1]
+    
+    if cumulation == True : 
+        cnt = sum(y)
+        for i in range(len(x)):
+            cnt -= y[i]
+            y[i] += cnt
+
+    if show == True :
+        plt.plot(x,y, 'o',color='b')
+        if logy : plt.yscale('log')
+        if logx : plt.xscale('log')
+        
+
+    if coeff == True : 
+
+        xx = [np.log2(i) for i in x]
+        yy = [np.log2(i) for i in y]
+        
+        k,b = np.polyfit(xx, yy, 1)
+#         lg = yy[0]/xx[-1]
+#         lg = 1/lg
+        print("alpha: "+str(k))
+        
+        xx = x
+        yy = [(i**k)*(2**b) for i in xx]
+        plt.plot(xx,yy,color='r')
+    plt.show()
+
+    return [(x[i],y[i]) for i in range(len(x))]

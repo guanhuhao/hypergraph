@@ -107,6 +107,7 @@ class K_core:
                 if self.edge[edge_id].degree == 0 :
                     del self.edge[edge_id]
             del self.node[node.id]
+            
     def find_connection(self,nodes):
         ret  = set()
         ret.add(nodes[0])

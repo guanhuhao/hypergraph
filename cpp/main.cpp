@@ -15,13 +15,13 @@ public:
     vector<int> nodes;
 };
 class Heap{
-    int maxi_size;
     struct cmp{
         bool operator()(P a,P b){
             return a.first > b.first;
         }
     };
 public:
+    int maxi_size;
     set<int> check;
     priority_queue<P,vector<P>,cmp> heap;
     void add(int rank,int id){
@@ -64,7 +64,7 @@ HyperNode *Node;
 HyperEdge *Edge;
 class K_core{
     int node_num,edge_num;
-    map<int,int> n_deg,e_deg;
+    unordered_map<int,int> n_deg,e_deg;
     HyperNode *Node;
     HyperEdge *Edge;
     
@@ -79,7 +79,7 @@ public:
     }
     vector<int> get_kcore(){
         vector<int> ret;
-        map<int,int> mp_node,mp_edge;
+        unordered_map<int,int> mp_node,mp_edge;
         vector<int> *cur_n,*nex_n;
         vector<int> *cur_e,*nex_e;
         vector<int> n_a,n_b;
@@ -170,19 +170,14 @@ void solve(int p,int topk, int buffer_fac = 2){
     int maxi_cap = n/p + 1;
     vector<set<int> > part_node;
     vector<set<int> > part_edge;
-    map<int,int> eval;
-    map<int,bool> assign_n; 
-    int heap_size = topk*buffer_fac;
-    Heap heap(heap_size);
+    unordered_map<int,int> eval;
+    unordered_map<int,bool> assign_n; 
+    int buffer_size = topk*buffer_fac;
+    Heap heap(topk);
     K_core kcore(Node,Edge,n,m);
-    vector<int> a = kcore.get_kcore();
-    // cerr<<a.size()<<endl;
-    // kcore.del_node(a);
-    // a = kcore.get_kcore();
-    // cerr<<a.size()<<endl;
-    // for(int i=0;i<a.size();i++) {
-    //     cerr<<"test:"<<a[i]<<endl;
-    // }
+    // vector<int> a = kcore.get_kcore();
+    vector<int> buffer[2];
+    int cur_buf = 0;
 
 
     int cnt = 0;
@@ -190,25 +185,47 @@ void solve(int p,int topk, int buffer_fac = 2){
     part_node.push_back(set<int>());
     part_edge.push_back(set<int>());
     clock_t beg_time = clock();
+    clock_t timer1 = 0;
+    clock_t timer2 = 0;
+    int loop = 0;
     while(cnt < n){
-        vector<int> add_node;
+        vector<int> add_node;            
+        clock_t beg;
         if(part_node[cur_p].size()==0){
             add_node = kcore.get_kcore();
-            cerr<<add_node.size()<<endl;
         }else{
-            if(heap.size()<heap_size/2){
+            beg = clock();
+            if(buffer[cur_buf].size()<buffer_size/2){
+                buffer[cur_buf].clear();
                 heap.clear();
+                heap.maxi_size = buffer_size;
                 for(int id=0;id<n;id++) {
                     if(assign_n[id] == true) continue;
-                    // if(Node[id].degree == 0) continue;
                     heap.add(eval[id],id);
                 }
+                while(heap.size() != 0) buffer[cur_buf].push_back(heap.pop());
+                heap.maxi_size = topk;
             }
-            int k = min(topk,heap.size());
-            for(int i=0;i<k;i++) add_node.push_back(heap.pop());
+            assert(heap.size()==0);
+            for(auto &n_id:buffer[cur_buf]) heap.add(eval[n_id],n_id);
+            unordered_map<int,int> remove_n;
+            while(heap.size()!=0) {
+                int n_id = heap.pop();
+                add_node.push_back(n_id);
+                remove_n[n_id] = 1;
+            }
+            int nex_buf = cur_buf^1;
+            buffer[nex_buf].clear();
+            for(auto &n_id:buffer[cur_buf]){
+                if(remove_n[n_id] == 1) continue;
+                buffer[nex_buf].push_back(n_id);
+            }
+            cur_buf = nex_buf;
+            timer1 += (clock()-beg)*1000/CLOCKS_PER_SEC;
         }
-        
-        for(auto &cur_node:add_node){
+        beg = clock();
+        for(auto &cur_node:add_node){     
+            
             assign_n[cur_node] = true;
             cnt += 1;   
             kcore.del_node(cur_node);
@@ -218,6 +235,7 @@ void solve(int p,int topk, int buffer_fac = 2){
                     part_edge[cur_p].insert(e_id);
                     for(auto &n_id:Edge[e_id].nodes){
                         if(assign_n[n_id] == true) continue;
+                        loop += 1;
                         eval[n_id] += 1;
                     }
                 }
@@ -229,13 +247,15 @@ void solve(int p,int topk, int buffer_fac = 2){
                 eval.clear();
                 heap.clear();
                 break;
-            }
+            }        
         }
-        vector<int> rebuild;
-        while(heap.size()!=0) rebuild.push_back(heap.pop());
-        for(auto &n_id:rebuild){
-            heap.add(eval[n_id],n_id);
-        }
+        timer2 += (clock()-beg)*1000/CLOCKS_PER_SEC;
+
+        // vector<int> rebuild;
+        // while(heap.size()!=0) rebuild.push_back(heap.pop());
+        // for(auto &n_id:rebuild){
+        //     heap.add(eval[n_id],n_id);
+        // }
         
 
     }
@@ -243,11 +263,13 @@ void solve(int p,int topk, int buffer_fac = 2){
     int k_1 = 0;
     set<int> edge_set;
     for(int i=0;i<part_edge.size();i++) {
-        cerr<<i<<":"<<part_node[i].size()<<" "<<part_edge[i].size()<<endl;
+        // cerr<<i<<":"<<part_node[i].size()<<" "<<part_edge[i].size()<<endl;
         k_1 += part_edge[i].size();
         for(auto &e_id:part_edge[i]) edge_set.insert(e_id);
     }
     cerr<<"para:"<<endl<<"p:"<<p<<" topk:"<<topk<<" buffer_fac:"<<buffer_fac<<endl;
+    cerr<<"timer1:"<<timer1<<" timer2:"<<timer2<<endl;
+    cerr<<"loop:"<<loop<<endl;
     cerr<<"k-1: "<<k_1-edge_set.size()<<" runtime:"<<(end_time-beg_time)*1000/CLOCKS_PER_SEC<<"(ms)"<<endl<<"----------"<<endl;
 }
 int main(){
@@ -258,18 +280,19 @@ int main(){
     n = 56520;
     m = 120870;
     string path = "../data/github/github.txt";
-
     Node = new HyperNode[n];
     Edge = new HyperEdge[m];
     for(int i=0;i<n;i++) Node[i].id = i;
     for(int i=0;i<m;i++) Edge[i].id = i;
-
-    int p = 16;
-    int topk = 10;
-    int buffer_fac = 2;
     load_data(path);
-    solve(p,10,10);
-    printf("OK");
+
+    for(int i=0; i<10; i++){
+        int p = 16;
+        int topk = i+1;
+        int buffer_fac = 2;
+        solve(p,topk,buffer_fac);
+        // printf("OK");
+    }
 
     // Heap test(5);
     // for(int i=0;i<10;i++) {

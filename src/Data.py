@@ -81,7 +81,6 @@ class K_core:
             for edge_id,degree in mp_edge.items():
                 if degree <= k : del_edge.append(edge_id)
             if len(mp_node) - len(del_node) < mini_size : 
-                print("k:",k," node number:",len(mp_node)," edge number:",len(mp_edge))
                 return [self.node[node_id] for node_id in mp_node.keys()]
             for node_id in del_node:
                 for edge_id in self.node[node_id].edges:
@@ -93,13 +92,11 @@ class K_core:
                     if node_id not in mp_node.keys() : continue
                     mp_node[node_id] -= 1
                 del mp_edge[edge_id]
-#             print("k:",k," ",len(mp_node)," ",len(mp_edge))
             k += 1
         
             
     def del_node(self,nodes):
         for node in nodes:
-#             print(self.node[node.id].degree)
             if node.id not in self.node.keys() : continue
             for edge_id in node.edges:
                 if edge_id not in self.edge.keys() : continue

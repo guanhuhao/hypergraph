@@ -31,6 +31,7 @@ class HyperEdge:
 class Heap:
     def __init__(self):
         self.heap = []
+        self.min_h = []
         self.check = set()
         
     def add(self,rank,item):

@@ -15,7 +15,7 @@ class Buffer{
 public:
     int maxi_size;
     unordered_map<int,int> *eval;
-    set<int> check;
+    unordered_map<int,int> check;
     vector<P> heap;
     void add(int id){
         if(check.find(id) != check.end()) return;
@@ -28,11 +28,12 @@ public:
         }
         heap.push_back(P((*eval)[id],id));
         push_heap(heap.begin(),heap.end(),cmp);
-        check.insert(id);
+        check[id] = 1;
     }
     vector<int> get_topk(int k){
         priority_queue<P,vector<P>,MinHeap> topk;
-        for(auto &n_id:check){
+        for(auto &item:check){
+            int n_id = item.first;
             if(topk.size()<k){
                 topk.push(P((*eval)[n_id],n_id));
                 continue;
@@ -61,7 +62,10 @@ public:
         heap.clear();
         heap.resize(check.size());
         int i = 0;
-        for(auto &n_id:check) heap[i++] = P((*eval)[n_id],n_id);
+        for(auto &item:check) {
+            int n_id = item.first;
+            heap[i++] = P((*eval)[n_id],n_id);
+        }
         make_heap(heap.begin(),heap.end());
     }
     bool exist(int id){
@@ -73,5 +77,23 @@ public:
     void clear(){
         check.clear();
         heap.clear();
+    }
+    void build(vector<int> nodes){
+        clear();
+        vector<P> h;
+        h.resize(nodes.size());
+        int i =0;
+        for(auto &n_id:nodes){
+            h[i++] = P((*eval)[n_id],n_id);
+        }
+        make_heap(h.begin(),h.end());
+        int size = min(maxi_size,int(nodes.size()));
+        heap.resize(size);
+        for(int i=0;i<size;i++){
+            int n_id = h[i].second;
+            heap[i] = h[i];
+            check[n_id] = 1;
+        }
+
     }
 };

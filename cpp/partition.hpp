@@ -48,6 +48,9 @@ void solve(int n,int m, HyperNode *Node, HyperEdge *Edge, int p,int topk, int bu
     clock_t timer2 = 0;
     clock_t timer3 = 0;
     int loop = 0;
+    int cnt_big = 0;
+    vector<int> node_list;
+    for(int i=0;i<n;i++) node_list.push_back(i);
     while(cnt < n){
         vector<int> add_node;            
         clock_t beg;
@@ -55,12 +58,18 @@ void solve(int n,int m, HyperNode *Node, HyperEdge *Edge, int p,int topk, int bu
             add_node = kcore.get_kcore();
         }else{
             beg = clock();
-            if(buffer.size() < topk){
+            if(buffer.size() <  topk){
+                cnt_big += node_list.size();
                 buffer.clear();
-                for(int id=0;id<n;id++) {
+                int fix = 0;
+                for(int i=0;i<node_list.size();i++) {
+                    int id = node_list[i];
                     if(assign_n[id] == true) continue;
-                    buffer.add(id);
+                    node_list[fix++] = node_list[i];
+                    // buffer.add(id);
                 }
+                node_list.resize(fix);
+                buffer.build(node_list);
             }
             for(auto &id:buffer.get_topk(topk)){
                 add_node.push_back(id);
@@ -69,28 +78,33 @@ void solve(int n,int m, HyperNode *Node, HyperEdge *Edge, int p,int topk, int bu
         }
         beg = clock();
         // reverse(add_node.begin(),add_node.end());
-        set<int> tmp;
+        unordered_map<int,int> tmp;
         for(auto &cur_node:add_node){     
             assign_n[cur_node] = true;
             cnt += 1;   
             buffer.erase(cur_node);
             part_node[cur_p][cur_node] = 1;
             for(auto &e_id:Node[cur_node].edges){
-                if(part_edge[cur_p].find(e_id) == part_edge[cur_p].end()){
+                if(part_edge[cur_p][e_id] == 0){
                     part_edge[cur_p][e_id] = 1;
                     if(Edge[e_id].degree > shield_heavy_node) continue;
                     for(auto &n_id:Edge[e_id].nodes){
                         if(assign_n[n_id] == true) continue;
-                        loop += 1;
+                        // double pi = 1.0*Edge[e_id].degree/m;
+                        // loop += 1;
+                        // eval[n_id] += -log(pi);
                         eval[n_id] += 1;
-                        tmp.insert(n_id);
+                        tmp[n_id] = 1;
                         // buffer.add(n_id);
                     }
                 }
             }
             if(part_node[cur_p].size() >= maxi_cap) break;
  
-        }
+        }        
+        // cerr<<"try add node:"<<tmp.size()<<endl;
+        buffer.rebuild();
+        for(auto &n_id:tmp) buffer.add(n_id.first);
         if(part_node[cur_p].size() >= maxi_cap){
                 cur_p += 1;
                 part_node.push_back(unordered_map<int,int>());
@@ -98,9 +112,6 @@ void solve(int n,int m, HyperNode *Node, HyperEdge *Edge, int p,int topk, int bu
                 eval.clear();
                 buffer.clear();
         }
-        buffer.rebuild();
-        for(auto &n_id:tmp) buffer.add(n_id);
-        
         timer2 += (clock()-beg)*1000/CLOCKS_PER_SEC;       
 
     }
@@ -112,6 +123,7 @@ void solve(int n,int m, HyperNode *Node, HyperEdge *Edge, int p,int topk, int bu
         k_1 += part_edge[i].size();
         for(auto &e_id:part_edge[i]) edge_set.insert(e_id.first);
     }
+    cerr<<"cnt_big:"<<cnt_big<<endl;
     cerr<<"parameter:"<<endl<<"p:"<<p<<" topk:"<<topk<<" buffer_fac:"<<buffer_fac<<" shield_heavy_node:"<<shield_heavy_node<<endl;
     cerr<<"timer1:"<<timer1<<" timer2:"<<timer2<<" timer3:"<<timer3<<endl;
     cerr<<"loop:"<<loop<<endl;

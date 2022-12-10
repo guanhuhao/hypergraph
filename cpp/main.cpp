@@ -20,12 +20,12 @@ int main(){
     for(int i=0;i<m;i++) Edge[i].id = i;
     load_data(path,Node,Edge);
 
-    for(int i=2; i<20; i++){
+    for(int i=2; i<10; i++){
         int p = 16;
         int topk = 50;
-        int buffer_fac = 10;
+        int buffer_fac = 20;
         bool set_kcore = false;
-        int shield_heavy_node = i*10;
+        int shield_heavy_node = 10*i;
         solve(n,m,Node,Edge,p,topk,buffer_fac,set_kcore,shield_heavy_node);
     }
 

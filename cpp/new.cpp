@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-#include "data.h"
+#include "data.hpp"
 #include "partition.hpp"
 using namespace std;
 int n,m;
@@ -22,9 +22,9 @@ int main(){
     // m = 383641;
     // string path = "../data/actor-movie/out.actor-movie";
 
-    // n = 172080;
-    // m = 53408;
-    // string path = "../data/dbpedia-location/out.dbpedia-location";
+    n = 172080;
+    m = 53408;
+    string path = "../data/dbpedia-location/out.dbpedia-location";
     
     // n = 1953086;
     // m = 5624220;
@@ -38,12 +38,12 @@ int main(){
     for(int i=0;i<m;i++) Edge[i].id = i;
     load_data(path,Node,Edge);
 
-    for(int i=2; i<64; i*=2){
-        int p = i;
-        int topk = 50;
-        int buffer_fac = 10;
+    for(int i=1; i<10; i++){
+        int p = 1<<i;
+        int topk = 1;
+        int buffer_fac = 1;
         bool set_kcore = false;
-        int shield_heavy_node = 200;
+        int shield_heavy_node = 20000;
         solve(n,m,Node,Edge,p,topk,buffer_fac,set_kcore,shield_heavy_node);
     }
 

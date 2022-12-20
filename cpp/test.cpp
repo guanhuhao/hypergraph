@@ -5,10 +5,27 @@ int main(){
     int query = 5;
     int cnt = 0;
 
+    clock_t beg = clock();
     unordered_map<int,int> mp;
-    mp.erase(0);
-    // for(int i=0;i<10;i++) mp[i] = i;
-    cerr<<mp.size()<<endl;
+    for(int i=0;i<maxi;i++) mp[i] = 1;
+    for(int i=0;i<maxi;i++){
+        mp.erase(i);
+        int rd = rand()%maxi;
+        for(int j=0;j<query;j++)
+            if(mp.find(rd)!=mp.end()) cnt++;
+    }
+    cerr<<(clock()-beg)*1000/CLOCKS_PER_SEC<<endl;
+
+    beg = clock();
+    unordered_set<int> st;
+    for(int i=0;i<maxi;i++) st.insert(i);
+    for(int i=0;i<maxi;i++){
+        st.erase(i);
+        int rd = rand()%maxi;
+        for(int j=0;j<query;j++)
+            if(st.find(rd)!=st.end()) cnt++;
+    }
+    cerr<<(clock()-beg)*1000/CLOCKS_PER_SEC<<endl;
 
 
 }

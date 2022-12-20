@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-#include "data.h"
+#include "data.hpp"
 using namespace std;
 class K_core{
     int node_num,edge_num;

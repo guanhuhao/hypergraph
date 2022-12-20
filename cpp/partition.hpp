@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-#include "data.h"
+#include "data.hpp"
 #include "buffer.hpp"
 #include "k_core.hpp"
 
@@ -54,6 +54,7 @@ void solve(int n,int m, HyperNode *Node, HyperEdge *Edge, int p,int topk, int bu
     while(cnt < n){
         vector<int> add_node;            
         clock_t beg;
+        if(cnt%10000 == 0) cerr<<cnt<<endl;
         if(part_node[cur_p].size()==0 && set_kcore == true){
             add_node = kcore.get_kcore();
         }else{

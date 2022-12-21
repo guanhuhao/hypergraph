@@ -8,22 +8,16 @@ int main(){
     clock_t beg = clock();
     unordered_map<int,int> mp;
     for(int i=0;i<maxi;i++) mp[i] = 1;
-    for(int i=0;i<maxi;i++){
-        mp.erase(i);
-        int rd = rand()%maxi;
-        for(int j=0;j<query;j++)
-            if(mp.find(rd)!=mp.end()) cnt++;
+    for(int i=0;i<5;i++){
+        for(auto &item:mp) cnt+= i*item.first;
     }
     cerr<<(clock()-beg)*1000/CLOCKS_PER_SEC<<endl;
 
     beg = clock();
-    unordered_set<int> st;
-    for(int i=0;i<maxi;i++) st.insert(i);
-    for(int i=0;i<maxi;i++){
-        st.erase(i);
-        int rd = rand()%maxi;
-        for(int j=0;j<query;j++)
-            if(st.find(rd)!=st.end()) cnt++;
+    vector<int> v;
+    for(int i=0;i<maxi;i++) v.push_back(i);
+    for(int i=0;i<5;i++){
+        for(auto &item:v) cnt+= i*item;
     }
     cerr<<(clock()-beg)*1000/CLOCKS_PER_SEC<<endl;
 

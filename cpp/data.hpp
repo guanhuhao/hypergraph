@@ -14,4 +14,5 @@ public:
     int id;
     int degree;
     vector<int> nodes;
+    int rest;
 };

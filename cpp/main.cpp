@@ -85,8 +85,6 @@ void load_data(string path,HyperNode * Node,HyperEdge * Edge){
     while(~fscanf(file,"%d%d",&n_id,&e_id)){
         assert(n_id<n);
         assert(e_id<m);
-        Node[n_id].degree += 1;
-        Edge[e_id].degree += 1;
         Node[n_id].edges.push_back(e_id);
         Edge[e_id].nodes.push_back(n_id);
     }
@@ -133,6 +131,17 @@ void solve(int n,int m, HyperNode *Node, HyperEdge *Edge, int p, int shield_heav
 
         for(auto &e_id:Node[add_node].edges){
             part_edge[cur_p][e_id] += 1;
+            // Edge[e_id].rest--;
+            // if(Edge[e_id].rest < Edge[e_id].degree/2){
+            //     int pos = 0;
+            //     for(auto &n_id:Edge[e_id].nodes){
+            //         if(score_list.assigned(n_id)) continue;
+            //         Edge[e_id].nodes[pos] = n_id;
+            //         pos++;
+            //     }
+            //     Edge[e_id].nodes.resize(Edge[e_id].rest);
+            //     Edge[e_id].degree = Edge[e_id].rest;
+            // }
             if(part_edge[cur_p][e_id] == 1){
                 if(Edge[e_id].degree > shield_heavy_node) continue;
                 for(auto &n_id:Edge[e_id].nodes) {
@@ -173,10 +182,12 @@ void solve(int n,int m, HyperNode *Node, HyperEdge *Edge, int p, int shield_heav
         // for(int j=0;j<11;j++) cerr<<j<<":"<<tmp[j]<<" ";
         // cerr<<endl;
     }
+    clock_t runtime = (end_time-beg_time)*1000/CLOCKS_PER_SEC;
     cerr<<"cnt_big:"<<cnt_big<<endl;
     cerr<<"parameter:"<<endl<<"p:"<<p<<" shield_heavy_node:"<<shield_heavy_node<<endl;
     cerr<<"time1:"<<time1<<" "<<"time2:"<<time2<<endl;
     cerr<<"k-1: "<<k_1-m<<" runtime:"<<(end_time-beg_time)*1000/CLOCKS_PER_SEC<<"(ms)"<<endl<<"----------"<<endl;
+    cout<<p<<" "<<shield_heavy_node<<" "<<k_1-m<<" "<<runtime<<endl;
 }
 int main(){
     // n = 4600;
@@ -187,34 +198,50 @@ int main(){
     // m = 120870;
     // string path = "../data/github/github.txt";
 
-    n = 901167;
-    m = 34462;
-    string path = "../data/dbpedia-team/out.dbpedia-team";
+    // n = 901167;
+    // m = 34462;
+    // string path = "../data/dbpedia-team/out.dbpedia-team";
 
     // n = 127824;
-    // m = 383641;`
+    // m = 383641;
     // string path = "../data/actor-movie/out.actor-movie";
 
-    // n = 172100;
-    // m = 53420;
-    // string path = "../data/dbpedia-location/out.dbpedia-location";
+    n = 172100;
+    m = 53420;
+    string path = "../data/dbpedia-location/out.dbpedia-location";
     
-    //n = 1953086;
-    //m = 5624220;
-    //string path = "../data/dblp-author/out.dblp-author";
+    // n = 1953086;
+    // m = 5624220;
+    // string path = "../data/dblp-author/out.dblp-author";
+    string filename;
+    for(auto &ch:path){
+        filename.push_back(ch);
+        if(ch == '/') filename.clear();
+    }
+    string out_path = "./out/"+filename+".log";
+
+    freopen(out_path.c_str(),"w",stdout);
 
 
     Node = new HyperNode[n];
     Edge = new HyperEdge[m];
-    for(int i=0;i<n;i++) Node[i].id = i; 
-    for(int i=0;i<m;i++) Edge[i].id = i;
+
     cerr<<"begin load data!"<<endl;
     load_data(path,Node,Edge);
+    for(int i=0;i<n;i++) {
+        Node[i].id = i; 
+        Node[i].degree = Node[i].edges.size();
+    }
+    for(int i=0;i<m;i++) {
+        Edge[i].id = i;
+        Edge[i].degree = Edge[i].rest = Edge[i].nodes.size();
+    }
     cerr<<"load data OK!"<<endl;
-
+    cout<<"# dataset:"<<filename<<endl;
+    cout<<"# p sheild k-1 runtime(ms)"<<endl;
     for(int i=1; i<= 6; i++){
-        int p = 1<<i;
-        int shield_heavy_node = 4000000;
+        int p = 1 << i;
+        int shield_heavy_node = 1e9;
         solve(n,m,Node,Edge,p,shield_heavy_node);
     }
     //}

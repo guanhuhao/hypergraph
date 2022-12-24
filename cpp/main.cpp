@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#include <stdlib.h>
 #include "data.hpp"
 // #include "partition.hpp"
 using namespace std;
@@ -131,26 +132,16 @@ void solve(int n,int m, HyperNode *Node, HyperEdge *Edge, int p, int shield_heav
 
         for(auto &e_id:Node[add_node].edges){
             part_edge[cur_p][e_id] += 1;
-            // Edge[e_id].rest--;
-            // if(Edge[e_id].rest < Edge[e_id].degree/2){
-            //     int pos = 0;
-            //     for(auto &n_id:Edge[e_id].nodes){
-            //         if(score_list.assigned(n_id)) continue;
-            //         Edge[e_id].nodes[pos] = n_id;
-            //         pos++;
-            //     }
-            //     Edge[e_id].nodes.resize(Edge[e_id].rest);
-            //     Edge[e_id].degree = Edge[e_id].rest;
-            // }
             if(part_edge[cur_p][e_id] == 1){
                 if(Edge[e_id].degree > shield_heavy_node) continue;
-                for(auto &n_id:Edge[e_id].nodes) {
+                for(int i=0;i<Edge[e_id].degree;i++){
+                    int n_id = Edge[e_id].nodes[i];
                     score_list.add(n_id);
                 }
             }
         }
         
-        time1 += (clock()-beg_t)*1000/CLOCKS_PER_SEC;
+        // time1 += (clock()-beg_t)*1000/CLOCKS_PER_SEC;
  
         if(part_node[cur_p].size() >= maxi_cap){
             beg_t = clock();     
@@ -162,22 +153,21 @@ void solve(int n,int m, HyperNode *Node, HyperEdge *Edge, int p, int shield_heav
         }
     }
     // cerr<<cur_p<<": "<<"time:"<<(clock()-time1)*1000/CLOCKS_PER_SEC<< " edge num:"<<part_edge[cur_p].size()<<" node num:"<<part_node[cur_p].size()<<endl;
-
     clock_t end_time = clock();
     int k_1 = 0;
     set<int> edge_set;
     for(int i=0;i<p;i++) {
         vector<int> tmp(11);
         k_1 += part_edge[i].size();
-        double ave = 0;
-        for(auto &item:part_edge[i]){
-            int e_id = item.first;
-            double per = 1.0*part_edge[i][e_id]/Edge[e_id].degree;
-            ave += per;
-            tmp[int(per*10)] ++;
+        // double ave = 0;
+        // for(auto &item:part_edge[i]){
+        //     int e_id = item.first;
+        //     double per = 1.0*part_edge[i][e_id]/Edge[e_id].degree;
+        //     ave += per;
+        //     tmp[int(per*10)] ++;
              
-        }
-        ave /= part_edge[i].size();
+        // }
+        // ave /= part_edge[i].size();
         // cerr<<i<<": "<<" edge num:"<<part_edge[i].size()<<" node num:"<<part_node[i].size()<<" ave:"<<ave<<endl;
         // for(int j=0;j<11;j++) cerr<<j<<":"<<tmp[j]<<" ";
         // cerr<<endl;
@@ -198,21 +188,22 @@ int main(){
     // m = 120870;
     // string path = "../data/github/github.txt";
 
-    // n = 901167;
-    // m = 34462;
-    // string path = "../data/dbpedia-team/out.dbpedia-team";
+    n = 901167;
+    m = 34462;
+    string path = "../data/dbpedia-team/out.dbpedia-team";
 
     // n = 127824;
     // m = 383641;
     // string path = "../data/actor-movie/out.actor-movie";
 
-    n = 172100;
-    m = 53420;
-    string path = "../data/dbpedia-location/out.dbpedia-location";
+    // n = 172100;
+    // m = 53420;
+    // string path = "../data/dbpedia-location/out.dbpedia-location";
     
     // n = 1953086;
     // m = 5624220;
     // string path = "../data/dblp-author/out.dblp-author";
+
     string filename;
     for(auto &ch:path){
         filename.push_back(ch);
@@ -221,7 +212,6 @@ int main(){
     string out_path = "./out/"+filename+".log";
 
     freopen(out_path.c_str(),"w",stdout);
-
 
     Node = new HyperNode[n];
     Edge = new HyperEdge[m];
@@ -235,13 +225,15 @@ int main(){
     for(int i=0;i<m;i++) {
         Edge[i].id = i;
         Edge[i].degree = Edge[i].rest = Edge[i].nodes.size();
+        // cerr<< Edge[i].degree<<endl;
     }
     cerr<<"load data OK!"<<endl;
     cout<<"# dataset:"<<filename<<endl;
     cout<<"# p sheild k-1 runtime(ms)"<<endl;
     for(int i=1; i<= 6; i++){
-        int p = 1 << i;
-        int shield_heavy_node = 1e9;
+        int p = 1<<i;
+        int shield_heavy_node = 100000;
+        for(int i=0;i<m;i++) Edge[i].degree = Edge[i].rest = Edge[i].nodes.size();
         solve(n,m,Node,Edge,p,shield_heavy_node);
     }
     //}

@@ -7,6 +7,7 @@ int n,m;
 HyperNode *Node;
 HyperEdge *Edge;
 typedef pair<int,int> P;
+bool swap_ve = false;
 class Score_List{
 public:
     int maxi_degree;
@@ -79,11 +80,13 @@ public:
     }
 };
 void load_data(string path,HyperNode * Node,HyperEdge * Edge){
+    // swap(n,m);
     FILE *file;
     file = fopen(path.c_str(),"r");
     int n_id,e_id;
     int turn = 0;
     while(~fscanf(file,"%d%d",&n_id,&e_id)){
+        if(swap_ve) swap(n_id,e_id);
         assert(n_id<n);
         assert(e_id<m);
         Node[n_id].edges.push_back(e_id);
@@ -121,7 +124,7 @@ void solve(int n,int m, HyperNode *Node, HyperEdge *Edge, int p, int shield_heav
     int cnt_big = 0;
 
     int cur_deg = tot_deg;
-    unordered_set<int> check_edge;
+    unordered_map<int,int> check_edge;
     while(cnt < n){   
         cnt ++; 
         int add_node = score_list.top();
@@ -133,6 +136,7 @@ void solve(int n,int m, HyperNode *Node, HyperEdge *Edge, int p, int shield_heav
         for(auto &e_id:Node[add_node].edges){
             part_edge[cur_p][e_id] += 1;
             if(part_edge[cur_p][e_id] == 1){
+                check_edge[e_id] += 1;
                 if(Edge[e_id].degree > shield_heavy_node) continue;
                 for(int i=0;i<Edge[e_id].degree;i++){
                     int n_id = Edge[e_id].nodes[i];
@@ -172,6 +176,29 @@ void solve(int n,int m, HyperNode *Node, HyperEdge *Edge, int p, int shield_heav
         // for(int j=0;j<11;j++) cerr<<j<<":"<<tmp[j]<<" ";
         // cerr<<endl;
     }
+    map<int,int> cnt_num;
+    map<int,int> cnt_val;
+    int maxi_edge_degree = 0;
+    for(int i = 0;i<m;i++){
+        int e_id = Edge[i].id;
+        int deg = Edge[i].degree;
+        cnt_num[deg] ++;
+        cnt_val[deg] += check_edge[e_id];
+        maxi_edge_degree = max(maxi_edge_degree,deg);
+    }
+    double sum_val,sum_cnt;
+    int gap = 50;
+    sum_val = sum_cnt = 0;
+    for(int i=0;i<maxi_edge_degree;i++){
+        // if(cnt_num[i] == 0) continue;
+        if(i%gap == 0 && i != 0){
+            if(sum_cnt == 0) continue;
+            cerr<<"degree:"<<i<<" ave:"<<sum_val/sum_cnt<<endl;
+            sum_val = sum_cnt = 0;
+        }
+        sum_cnt += cnt_num[i];
+        sum_val += cnt_val[i];
+    }
     clock_t runtime = (end_time-beg_time)*1000/CLOCKS_PER_SEC;
     cerr<<"cnt_big:"<<cnt_big<<endl;
     cerr<<"parameter:"<<endl<<"p:"<<p<<" shield_heavy_node:"<<shield_heavy_node<<endl;
@@ -180,6 +207,8 @@ void solve(int n,int m, HyperNode *Node, HyperEdge *Edge, int p, int shield_heav
     cout<<p<<" "<<shield_heavy_node<<" "<<k_1-m<<" "<<runtime<<endl;
 }
 int main(){
+    swap_ve = false;
+    
     // n = 4600;
     // m = 4600;
     // string path = "../data/wiki/wiki.txt";
@@ -188,21 +217,23 @@ int main(){
     // m = 120870;
     // string path = "../data/github/github.txt";
 
-    n = 901167;
-    m = 34462;
-    string path = "../data/dbpedia-team/out.dbpedia-team";
+    // n = 901167;
+    // m = 34462;
+    // string path = "../data/dbpedia-team/out.dbpedia-team";
 
     // n = 127824;
     // m = 383641;
     // string path = "../data/actor-movie/out.actor-movie";
 
-    // n = 172100;
-    // m = 53420;
-    // string path = "../data/dbpedia-location/out.dbpedia-location";
+    n = 172100;
+    m = 53420;
+    string path = "../data/dbpedia-location/out.dbpedia-location";
     
     // n = 1953086;
     // m = 5624220;
     // string path = "../data/dblp-author/out.dblp-author";
+
+    if(swap_ve) swap(n,m);
 
     string filename;
     for(auto &ch:path){
@@ -225,14 +256,13 @@ int main(){
     for(int i=0;i<m;i++) {
         Edge[i].id = i;
         Edge[i].degree = Edge[i].rest = Edge[i].nodes.size();
-        // cerr<< Edge[i].degree<<endl;
     }
     cerr<<"load data OK!"<<endl;
     cout<<"# dataset:"<<filename<<endl;
     cout<<"# p sheild k-1 runtime(ms)"<<endl;
-    for(int i=1; i<= 6; i++){
-        int p = 1<<i;
-        int shield_heavy_node = 100000;
+    for(int i=1; i<= 10; i++){
+        int p = 16;
+        int shield_heavy_node = 100*i;
         for(int i=0;i<m;i++) Edge[i].degree = Edge[i].rest = Edge[i].nodes.size();
         solve(n,m,Node,Edge,p,shield_heavy_node);
     }

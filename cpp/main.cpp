@@ -221,13 +221,13 @@ int main(){
     // m = 34462;
     // string path = "../data/dbpedia-team/out.dbpedia-team";
 
-    // n = 127824;
-    // m = 383641;
-    // string path = "../data/actor-movie/out.actor-movie";
+    n = 127824;
+    m = 383641;
+    string path = "../data/actor-movie/out.actor-movie";
 
-    n = 172100;
-    m = 53420;
-    string path = "../data/dbpedia-location/out.dbpedia-location";
+    // n = 172100;
+    // m = 53420;
+    // string path = "../data/dbpedia-location/out.dbpedia-location";
     
     // n = 1953086;
     // m = 5624220;
@@ -261,8 +261,8 @@ int main(){
     cout<<"# dataset:"<<filename<<endl;
     cout<<"# p sheild k-1 runtime(ms)"<<endl;
     for(int i=1; i<= 10; i++){
-        int p = 16;
-        int shield_heavy_node = 100*i;
+        int p = 2;
+        int shield_heavy_node = i*3;
         for(int i=0;i<m;i++) Edge[i].degree = Edge[i].rest = Edge[i].nodes.size();
         solve(n,m,Node,Edge,p,shield_heavy_node);
     }

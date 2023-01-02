@@ -179,9 +179,11 @@ void solve(int n,int m, HyperNode *Node, HyperEdge *Edge, int p, int shield_heav
     map<int,int> cnt_num;
     map<int,int> cnt_val;
     int maxi_edge_degree = 0;
+    int cnt_edge = 0;
     for(int i = 0;i<m;i++){
         int e_id = Edge[i].id;
         int deg = Edge[i].degree;
+        if(deg<shield_heavy_node) cnt_edge++;
         cnt_num[deg] ++;
         cnt_val[deg] += check_edge[e_id];
         maxi_edge_degree = max(maxi_edge_degree,deg);
@@ -193,7 +195,7 @@ void solve(int n,int m, HyperNode *Node, HyperEdge *Edge, int p, int shield_heav
         // if(cnt_num[i] == 0) continue;
         if(i%gap == 0 && i != 0){
             if(sum_cnt == 0) continue;
-            cerr<<"degree:"<<i<<" ave:"<<sum_val/sum_cnt<<endl;
+            // cerr<<"degree:"<<i<<" ave:"<<sum_val/sum_cnt<<endl;
             sum_val = sum_cnt = 0;
         }
         sum_cnt += cnt_num[i];
@@ -204,7 +206,8 @@ void solve(int n,int m, HyperNode *Node, HyperEdge *Edge, int p, int shield_heav
     cerr<<"parameter:"<<endl<<"p:"<<p<<" shield_heavy_node:"<<shield_heavy_node<<endl;
     cerr<<"time1:"<<time1<<" "<<"time2:"<<time2<<endl;
     cerr<<"k-1: "<<k_1-m<<" runtime:"<<(end_time-beg_time)*1000/CLOCKS_PER_SEC<<"(ms)"<<endl<<"----------"<<endl;
-    cout<<p<<" "<<shield_heavy_node<<" "<<k_1-m<<" "<<runtime<<endl;
+    cerr<<"sheild%:"<<1.0*cnt_edge/m<<endl;
+    cout<<p<<" "<<shield_heavy_node<<" "<<1.0*cnt_edge/m<<" "<<k_1-m<<" "<<runtime<<endl;
 }
 int main(){
     swap_ve = false;
@@ -213,17 +216,17 @@ int main(){
     // m = 4600;
     // string path = "../data/wiki/wiki.txt";
 
-    // n = 56520;
-    // m = 120870;
-    // string path = "../data/github/github.txt";
+    n = 56520;
+    m = 120870;
+    string path = "../data/github/github.txt";
 
     // n = 901167;
     // m = 34462;
     // string path = "../data/dbpedia-team/out.dbpedia-team";
 
-    n = 127824;
-    m = 383641;
-    string path = "../data/actor-movie/out.actor-movie";
+    // n = 127824;
+    // m = 383641;
+    // string path = "../data/actor-movie/out.actor-movie";
 
     // n = 172100;
     // m = 53420;
@@ -253,18 +256,26 @@ int main(){
         Node[i].id = i; 
         Node[i].degree = Node[i].edges.size();
     }
+    vector<int> edge_degree;
     for(int i=0;i<m;i++) {
         Edge[i].id = i;
         Edge[i].degree = Edge[i].rest = Edge[i].nodes.size();
+        edge_degree.push_back(Edge[i].nodes.size());
     }
+    sort(edge_degree.begin(),edge_degree.end(),greater<int>());
     cerr<<"load data OK!"<<endl;
     cout<<"# dataset:"<<filename<<endl;
-    cout<<"# p sheild k-1 runtime(ms)"<<endl;
-    for(int i=1; i<= 10; i++){
-        int p = 2;
-        int shield_heavy_node = i*3;
-        for(int i=0;i<m;i++) Edge[i].degree = Edge[i].rest = Edge[i].nodes.size();
-        solve(n,m,Node,Edge,p,shield_heavy_node);
+    cout<<"# p sheild sheild% k-1 runtime(ms)"<<endl; 
+    for(int i=1; i<= 6; i++){
+        int p = 1<<i;
+        int rec_before = -1;
+        for(double per = 1;int(per*m);per/=1.5){
+            int shield_heavy_node = edge_degree[int(per*m)];
+            if(shield_heavy_node == rec_before) continue;
+            rec_before = shield_heavy_node;
+            for(int i=0;i<m;i++) Edge[i].degree = Edge[i].rest = Edge[i].nodes.size();
+            solve(n,m,Node,Edge,p,shield_heavy_node);
+        }
     }
     //}
 

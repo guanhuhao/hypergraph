@@ -1,0 +1,11 @@
+# dataset:../data/wiki.txt n:4600 m:4600
+#| p | k-1 | partition time | total time |
+2,2613,135,196
+4,7299,174,199
+8,13768,267,293
+16,20469,428,452
+32,28216,645,669
+64,36492,1075,1099
+
+# dataset:../data/out.github n:56520 m:120870
+#| p | k-1 | partition time | total time |

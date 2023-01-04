@@ -1,0 +1,22 @@
+
+
+# dataset:../data/wiki.txt n:4600 m:4600 sheild degree:283
+#| p | k-1 | partition time | total time |
+2,2575,94,466
+4,7166,146,488
+8,13231,205,544
+16,19751,373,721
+32,27303,593,971
+64,35482,710,1084
+
+# dataset:../data/out.github n:56520 m:120870 sheild degree:44
+#| p | k-1 | partition time | total time |
+2,2714,553,2049
+4,13031,587,2138
+8,25175,611,2160
+16,41076,609,2163
+32,59968,625,2040
+64,80624,694,2153
+
+# dataset:../data/out.dbpedia-team n:901167 m:34462 sheild degree:633
+#| p | k-1 | partition time | total time |

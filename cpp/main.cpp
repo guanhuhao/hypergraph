@@ -10,7 +10,6 @@ vector<int> nn;
 vector<int> mm;
 vector<string> filename;
 typedef pair<int,int> P;
-bool swap_ve = false;
 class Score_List{
 public:
     int maxi_degree;
@@ -79,9 +78,8 @@ void load_data(string path,HyperNode * Node,HyperEdge * Edge){
     int n_id,e_id;
     int turn = 0;
     while(~fscanf(file,"%d%d",&n_id,&e_id)){
-        if(swap_ve) swap(n_id,e_id);
         assert(n_id<n);
-        // cerr<<e_id<<" "<<m<<endl;
+        cerr<<e_id<<" "<<m<<endl;
         assert(e_id<m);
         Node[n_id].edges.push_back(e_id);
         Edge[e_id].nodes.push_back(n_id);
@@ -126,19 +124,13 @@ void solve(int n,int m,string path, int p, int shield_heavy_node = 1e9){
     int cur_p = 0;
     part_node.push_back(unordered_map<int,int>());
     part_edge.push_back(unordered_map<int,int>());    
-    clock_t time1 = 0;
-    clock_t time2 = 0;
     clock_t beg_time = clock();
-    clock_t beg_t;
-    int cnt_big = 0;
 
     int cur_deg = tot_deg;
     unordered_map<int,int> check_edge;
     while(cnt < n){   
         cnt ++; 
         int add_node = score_list.top();
-
-        beg_t = clock();
         score_list.erase(add_node);
         part_node[cur_p][add_node] = 1;
 
@@ -153,16 +145,12 @@ void solve(int n,int m,string path, int p, int shield_heavy_node = 1e9){
                 }
             }
         }
-        
-        // time1 += (clock()-beg_t)*1000/CLOCKS_PER_SEC;
  
-        if(part_node[cur_p].size() >= maxi_cap){
-            beg_t = clock();     
+        if(part_node[cur_p].size() >= maxi_cap){   
             score_list.clear();
             cur_p += 1;
             part_node.push_back(unordered_map<int,int>());
             part_edge.push_back(unordered_map<int,int>());   
-            time2 += (clock()-beg_t)*1000/CLOCKS_PER_SEC;   
         }
     }
     // cerr<<cur_p<<": "<<"time:"<<(clock()-time1)*1000/CLOCKS_PER_SEC<< " edge num:"<<part_edge[cur_p].size()<<" node num:"<<part_node[cur_p].size()<<endl;
@@ -212,9 +200,7 @@ void solve(int n,int m,string path, int p, int shield_heavy_node = 1e9){
     }
     clock_t runtime = (end_time-beg_time)*1000/CLOCKS_PER_SEC;
     clock_t tot_time = (clock()-tot_begin)*1000/CLOCKS_PER_SEC;
-    cerr<<"cnt_big:"<<cnt_big<<endl;
     cerr<<"parameter:"<<endl<<"p:"<<p<<" shield_heavy_node:"<<shield_heavy_node<<endl;
-    cerr<<"time1:"<<time1<<" "<<"time2:"<<time2<<endl;
     cerr<<"k-1: "<<k_1-m<<" runtime:"<<(end_time-beg_time)*1000/CLOCKS_PER_SEC<<"(ms)"<<endl<<"----------"<<endl;
     cerr<<"sheild%:"<<1.0*cnt_edge/m<<endl;
     cout<<p<<","<<k_1-m<<","<<runtime<<","<<tot_time<<endl;
@@ -239,6 +225,10 @@ void unit_test1(){
 
 void unit_test2(){
     freopen("./out/unit_test2.txt","w",stdout);
+    for(int i=0;i<nn.size();i++) cerr<<nn[i]<<" ";
+    cout<<endl;
+    for(int i=0;i<nn.size();i++) cerr<<mm[i]<<" ";
+    cout<<endl;
     for(int i=0;i<nn.size();i++){
         n = nn[i];
         m = mm[i];
@@ -288,15 +278,13 @@ void uni_test2(int n,int m,string path){
     // }
 }
 int main(){
-    // swap_ve = true;
-    
     nn.push_back(4600);
     mm.push_back(4600);
     filename.push_back("../data/wiki.txt");
 
     nn.push_back(56520);
     mm.push_back(120870);
-    filename.push_back("../data/github.txt");
+    filename.push_back("../data/out.github");
 
     nn.push_back(901167);
     mm.push_back(34462);
@@ -326,10 +314,17 @@ int main(){
     mm.push_back(172100);
     filename.push_back("../data/out.dbpedia-location-swap.txt");
 
-    // if(swap_ve) swap(n,m);
+    // nn.push_back(2783198);
+    // mm.push_back(8730859);
+    // string path = "../data/out.orkut-groupmemberships";
+
+    // nn.push_back(8730859);
+    // mm.push_back(2783198);
+    // string path = "../data/out.orkut-groupmemberships-swap.txt";
+
+
+    unit_test1();
     unit_test2();
-
-
 
     return 0;
 }

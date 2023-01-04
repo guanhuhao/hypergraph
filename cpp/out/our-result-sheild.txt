@@ -1,0 +1,81 @@
+# dataset:../data/wiki.txt n:4600 m:4600 sheild degree:283
+#| p | k-1 | partition time | total time |
+2,2575,113,139
+4,7166,151,175
+8,13231,218,244
+16,19751,334,358
+32,27303,539,563
+64,35482,789,815
+
+# dataset:../data/github.txt n:56520 m:120870 sheild degree:44
+#| p | k-1 | partition time | total time |
+2,2713,580,840
+4,13031,609,858
+8,25169,571,806
+16,40951,622,857
+32,59964,679,912
+64,80569,734,968
+
+# dataset:../data/out.dbpedia-team n:901167 m:34462 sheild degree:633
+#| p | k-1 | partition time | total time |
+2,8697,3735,4327
+4,12271,3942,4499
+8,18322,4229,4782
+16,28392,5102,5672
+32,42516,5884,6435
+64,59256,7634,8177
+
+# dataset:../data/out.actor-movie n:127824 m:383641 sheild degree:48
+#| p | k-1 | partition time | total time |
+2,52403,2333,2980
+4,115769,2665,3296
+8,154141,2851,3477
+16,193672,3062,3682
+32,245829,3431,4062
+64,305235,3866,4519
+
+# dataset:../data/out.dbpedia-location n:172100 m:53420 sheild degree:65
+#| p | k-1 | partition time | total time |
+2,506,509,666
+4,1507,526,680
+8,3982,517,665
+16,7694,504,660
+32,12579,461,612
+64,19642,460,621
+
+# dataset:../data/out.dblp-author n:1953086 m:5624220 sheild degree:7
+#| p | k-1 | partition time | total time |
+2,449274,25098,33185
+4,878933,25904,36013
+8,1339542,26621,34764
+16,1824213,26828,34782
+32,2199513,27609,35739
+64,2439275,27994,36129
+
+# dataset:../data/out.dbpedia-team-swap.txt n:34462 m:901167 sheild degree:9
+#| p | k-1 | partition time | total time |
+2,8506,1647,2276
+4,22497,1727,2373
+8,49609,1647,2297
+16,81688,1720,2350
+32,105713,1786,2432
+64,117615,1788,2434
+
+# dataset:../data/out.actor-movie-swap.txt n:383641 m:127824 sheild degree:57
+#| p | k-1 | partition time | total time |
+2,43125,3065,3644
+4,68059,3191,3773
+8,117012,3656,4253
+16,175692,4265,4858
+32,236813,5330,5966
+64,289636,5968,6708
+
+# dataset:../data/out.dbpedia-location-swap.txt n:53420 m:172100 sheild degree:4
+#| p | k-1 | partition time | total time |
+2,7802,438,603
+4,19066,454,614
+8,26624,462,624
+16,32565,449,608
+32,37658,432,587
+64,38928,435,589
+

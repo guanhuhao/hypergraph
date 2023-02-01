@@ -1,0 +1,6 @@
+# dataset:../data/out.actor-movie-swap.txt n:383645 m:127828 sheild degree:57
+#| p | k-1 | partition time | total time | shield degree | shield per |
+2,43121,2963,3530,57,0.01
+2,41556,2694,3238,42,0.03
+2,41850,2604,3153,35,0.05
+2,33433,2425,2983,25,0.1

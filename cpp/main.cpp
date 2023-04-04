@@ -170,7 +170,7 @@ void solve(int p,int topk, int buffer_fac = 2){
     int maxi_cap = n/p + 1;
     vector<set<int> > part_node;
     vector<set<int> > part_edge;
-    unordered_map<int,int> eval;
+    unordered_map<int,double> eval;
     unordered_map<int,bool> assign_n; 
     int buffer_size = topk*buffer_fac;
     Heap heap(topk);
@@ -239,7 +239,9 @@ void solve(int p,int topk, int buffer_fac = 2){
                     for(auto &n_id:Edge[e_id].nodes){
                         if(assign_n[n_id] == true) continue;
                         loop += 1;
-                        eval[n_id] += 1;
+                        double entro = -log(1.0*Edge[e_id].degree/3675);
+                        eval[n_id] += entro;
+                        // eval[n_id] += 1;
                     }
                 }
             }
@@ -288,6 +290,11 @@ int main(){
     for(int i=0;i<n;i++) Node[i].id = i;
     for(int i=0;i<m;i++) Edge[i].id = i;
     load_data(path);
+    int maxi_degree = 0;
+    // for(int i=0;i<m;i++){
+    //     maxi_degree = max(Edge[i].degree,maxi_degree);
+    // }
+    // cerr<<"maxi:"<<maxi_degree<<endl;
 
     for(int i=0; i<10; i++){
         int p = 16;

@@ -1,0 +1,4 @@
+# dataset:../data/out.github n:56524 m:120872
+#| p | k-1 | partition time | total time |
+16,37544,740,941
+

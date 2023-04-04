@@ -1,4 +1,6 @@
-# dataset:../data/out.github n:56524 m:120872
+# dataset:../data/out.actor-movie n:127828 m:383645
 #| p | k-1 | partition time | total time |
-16,37544,740,941
-
+2,52020,2266,2835
+4,105767,2605,3152
+8,149577,2913,3465
+16,186927,3579,4131

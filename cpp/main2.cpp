@@ -94,7 +94,7 @@ void load_data(string path,HyperNode * Node,HyperEdge * Edge){
     }
 }
 
-void solve(int n,int m,string path, int p, int shield_heavy_node = 1e9,double per= -1,bool output = false){
+void solve(int n,int m,string path, int p,bool output = false){
     // n: number of HyperNode
     // m: number of HyperEdge
     // Node: array of HyperNode
@@ -103,6 +103,7 @@ void solve(int n,int m,string path, int p, int shield_heavy_node = 1e9,double pe
     // topk: add topk node at once
     // buffer_fac: set buffer to reduce search range 
     // shield_heavy_node: shield heavy node to speed and improve quality
+    cerr<<"parameters:\nn:"<<n<<" m:"<<m<<" path:"<<path<<" p:"<<p<<" output:"<<output<<endl;
 
     Node = new HyperNode[n];
     Edge = new HyperEdge[m];
@@ -146,12 +147,12 @@ void solve(int n,int m,string path, int p, int shield_heavy_node = 1e9,double pe
 
         for(auto &e_id:Node[add_node].edges){
             part_edge[cur_p][e_id] += 1;
+            double val = -log(1.0*Edge[e_id].degree/(Emaxi_degree+1));
+            // if(val<1) continue;
             if(part_edge[cur_p][e_id] == 1){
                 check_edge[e_id] += 1;
-                if(Edge[e_id].degree > shield_heavy_node) continue;
                 for(int i=0;i<Edge[e_id].degree;i++){
                     int n_id = Edge[e_id].nodes[i];
-                    double val = -log(1.0*Edge[e_id].degree/(Emaxi_degree+2));
                     score_list.add(n_id,val);
                 }
             }
@@ -191,7 +192,6 @@ void solve(int n,int m,string path, int p, int shield_heavy_node = 1e9,double pe
     for(int i = 0;i<m;i++){
         int e_id = Edge[i].id;
         int deg = Edge[i].degree;
-        if(deg<shield_heavy_node) cnt_edge++;
         cnt_num[deg] ++;
         cnt_val[deg] += check_edge[e_id];
         maxi_edge_degree = max(maxi_edge_degree,deg);
@@ -211,11 +211,10 @@ void solve(int n,int m,string path, int p, int shield_heavy_node = 1e9,double pe
     }
     clock_t runtime = (end_time-beg_time)*1000/CLOCKS_PER_SEC;
     clock_t tot_time = (clock()-tot_begin)*1000/CLOCKS_PER_SEC;
-    cerr<<"parameter:"<<endl<<"p:"<<p<<" shield_heavy_node:"<<shield_heavy_node<<endl;
+    cerr<<"parameter:"<<endl<<"p:"<<p<<endl;
     cerr<<"k-1: "<<k_1-m<<" runtime:"<<(end_time-beg_time)*1000/CLOCKS_PER_SEC<<"(ms)"<<endl<<"----------"<<endl;
-    cerr<<"sheild%:"<<1.0*cnt_edge/m<<endl;
     cout<<p<<","<<k_1-m<<","<<runtime<<","<<tot_time;
-    if(per != -1) cout<<","<<shield_heavy_node<<","<<per;
+
     cout<<endl;
     if(output){
         FILE *result;
@@ -253,15 +252,13 @@ void unit_single(){
         cout<<"# dataset:"<<path<<" n:"<<n<<" m:"<<m<<endl;
         cout<<"#| p | k-1 | partition time | total time |"<<endl; 
         for(int p=16; p<=16;p*=2){
-            int sheild_heavy_node = 10000000;
-            solve(n,m,path,p,sheild_heavy_node);
+            solve(n,m,path,p);
         }
         cout<<endl;
     }
 }
 void unit_test1(){
     freopen("./out/our-base.txt","w",stdout);
-    cerr<<"load data OK!"<<endl;
     for(int i=0;i<nn.size();i++){
         n = nn[i]+5;
         m = mm[i]+5;
@@ -270,8 +267,7 @@ void unit_test1(){
         cout<<"# dataset:"<<path<<" n:"<<n<<" m:"<<m<<endl;
         cout<<"#| p | k-1 | partition time | total time |"<<endl; 
         for(int p=2; p<=64;p*=2){
-            int sheild_heavy_node = 10000000;
-            solve(n,m,path,p,sheild_heavy_node);
+            solve(n,m,path,p);
         }
         cout<<endl;
     }
@@ -325,7 +321,7 @@ void get_partition_result(int p){
         // int p = 8;
         // for(int p=2; p<=64;p*=2){
             int sheild_heavy_node = edge_degree[int(0.01*m)];
-            solve(n,m,path,p,sheild_heavy_node,-1,true);
+            solve(n,m,path,p,true);
         // }
         cout<<endl;
     }
@@ -366,84 +362,84 @@ void sheild_select(){
             for(auto &j:candidate){
                 int sheild_heavy_node = edge_degree[int(j*m)];
                 // if(rec_s == sheild_heavy_node) continue;
-                rec_s = sheild_heavy_node;
-                solve(n,m,path,p,sheild_heavy_node,j);
+                // rec_s = sheild_heavy_node;
+                solve(n,m,path,p,j);
             }
         // }
         cout<<endl;
     }
 }
 int main(){
-    // nn.push_back( 127823 );
-    // mm.push_back( 383640 );
-    // filename.push_back( "../data/out.actor-movie" );
+    nn.push_back( 127823 );
+    mm.push_back( 383640 );
+    filename.push_back( "../data/out.actor-movie" );
 
-    // nn.push_back( 383640 ); // use
-    // mm.push_back( 127823 );
-    // filename.push_back( "../data/out.actor-movie-swap.txt" );
+    nn.push_back( 383640 ); // use
+    mm.push_back( 127823 );
+    filename.push_back( "../data/out.actor-movie-swap.txt" );
 
-    // nn.push_back( 1953085 );// use
-    // mm.push_back( 5624219 );
-    // filename.push_back( "../data/out.dblp-author" );
+    nn.push_back( 1953085 );// use
+    mm.push_back( 5624219 );
+    filename.push_back( "../data/out.dblp-author" );
 
-    // nn.push_back( 5623931 );
-    // mm.push_back( 1953085 );
-    // filename.push_back( "../data/out.dblp-author-swap.txt" );
+    nn.push_back( 5623931 );
+    mm.push_back( 1953085 );
+    filename.push_back( "../data/out.dblp-author-swap.txt" );
 
-    // nn.push_back( 172091 );
-    // mm.push_back( 53407 );
-    // filename.push_back( "../data/out.dbpedia-location" );
+    nn.push_back( 172091 );
+    mm.push_back( 53407 );
+    filename.push_back( "../data/out.dbpedia-location" );
 
-    // nn.push_back( 53407 ); //use
-    // mm.push_back( 172091 );
-    // filename.push_back( "../data/out.dbpedia-location-swap.txt" );
+    nn.push_back( 53407 ); //use
+    mm.push_back( 172091 );
+    filename.push_back( "../data/out.dbpedia-location-swap.txt" );
 
-    // nn.push_back( 901166 );
-    // mm.push_back( 34461 );
-    // filename.push_back( "../data/out.dbpedia-team" );
+    nn.push_back( 901166 );
+    mm.push_back( 34461 );
+    filename.push_back( "../data/out.dbpedia-team" );
 
-    // nn.push_back( 34461 ); //use
-    // mm.push_back( 901166 );
-    // filename.push_back( "../data/out.dbpedia-team-swap.txt" );
+    nn.push_back( 34461 ); //use
+    mm.push_back( 901166 );
+    filename.push_back( "../data/out.dbpedia-team-swap.txt" );
 
     nn.push_back( 56519 );
     mm.push_back( 120867 );
     filename.push_back( "../data/out.github" );
 
-    // nn.push_back( 120867 );
-    // mm.push_back( 56519 );
-    // filename.push_back( "../data/out.github-swap.txt" );
+    nn.push_back( 120867 );
+    mm.push_back( 56519 );
+    filename.push_back( "../data/out.github-swap.txt" );
 
-    // nn.push_back( 2783196 );
-    // mm.push_back( 8730857 );
-    // filename.push_back( "../data/out.orkut-groupmemberships" );
+    nn.push_back( 2783196 );
+    mm.push_back( 8730857 );
+    filename.push_back( "../data/out.orkut-groupmemberships" );
 
-    // nn.push_back( 8730857 );
-    // mm.push_back( 2783196 );
-    // filename.push_back( "../data/out.orkut-groupmemberships-swap.txt" );
+    nn.push_back( 8730857 );
+    mm.push_back( 2783196 );
+    filename.push_back( "../data/out.orkut-groupmemberships-swap.txt" );
 
-    // nn.push_back( 27665730 );
-    // mm.push_back( 12756244 );
-    // filename.push_back( "../data/out.trackers" );
+    nn.push_back( 27665730 );
+    mm.push_back( 12756244 );
+    filename.push_back( "../data/out.trackers" );
 
-    // nn.push_back( 12756244 );
-    // mm.push_back( 27665730 );
-    // filename.push_back( "../data/out.trackers-swap.txt" );
+    nn.push_back( 12756244 );
+    mm.push_back( 27665730 );
+    filename.push_back( "../data/out.trackers-swap.txt" );
 
-    // nn.push_back( 4566 );
-    // mm.push_back( 4131 );
-    // filename.push_back( "../data/wiki_new.txt" );
+    nn.push_back( 4566 );
+    mm.push_back( 4131 );
+    filename.push_back( "../data/wiki_new.txt" );
 
-    // nn.push_back( 4131 );
-    // mm.push_back( 4566 );
-    // filename.push_back( "../data/wiki_new.txt-swap.txt" );
+    nn.push_back( 4131 );
+    mm.push_back( 4566 );
+    filename.push_back( "../data/wiki_new.txt-swap.txt" );
 
     // nn.push_back( 10000000 );
     // mm.push_back( 10000000 );
     // filename.push_back( "../data/rand-n10M-m10M-e100M" );
 
-    unit_single();
-    // unit_test1();
+    // unit_single();
+    unit_test1();
     // unit_test2();
     // sheild_select();
     int p = 8;

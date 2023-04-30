@@ -64,3 +64,8 @@ $$
 #### 思路:
 > 1. 寻找合适数据集,使得数据集满足条件$e_{max}< c$, $c$为指定不大的常数
 > 2. 对于给定数据集,若$e_{max}$很大,则可以通过设置合适的$sheild$ 值来手动排除这些大超边的影响
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config"> MathJax.Hub.Config({ tex2jax: {inlineMath: [['$', '$']]}, messageStyle: "none" });</script>
+
+时序周期,噪声

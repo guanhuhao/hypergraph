@@ -264,10 +264,11 @@ void solve(int n,int m,string path, int p,double sheild = 0,string method = "ent
         for(int i=0;i<p;i++){
             for(auto &item:part_node[i]){
                 int n_id = item.first;
-                for(auto &e_id:Node[n_id].edges){
-                    fprintf(result,"%d %d %d\n",n_id,e_id+n,i);
-                    fprintf(result,"%d %d %d\n",e_id+n,n_id,i);
-                }
+                fprintf(result,"%d %d\n",n_id,i);
+                // for(auto &e_id:Node[n_id].edges){
+                //     fprintf(result,"%d %d %d\n",n_id,i);
+                //     // fprintf(result,"%d %d %d\n",e_id+n,n_id,i);
+                // }
 
             }
         }
@@ -348,7 +349,8 @@ void get_partition_result(int p){
         // int p = 8;
         // for(int p=2; p<=64;p*=2){
             int sheild_heavy_node = edge_degree[int(0.01*m)];
-            solve(n,m,path,p,true);
+            // solve(int n,int m,string path, int p,double sheild = 0,string method = "entropy",bool output = false)
+            solve(n,m,path,p,0,"entropy",true);
         // }
         cout<<endl;
     }
@@ -409,9 +411,9 @@ int main(){
     // mm.push_back( 1953085 );
     // filename.push_back( "../data/out.dblp-author-swap.txt" );
 
-    nn.push_back( 172091 );
-    mm.push_back( 53407 );
-    filename.push_back( "../data/out.dbpedia-location" );
+    // nn.push_back( 172091 );
+    // mm.push_back( 53407 );
+    // filename.push_back( "../data/out.dbpedia-location" );
 
     // nn.push_back( 53407 ); //use
     // mm.push_back( 172091 );
@@ -425,9 +427,9 @@ int main(){
     // mm.push_back( 901166 );
     // filename.push_back( "../data/out.dbpedia-team-swap.txt" );
 
-    // nn.push_back( 56519 );
-    // mm.push_back( 120867 );
-    // filename.push_back( "../data/out.github" );
+    nn.push_back( 56519 );
+    mm.push_back( 120867 );
+    filename.push_back( "../data/out.github" );
 
     // nn.push_back( 120867 );
     // mm.push_back( 56519 );
@@ -463,7 +465,8 @@ int main(){
 
     // unit_single();
     // unit_basic();
-    unit_entropy();
+    // unit_entropy();
+    get_partition_result(4);
     // sheild_select();
 
 

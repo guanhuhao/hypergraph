@@ -427,9 +427,9 @@ int main(){
     // mm.push_back( 901166 );
     // filename.push_back( "../data/out.dbpedia-team-swap.txt" );
 
-    nn.push_back( 56519 );
-    mm.push_back( 120867 );
-    filename.push_back( "../data/out.github" );
+    // nn.push_back( 56519 );
+    // mm.push_back( 120867 );
+    // filename.push_back( "../data/out.github" );
 
     // nn.push_back( 120867 );
     // mm.push_back( 56519 );
@@ -451,9 +451,9 @@ int main(){
     // mm.push_back( 27665730 );
     // filename.push_back( "../data/out.trackers-swap.txt" );
 
-    // nn.push_back( 4566 );
-    // mm.push_back( 4131 );
-    // filename.push_back( "../data/wiki_new.txt" );
+    nn.push_back( 4566 );
+    mm.push_back( 4131 );
+    filename.push_back( "../data/wiki_new.txt" );
 
     // nn.push_back( 4131 );
     // mm.push_back( 4566 );

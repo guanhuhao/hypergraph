@@ -411,9 +411,9 @@ int main(){
     // mm.push_back( 1953085 );
     // filename.push_back( "../data/out.dblp-author-swap.txt" );
 
-    // nn.push_back( 172091 );
-    // mm.push_back( 53407 );
-    // filename.push_back( "../data/out.dbpedia-location" );
+    nn.push_back( 172091 );
+    mm.push_back( 53407 );
+    filename.push_back( "../data/out.dbpedia-location" );
 
     // nn.push_back( 53407 ); //use
     // mm.push_back( 172091 );
@@ -451,9 +451,9 @@ int main(){
     // mm.push_back( 27665730 );
     // filename.push_back( "../data/out.trackers-swap.txt" );
 
-    nn.push_back( 4566 );
-    mm.push_back( 4131 );
-    filename.push_back( "../data/wiki_new.txt" );
+    // nn.push_back( 4566 );
+    // mm.push_back( 4131 );
+    // filename.push_back( "../data/wiki_new.txt" );
 
     // nn.push_back( 4131 );
     // mm.push_back( 4566 );
@@ -466,7 +466,7 @@ int main(){
     // unit_single();
     // unit_basic();
     // unit_entropy();
-    get_partition_result(4);
+    get_partition_result(2);
     // sheild_select();
 
 

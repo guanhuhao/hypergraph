@@ -1,8 +1,1 @@
-# MIN-MAX  - dataset:out.actor-movie n:127823 m:383640
-#| p | k-1 | partition time | total time |
-2,75812,None,3203
-4,138637,None,5001
-8,192020,None,8244
-16,230916,None,14638
-32,290112,None,25489
-64,383125,None,42499
+4,16330,None,683

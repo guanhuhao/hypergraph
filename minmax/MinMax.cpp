@@ -64,10 +64,11 @@ std::map<int,int> MinMax(std::string path,int n,int m,int K,int s,bool output = 
         
         V[p]++;
         if(output){
-            for(auto &e_id:nets[n_id]){
-            fprintf(result,"%d %d %d\n",n_id,e_id+n,p);
-            fprintf(result,"%d %d %d\n",e_id+n,n_id,p);
-            }
+            fprintf(result,"%d %d\n",n_id,p); 
+            // for(auto &e_id:nets[n_id]){
+            // fprintf(result,"%d %d %d\n",n_id,p);
+            // // fprintf(result,"%d %d %d\n",e_id+n,n_id,p);
+            // }
         }
         n2p[n_id] = p;
         if(p == pmin){
@@ -120,33 +121,33 @@ void init_data(){
     // mm.push_back( 383640 );
     // filename.push_back( "../data/out.actor-movie" );
 
-    nn.push_back( 383640 );
-    mm.push_back( 127823 );
-    filename.push_back( "../data/out.actor-movie-swap.txt" );
+    // nn.push_back( 383640 );
+    // mm.push_back( 127823 );
+    // filename.push_back( "../data/out.actor-movie-swap.txt" );
 
-    nn.push_back( 1953085 );
-    mm.push_back( 5624219 );
-    filename.push_back( "../data/out.dblp-author" );
+    // nn.push_back( 1953085 );
+    // mm.push_back( 5624219 );
+    // filename.push_back( "../data/out.dblp-author" );
 
     // nn.push_back( 5623931 );
     // mm.push_back( 1953085 );
     // filename.push_back( "../data/out.dblp-author-swap.txt" );
 
-    // nn.push_back( 172091 );
-    // mm.push_back( 53407 );
-    // filename.push_back( "../data/out.dbpedia-location" );
+    nn.push_back( 172091 );
+    mm.push_back( 53407 );
+    filename.push_back( "../data/out.dbpedia-location" );
 
-    nn.push_back( 53407 );
-    mm.push_back( 172091 );
-    filename.push_back( "../data/out.dbpedia-location-swap.txt" );
+    // nn.push_back( 53407 );
+    // mm.push_back( 172091 );
+    // filename.push_back( "../data/out.dbpedia-location-swap.txt" );
 
     // nn.push_back( 901166 );
     // mm.push_back( 34461 );
     // filename.push_back( "../data/out.dbpedia-team" );
 
-    nn.push_back( 34461 );
-    mm.push_back( 901166 );
-    filename.push_back( "../data/out.dbpedia-team-swap.txt" );
+    // nn.push_back( 34461 );
+    // mm.push_back( 901166 );
+    // filename.push_back( "../data/out.dbpedia-team-swap.txt" );
 
     // nn.push_back( 56519 );
     // mm.push_back( 120867 );
@@ -160,17 +161,17 @@ void init_data(){
     // mm.push_back( 8730857 );
     // filename.push_back( "../data/out.orkut-groupmemberships" );
 
-    nn.push_back( 8730857 );
-    mm.push_back( 2783196 );
-    filename.push_back( "../data/out.orkut-groupmemberships-swap.txt" );
+    // nn.push_back( 8730857 );
+    // mm.push_back( 2783196 );
+    // filename.push_back( "../data/out.orkut-groupmemberships-swap.txt" );
 
     // nn.push_back( 27665730 );
     // mm.push_back( 12756244 );
     // filename.push_back( "../data/out.trackers" );
 
-    nn.push_back( 12756244 );
-    mm.push_back( 27665730 );
-    filename.push_back( "../data/out.trackers-swap.txt" );
+    // nn.push_back( 12756244 );
+    // mm.push_back( 27665730 );
+    // filename.push_back( "../data/out.trackers-swap.txt" );
 
     // nn.push_back( 4566 );
     // mm.push_back( 4131 );
@@ -207,11 +208,11 @@ void unit_test2(){ // generate par result
         int n = nn[i];
         int m = mm[i];
         string f = filename[i];
-        int p = 8;
+        int p = 4;
         MinMax(f,n,m,p,int(n*0.01),true);
         cerr<<"------------"<<endl;
     }
 }
 int main(){
-    unit_test();
+    unit_test2();
 }

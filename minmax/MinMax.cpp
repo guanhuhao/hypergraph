@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-std::map<int,int> MinMax(std::string path,int n,int m,int K,int s,bool output = false){
+std::map<int,int> MinMax(std::string path,int n,int m,int K,int s,string output = "None"){
     FILE *file;
     file = fopen(path.c_str(),"r");
 
@@ -13,7 +13,9 @@ std::map<int,int> MinMax(std::string path,int n,int m,int K,int s,bool output = 
     reverse(filename.begin(),filename.end());
     result_path = result_path+"MinMax-par/"+filename;
     FILE *result;
-    if(output) result = fopen(result_path.c_str(),"w");
+    if(output != "None") {
+        result = fopen(output.c_str(),"w");
+    }
 
     std::map<int,int> n2p;
     std::vector<int> V;
@@ -63,7 +65,7 @@ std::map<int,int> MinMax(std::string path,int n,int m,int K,int s,bool output = 
         for(auto &x:nets[n_id]) part_edge[p].insert(x);
         
         V[p]++;
-        if(output){
+        if(output != "None"){
             fprintf(result,"%d %d\n",n_id,p); 
             // for(auto &e_id:nets[n_id]){
             // fprintf(result,"%d %d %d\n",n_id,p);
@@ -88,9 +90,10 @@ std::map<int,int> MinMax(std::string path,int n,int m,int K,int s,bool output = 
     }
     if(K == 2) {
         cout<<"# MIN-MAX  - dataset:"<<filename<<" n:"<<n<<" m:"<<m<<endl;
-        cout<<"#| p | k-1 | partition time | total time |"<<endl; 
+        cout<<"# p , k-1 ,  total time "<<endl; 
     }
-    cout<<K<<","<<k_1-m<<",None"<<","<<tot_time<<endl;
+    cout<<K<<","<<k_1-m<<","<<tot_time<<endl;
+    cout<<endl;
     return n2p;
 }
 
@@ -117,45 +120,45 @@ std::map<int,std::vector<int> > E2N(std::string filename){
 vector<int> nn,mm;
 vector<string> filename;
 void init_data(){
-    // nn.push_back( 127823 );
-    // mm.push_back( 383640 );
-    // filename.push_back( "../data/out.actor-movie" );
+    nn.push_back( 127823 );
+    mm.push_back( 383640 );
+    filename.push_back( "../data/out.actor-movie" );
 
-    // nn.push_back( 383640 );
-    // mm.push_back( 127823 );
-    // filename.push_back( "../data/out.actor-movie-swap.txt" );
+    nn.push_back( 383640 );
+    mm.push_back( 127823 );
+    filename.push_back( "../data/out.actor-movie-swap.txt" );
 
-    // nn.push_back( 1953085 );
-    // mm.push_back( 5624219 );
-    // filename.push_back( "../data/out.dblp-author" );
+    nn.push_back( 1953085 );
+    mm.push_back( 5624219 );
+    filename.push_back( "../data/out.dblp-author" );
 
-    // nn.push_back( 5623931 );
-    // mm.push_back( 1953085 );
-    // filename.push_back( "../data/out.dblp-author-swap.txt" );
+    nn.push_back( 5623931 );
+    mm.push_back( 1953085 );
+    filename.push_back( "../data/out.dblp-author-swap.txt" );
 
     nn.push_back( 172091 );
     mm.push_back( 53407 );
     filename.push_back( "../data/out.dbpedia-location" );
 
-    // nn.push_back( 53407 );
-    // mm.push_back( 172091 );
-    // filename.push_back( "../data/out.dbpedia-location-swap.txt" );
+    nn.push_back( 53407 );
+    mm.push_back( 172091 );
+    filename.push_back( "../data/out.dbpedia-location-swap.txt" );
 
-    // nn.push_back( 901166 );
-    // mm.push_back( 34461 );
-    // filename.push_back( "../data/out.dbpedia-team" );
+    nn.push_back( 901166 );
+    mm.push_back( 34461 );
+    filename.push_back( "../data/out.dbpedia-team" );
 
-    // nn.push_back( 34461 );
-    // mm.push_back( 901166 );
-    // filename.push_back( "../data/out.dbpedia-team-swap.txt" );
+    nn.push_back( 34461 );
+    mm.push_back( 901166 );
+    filename.push_back( "../data/out.dbpedia-team-swap.txt" );
 
-    // nn.push_back( 56519 );
-    // mm.push_back( 120867 );
-    // filename.push_back( "../data/out.github" );
+    nn.push_back( 56519 );
+    mm.push_back( 120867 );
+    filename.push_back( "../data/out.github" );
 
-    // nn.push_back( 120867 );
-    // mm.push_back( 56519 );
-    // filename.push_back( "../data/out.github-swap.txt" );
+    nn.push_back( 120867 );
+    mm.push_back( 56519 );
+    filename.push_back( "../data/out.github-swap.txt" );
 
     // nn.push_back( 2783196 );
     // mm.push_back( 8730857 );
@@ -173,13 +176,13 @@ void init_data(){
     // mm.push_back( 27665730 );
     // filename.push_back( "../data/out.trackers-swap.txt" );
 
-    // nn.push_back( 4566 );
-    // mm.push_back( 4131 );
-    // filename.push_back( "../data/wiki_new.txt" );
+    nn.push_back( 4566 );
+    mm.push_back( 4131 );
+    filename.push_back( "../data/wiki_new.txt" );
 
-    // nn.push_back( 4131 );
-    // mm.push_back( 4566 );
-    // filename.push_back( "../data/wiki_new.txt-swap.txt" );
+    nn.push_back( 4131 );
+    mm.push_back( 4566 );
+    filename.push_back( "../data/wiki_new.txt-swap.txt" );
 
     // nn.push_back( 10000000 );
     // mm.push_back( 10000000 );
@@ -203,14 +206,26 @@ void unit_test(){ // diffrent dataset and p
 void unit_test2(){ // generate par result
     init_data();
     freopen("./MIN-MAX_result.txt","w",stdout);
-    for(int i=0;i<nn.size();i++){
-        cerr<<"begin solve "<<filename[i]<<endl;
-        int n = nn[i];
-        int m = mm[i];
-        string f = filename[i];
-        int p = 4;
-        MinMax(f,n,m,p,int(n*0.01),true);
-        cerr<<"------------"<<endl;
+    for(int p =2;p<=64;p*=2){
+        for(int i=0;i<nn.size();i++){
+            cerr<<"begin solve "<<filename[i]<<endl;
+            int n = nn[i];
+            int m = mm[i];
+            string f = filename[i];
+            // int p = 16;
+
+            string result_path = f;
+            string filename;
+            while (result_path.back()!='/') {
+                filename.push_back(result_path.back());
+                result_path.pop_back();
+            }
+            reverse(filename.begin(),filename.end());
+            result_path = "../simulation/test_data/"+to_string(p)+"/"+filename+"/MinMax.txt";
+
+            MinMax(f,n,m,p,int(n*0.01),result_path);
+            cerr<<"------------"<<endl;
+        }
     }
 }
 int main(){

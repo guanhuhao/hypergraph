@@ -104,7 +104,7 @@ void load_data(string path,HyperNode * Node,HyperEdge * Edge){
     }
 }
 
-void solve(int n,int m,string path, int p,double sheild = 0,string method = "entropy",bool output = false){
+void solve(int n,int m,string path, int p,double sheild = 0,string method = "entropy",string output = "None"){
     // n: number of HyperNode
     // m: number of HyperEdge
     // Node: array of HyperNode
@@ -248,19 +248,19 @@ void solve(int n,int m,string path, int p,double sheild = 0,string method = "ent
     cout<<p<<","<<k_1-m<<","<<runtime<<","<<tot_time;
 
     cout<<endl;
-    if(output){
+    if(output != "None"){
         FILE *result;
-        string result_path = path;
-        string filename;
-        while (result_path.back()!='/') {
-            filename.push_back(result_path.back());
-            result_path.pop_back();
-        }
-        reverse(filename.begin(),filename.end());
-        result_path = result_path+"NA-par/"+filename;
-        cerr<<"outlog:"<<result_path<<endl;
+        // string result_path = path;
+        // string filename;
+        // while (result_path.back()!='/') {
+        //     filename.push_back(result_path.back());
+        //     result_path.pop_back();
+        // }
+        // reverse(filename.begin(),filename.end());
+        // result_path = result_path+"NA-par/"+filename;
+        // cerr<<"outlog:"<<result_path<<endl;
 
-        result = fopen(result_path.c_str(),"w");
+        result = fopen(output.c_str(),"w");
         for(int i=0;i<p;i++){
             for(auto &item:part_node[i]){
                 int n_id = item.first;
@@ -346,11 +346,22 @@ void get_partition_result(int p){
 
         cout<<"# dataset:"<<path<<" n:"<<n<<" m:"<<m<<" sheild degree:"<<edge_degree[int(0.01*m)]<<endl;
         cout<<"#| p | k-1 | partition time | total time |"<<endl; 
+
+        string result_path = path;
+        string filename;
+        while (result_path.back()!='/') {
+            filename.push_back(result_path.back());
+            result_path.pop_back();
+        }
+        reverse(filename.begin(),filename.end());
+        result_path = "../simulation/test_data/"+to_string(p)+"/"+filename+"/NA.txt";
+        cerr<<"outlog:"<<result_path<<endl;
+
         // int p = 8;
         // for(int p=2; p<=64;p*=2){
             int sheild_heavy_node = edge_degree[int(0.01*m)];
             // solve(int n,int m,string path, int p,double sheild = 0,string method = "entropy",bool output = false)
-            solve(n,m,path,p,0,"entropy",true);
+            solve(n,m,path,p,0,"entropy",result_path);
         // }
         cout<<endl;
     }
@@ -395,45 +406,45 @@ void sheild_select(){
     }
 }
 int main(){
-    // nn.push_back( 127823 );
-    // mm.push_back( 383640 );
-    // filename.push_back( "../data/out.actor-movie" );
+    nn.push_back( 127823 );
+    mm.push_back( 383640 );
+    filename.push_back( "../data/out.actor-movie" );
 
-    // nn.push_back( 383640 ); // use
-    // mm.push_back( 127823 );
-    // filename.push_back( "../data/out.actor-movie-swap.txt" );
+    nn.push_back( 383640 ); // use
+    mm.push_back( 127823 );
+    filename.push_back( "../data/out.actor-movie-swap.txt" );
 
-    // nn.push_back( 1953085 );// use
-    // mm.push_back( 5624219 );
-    // filename.push_back( "../data/out.dblp-author" );
+    nn.push_back( 1953085 );// use
+    mm.push_back( 5624219 );
+    filename.push_back( "../data/out.dblp-author" );
 
-    // nn.push_back( 5623931 );
-    // mm.push_back( 1953085 );
-    // filename.push_back( "../data/out.dblp-author-swap.txt" );
+    nn.push_back( 5623931 );
+    mm.push_back( 1953085 );
+    filename.push_back( "../data/out.dblp-author-swap.txt" );
 
     nn.push_back( 172091 );
     mm.push_back( 53407 );
     filename.push_back( "../data/out.dbpedia-location" );
 
-    // nn.push_back( 53407 ); //use
-    // mm.push_back( 172091 );
-    // filename.push_back( "../data/out.dbpedia-location-swap.txt" );
+    nn.push_back( 53407 ); //use
+    mm.push_back( 172091 );
+    filename.push_back( "../data/out.dbpedia-location-swap.txt" );
 
-    // nn.push_back( 901166 );
-    // mm.push_back( 34461 );
-    // filename.push_back( "../data/out.dbpedia-team" );
+    nn.push_back( 901166 );
+    mm.push_back( 34461 );
+    filename.push_back( "../data/out.dbpedia-team" );
 
-    // nn.push_back( 34461 ); //use
-    // mm.push_back( 901166 );
-    // filename.push_back( "../data/out.dbpedia-team-swap.txt" );
+    nn.push_back( 34461 ); //use
+    mm.push_back( 901166 );
+    filename.push_back( "../data/out.dbpedia-team-swap.txt" );
 
-    // nn.push_back( 56519 );
-    // mm.push_back( 120867 );
-    // filename.push_back( "../data/out.github" );
+    nn.push_back( 56519 );
+    mm.push_back( 120867 );
+    filename.push_back( "../data/out.github" );
 
-    // nn.push_back( 120867 );
-    // mm.push_back( 56519 );
-    // filename.push_back( "../data/out.github-swap.txt" );
+    nn.push_back( 120867 );
+    mm.push_back( 56519 );
+    filename.push_back( "../data/out.github-swap.txt" );
 
     // nn.push_back( 2783196 );
     // mm.push_back( 8730857 );
@@ -451,13 +462,13 @@ int main(){
     // mm.push_back( 27665730 );
     // filename.push_back( "../data/out.trackers-swap.txt" );
 
-    // nn.push_back( 4566 );
-    // mm.push_back( 4131 );
-    // filename.push_back( "../data/wiki_new.txt" );
+    nn.push_back( 4566 );
+    mm.push_back( 4131 );
+    filename.push_back( "../data/wiki_new.txt" );
 
-    // nn.push_back( 4131 );
-    // mm.push_back( 4566 );
-    // filename.push_back( "../data/wiki_new.txt-swap.txt" );
+    nn.push_back( 4131 );
+    mm.push_back( 4566 );
+    filename.push_back( "../data/wiki_new.txt-swap.txt" );
 
     // nn.push_back( 10000000 );
     // mm.push_back( 10000000 );
@@ -466,7 +477,9 @@ int main(){
     // unit_single();
     // unit_basic();
     // unit_entropy();
-    get_partition_result(2);
+    for(int i=32;i<=64;i*=2){
+        get_partition_result(i);
+    }
     // sheild_select();
 
 

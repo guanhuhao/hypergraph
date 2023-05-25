@@ -1,1 +1,78 @@
-4,16330,None,683
+# MIN-MAX  - dataset:out.actor-movie n:127823 m:383640
+# p , k-1 ,  total time 
+2,73394,2274
+
+# MIN-MAX  - dataset:out.actor-movie-swap.txt n:383640 m:127823
+# p , k-1 ,  total time 
+2,80985,2811
+
+# MIN-MAX  - dataset:out.dblp-author n:1953085 m:5624219
+# p , k-1 ,  total time 
+2,1016797,39913
+
+# MIN-MAX  - dataset:out.dblp-author-swap.txt n:5623931 m:1953085
+# p , k-1 ,  total time 
+2,764050,44165
+
+# MIN-MAX  - dataset:out.dbpedia-location n:172091 m:53407
+# p , k-1 ,  total time 
+2,8416,578
+
+# MIN-MAX  - dataset:out.dbpedia-location-swap.txt n:53407 m:172091
+# p , k-1 ,  total time 
+2,19729,431
+
+# MIN-MAX  - dataset:out.dbpedia-team n:901166 m:34461
+# p , k-1 ,  total time 
+2,13742,2989
+
+# MIN-MAX  - dataset:out.dbpedia-team-swap.txt n:34461 m:901166
+# p , k-1 ,  total time 
+2,44275,2151
+
+# MIN-MAX  - dataset:out.github n:56519 m:120867
+# p , k-1 ,  total time 
+2,15035,576
+
+# MIN-MAX  - dataset:out.github-swap.txt n:120867 m:56519
+# p , k-1 ,  total time 
+2,17193,643
+
+# MIN-MAX  - dataset:wiki_new.txt n:4566 m:4131
+# p , k-1 ,  total time 
+2,2730,107
+
+# MIN-MAX  - dataset:wiki_new.txt-swap.txt n:4131 m:4566
+# p , k-1 ,  total time 
+2,4309,99
+
+4,160818,3358
+
+4,177231,3910
+
+4,1919181,58451
+
+4,1456954,60428
+
+4,16300,681
+
+4,38508,564
+
+4,31679,3536
+
+4,83447,2928
+
+4,32629,786
+
+4,32854,878
+
+4,7142,147
+
+4,9997,159
+
+8,264267,4799
+
+8,293465,5511
+
+8,2742399,92015
+

@@ -1,3 +1,4 @@
 .ipynb_checkpoints/*
 data/*
 simulation/test_data/*
+simulation/pipeline/*

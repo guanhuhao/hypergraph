@@ -1,0 +1,26 @@
+----------------------------------------------------------------------------
+Partitioning Graph: /home/guan/Desktop/hypergraph/exec/../data/out.dblp-author
+into 16 partitions
+max secondary set size: 10
+while the secondary set expantion, the biggest 0% of edges will be ignored
+the neighbourhood heuristic of a node will be cached
+if sset is emtpy, new nodes will be selected: next-best
+----------------------------------------------------------------------------
+parsing graph ...
+graph parsed in 11765 milliseconds
+#Nodes:	1953085
+#HyperEdges:	5624219
+----------------------------------------------------------------------------
+partitioning graph
+partitioning done in 13117 milliseconds
+----------------------------------------------------------------------------
+sum of external degrees: 4783503
+Hyperedges cut: 1998254
+K-1: 2785249
+node balancing: 8.19216e-06
+edge balancing: 0.864702
+parsing time: 11765
+partition time: 13117
+total time: 24882
+----------------------------------------------------------------------------
+writing partitions ...

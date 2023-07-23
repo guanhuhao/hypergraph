@@ -273,6 +273,8 @@ void solve(int n,int m,string path, int p,double sheild = 0,string method = "ent
             }
         }
     }
+    delete []Node;
+    delete []Edge;
 
 }
 void unit_single(){
@@ -403,6 +405,8 @@ void sheild_select(){
             }
         // }
         cout<<endl;
+        delete []Node;
+        delete []Edge;
     }
 }
 int main(){
@@ -477,7 +481,7 @@ int main(){
     // unit_single();
     // unit_basic();
     // unit_entropy();
-    for(int i=32;i<=64;i*=2){
+    for(int i=2;i<=64;i*=2){
         get_partition_result(i);
     }
     // sheild_select();

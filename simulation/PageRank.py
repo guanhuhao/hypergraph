@@ -89,16 +89,16 @@ class Master:
                 buf.get()
             buf.close()
             
-        sys.stdout.write("before join!\n")
+        # sys.stdout.write("before join!\n")
         for thread in self.thread_pool:
             thread.terminate()
-        sys.stdout.write("OKK!\n")
+        # sys.stdout.write("OKK!\n")
             
             
     def load_data(self,data_file,par_method = "partition_method.txt"):
         data_path = "../data/"
         file_path = "./test_data/"+str(self.p)+"/"+data_file+"/"
-        print("dataset:",data_file," partition method:"+par_method);
+        # print("dataset:",data_file," partition method:"+par_method);
         with open(file_path+par_method) as file :  # (n_id,p_id)
             for line in file:
                 v_id,par_id = line[0:-1].split(" ")
@@ -190,7 +190,7 @@ class Master:
         distribute_beg = time.time()
         self.distribute()
         distribute_time = ((time.time() - distribute_beg)*100000)/100
-        print("distribute time:",distribute_time,"ms")
+        # print("distribute time:",distribute_time,"ms")
 #         sys.stdout.write("init data distribute over"+"\n")
         
         msg_num = 1
@@ -263,7 +263,7 @@ class Master:
 #             for key in range(5):
 #                 print(key,":",dic[key])
         
-        sys.stdout.write("terminal "+"\n")
+        # sys.stdout.write("terminal "+"\n")
         self.broadcast(-1) # off worker
 #         self.sync()
 #         sys.stdout.write("wokers shut down"+"\n")
@@ -271,15 +271,15 @@ class Master:
         self.get_result()
         self.terminal()
         
-        sys.stdout.write("finished"+"\n")
-        print("msg info:\ntotal msg:",msg_tot,\
+        # sys.stdout.write("finished"+"\n")
+        print("msg info:\ ntotal msg:",msg_tot,\
               " cross msg:",msg_cro,\
               " sum of max msg:",msg_max,\
-              "\ntime info:\ncompute time:",int(compute_time*100)/100,\
+              "\n time info:\n compute time:",int(compute_time*100)/100,\
               "(ms) communicate time:",int((send_time+recv_time)*100)/100,\
-              "(ms)\nsend time:",int(send_time*100)/100,\
+              "(ms)\n send time:",int(send_time*100)/100,\
               "(ms) recv time:",int(recv_time*100)/100,\
-              "(ms)\ntotal time:",int(send_time*100+recv_time*100+compute_time*100)/100
+              "(ms)\n total time:",int(send_time*100+recv_time*100+compute_time*100)/100
              )
         return {"total_msg":str(msg_tot),\
                 "cross_msg":str(msg_cro),\
@@ -493,24 +493,28 @@ import re
 data_path = os.getcwd()+"/../data/"
 os.system("rm "+data_path+"*partition*")
 
-method = ["NA.txt","HYPE.txt","MinMax.txt"]
+# method = ["entropy.txt","basic.txt","anti-basic.txt","HYPE.txt","MinMax.txt","KaHypar.txt"]
+method = ["KaHypar.txt"]
+dataset_list = ["out.actor-movie","out.actor-movie-swap.txt","out.dbpedia-location",\
+                "out.dbpedia-location-swap.txt","out.dbpedia-team","out.dbpedia-team-swap.txt","wiki_new.txt","wiki_new.txt-swap.txt"]
+
 
 alpha = 0.15
 for mm in method:
     result = open(mm+"-result.txt","w")
 
-for file in os.listdir(data_path):
-    if re.match("(.*)ipynb(.*)",file) != None : continue
-    if os.path.isdir(data_path+file) == True : continue
-    if re.match("(.*)orkut(.*)",file) != None : continue
+for file in dataset_list:
+    if re.match("(.*)ipynb(.*)",file) != None   : continue
+    if os.path.isdir(data_path+file) == True    : continue
+    if re.match("(.*)orkut(.*)",file) != None   : continue
     if re.match("(.*)tracker(.*)",file) != None : continue
-    if re.match("(.*)rand(.*)",file) != None : continue
-    if re.match("(.*)author(.*)",file) != None : continue
+    if re.match("(.*)rand(.*)",file) != None    : continue
+    if re.match("(.*)author(.*)",file) != None  : continue
 
     # if re.match("(.*)wiki(.*)",file) == None : continue
 
     for mm in method:
-        print("---------------------------\nsolving ",file," ",mm)
+        print("---------------------------\n solving ",file," ",mm)
 
         p = 1
         data_file = file        

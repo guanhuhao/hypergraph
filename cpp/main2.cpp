@@ -145,14 +145,19 @@ void solve(int n,int m,string path, int p,double sheild = 0,string method = "ent
 
 
     Score_List score_list(maxi_degree,n);
+    if(method == "anti_basic"){
+        for(int i=0;i<n;i++){
+            score_list.add(i,maxi_degree-Node[i].edges.size());
+        }
+    }
     int cnt = 0;
     int cur_p = 0;
     part_node.push_back(unordered_map<int,int>());
     part_edge.push_back(unordered_map<int,int>());    
 
     unordered_map<int,int> check_edge;
-    sheild = 0.3;
-    double c = total_edge * sheild/log2(p);
+    // sheild = 0.2;
+    double c = total_edge * sheild;
     // double c = total_edge * sheild/(p-1);
     int pos = 0;
     while(c>0) c -= edge_degree[pos++];
@@ -174,6 +179,7 @@ void solve(int n,int m,string path, int p,double sheild = 0,string method = "ent
                 double val ;
                 if(method == "entropy") val = -log2(1.0*Edge[e_id].degree/(Emaxi_degree+1));
                 else if (method == "basic") val = 1; 
+                else if (method == "anti-basic") val = 1; 
                 else assert(false);
 
                 for(int i=0;i<Edge[e_id].degree;i++){
@@ -206,6 +212,7 @@ void solve(int n,int m,string path, int p,double sheild = 0,string method = "ent
     for(int i=0;i<p;i++) {
         vector<int> tmp(11);
         k_1 += part_edge[i].size();
+        cerr<<i<<" "<<part_edge[i].size()<<endl;
         // double ave = 0;
         // for(auto &item:part_edge[i]){
         //     int e_id = item.first;
@@ -275,8 +282,8 @@ void solve(int n,int m,string path, int p,double sheild = 0,string method = "ent
     }
     delete []Node;
     delete []Edge;
-
 }
+
 void unit_single(){
     freopen("./out/our-base.txt","w",stdout);
     cerr<<"load data OK!"<<endl;
@@ -293,6 +300,7 @@ void unit_single(){
         cout<<endl;
     }
 }
+
 void unit_basic(){
     freopen("./out/our-base-plus1.txt","w",stdout);
     double shield = 0;
@@ -310,6 +318,7 @@ void unit_basic(){
         cout<<endl;
     }
 }
+
 void unit_entropy(){
     double shield = 0.2;
     string method = "entropy";
@@ -330,7 +339,7 @@ void unit_entropy(){
     }
 }
 
-void get_partition_result(int p){
+void get_partition_result(int p,string method="entropy"){
     for(int i=0;i<nn.size();i++){
         n = nn[i]+5;
         m = mm[i]+5;
@@ -356,14 +365,14 @@ void get_partition_result(int p){
             result_path.pop_back();
         }
         reverse(filename.begin(),filename.end());
-        result_path = "../simulation/test_data/"+to_string(p)+"/"+filename+"/NA.txt";
+        result_path = "../simulation/test_data/"+to_string(p)+"/"+filename+"/"+method+".txt";
         cerr<<"outlog:"<<result_path<<endl;
 
         // int p = 8;
         // for(int p=2; p<=64;p*=2){
-            int sheild_heavy_node = edge_degree[int(0.01*m)];
+            int sheild_heavy_node = 0.2;
             // solve(int n,int m,string path, int p,double sheild = 0,string method = "entropy",bool output = false)
-            solve(n,m,path,p,0,"entropy",result_path);
+            solve(n,m,path,p,sheild_heavy_node,method,result_path);
         // }
         cout<<endl;
     }
@@ -409,7 +418,8 @@ void sheild_select(){
         delete []Edge;
     }
 }
-int main(){
+
+void load_dataset(){
     nn.push_back( 127823 );
     mm.push_back( 383640 );
     filename.push_back( "../data/out.actor-movie" );
@@ -478,11 +488,15 @@ int main(){
     // mm.push_back( 10000000 );
     // filename.push_back( "../data/rand-n10M-m10M-e100M" );
 
+}
+
+int main(){
+    load_dataset();
     // unit_single();
     // unit_basic();
     // unit_entropy();
     for(int i=2;i<=64;i*=2){
-        get_partition_result(i);
+        get_partition_result(i,"basic");
     }
     // sheild_select();
 

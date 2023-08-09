@@ -120,37 +120,21 @@ std::map<int,std::vector<int> > E2N(std::string filename){
 vector<int> nn,mm;
 vector<string> filename;
 void init_data(){
-    nn.push_back( 127823 );
-    mm.push_back( 383640 );
-    filename.push_back( "../data/out.actor-movie" );
+    nn.push_back( 4566 );
+    mm.push_back( 4131 );
+    filename.push_back( "../data/wiki_new.txt" );
 
-    nn.push_back( 383640 );
-    mm.push_back( 127823 );
-    filename.push_back( "../data/out.actor-movie-swap.txt" );
-
-    nn.push_back( 1953085 );
-    mm.push_back( 5624219 );
-    filename.push_back( "../data/out.dblp-author" );
-
-    nn.push_back( 5623931 );
-    mm.push_back( 1953085 );
-    filename.push_back( "../data/out.dblp-author-swap.txt" );
+    nn.push_back( 4131 );
+    mm.push_back( 4566 );
+    filename.push_back( "../data/wiki_new.txt-swap.txt" );
 
     nn.push_back( 172091 );
     mm.push_back( 53407 );
     filename.push_back( "../data/out.dbpedia-location" );
 
-    nn.push_back( 53407 );
+    nn.push_back( 53407 ); //use
     mm.push_back( 172091 );
     filename.push_back( "../data/out.dbpedia-location-swap.txt" );
-
-    nn.push_back( 901166 );
-    mm.push_back( 34461 );
-    filename.push_back( "../data/out.dbpedia-team" );
-
-    nn.push_back( 34461 );
-    mm.push_back( 901166 );
-    filename.push_back( "../data/out.dbpedia-team-swap.txt" );
 
     nn.push_back( 56519 );
     mm.push_back( 120867 );
@@ -159,6 +143,31 @@ void init_data(){
     nn.push_back( 120867 );
     mm.push_back( 56519 );
     filename.push_back( "../data/out.github-swap.txt" );
+
+    nn.push_back( 127823 );
+    mm.push_back( 383640 );
+    filename.push_back( "../data/out.actor-movie" );
+
+    nn.push_back( 383640 ); // use
+    mm.push_back( 127823 );
+    filename.push_back( "../data/out.actor-movie-swap.txt" );
+
+    nn.push_back( 901166 );
+    mm.push_back( 34461 );
+    filename.push_back( "../data/out.dbpedia-team" );
+
+    nn.push_back( 34461 ); //use
+    mm.push_back( 901166 );
+    filename.push_back( "../data/out.dbpedia-team-swap.txt" );
+
+
+    // nn.push_back( 1953085 );// use
+    // mm.push_back( 5624219 );
+    // filename.push_back( "../data/out.dblp-author" );
+
+    // nn.push_back( 5623931 );
+    // mm.push_back( 1953085 );
+    // filename.push_back( "../data/out.dblp-author-swap.txt" );
 
     // nn.push_back( 2783196 );
     // mm.push_back( 8730857 );
@@ -176,17 +185,10 @@ void init_data(){
     // mm.push_back( 27665730 );
     // filename.push_back( "../data/out.trackers-swap.txt" );
 
-    nn.push_back( 4566 );
-    mm.push_back( 4131 );
-    filename.push_back( "../data/wiki_new.txt" );
-
-    nn.push_back( 4131 );
-    mm.push_back( 4566 );
-    filename.push_back( "../data/wiki_new.txt-swap.txt" );
-
     // nn.push_back( 10000000 );
     // mm.push_back( 10000000 );
     // filename.push_back( "../data/rand-n10M-m10M-e100M" );
+
 }
 void unit_test(){ // diffrent dataset and p
     init_data();
@@ -205,9 +207,9 @@ void unit_test(){ // diffrent dataset and p
 }
 void unit_test2(){ // generate par result
     init_data();
-    freopen("./MIN-MAX_result.txt","w",stdout);
-    for(int p =2;p<=64;p*=2){
-        for(int i=0;i<nn.size();i++){
+    freopen("./result-MinMax.txt","w",stdout);
+    for(int i=0;i<nn.size();i++){
+        for(int p =2;p<=64;p*=2){
             cerr<<"begin solve "<<filename[i]<<endl;
             int n = nn[i];
             int m = mm[i];

@@ -51,11 +51,7 @@ public:
         degree_mp[pre_v].erase(id);
         degree_mp[aft_v][id] = 1;
 
-        if(aft_v>cur_maxi) cur_maxi = aft_v;        
-
-    }
-
-    
+        if(aft_v>cur_maxi) cur_maxi = aft_v;        mount
     int top(){
         if(cur_maxi == 0 &&degree_mp[cur_maxi].size() == 0){
             for(auto &item:wait_assign) return item;
@@ -152,63 +148,71 @@ void solve(int n,int m,string path, int p,double sheild = 0,string method = "ent
     }
     int cnt = 0;
     int cur_p = 0;
-    part_node.push_back(unordered_map<int,int>());
-    part_edge.push_back(unordered_map<int,int>());    
-
-    unordered_map<int,int> check_edge;
-    // sheild = 0.2;
-    double c = total_edge * sheild;
-    // double c = total_edge * sheild/(p-1);
-    int pos = 0;
-    while(c>0) c -= edge_degree[pos++];
+    for(int i = 0; i < p; i++) part_node.push_back(unordered_map<int,int>());
+    for(int i = 0; i < p; i++) part_edge.push_back(unordered_map<int,int>());    
     
-    sheild = edge_degree[pos];
-    cerr<<"sheild:"<<sheild<<" "<<pos<<" "<<total_edge<<endl;
- 
     clock_t beg_time = clock();
-    while(cnt < n){   
-        cnt ++; 
-        int add_node = score_list.top();
-        score_list.erase(add_node);
-        part_node[cur_p][add_node] = 1;
-
-        for(auto &e_id:Node[add_node].edges){
-            part_edge[cur_p][e_id] += 1;
-            if(Edge[e_id].degree>sheild) continue;
-            if(part_edge[cur_p][e_id] == 1){
-                double val ;
-                if(method == "entropy") val = -log2(1.0*Edge[e_id].degree/(Emaxi_degree+1));
-                else if (method == "basic") val = 1; 
-                else if (method == "anti-basic") val = 1; 
-                else assert(false);
-
-                for(int i=0;i<Edge[e_id].degree;i++){
-                    int n_id = Edge[e_id].nodes[i];
-                    score_list.add(n_id,val);
-                }
+    if(method == "random"){
+        for(int i = 0 ; i < n; i++){
+            int send_p = rand()%p;
+            part_node[send_p][i] = 1
+            for(auto &e_id:Node[i].edges){
+                part_edge[send_p][e_id] = 1
             }
         }
-        if(part_node[cur_p].size() >= maxi_cap){   
-            // cerr<<"new part"<<endl;
-            // for(auto &item : part_edge[cur_p]){
-            //     int id = item.first;
-            //     int cnt = item.second;
-            //     if(-log(1.0*Edge[id].degree/(Emaxi_degree+1)) > sheild) continue;
-            //     Edge[id].degree -= cnt;
-            // }
-            // Emaxi_degree = 0;
-            // for(int i=0;i<m;i++)  Emaxi_degree = max(Emaxi_degree,Edge[i].degree);
-            // cerr<<"bbb:"<<bbb<<" "<<log2(bbb)<<" "<<log2(score_max)<<endl;
-            score_list.clear();
-            cur_p += 1;
-            part_node.push_back(unordered_map<int,int>());
-            part_edge.push_back(unordered_map<int,int>());   
+    }
+    else{
+        unordered_map<int,int> check_edge;
+        // sheild = 0.2;
+        double c = total_edge * sheild;
+        // double c = total_edge * sheild/(p-1);
+        int pos = 0;
+        while(c>0) c -= edge_degree[pos++];
+        
+        sheild = edge_degree[pos];
+        cerr<<"sheild:"<<sheild<<" "<<pos<<" "<<total_edge<<endl;
+
+        while(cnt < n){   
+            cnt ++; 
+            int add_node = score_list.top();
+            score_list.erase(add_node);
+            part_node[cur_p][add_node] = 1;
+
+            for(auto &e_id:Node[add_node].edges){
+                part_edge[cur_p][e_id] += 1;
+                if(Edge[e_id].degree>sheild) continue;
+                if(part_edge[cur_p][e_id] == 1){
+                    double val ;
+                    if(method == "entropy") val = -log2(1.0*Edge[e_id].degree/(Emaxi_degree+1));
+                    else if (method == "basic") val = 1; 
+                    else if (method == "anti-basic") val = 1; 
+                    else assert(false);
+
+                    for(int i=0;i<Edge[e_id].degree;i++){
+                        int n_id = Edge[e_id].nodes[i];
+                        score_list.add(n_id,val);
+                    }
+                }
+            }
+            if(part_node[cur_p].size() >= maxi_cap){   
+                // cerr<<"new part"<<endl;
+                // for(auto &item : part_edge[cur_p]){
+                //     int id = item.first;
+                //     int cnt = item.second;
+                //     if(-log(1.0*Edge[id].degree/(Emaxi_degree+1)) > sheild) continue;
+                //     Edge[id].degree -= cnt;
+                // }
+                // Emaxi_degree = 0;
+                // for(int i=0;i<m;i++)  Emaxi_degree = max(Emaxi_degree,Edge[i].degree);
+                // cerr<<"bbb:"<<bbb<<" "<<log2(bbb)<<" "<<log2(score_max)<<endl;
+                score_list.clear();
+                cur_p += 1;
+            }
         }
     }
     // cerr<<cur_p<<": "<<"time:"<<(clock()-time1)*1000/CLOCKS_PER_SEC<< " edge num:"<<part_edge[cur_p].size()<<" node num:"<<part_node[cur_p].size()<<endl;
     clock_t end_time = clock();
     int k_1 = 0;
-    set<int> edge_set;
     for(int i=0;i<p;i++) {
         vector<int> tmp(11);
         k_1 += part_edge[i].size();
@@ -417,6 +421,9 @@ void sheild_select(){
         delete []Node;
         delete []Edge;
     }
+}
+void random(){
+    
 }
 
 void load_dataset(){

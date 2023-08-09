@@ -4,27 +4,29 @@ import re
 
 data_path = os.getcwd()+"/test_data/"
 # p = 1
-# method_list = ["basic.txt","anti-basic.txt","entropy.txt","HYPE.txt","MinMax.txt","KaHypar.txt"]
-method_list = ["KaHypar.txt"]
-dataset_list = ["out.actor-movie","out.actor-movie-swap.txt","out.dbpedia-location",\
-                "out.dbpedia-location-swap.txt","out.dbpedia-team","out.dbpedia-team-swap.txt","wiki_new.txt","wiki_new.txt-swap.txt"]
+method_list = ["basic.txt","anti-basic.txt","entropy.txt","HYPE.txt","MinMax.txt","KaHypar.txt"]
+# method_list = ["KaHypar.txt"]
+dataset_list = [
+    "wiki_new.txt",         "wiki_new.txt-swap.txt",\
+    "out.dbpedia-location", "out.dbpedia-location-swap.txt",\
+    "out.github",           "out.github-swap.txt",\
+    "out.actor-movie",      "out.actor-movie-swap.txt",\
+    "out.dbpedia-team",     "out.dbpedia-team-swap.txt",\
+    ]
+
+
 
 # "out.actor-movie","out.actor-movie-swap.txt","out.dbpedia-location",\
 #                 "out.dbpedia-location-swap.txt","out.dbpedia-team","out.dbpedia-team-swap.txt","wiki_new.txt"   
-outfile = open("partition_analyze.txt","w")
-
-for dataset in dataset_list:
-    print("\n--------------------------------------------\n sloving dataset:",dataset)
-    p = 1
-    while p < 64:
-        p *= 2
-        print("p=",p)
-        outfile.write("dataset:"+dataset+" p:"+str(p)+"\n")
-        outfile.write("method, k-1, replication factory, v_max, cal_max, comm_max \n")
-        for method in method_list:
-        #     method = "basic.txt"
-            # dataset = "wiki_new.txt"
-
+for method in method_list:
+    outfile = open("partition_analyze_"+method+".txt","w")
+    for dataset in dataset_list:
+        outfile.write("\ndataset:"+dataset+"\n")
+        outfile.write("p, k-1, replication factory, v_max, cal_max, comm_max \n")
+        p = 1
+        while p < 64:
+            p *= 2
+            print("p=",p)
             HyperVertex = {}
             HyperEdge = {}
             Partition = {}
@@ -85,9 +87,9 @@ for dataset in dataset_list:
             # print("n:",len(HyperVertex),"m:",len(HyperEdge))
             # for i in range(len(part_edge)):
             #     print("i:",i," size:",len(part_edge[i]))
-            print("method:",method," k-1 metric:",k_1," replication factory:",replication_fac," v_max:",v_max,\
+            print("p:",p," k-1 metric:",k_1," replication factory:",replication_fac," v_max:",v_max,\
                 " cal_max:",cal_max," comm_max:",comm_max)
-            outfile.write(str(method)+","+str(k_1)+","+str(replication_fac)+","+str(v_max)+","+str(cal_max)+","+str(comm_max)+"\n")
+            outfile.write(str(p)+","+str(k_1)+","+str(replication_fac)+","+str(v_max)+","+str(cal_max)+","+str(comm_max)+"\n")
 outfile.close()
     
         
@@ -107,4 +109,3 @@ outfile.close()
 #         p *= 2
 #         out_path = "../simulation/test_data/"+str(p)+"/"+file+"/HYPE.txt"
 # #         if os.path.exists(out_path) : continue
-

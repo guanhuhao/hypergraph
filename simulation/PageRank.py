@@ -356,6 +356,7 @@ class Worker:
         
     def receive_edge(self,m2sPipe,s2mPipe):
         while True:
+
             e_id,node,cross = m2sPipe.get()
             if e_id == -1 : break
             if e_id in self.Edge : 
@@ -494,9 +495,15 @@ data_path = os.getcwd()+"/../data/"
 os.system("rm "+data_path+"*partition*")
 
 # method = ["entropy.txt","basic.txt","anti-basic.txt","HYPE.txt","MinMax.txt","KaHypar.txt"]
-method = ["KaHypar.txt"]
-dataset_list = ["out.actor-movie","out.actor-movie-swap.txt","out.dbpedia-location",\
-                "out.dbpedia-location-swap.txt","out.dbpedia-team","out.dbpedia-team-swap.txt","wiki_new.txt","wiki_new.txt-swap.txt"]
+# method = ["KaHypar.txt"]
+method = ["basic.txt","anti-basic.txt","entropy.txt","MinMax.txt","HYPE.txt","KaHypar.txt"]
+dataset_list = [
+    "wiki_new.txt",         "wiki_new.txt-swap.txt",\
+    "out.dbpedia-location", "out.dbpedia-location-swap.txt",\
+    "out.github",           "out.github-swap.txt",\
+    "out.actor-movie",      "out.actor-movie-swap.txt",\
+    "out.dbpedia-team",     "out.dbpedia-team-swap.txt",\
+    ]
 
 
 alpha = 0.15
@@ -504,12 +511,6 @@ for mm in method:
     result = open(mm+"-result.txt","w")
 
 for file in dataset_list:
-    if re.match("(.*)ipynb(.*)",file) != None   : continue
-    if os.path.isdir(data_path+file) == True    : continue
-    if re.match("(.*)orkut(.*)",file) != None   : continue
-    if re.match("(.*)tracker(.*)",file) != None : continue
-    if re.match("(.*)rand(.*)",file) != None    : continue
-    if re.match("(.*)author(.*)",file) != None  : continue
 
     # if re.match("(.*)wiki(.*)",file) == None : continue
 

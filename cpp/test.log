@@ -1,0 +1,83 @@
+# dataset:../data/wiki_new.txt n:4571 m:4136 sheild degree:293
+#| p | k-1 | partition time | total time |
+2,2988,115,141
+4,7522,162,184
+8,13223,248,270
+16,19725,398,419
+32,27261,631,653
+64,35105,971,994
+
+# dataset:../data/wiki_new.txt-swap.txt n:4136 m:4571 sheild degree:129
+#| p | k-1 | partition time | total time |
+2,3216,103,125
+4,7882,124,145
+8,14036,169,190
+16,21637,259,280
+32,29947,361,386
+64,39025,495,517
+
+# dataset:../data/out.dbpedia-location n:172096 m:53412 sheild degree:65
+#| p | k-1 | partition time | total time |
+2,338,585,735
+4,995,585,727
+8,1955,760,902
+16,2188,939,1089
+32,2265,1164,1332
+64,2556,1161,1308
+
+# dataset:../data/out.dbpedia-location-swap.txt n:53412 m:172096 sheild degree:4
+#| p | k-1 | partition time | total time |
+2,7837,276,456
+4,19478,270,450
+8,26426,271,450
+16,32763,276,454
+32,36805,279,458
+64,40170,284,467
+
+# dataset:../data/out.github n:56524 m:120872 sheild degree:44
+#| p | k-1 | partition time | total time |
+2,2417,448,649
+4,11473,464,660
+8,23229,531,725
+16,37540,667,860
+32,53104,880,1078
+64,68886,1259,1471
+
+# dataset:../data/out.github-swap.txt n:120872 m:56524 sheild degree:93
+#| p | k-1 | partition time | total time |
+2,5998,621,793
+4,17318,637,807
+8,23684,690,862
+16,31461,788,955
+32,41558,964,1130
+64,54208,1213,1377
+
+# dataset:../data/out.actor-movie n:127828 m:383645 sheild degree:48
+#| p | k-1 | partition time | total time |
+2,52008,1756,2370
+4,104483,2402,3055
+8,148701,2422,3027
+16,191760,2943,3554
+32,223492,3257,3913
+64,266455,3774,4366
+
+# dataset:../data/out.actor-movie-swap.txt n:383645 m:127828 sheild degree:57
+#| p | k-1 | partition time | total time |
+2,30945,2382,2866
+4,64493,2869,3340
+8,110524,2976,3471
+16,165353,3381,3874
+32,222027,4618,5138
+64,261215,4899,5382
+
+# dataset:../data/out.dbpedia-team n:901171 m:34466 sheild degree:633
+#| p | k-1 | partition time | total time |
+2,1969,3936,4416
+4,5618,4650,5118
+8,10460,4960,5431
+16,23633,6611,7098
+32,32359,8987,9455
+64,44354,12094,12560
+
+# dataset:../data/out.dbpedia-team-swap.txt n:34466 m:901171 sheild degree:9
+#| p | k-1 | partition time | total time |

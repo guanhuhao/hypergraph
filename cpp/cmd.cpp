@@ -117,7 +117,7 @@ void solve(int n,int m,string path, int p,double sheild = 0,string method = "ent
 
     Node = new HyperNode[n];
     Edge = new HyperEdge[m];
-
+    clock_t beg_time = clock();
     clock_t tot_begin = clock();
     load_data(path,Node,Edge);
     for(int i=0;i<n;i++) {
@@ -145,108 +145,95 @@ void solve(int n,int m,string path, int p,double sheild = 0,string method = "ent
 
 
     Score_List score_list(maxi_degree,n);
-    if(method == "anti_basic"){
+    cerr<<"method:"<<method<<endl;
+    if(method == "anti-basic"){
+        int cnt = 0;
         for(int i=0;i<n;i++){
-            score_list.add(i,maxi_degree-Node[i].edges.size());
+            score_list.add(i,Emaxi_degree-Node[i].edges.size());
         }
     }
     int cnt = 0;
     int cur_p = 0;
-    part_node.push_back(unordered_map<int,int>());
-    part_edge.push_back(unordered_map<int,int>());    
-
-    unordered_map<int,int> check_edge;
-    // sheild = 0.2;
-    double c = total_edge * sheild;
-    // double c = total_edge * sheild/(p-1);
-    int pos = 0;
-    while(c>0) c -= edge_degree[pos++];
+    for(int i = 0; i < p; i++) part_node.push_back(unordered_map<int,int>());
+    for(int i = 0; i < p; i++) part_edge.push_back(unordered_map<int,int>());    
     
-    sheild = edge_degree[pos];
-    cerr<<"sheild:"<<sheild<<" "<<pos<<" "<<total_edge<<endl;
- 
-    clock_t beg_time = clock();
-    while(cnt < n){   
-        cnt ++; 
-        int add_node = score_list.top();
-        score_list.erase(add_node);
-        part_node[cur_p][add_node] = 1;
-
-        for(auto &e_id:Node[add_node].edges){
-            part_edge[cur_p][e_id] += 1;
-            if(Edge[e_id].degree>sheild) continue;
-            if(part_edge[cur_p][e_id] == 1){
-                double val ;
-                if(method == "entropy") val = -log2(1.0*Edge[e_id].degree/(Emaxi_degree+1));
-                else if (method == "basic") val = 1; 
-                else if (method == "anti-basic") val = 1; 
-                else assert(false);
-
-                for(int i=0;i<Edge[e_id].degree;i++){
-                    int n_id = Edge[e_id].nodes[i];
-                    score_list.add(n_id,val);
-                }
+    if(method == "random"){
+        for(int i = 0 ; i < n; i++){
+            int send_p = rand()%p;
+            part_node[send_p][i] = 1;
+            for(auto &e_id:Node[i].edges){
+                part_edge[send_p][e_id] = 1;
             }
         }
-        if(part_node[cur_p].size() >= maxi_cap){   
-            // cerr<<"new part"<<endl;
-            // for(auto &item : part_edge[cur_p]){
-            //     int id = item.first;
-            //     int cnt = item.second;
-            //     if(-log(1.0*Edge[id].degree/(Emaxi_degree+1)) > sheild) continue;
-            //     Edge[id].degree -= cnt;
-            // }
-            // Emaxi_degree = 0;
-            // for(int i=0;i<m;i++)  Emaxi_degree = max(Emaxi_degree,Edge[i].degree);
-            // cerr<<"bbb:"<<bbb<<" "<<log2(bbb)<<" "<<log2(score_max)<<endl;
-            score_list.clear();
-            cur_p += 1;
-            part_node.push_back(unordered_map<int,int>());
-            part_edge.push_back(unordered_map<int,int>());   
+    }
+    else{
+        unordered_map<int,int> check_edge;
+        // sheild = 0.2;
+        double c = total_edge * sheild;
+        // double c = total_edge * sheild/(p-1);
+        int pos = 0;
+        while(c>0) c -= edge_degree[pos++];
+        
+        sheild = edge_degree[pos];
+        cerr<<"sheild:"<<sheild<<" "<<pos<<" "<<total_edge<<endl;
+    
+        clock_t beg_time = clock();
+        while(cnt < n){   
+            cnt ++; 
+            int add_node = score_list.top();
+            score_list.erase(add_node);
+            part_node[cur_p][add_node] = 1;
+
+            for(auto &e_id:Node[add_node].edges){
+                part_edge[cur_p][e_id] += 1;
+                if(Edge[e_id].degree>sheild) continue;
+                if(part_edge[cur_p][e_id] == 1){
+                    double val ;
+                    if(method == "entropy") val = -log2(1.0*Edge[e_id].degree/(Emaxi_degree+1));
+                    else if (method == "basic") val = 1; 
+                    else if (method == "anti-basic") val = 1; 
+                    else assert(false);
+
+                    for(int i=0;i<Edge[e_id].degree;i++){
+                        int n_id = Edge[e_id].nodes[i];
+                        score_list.add(n_id,val);
+                    }
+                }
+            }
+            if(part_node[cur_p].size() >= maxi_cap){   
+                score_list.clear();
+                cur_p += 1;
+            }
         }
     }
-    // cerr<<cur_p<<": "<<"time:"<<(clock()-time1)*1000/CLOCKS_PER_SEC<< " edge num:"<<part_edge[cur_p].size()<<" node num:"<<part_node[cur_p].size()<<endl;
     clock_t end_time = clock();
     int k_1 = 0;
-    set<int> edge_set;
     for(int i=0;i<p;i++) {
         vector<int> tmp(11);
         k_1 += part_edge[i].size();
-        // double ave = 0;
-        // for(auto &item:part_edge[i]){
-        //     int e_id = item.first;
-        //     double per = 1.0*part_edge[i][e_id]/Edge[e_id].degree;
-        //     ave += per;
-        //     tmp[int(per*10)] ++;
-             
-        // }
-        // ave /= part_edge[i].size();
-        // cerr<<i<<": "<<" edge num:"<<part_edge[i].size()<<" node num:"<<part_node[i].size()<<" ave:"<<ave<<endl;
-        // for(int j=0;j<11;j++) cerr<<j<<":"<<tmp[j]<<" ";
-        // cerr<<endl;
     }
-    map<int,int> cnt_num;
-    map<int,int> cnt_val;
-    int maxi_edge_degree = 0;
-    int cnt_edge = 0;
-    for(int i = 0;i<m;i++){
-        int e_id = Edge[i].id;
-        int deg = Edge[i].degree;
-        cnt_num[deg] ++;
-        cnt_val[deg] += check_edge[e_id];
-        maxi_edge_degree = max(maxi_edge_degree,deg);
-    }
-    double sum_val,sum_cnt;
-    int gap = 50;
-    sum_val = sum_cnt = 0;
-    for(int i=0;i<maxi_edge_degree;i++){
-        if(i%gap == 0 && i != 0){
-            if(sum_cnt == 0) continue;
-            sum_val = sum_cnt = 0;
-        }
-        sum_cnt += cnt_num[i];
-        sum_val += cnt_val[i];
-    }
+    // map<int,int> cnt_num;
+    // map<int,int> cnt_val;
+    // int maxi_edge_degree = 0;
+    // int cnt_edge = 0;
+    // for(int i = 0;i<m;i++){
+    //     int e_id = Edge[i].id;
+    //     int deg = Edge[i].degree;
+    //     cnt_num[deg] ++;
+    //     cnt_val[deg] += check_edge[e_id];
+    //     maxi_edge_degree = max(maxi_edge_degree,deg);
+    // }
+    // double sum_val,sum_cnt;
+    // int gap = 50;
+    // sum_val = sum_cnt = 0;
+    // for(int i=0;i<maxi_edge_degree;i++){
+    //     if(i%gap == 0 && i != 0){
+    //         if(sum_cnt == 0) continue;
+    //         sum_val = sum_cnt = 0;
+    //     }
+    //     sum_cnt += cnt_num[i];
+    //     sum_val += cnt_val[i];
+    // }
     clock_t runtime = (end_time-beg_time)*1000/CLOCKS_PER_SEC;
     clock_t tot_time = (clock()-tot_begin)*1000/CLOCKS_PER_SEC;
     cerr<<"parameter:"<<endl<<"p:"<<p<<endl;
@@ -256,12 +243,6 @@ void solve(int n,int m,string path, int p,double sheild = 0,string method = "ent
     cout<<endl;
     if(output != "None"){
         FILE *result;
-        // string result_path = path;
-        // string filename;
-        // while (result_path.back()!='/') {
-        //     filename.push_back(result_path.back());
-        //     result_path.pop_back();
-        // }
         // reverse(filename.begin(),filename.end());
         // result_path = result_path+"NA-par/"+filename;
         // cerr<<"outlog:"<<result_path<<endl;
@@ -293,7 +274,7 @@ void unit_single(){
         cerr<<n<<" "<<m<<endl;
         string path = filename[i];
         cout<<"# dataset:"<<path<<" n:"<<n<<" m:"<<m<<endl;
-        cout<<"#| p | k-1 | partition time | total time |"<<endl; 
+        cout<<"# p , k-1 , partition time , total time "<<endl; 
         for(int p=16; p<=16;p*=2){
             solve(n,m,path,p);
         }
@@ -310,7 +291,7 @@ void unit_basic(){
         cerr<<n<<" "<<m<<endl;
         string path = filename[i];
         cout<<"# dataset:"<<path<<" n:"<<n<<" m:"<<m<<endl;
-        cout<<"#| p | k-1 | partition time | total time |"<<endl; 
+        cout<<"# p , k-1 , partition time , total time "<<endl; 
         for(int p=2; p<=64;p*=2){
             solve(n,m,path,p,shield,method);
         }
@@ -329,7 +310,7 @@ void unit_entropy(){
         cerr<<n<<" "<<m<<endl;
         string path = filename[i];
         cout<<"# dataset:"<<path<<" n:"<<n<<" m:"<<m<<endl;
-        cout<<"#| p | k-1 | partition time | total time |"<<endl; 
+        cout<<"# p , k-1 , partition time , total time "<<endl; 
         for(int p=2; p<=64;p*=2){
             solve(n,m,path,p,shield,method);
         }
@@ -337,7 +318,7 @@ void unit_entropy(){
     }
 }
 
-void get_partition_result(int p,string method="entropy"){
+void get_partition_result(string method="entropy"){
     for(int i=0;i<nn.size();i++){
         n = nn[i]+5;
         m = mm[i]+5;
@@ -353,8 +334,8 @@ void get_partition_result(int p,string method="entropy"){
         // for(int i=0;i<10;i++) cout<<edge_degree[i]<<" ";
         // cout<<endl;
 
-        cout<<"# dataset:"<<path<<" n:"<<n<<" m:"<<m<<" sheild degree:"<<edge_degree[int(0.01*m)]<<endl;
-        cout<<"#| p | k-1 | partition time | total time |"<<endl; 
+        cout<<"# dataset:"<<path<<" n:"<<n<<" m:"<<m<<endl;
+        cout<<"# p , k-1 , partition time , total time "<<endl; 
 
         string result_path = path;
         string filename;
@@ -363,15 +344,14 @@ void get_partition_result(int p,string method="entropy"){
             result_path.pop_back();
         }
         reverse(filename.begin(),filename.end());
-        result_path = "../simulation/test_data/"+to_string(p)+"/"+filename+"/"+method+".txt";
         cerr<<"outlog:"<<result_path<<endl;
 
         // int p = 8;
-        // for(int p=2; p<=64;p*=2){
+        for(int p=2; p<=64;p*=2){
             int sheild_heavy_node = 0.2;
-            // solve(int n,int m,string path, int p,double sheild = 0,string method = "entropy",bool output = false)
+            result_path = "../simulation/test_data/"+to_string(p)+"/"+filename+"/"+method+".txt";
             solve(n,m,path,p,sheild_heavy_node,method,result_path);
-        // }
+        }
         cout<<endl;
     }
 }
@@ -393,7 +373,7 @@ void sheild_select(){
         sort(edge_degree.begin(),edge_degree.end(),greater<int>());
 
         cout<<"# dataset:"<<path<<" n:"<<n<<" m:"<<m<<" sheild degree:"<<edge_degree[int(0.01*m)]<<endl;
-        cout<<"#| p | k-1 | partition time | total time | shield degree | shield per |"<<endl; 
+        cout<<"# p , k-1 , partition time , total time , shield degree , shield per "<<endl; 
         int rec_s = -1;
         vector<double> candidate;
         for(int j=2;j<=5;j++) candidate.push_back(0.1*j);
@@ -418,21 +398,13 @@ void sheild_select(){
 }
 
 void load_dataset(){
-    nn.push_back( 127823 );
-    mm.push_back( 383640 );
-    filename.push_back( "../data/out.actor-movie" );
+    nn.push_back( 4566 );
+    mm.push_back( 4131 );
+    filename.push_back( "../data/wiki_new.txt" );
 
-    nn.push_back( 383640 ); // use
-    mm.push_back( 127823 );
-    filename.push_back( "../data/out.actor-movie-swap.txt" );
-
-    nn.push_back( 1953085 );// use
-    mm.push_back( 5624219 );
-    filename.push_back( "../data/out.dblp-author" );
-
-    nn.push_back( 5623931 );
-    mm.push_back( 1953085 );
-    filename.push_back( "../data/out.dblp-author-swap.txt" );
+    nn.push_back( 4131 );
+    mm.push_back( 4566 );
+    filename.push_back( "../data/wiki_new.txt-swap.txt" );
 
     nn.push_back( 172091 );
     mm.push_back( 53407 );
@@ -442,6 +414,22 @@ void load_dataset(){
     mm.push_back( 172091 );
     filename.push_back( "../data/out.dbpedia-location-swap.txt" );
 
+    nn.push_back( 56519 );
+    mm.push_back( 120867 );
+    filename.push_back( "../data/out.github" );
+
+    nn.push_back( 120867 );
+    mm.push_back( 56519 );
+    filename.push_back( "../data/out.github-swap.txt" );
+
+    nn.push_back( 127823 );
+    mm.push_back( 383640 );
+    filename.push_back( "../data/out.actor-movie" );
+
+    nn.push_back( 383640 ); // use
+    mm.push_back( 127823 );
+    filename.push_back( "../data/out.actor-movie-swap.txt" );
+
     nn.push_back( 901166 );
     mm.push_back( 34461 );
     filename.push_back( "../data/out.dbpedia-team" );
@@ -450,13 +438,14 @@ void load_dataset(){
     mm.push_back( 901166 );
     filename.push_back( "../data/out.dbpedia-team-swap.txt" );
 
-    nn.push_back( 56519 );
-    mm.push_back( 120867 );
-    filename.push_back( "../data/out.github" );
 
-    nn.push_back( 120867 );
-    mm.push_back( 56519 );
-    filename.push_back( "../data/out.github-swap.txt" );
+    // nn.push_back( 1953085 );// use
+    // mm.push_back( 5624219 );
+    // filename.push_back( "../data/out.dblp-author" );
+
+    // nn.push_back( 5623931 );
+    // mm.push_back( 1953085 );
+    // filename.push_back( "../data/out.dblp-author-swap.txt" );
 
     // nn.push_back( 2783196 );
     // mm.push_back( 8730857 );
@@ -474,28 +463,25 @@ void load_dataset(){
     // mm.push_back( 27665730 );
     // filename.push_back( "../data/out.trackers-swap.txt" );
 
-    nn.push_back( 4566 );
-    mm.push_back( 4131 );
-    filename.push_back( "../data/wiki_new.txt" );
-
-    nn.push_back( 4131 );
-    mm.push_back( 4566 );
-    filename.push_back( "../data/wiki_new.txt-swap.txt" );
-
     // nn.push_back( 10000000 );
     // mm.push_back( 10000000 );
     // filename.push_back( "../data/rand-n10M-m10M-e100M" );
 
 }
 
-int main(){
+int main(int argc,char *argv[]){
+    string method;
+    method = argv[1];
+    cerr<<method<<endl;
     load_dataset();
     // unit_single();
     // unit_basic();
     // unit_entropy();
-    for(int i=2;i<=64;i*=2){
-        get_partition_result(i,"entropy");
-    }
+    // cout<<"# dataset:"<<path<<" n:"<<n<<" m:"<<m<<" sheild degree:"<<edge_degree[int(0.01*m)]<<endl;
+    // cout<<"# p , k-1 , partition time , total time "<<endl; 
+    // for(int i=2;i<=64;i*=2){
+    get_partition_result(method);
+    // }
     // sheild_select();
 
 

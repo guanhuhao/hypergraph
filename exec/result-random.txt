@@ -1,0 +1,431 @@
+random
+outlog:../data/
+parameters:
+n:4571 m:4136 path:../data/wiki_new.txt p:2 output:../simulation/test_data/2/wiki_new.txt/random.txt
+method:random
+parameter:
+p:2
+k-1: 3418 runtime:47(ms)
+----------
+parameters:
+n:4571 m:4136 path:../data/wiki_new.txt p:4 output:../simulation/test_data/4/wiki_new.txt/random.txt
+method:random
+parameter:
+p:4
+k-1: 9149 runtime:49(ms)
+----------
+parameters:
+n:4571 m:4136 path:../data/wiki_new.txt p:8 output:../simulation/test_data/8/wiki_new.txt/random.txt
+method:random
+parameter:
+p:8
+k-1: 17769 runtime:52(ms)
+----------
+parameters:
+n:4571 m:4136 path:../data/wiki_new.txt p:16 output:../simulation/test_data/16/wiki_new.txt/random.txt
+method:random
+parameter:
+p:16
+k-1: 29997 runtime:56(ms)
+----------
+parameters:
+n:4571 m:4136 path:../data/wiki_new.txt p:32 output:../simulation/test_data/32/wiki_new.txt/random.txt
+method:random
+parameter:
+p:32
+k-1: 45071 runtime:62(ms)
+----------
+parameters:
+n:4571 m:4136 path:../data/wiki_new.txt p:64 output:../simulation/test_data/64/wiki_new.txt/random.txt
+method:random
+parameter:
+p:64
+k-1: 61602 runtime:68(ms)
+----------
+outlog:../data/
+parameters:
+n:4136 m:4571 path:../data/wiki_new.txt-swap.txt p:2 output:../simulation/test_data/2/wiki_new.txt-swap.txt/random.txt
+method:random
+parameter:
+p:2
+k-1: 4463 runtime:46(ms)
+----------
+parameters:
+n:4136 m:4571 path:../data/wiki_new.txt-swap.txt p:4 output:../simulation/test_data/4/wiki_new.txt-swap.txt/random.txt
+method:random
+parameter:
+p:4
+k-1: 12786 runtime:48(ms)
+----------
+parameters:
+n:4136 m:4571 path:../data/wiki_new.txt-swap.txt p:8 output:../simulation/test_data/8/wiki_new.txt-swap.txt/random.txt
+method:random
+parameter:
+p:8
+k-1: 26406 runtime:52(ms)
+----------
+parameters:
+n:4136 m:4571 path:../data/wiki_new.txt-swap.txt p:16 output:../simulation/test_data/16/wiki_new.txt-swap.txt/random.txt
+method:random
+parameter:
+p:16
+k-1: 45401 runtime:61(ms)
+----------
+parameters:
+n:4136 m:4571 path:../data/wiki_new.txt-swap.txt p:32 output:../simulation/test_data/32/wiki_new.txt-swap.txt/random.txt
+method:random
+parameter:
+p:32
+k-1: 65333 runtime:67(ms)
+----------
+parameters:
+n:4136 m:4571 path:../data/wiki_new.txt-swap.txt p:64 output:../simulation/test_data/64/wiki_new.txt-swap.txt/random.txt
+method:random
+parameter:
+p:64
+k-1: 83605 runtime:62(ms)
+----------
+outlog:../data/
+parameters:
+n:172096 m:53412 path:../data/out.dbpedia-location p:2 output:../simulation/test_data/2/out.dbpedia-location/random.txt
+method:random
+parameter:
+p:2
+k-1: 15163 runtime:254(ms)
+----------
+parameters:
+n:172096 m:53412 path:../data/out.dbpedia-location p:4 output:../simulation/test_data/4/out.dbpedia-location/random.txt
+method:random
+parameter:
+p:4
+k-1: 32453 runtime:264(ms)
+----------
+parameters:
+n:172096 m:53412 path:../data/out.dbpedia-location p:8 output:../simulation/test_data/8/out.dbpedia-location/random.txt
+method:random
+parameter:
+p:8
+k-1: 51150 runtime:269(ms)
+----------
+parameters:
+n:172096 m:53412 path:../data/out.dbpedia-location p:16 output:../simulation/test_data/16/out.dbpedia-location/random.txt
+method:random
+parameter:
+p:16
+k-1: 70673 runtime:275(ms)
+----------
+parameters:
+n:172096 m:53412 path:../data/out.dbpedia-location p:32 output:../simulation/test_data/32/out.dbpedia-location/random.txt
+method:random
+parameter:
+p:32
+k-1: 91217 runtime:280(ms)
+----------
+parameters:
+n:172096 m:53412 path:../data/out.dbpedia-location p:64 output:../simulation/test_data/64/out.dbpedia-location/random.txt
+method:random
+parameter:
+p:64
+k-1: 113055 runtime:291(ms)
+----------
+outlog:../data/
+parameters:
+n:53412 m:172096 path:../data/out.dbpedia-location-swap.txt p:2 output:../simulation/test_data/2/out.dbpedia-location-swap.txt/random.txt
+method:random
+parameter:
+p:2
+k-1: 52277 runtime:247(ms)
+----------
+parameters:
+n:53412 m:172096 path:../data/out.dbpedia-location-swap.txt p:4 output:../simulation/test_data/4/out.dbpedia-location-swap.txt/random.txt
+method:random
+parameter:
+p:4
+k-1: 83229 runtime:254(ms)
+----------
+parameters:
+n:53412 m:172096 path:../data/out.dbpedia-location-swap.txt p:8 output:../simulation/test_data/8/out.dbpedia-location-swap.txt/random.txt
+method:random
+parameter:
+p:8
+k-1: 102745 runtime:260(ms)
+----------
+parameters:
+n:53412 m:172096 path:../data/out.dbpedia-location-swap.txt p:16 output:../simulation/test_data/16/out.dbpedia-location-swap.txt/random.txt
+method:random
+parameter:
+p:16
+k-1: 110849 runtime:259(ms)
+----------
+parameters:
+n:53412 m:172096 path:../data/out.dbpedia-location-swap.txt p:32 output:../simulation/test_data/32/out.dbpedia-location-swap.txt/random.txt
+method:random
+parameter:
+p:32
+k-1: 116054 runtime:261(ms)
+----------
+parameters:
+n:53412 m:172096 path:../data/out.dbpedia-location-swap.txt p:64 output:../simulation/test_data/64/out.dbpedia-location-swap.txt/random.txt
+method:random
+parameter:
+p:64
+k-1: 119148 runtime:261(ms)
+----------
+outlog:../data/
+parameters:
+n:56524 m:120872 path:../data/out.github p:2 output:../simulation/test_data/2/out.github/random.txt
+method:random
+parameter:
+p:2
+k-1: 27521 runtime:267(ms)
+----------
+parameters:
+n:56524 m:120872 path:../data/out.github p:4 output:../simulation/test_data/4/out.github/random.txt
+method:random
+parameter:
+p:4
+k-1: 57289 runtime:284(ms)
+----------
+parameters:
+n:56524 m:120872 path:../data/out.github p:8 output:../simulation/test_data/8/out.github/random.txt
+method:random
+parameter:
+p:8
+k-1: 89065 runtime:291(ms)
+----------
+parameters:
+n:56524 m:120872 path:../data/out.github p:16 output:../simulation/test_data/16/out.github/random.txt
+method:random
+parameter:
+p:16
+k-1: 122112 runtime:294(ms)
+----------
+parameters:
+n:56524 m:120872 path:../data/out.github p:32 output:../simulation/test_data/32/out.github/random.txt
+method:random
+parameter:
+p:32
+k-1: 157127 runtime:300(ms)
+----------
+parameters:
+n:56524 m:120872 path:../data/out.github p:64 output:../simulation/test_data/64/out.github/random.txt
+method:random
+parameter:
+p:64
+k-1: 191277 runtime:310(ms)
+----------
+outlog:../data/
+parameters:
+n:120872 m:56524 path:../data/out.github-swap.txt p:2 output:../simulation/test_data/2/out.github-swap.txt/random.txt
+method:random
+parameter:
+p:2
+k-1: 26424 runtime:275(ms)
+----------
+parameters:
+n:120872 m:56524 path:../data/out.github-swap.txt p:4 output:../simulation/test_data/4/out.github-swap.txt/random.txt
+method:random
+parameter:
+p:4
+k-1: 60980 runtime:285(ms)
+----------
+parameters:
+n:120872 m:56524 path:../data/out.github-swap.txt p:8 output:../simulation/test_data/8/out.github-swap.txt/random.txt
+method:random
+parameter:
+p:8
+k-1: 104432 runtime:300(ms)
+----------
+parameters:
+n:120872 m:56524 path:../data/out.github-swap.txt p:16 output:../simulation/test_data/16/out.github-swap.txt/random.txt
+method:random
+parameter:
+p:16
+k-1: 155788 runtime:311(ms)
+----------
+parameters:
+n:120872 m:56524 path:../data/out.github-swap.txt p:32 output:../simulation/test_data/32/out.github-swap.txt/random.txt
+method:random
+parameter:
+p:32
+k-1: 210212 runtime:327(ms)
+----------
+parameters:
+n:120872 m:56524 path:../data/out.github-swap.txt p:64 output:../simulation/test_data/64/out.github-swap.txt/random.txt
+method:random
+parameter:
+p:64
+k-1: 261751 runtime:339(ms)
+----------
+outlog:../data/
+parameters:
+n:127828 m:383645 path:../data/out.actor-movie p:2 output:../simulation/test_data/2/out.actor-movie/random.txt
+method:random
+parameter:
+p:2
+k-1: 107733 runtime:874(ms)
+----------
+parameters:
+n:127828 m:383645 path:../data/out.actor-movie p:4 output:../simulation/test_data/4/out.actor-movie/random.txt
+method:random
+parameter:
+p:4
+k-1: 238993 runtime:904(ms)
+----------
+parameters:
+n:127828 m:383645 path:../data/out.actor-movie p:8 output:../simulation/test_data/8/out.actor-movie/random.txt
+method:random
+parameter:
+p:8
+k-1: 391892 runtime:990(ms)
+----------
+parameters:
+n:127828 m:383645 path:../data/out.actor-movie p:16 output:../simulation/test_data/16/out.actor-movie/random.txt
+method:random
+parameter:
+p:16
+k-1: 555076 runtime:1030(ms)
+----------
+parameters:
+n:127828 m:383645 path:../data/out.actor-movie p:32 output:../simulation/test_data/32/out.actor-movie/random.txt
+method:random
+parameter:
+p:32
+k-1: 713799 runtime:1060(ms)
+----------
+parameters:
+n:127828 m:383645 path:../data/out.actor-movie p:64 output:../simulation/test_data/64/out.actor-movie/random.txt
+method:random
+parameter:
+p:64
+k-1: 846320 runtime:1105(ms)
+----------
+outlog:../data/
+parameters:
+n:383645 m:127828 path:../data/out.actor-movie-swap.txt p:2 output:../simulation/test_data/2/out.actor-movie-swap.txt/random.txt
+method:random
+parameter:
+p:2
+k-1: 110218 runtime:889(ms)
+----------
+parameters:
+n:383645 m:127828 path:../data/out.actor-movie-swap.txt p:4 output:../simulation/test_data/4/out.actor-movie-swap.txt/random.txt
+method:random
+parameter:
+p:4
+k-1: 285025 runtime:955(ms)
+----------
+parameters:
+n:383645 m:127828 path:../data/out.actor-movie-swap.txt p:8 output:../simulation/test_data/8/out.actor-movie-swap.txt/random.txt
+method:random
+parameter:
+p:8
+k-1: 514065 runtime:1233(ms)
+----------
+parameters:
+n:383645 m:127828 path:../data/out.actor-movie-swap.txt p:16 output:../simulation/test_data/16/out.actor-movie-swap.txt/random.txt
+method:random
+parameter:
+p:16
+k-1: 759231 runtime:1137(ms)
+----------
+parameters:
+n:383645 m:127828 path:../data/out.actor-movie-swap.txt p:32 output:../simulation/test_data/32/out.actor-movie-swap.txt/random.txt
+method:random
+parameter:
+p:32
+k-1: 972298 runtime:1191(ms)
+----------
+parameters:
+n:383645 m:127828 path:../data/out.actor-movie-swap.txt p:64 output:../simulation/test_data/64/out.actor-movie-swap.txt/random.txt
+method:random
+parameter:
+p:64
+k-1: 1127576 runtime:1239(ms)
+----------
+outlog:../data/
+parameters:
+n:901171 m:34466 path:../data/out.dbpedia-team p:2 output:../simulation/test_data/2/out.dbpedia-team/random.txt
+method:random
+parameter:
+p:2
+k-1: 20840 runtime:1048(ms)
+----------
+parameters:
+n:901171 m:34466 path:../data/out.dbpedia-team p:4 output:../simulation/test_data/4/out.dbpedia-team/random.txt
+method:random
+parameter:
+p:4
+k-1: 51731 runtime:1118(ms)
+----------
+parameters:
+n:901171 m:34466 path:../data/out.dbpedia-team p:8 output:../simulation/test_data/8/out.dbpedia-team/random.txt
+method:random
+parameter:
+p:8
+k-1: 100255 runtime:1138(ms)
+----------
+parameters:
+n:901171 m:34466 path:../data/out.dbpedia-team p:16 output:../simulation/test_data/16/out.dbpedia-team/random.txt
+method:random
+parameter:
+p:16
+k-1: 173407 runtime:1194(ms)
+----------
+parameters:
+n:901171 m:34466 path:../data/out.dbpedia-team p:32 output:../simulation/test_data/32/out.dbpedia-team/random.txt
+method:random
+parameter:
+p:32
+k-1: 275950 runtime:1255(ms)
+----------
+parameters:
+n:901171 m:34466 path:../data/out.dbpedia-team p:64 output:../simulation/test_data/64/out.dbpedia-team/random.txt
+method:random
+parameter:
+p:64
+k-1: 410409 runtime:1309(ms)
+----------
+outlog:../data/
+parameters:
+n:34466 m:901171 path:../data/out.dbpedia-team-swap.txt p:2 output:../simulation/test_data/2/out.dbpedia-team-swap.txt/random.txt
+method:random
+parameter:
+p:2
+k-1: 93843 runtime:1019(ms)
+----------
+parameters:
+n:34466 m:901171 path:../data/out.dbpedia-team-swap.txt p:4 output:../simulation/test_data/4/out.dbpedia-team-swap.txt/random.txt
+method:random
+parameter:
+p:4
+k-1: 206525 runtime:1042(ms)
+----------
+parameters:
+n:34466 m:901171 path:../data/out.dbpedia-team-swap.txt p:8 output:../simulation/test_data/8/out.dbpedia-team-swap.txt/random.txt
+method:random
+parameter:
+p:8
+k-1: 307405 runtime:1062(ms)
+----------
+parameters:
+n:34466 m:901171 path:../data/out.dbpedia-team-swap.txt p:16 output:../simulation/test_data/16/out.dbpedia-team-swap.txt/random.txt
+method:random
+parameter:
+p:16
+k-1: 377095 runtime:1089(ms)
+----------
+parameters:
+n:34466 m:901171 path:../data/out.dbpedia-team-swap.txt p:32 output:../simulation/test_data/32/out.dbpedia-team-swap.txt/random.txt
+method:random
+parameter:
+p:32
+k-1: 418333 runtime:1110(ms)
+----------
+parameters:
+n:34466 m:901171 path:../data/out.dbpedia-team-swap.txt p:64 output:../simulation/test_data/64/out.dbpedia-team-swap.txt/random.txt
+method:random
+parameter:
+p:64
+k-1: 441367 runtime:1111(ms)
+----------

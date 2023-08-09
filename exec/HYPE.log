@@ -1,0 +1,10 @@
+----------------------------------------------------------------------------
+Partitioning Graph: ../data/../data/wiki_new.txt-swap.txt../data/out.dbpedia-location
+into 2 partitions
+max secondary set size: 10
+while the secondary set expantion, the biggest 0% of edges will be ignored
+the neighbourhood heuristic of a node will be cached
+if sset is emtpy, new nodes will be selected: next-best
+----------------------------------------------------------------------------
+parsing graph ...
+file: ../data/../data/wiki_new.txt-swap.txt../data/out.dbpedia-locationnot found

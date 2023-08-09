@@ -191,16 +191,17 @@ for method in method_list:
                 lst = sorted(comm.items(),key = lambda x:-x[1])
                 move_set = []
                 max_p = lst[0][0]
-                min_p = -1
+                min_p = lst[-1][0]
+                mini_loss = 100000000
+                sel_eid = -1
                 for e_id in part_edge[max_p].keys():
-                    min_p = -1
+                    # min_p = -1
                     st = set()
                     dic = {}
                     gain = 0
                     for v_id in HyperEdge[e_id]:
                         # if v_id not in part_vertex[max_p]: continue
                         if Partition[v_id] != max_p : continue
-                        st.add(v_id)
                         if v_id not in HyperEdge.keys() : continue
                         for edge in HyperVertex[v_id]:
                             if edge not in dic.keys() : dic[edge] = 0  
@@ -209,40 +210,38 @@ for method in method_list:
                     for ee_id,cnt in dic.items():
                         if cnt == part_edge[max_p][ee_id] : 
                             # print("test1:",2 * cross_edge[ee_id] - 2)
-                            gain += 2 * cross_edge[ee_id] - 2
+                            gain += cross_edge[ee_id] - 1
                             dic[ee_id] = 0
-                    rec = 0
-                    for p_id in range(max_p,p):
-                        if p_id == max_p: continue
-                        loss = 0
-                        for ee_id,cnt in dic.items():
-                            if ee_id not in part_edge[p_id]:
-                                if cnt == 0 :
-                                    loss += 2 * cross_edge[ee_id] - 2
-                                else : loss += 2 * cross_edge[ee_id]
-                                # print("test2:",2 * cross_edge[ee_id] - 2)
 
-                        if gain - loss > rec :
-                        # tmp = [i for i in comm]
+                    loss = 0
+                    for ee_id,cnt in dic.items():
+                        if ee_id not in part_edge[min_p]:
+                            if dic[ee_id] == 0:
+                                loss += cross_edge[ee_id] - 1
+                            else :
+                                loss += cross_edge[ee_id]
+                                gain -= 1
+                    if gain <= 0 : continue
+                    # print("test3:",loss," ",gain)
+                    
+                    if loss < mini_loss and comm[min_p] + loss < comm[max_p] - gain:
+                        sel_eid = e_id
+                        mini_loss = loss
 
-                        # if comm[max_p] - gain/2 > comm[p_id] + loss/2 :
-                            # print("dict:",dic)
-                            rec = gain - loss
-                            min_p = p_id
-                            break
-                    if min_p != -1 : 
-                        print("final:",rec," gain:",gain," loss:",loss," num_edge:",len(part_edge[min_p]))
-                        for v_id in HyperEdge[e_id] :
-                            if Partition[v_id] != max_p : continue
-                            move_set.append(v_id)
-                        break
+                if sel_eid == -1 : break
+
+                # print("final:",rec," gain:",gain," loss:",loss," num_edge:",len(part_edge[min_p]))
+                for v_id in HyperEdge[sel_eid] :
+                    if Partition[v_id] != max_p : continue
+                    move_set.append(v_id)
+                    break
                 
                     
                 if min_p == -1 : break
                 
                 printInfo(part_vertex,part_edge)
 
-                print("max_p:",max_p," min_p:",min_p," v_id:",move_set[0])
+                print("max_p:",max_p," min_p:",min_p," mini_loss:",mini_loss)
                 test_cnt = 0
                 for v_id in move_set:
                     # print("v part:",Partition[v_id])

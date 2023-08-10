@@ -1,7 +1,10 @@
 from ctypes import sizeof
+import heapq
 import os
 import re
 from math import log
+def heap_comp(x):
+    return -x[1]
 
 def printInfo(part_vertex,part_edge):
     cal = []
@@ -38,8 +41,7 @@ dataset_list = [
     ]
 method_list = ["entropy.txt"]
 dataset_list =  [
-    # "wiki_new.txt"
-     "out.dbpedia-location"
+    "wiki_new.txt"
     ]
 
 # "out.actor-movie","out.actor-movie-swap.txt","out.dbpedia-location",\
@@ -188,106 +190,19 @@ for method in method_list:
                     part_vertex[max_p].remove(v_id)
                     part_vertex[min_p].add(v_id)
 
-            while True :
-                lst = sorted(comm.items(),key = lambda x:-x[1])
-                move_set = []
-                max_p = lst[0][0]
-                min_p = -1
-                lst = sorted([(i,j)for i,j in part_edge[max_p].items()],key = lambda x:x[1])
-                # for e_id,_ in lst:
-                for e_id in part_edge[max_p].keys():
-                    if part_edge[max_p][e_id] > 15 : continue 
-                    min_p = -1
-                    st = set()
-                    dic = {}
-                    gain = 0
-                    for v_id in HyperEdge[e_id]:
-                        # if v_id not in part_vertex[max_p]: continue
-                        if Partition[v_id] != max_p : continue
-                        st.add(v_id)
-                        if v_id not in HyperEdge.keys() : continue
-                        for edge in HyperVertex[v_id]:
-                            if edge not in dic.keys() : dic[edge] = 0  
-                            dic[edge] += 1
+            heap = [[] for i in range(p)]
+            check_heap = [set() for i in range(p)]
+            heap_size = 10000
+            for i in range(p):
+                for e_id,cnt in part_edge[max_p].items():
+                    heapq.heappush(heap[i], (heap_comp((e_id,cnt)),(e_id,cnt)))
+                    check_heap[i].add(e_id)
+                    while len(heap[i]) > heap_size:
+                        id,value = heap[i][0][1]
+                        heapq.heappop(heap[i])
+                        # print("test:",i," ",id," ",value," ",heap[i][0][1])
+                        check_heap[i].remove(id)
 
-                    for ee_id,cnt in dic.items():
-                        if cnt == part_edge[max_p][ee_id] : 
-                            # print("test1:",2 * cross_edge[ee_id] - 2)
-                            gain += 2 * cross_edge[ee_id] - 2
-                            dic[ee_id] = 0
-                    rec = 0
-                    for p_id in range(max_p,p):
-                        if p_id == max_p: continue
-                        loss = 0
-                        for ee_id,cnt in dic.items():
-                            if ee_id not in part_edge[p_id]:
-                                if cnt == 0 :
-                                    loss += 2 * cross_edge[ee_id] - 2
-                                else : loss += 2 * cross_edge[ee_id]
-                                # print("test2:",2 * cross_edge[ee_id] - 2)
-
-                        if gain - loss > rec :
-                        # tmp = [i for i in comm]
-
-                        # if comm[max_p] - gain/2 > comm[p_id] + loss/2 :
-                            # print("dict:",dic)
-                            rec = gain - loss
-                            min_p = p_id
-                            break
-                    if min_p != -1 : 
-                        print("final:",rec," gain:",gain," loss:",loss," num_edge:",len(part_edge[min_p]))
-                        for v_id in HyperEdge[e_id] :
-                            if Partition[v_id] != max_p : continue
-                            move_set.append(v_id)
-                        break
-                
-                    
-                if min_p == -1 : break
-                
-                printInfo(part_vertex,part_edge)
-
-                print("max_p:",max_p," min_p:",min_p," v_id:",move_set[0])
-                test_cnt = 0
-                for v_id in move_set:
-                    # print("v part:",Partition[v_id])
-                    for e_id in HyperVertex[v_id]:
-                        # print(part_edge[max_p].keys())
-                        if e_id not in part_edge[max_p].keys():
-                            print("error! e_id:",e_id," p_id:",max_p)
-                    for e_id in HyperVertex[v_id]:
-                        part_edge[max_p][e_id] -= 1
-                        if part_edge[max_p][e_id] == 0:
-                            comm[max_p] -= cross_edge[e_id] - 1
-                            test_cnt += cross_edge[e_id] - 1
-                            cross_edge[e_id] -= 1
-                            part_edge[max_p].pop(e_id)
-                            # if e_id in part_edge[max_p].keys() : print("__________________________________________")
-                            for p_id in range(p):
-                                if e_id in part_edge[p_id].keys():
-                                    # if p_id == max_p: print("find error")
-                                    comm[p_id] -= 1
-                # print("test_cnt:",test_cnt)
-                
-                for v_id in move_set:
-                    for e_id in HyperVertex[v_id]:
-                        if e_id not in part_edge[min_p].keys():
-                            cross_edge[e_id] += 1
-                            comm[min_p] += cross_edge[e_id] - 1
-                            for p_id in range(p):
-                                if e_id in part_edge[p_id].keys():
-                                    # if p_id == max_p : print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-                                    comm[p_id] += 1
-                            part_edge[min_p][e_id] = 0
-                        part_edge[min_p][e_id] += 1
-                
-                for v_id in move_set:
-                    Partition[v_id] = min_p
-                    part_vertex[max_p].remove(v_id)
-                    part_vertex[min_p].add(v_id)
-
-                
-                # break
-        
             while True :
                 lst = sorted(comm.items(),key = lambda x:-x[1])
                 move_set = []
@@ -295,8 +210,14 @@ for method in method_list:
                 min_p = lst[-1][0]
                 mini_loss = 100000000
                 sel_eid = -1
-                for e_id in part_edge[max_p].keys():
-                    # if part_edge[max_p][e_id] > 15 : continue 
+                if len(heap[max_p]) > 2 * heap_size :
+                    heap[max_p] = []
+                    for e_id in check_heap[max_p] :
+                        heapq.heappush(heap[i], (heap_comp((e_id,part_edge[e_id])),(e_id,part_edge[e_id])))
+
+                for score,(e_id,_) in heap[max_p]:
+                    if part_edge[max_p][e_id] > 50 : continue
+                    # print("score:",score," A:",e_id," B:",_)
                     # min_p = -1
                     st = set()
                     dic = {}
@@ -323,13 +244,14 @@ for method in method_list:
                             else :
                                 loss += cross_edge[ee_id]
                                 gain -= 1
-                    if gain <= 0 : continue
                     # print("test3:",loss," ",gain)
+                    if gain <= 0 : continue
                     
                     if loss < mini_loss and comm[min_p] + loss < comm[max_p] - gain:
                         sel_eid = e_id
                         mini_loss = loss
-
+                        # break
+                # print("sel_eid",sel_eid)
                 if sel_eid == -1 : break
 
                 # print("final:",rec," gain:",gain," loss:",loss," num_edge:",len(part_edge[min_p]))
@@ -344,45 +266,61 @@ for method in method_list:
                 printInfo(part_vertex,part_edge)
 
                 print("max_p:",max_p," min_p:",min_p," mini_loss:",mini_loss)
-                test_cnt = 0
                 for v_id in move_set:
-                    # print("v part:",Partition[v_id])
-                    for e_id in HyperVertex[v_id]:
-                        # print(part_edge[max_p].keys())
-                        if e_id not in part_edge[max_p].keys():
-                            print("error! e_id:",e_id," p_id:",max_p)
                     for e_id in HyperVertex[v_id]:
                         part_edge[max_p][e_id] -= 1
+                        if len(check_heap[max_p]) < heap_size:
+                            check_heap[max_p].add(e_id)
+                            heapq.heappush(heap[max_p],(heap_comp((e_id,part_edge[max_p][e_id])),(e_id,part_edge[max_p][e_id])))
+
+                        elif -part_edge[max_p][e_id] > heap[max_p][0][0] and e_id not in  check_heap[max_p]:
+                            while heap[max_p][0][1][0] not in check_heap[max_p] : heapq.heappop(heap[max_p])
+                            check_heap[max_p].remove(heap[max_p][0][1][0])
+                            heapq.heappop(heap[max_p])
+
+                            check_heap[max_p].add(e_id)
+                            heapq.heappush(heap[max_p],(heap_comp((e_id,part_edge[max_p][e_id])),(e_id,part_edge[max_p][e_id])))
                         if part_edge[max_p][e_id] == 0:
                             comm[max_p] -= cross_edge[e_id] - 1
-                            test_cnt += cross_edge[e_id] - 1
                             cross_edge[e_id] -= 1
+
+                            check_heap[max_p].remove(e_id)
                             part_edge[max_p].pop(e_id)
-                            # if e_id in part_edge[max_p].keys() : print("__________________________________________")
                             for p_id in range(p):
                                 if e_id in part_edge[p_id].keys():
-                                    # if p_id == max_p: print("find error")
                                     comm[p_id] -= 1
-                # print("test_cnt:",test_cnt)
                 
                 for v_id in move_set:
+                    rec_dic = set()
                     for e_id in HyperVertex[v_id]:
                         if e_id not in part_edge[min_p].keys():
+                            rec_dic.add(e_id)
                             cross_edge[e_id] += 1
                             comm[min_p] += cross_edge[e_id] - 1
                             for p_id in range(p):
                                 if e_id in part_edge[p_id].keys():
-                                    # if p_id == max_p : print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
                                     comm[p_id] += 1
                             part_edge[min_p][e_id] = 0
                         part_edge[min_p][e_id] += 1
+                    for e_id in rec_dic:
+                        if len(check_heap[min_p]) < heap_size:
+                            check_heap[min_p].add(e_id)
+                            heapq.heappush(heap[min_p],(heap_comp((e_id,part_edge[min_p][e_id])),(e_id,part_edge[min_p][e_id])))
+                        elif -part_edge[min_p][e_id] > heap[min_p][0][0] and e_id not in check_heap[min_p]:
+                            while heap[min_p][0][1][0] not in check_heap[min_p] : heapq.heappop(heap[min_p])
+                            check_heap[min_p].remove(heap[min_p][0][1][0])
+                            heapq.heappop(heap[min_p])
+
+                            check_heap[min_p].add(e_id)
+                            heapq.heappush(heap[min_p],(heap_comp((e_id,part_edge[min_p][e_id])),(e_id,part_edge[min_p][e_id])))
                 
                 for v_id in move_set:
                     Partition[v_id] = min_p
                     part_vertex[max_p].remove(v_id)
                     part_vertex[min_p].add(v_id)
-                
 
+                
+                # break
             printInfo(part_vertex,part_edge)
             break
         print("output:",max(comm.values())," ",min(comm.values()))

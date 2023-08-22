@@ -1,15 +1,19 @@
 import os
 import re
+current_path = os.path.dirname(os.path.abspath(__file__))
 dataset_list = [
-    "wiki_new.txt",         "wiki_new.txt-swap.txt",\
+    "wiki_new.txt",                                                             "wiki_new.txt-swap.txt",\
     "out.dbpedia-location", "out.dbpedia-location-swap.txt",\
     "out.github",           "out.github-swap.txt",\
     "out.actor-movie",      "out.actor-movie-swap.txt",\
     "out.dbpedia-team",     "out.dbpedia-team-swap.txt",\
     ]
 method_list = ["basic","anti-basic","entropy","MinMax","HYPE","KaHyPar","random"]
-method_list = ["random"]
-cur_path = os.getcwd()+"/../data/"
+# method_list = ["anti-basic","entropy","MinMax","random"]
+# method_list = ["random"]
+cur_path = current_path + "/../data/"
+os.chdir(current_path)
+
 
 def run_KaHyPar(path, dataset, p, generate_scheme=False):
     edges = {}
@@ -124,10 +128,12 @@ for method in method_list:
     generate_scheme = False
 
     if method == "basic" or method == "anti-basic" or method == "entropy" or method == "random":
+        print("./cmd "+method+" 2>result-"+method+".txt")
         os.system("./cmd "+method+" 2>result-"+method+".txt")
         continue
 
     if method == "MinMax":
+        print("./"+method)
         os.system("./"+method)
         continue
 

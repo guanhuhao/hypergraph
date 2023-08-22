@@ -1,0 +1,491 @@
+basic
+outlog:../data/
+parameters:
+n:4571 m:4136 path:../data/wiki_new.txt p:2 output:../simulation/test_data/2/wiki_new.txt/basic.txt
+method:basic
+sheild:1545 0 119235
+parameter:
+p:2
+k-1: 3066 runtime:242(ms)
+----------
+parameters:
+n:4571 m:4136 path:../data/wiki_new.txt p:4 output:../simulation/test_data/4/wiki_new.txt/basic.txt
+method:basic
+sheild:1545 0 119235
+parameter:
+p:4
+k-1: 7759 runtime:313(ms)
+----------
+parameters:
+n:4571 m:4136 path:../data/wiki_new.txt p:8 output:../simulation/test_data/8/wiki_new.txt/basic.txt
+method:basic
+sheild:1545 0 119235
+parameter:
+p:8
+k-1: 14055 runtime:476(ms)
+----------
+parameters:
+n:4571 m:4136 path:../data/wiki_new.txt p:16 output:../simulation/test_data/16/wiki_new.txt/basic.txt
+method:basic
+sheild:1545 0 119235
+parameter:
+p:16
+k-1: 20969 runtime:728(ms)
+----------
+parameters:
+n:4571 m:4136 path:../data/wiki_new.txt p:32 output:../simulation/test_data/32/wiki_new.txt/basic.txt
+method:basic
+sheild:1545 0 119235
+parameter:
+p:32
+k-1: 28260 runtime:1016(ms)
+----------
+parameters:
+n:4571 m:4136 path:../data/wiki_new.txt p:64 output:../simulation/test_data/64/wiki_new.txt/basic.txt
+method:basic
+sheild:1545 0 119235
+parameter:
+p:64
+k-1: 36862 runtime:1692(ms)
+----------
+outlog:../data/
+parameters:
+n:4136 m:4571 path:../data/wiki_new.txt-swap.txt p:2 output:../simulation/test_data/2/wiki_new.txt-swap.txt/basic.txt
+method:basic
+sheild:294 0 119235
+parameter:
+p:2
+k-1: 3259 runtime:207(ms)
+----------
+parameters:
+n:4136 m:4571 path:../data/wiki_new.txt-swap.txt p:4 output:../simulation/test_data/4/wiki_new.txt-swap.txt/basic.txt
+method:basic
+sheild:294 0 119235
+parameter:
+p:4
+k-1: 8029 runtime:245(ms)
+----------
+parameters:
+n:4136 m:4571 path:../data/wiki_new.txt-swap.txt p:8 output:../simulation/test_data/8/wiki_new.txt-swap.txt/basic.txt
+method:basic
+sheild:294 0 119235
+parameter:
+p:8
+k-1: 14319 runtime:326(ms)
+----------
+parameters:
+n:4136 m:4571 path:../data/wiki_new.txt-swap.txt p:16 output:../simulation/test_data/16/wiki_new.txt-swap.txt/basic.txt
+method:basic
+sheild:294 0 119235
+parameter:
+p:16
+k-1: 22134 runtime:482(ms)
+----------
+parameters:
+n:4136 m:4571 path:../data/wiki_new.txt-swap.txt p:32 output:../simulation/test_data/32/wiki_new.txt-swap.txt/basic.txt
+method:basic
+sheild:294 0 119235
+parameter:
+p:32
+k-1: 30555 runtime:633(ms)
+----------
+parameters:
+n:4136 m:4571 path:../data/wiki_new.txt-swap.txt p:64 output:../simulation/test_data/64/wiki_new.txt-swap.txt/basic.txt
+method:basic
+sheild:294 0 119235
+parameter:
+p:64
+k-1: 39481 runtime:867(ms)
+----------
+outlog:../data/
+parameters:
+n:172096 m:53412 path:../data/out.dbpedia-location p:2 output:../simulation/test_data/2/out.dbpedia-location/basic.txt
+method:basic
+sheild:12189 0 293697
+parameter:
+p:2
+k-1: 3540 runtime:910(ms)
+----------
+parameters:
+n:172096 m:53412 path:../data/out.dbpedia-location p:4 output:../simulation/test_data/4/out.dbpedia-location/basic.txt
+method:basic
+sheild:12189 0 293697
+parameter:
+p:4
+k-1: 5501 runtime:918(ms)
+----------
+parameters:
+n:172096 m:53412 path:../data/out.dbpedia-location p:8 output:../simulation/test_data/8/out.dbpedia-location/basic.txt
+method:basic
+sheild:12189 0 293697
+parameter:
+p:8
+k-1: 5975 runtime:997(ms)
+----------
+parameters:
+n:172096 m:53412 path:../data/out.dbpedia-location p:16 output:../simulation/test_data/16/out.dbpedia-location/basic.txt
+method:basic
+sheild:12189 0 293697
+parameter:
+p:16
+k-1: 5951 runtime:1088(ms)
+----------
+parameters:
+n:172096 m:53412 path:../data/out.dbpedia-location p:32 output:../simulation/test_data/32/out.dbpedia-location/basic.txt
+method:basic
+sheild:12189 0 293697
+parameter:
+p:32
+k-1: 6269 runtime:1242(ms)
+----------
+parameters:
+n:172096 m:53412 path:../data/out.dbpedia-location p:64 output:../simulation/test_data/64/out.dbpedia-location/basic.txt
+method:basic
+sheild:12189 0 293697
+parameter:
+p:64
+k-1: 6771 runtime:1490(ms)
+----------
+outlog:../data/
+parameters:
+n:53412 m:172096 path:../data/out.dbpedia-location-swap.txt p:2 output:../simulation/test_data/2/out.dbpedia-location-swap.txt/basic.txt
+method:basic
+sheild:28 0 293697
+parameter:
+p:2
+k-1: 8864 runtime:490(ms)
+----------
+parameters:
+n:53412 m:172096 path:../data/out.dbpedia-location-swap.txt p:4 output:../simulation/test_data/4/out.dbpedia-location-swap.txt/basic.txt
+method:basic
+sheild:28 0 293697
+parameter:
+p:4
+k-1: 19576 runtime:480(ms)
+----------
+parameters:
+n:53412 m:172096 path:../data/out.dbpedia-location-swap.txt p:8 output:../simulation/test_data/8/out.dbpedia-location-swap.txt/basic.txt
+method:basic
+sheild:28 0 293697
+parameter:
+p:8
+k-1: 27360 runtime:478(ms)
+----------
+parameters:
+n:53412 m:172096 path:../data/out.dbpedia-location-swap.txt p:16 output:../simulation/test_data/16/out.dbpedia-location-swap.txt/basic.txt
+method:basic
+sheild:28 0 293697
+parameter:
+p:16
+k-1: 33058 runtime:480(ms)
+----------
+parameters:
+n:53412 m:172096 path:../data/out.dbpedia-location-swap.txt p:32 output:../simulation/test_data/32/out.dbpedia-location-swap.txt/basic.txt
+method:basic
+sheild:28 0 293697
+parameter:
+p:32
+k-1: 38676 runtime:504(ms)
+----------
+parameters:
+n:53412 m:172096 path:../data/out.dbpedia-location-swap.txt p:64 output:../simulation/test_data/64/out.dbpedia-location-swap.txt/basic.txt
+method:basic
+sheild:28 0 293697
+parameter:
+p:64
+k-1: 42096 runtime:492(ms)
+----------
+outlog:../data/
+parameters:
+n:56524 m:120872 path:../data/out.github p:2 output:../simulation/test_data/2/out.github/basic.txt
+method:basic
+sheild:3675 0 440237
+parameter:
+p:2
+k-1: 4164 runtime:789(ms)
+----------
+parameters:
+n:56524 m:120872 path:../data/out.github p:4 output:../simulation/test_data/4/out.github/basic.txt
+method:basic
+sheild:3675 0 440237
+parameter:
+p:4
+k-1: 12920 runtime:771(ms)
+----------
+parameters:
+n:56524 m:120872 path:../data/out.github p:8 output:../simulation/test_data/8/out.github/basic.txt
+method:basic
+sheild:3675 0 440237
+parameter:
+p:8
+k-1: 25694 runtime:864(ms)
+----------
+parameters:
+n:56524 m:120872 path:../data/out.github p:16 output:../simulation/test_data/16/out.github/basic.txt
+method:basic
+sheild:3675 0 440237
+parameter:
+p:16
+k-1: 41045 runtime:1027(ms)
+----------
+parameters:
+n:56524 m:120872 path:../data/out.github p:32 output:../simulation/test_data/32/out.github/basic.txt
+method:basic
+sheild:3675 0 440237
+parameter:
+p:32
+k-1: 57677 runtime:1287(ms)
+----------
+parameters:
+n:56524 m:120872 path:../data/out.github p:64 output:../simulation/test_data/64/out.github/basic.txt
+method:basic
+sheild:3675 0 440237
+parameter:
+p:64
+k-1: 74551 runtime:1764(ms)
+----------
+outlog:../data/
+parameters:
+n:120872 m:56524 path:../data/out.github-swap.txt p:2 output:../simulation/test_data/2/out.github-swap.txt/basic.txt
+method:basic
+sheild:884 0 440237
+parameter:
+p:2
+k-1: 11665 runtime:992(ms)
+----------
+parameters:
+n:120872 m:56524 path:../data/out.github-swap.txt p:4 output:../simulation/test_data/4/out.github-swap.txt/basic.txt
+method:basic
+sheild:884 0 440237
+parameter:
+p:4
+k-1: 20394 runtime:994(ms)
+----------
+parameters:
+n:120872 m:56524 path:../data/out.github-swap.txt p:8 output:../simulation/test_data/8/out.github-swap.txt/basic.txt
+method:basic
+sheild:884 0 440237
+parameter:
+p:8
+k-1: 25576 runtime:1039(ms)
+----------
+parameters:
+n:120872 m:56524 path:../data/out.github-swap.txt p:16 output:../simulation/test_data/16/out.github-swap.txt/basic.txt
+method:basic
+sheild:884 0 440237
+parameter:
+p:16
+k-1: 34512 runtime:1158(ms)
+----------
+parameters:
+n:120872 m:56524 path:../data/out.github-swap.txt p:32 output:../simulation/test_data/32/out.github-swap.txt/basic.txt
+method:basic
+sheild:884 0 440237
+parameter:
+p:32
+k-1: 45419 runtime:1311(ms)
+----------
+parameters:
+n:120872 m:56524 path:../data/out.github-swap.txt p:64 output:../simulation/test_data/64/out.github-swap.txt/basic.txt
+method:basic
+sheild:884 0 440237
+parameter:
+p:64
+k-1: 58360 runtime:1618(ms)
+----------
+outlog:../data/
+parameters:
+n:127828 m:383645 path:../data/out.actor-movie p:2 output:../simulation/test_data/2/out.actor-movie/basic.txt
+method:basic
+sheild:646 0 1470404
+parameter:
+p:2
+k-1: 59289 runtime:2580(ms)
+----------
+parameters:
+n:127828 m:383645 path:../data/out.actor-movie p:4 output:../simulation/test_data/4/out.actor-movie/basic.txt
+method:basic
+sheild:646 0 1470404
+parameter:
+p:4
+k-1: 121827 runtime:3243(ms)
+----------
+parameters:
+n:127828 m:383645 path:../data/out.actor-movie p:8 output:../simulation/test_data/8/out.actor-movie/basic.txt
+method:basic
+sheild:646 0 1470404
+parameter:
+p:8
+k-1: 162914 runtime:3846(ms)
+----------
+parameters:
+n:127828 m:383645 path:../data/out.actor-movie p:16 output:../simulation/test_data/16/out.actor-movie/basic.txt
+method:basic
+sheild:646 0 1470404
+parameter:
+p:16
+k-1: 211708 runtime:3949(ms)
+----------
+parameters:
+n:127828 m:383645 path:../data/out.actor-movie p:32 output:../simulation/test_data/32/out.actor-movie/basic.txt
+method:basic
+sheild:646 0 1470404
+parameter:
+p:32
+k-1: 248688 runtime:4455(ms)
+----------
+parameters:
+n:127828 m:383645 path:../data/out.actor-movie p:64 output:../simulation/test_data/64/out.actor-movie/basic.txt
+method:basic
+sheild:646 0 1470404
+parameter:
+p:64
+k-1: 296336 runtime:5218(ms)
+----------
+outlog:../data/
+parameters:
+n:383645 m:127828 path:../data/out.actor-movie-swap.txt p:2 output:../simulation/test_data/2/out.actor-movie-swap.txt/basic.txt
+method:basic
+sheild:294 0 1470404
+parameter:
+p:2
+k-1: 43557 runtime:3139(ms)
+----------
+parameters:
+n:383645 m:127828 path:../data/out.actor-movie-swap.txt p:4 output:../simulation/test_data/4/out.actor-movie-swap.txt/basic.txt
+method:basic
+sheild:294 0 1470404
+parameter:
+p:4
+k-1: 68579 runtime:3339(ms)
+----------
+parameters:
+n:383645 m:127828 path:../data/out.actor-movie-swap.txt p:8 output:../simulation/test_data/8/out.actor-movie-swap.txt/basic.txt
+method:basic
+sheild:294 0 1470404
+parameter:
+p:8
+k-1: 119934 runtime:4022(ms)
+----------
+parameters:
+n:383645 m:127828 path:../data/out.actor-movie-swap.txt p:16 output:../simulation/test_data/16/out.actor-movie-swap.txt/basic.txt
+method:basic
+sheild:294 0 1470404
+parameter:
+p:16
+k-1: 179600 runtime:4567(ms)
+----------
+parameters:
+n:383645 m:127828 path:../data/out.actor-movie-swap.txt p:32 output:../simulation/test_data/32/out.actor-movie-swap.txt/basic.txt
+method:basic
+sheild:294 0 1470404
+parameter:
+p:32
+k-1: 235263 runtime:5016(ms)
+----------
+parameters:
+n:383645 m:127828 path:../data/out.actor-movie-swap.txt p:64 output:../simulation/test_data/64/out.actor-movie-swap.txt/basic.txt
+method:basic
+sheild:294 0 1470404
+parameter:
+p:64
+k-1: 278243 runtime:5665(ms)
+----------
+outlog:../data/
+parameters:
+n:901171 m:34466 path:../data/out.dbpedia-team p:2 output:../simulation/test_data/2/out.dbpedia-team/basic.txt
+method:basic
+sheild:2671 0 1366466
+parameter:
+p:2
+k-1: 16129 runtime:4664(ms)
+----------
+parameters:
+n:901171 m:34466 path:../data/out.dbpedia-team p:4 output:../simulation/test_data/4/out.dbpedia-team/basic.txt
+method:basic
+sheild:2671 0 1366466
+parameter:
+p:4
+k-1: 16847 runtime:5391(ms)
+----------
+parameters:
+n:901171 m:34466 path:../data/out.dbpedia-team p:8 output:../simulation/test_data/8/out.dbpedia-team/basic.txt
+method:basic
+sheild:2671 0 1366466
+parameter:
+p:8
+k-1: 19317 runtime:4994(ms)
+----------
+parameters:
+n:901171 m:34466 path:../data/out.dbpedia-team p:16 output:../simulation/test_data/16/out.dbpedia-team/basic.txt
+method:basic
+sheild:2671 0 1366466
+parameter:
+p:16
+k-1: 28122 runtime:5744(ms)
+----------
+parameters:
+n:901171 m:34466 path:../data/out.dbpedia-team p:32 output:../simulation/test_data/32/out.dbpedia-team/basic.txt
+method:basic
+sheild:2671 0 1366466
+parameter:
+p:32
+k-1: 40237 runtime:8018(ms)
+----------
+parameters:
+n:901171 m:34466 path:../data/out.dbpedia-team p:64 output:../simulation/test_data/64/out.dbpedia-team/basic.txt
+method:basic
+sheild:2671 0 1366466
+parameter:
+p:64
+k-1: 52182 runtime:10492(ms)
+----------
+outlog:../data/
+parameters:
+n:34466 m:901171 path:../data/out.dbpedia-team-swap.txt p:2 output:../simulation/test_data/2/out.dbpedia-team-swap.txt/basic.txt
+method:basic
+sheild:17 0 1366466
+parameter:
+p:2
+k-1: 8044 runtime:1799(ms)
+----------
+parameters:
+n:34466 m:901171 path:../data/out.dbpedia-team-swap.txt p:4 output:../simulation/test_data/4/out.dbpedia-team-swap.txt/basic.txt
+method:basic
+sheild:17 0 1366466
+parameter:
+p:4
+k-1: 21705 runtime:1830(ms)
+----------
+parameters:
+n:34466 m:901171 path:../data/out.dbpedia-team-swap.txt p:8 output:../simulation/test_data/8/out.dbpedia-team-swap.txt/basic.txt
+method:basic
+sheild:17 0 1366466
+parameter:
+p:8
+k-1: 49051 runtime:1818(ms)
+----------
+parameters:
+n:34466 m:901171 path:../data/out.dbpedia-team-swap.txt p:16 output:../simulation/test_data/16/out.dbpedia-team-swap.txt/basic.txt
+method:basic
+sheild:17 0 1366466
+parameter:
+p:16
+k-1: 80891 runtime:1914(ms)
+----------
+parameters:
+n:34466 m:901171 path:../data/out.dbpedia-team-swap.txt p:32 output:../simulation/test_data/32/out.dbpedia-team-swap.txt/basic.txt
+method:basic
+sheild:17 0 1366466
+parameter:
+p:32
+k-1: 108790 runtime:1982(ms)
+----------
+parameters:
+n:34466 m:901171 path:../data/out.dbpedia-team-swap.txt p:64 output:../simulation/test_data/64/out.dbpedia-team-swap.txt/basic.txt
+method:basic
+sheild:17 0 1366466
+parameter:
+p:64
+k-1: 120109 runtime:2011(ms)
+----------

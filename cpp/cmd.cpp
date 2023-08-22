@@ -2,7 +2,11 @@
 #include <cmath>
 #include <stdlib.h>
 #include "data.hpp"
-// #include "partition.hpp"
+#include <iostream>
+#include <unistd.h>
+#include <limits.h>
+#include <cstring>
+
 using namespace std;
 int n,m;
 HyperNode *Node;
@@ -37,7 +41,6 @@ public:
         return wait_assign.find(id) == wait_assign.end();
     }
     void add(int id,double val = 1){     
-        // cerr<<"test2"<<endl;
         assert(val>0);
         if(assigned(id)) return;
         int pre_v = Eval[id];
@@ -147,11 +150,15 @@ void solve(int n,int m,string path, int p,double sheild = 0,string method = "ent
     Score_List score_list(maxi_degree,n);
     cerr<<"method:"<<method<<endl;
     if(method == "anti-basic"){
+        int max_val = -1;
         int cnt = 0;
+        for(int i=0;i<n;i++) max_val = max(max_val,int(Node[i].edges.size())+1);
         for(int i=0;i<n;i++){
-            score_list.add(i,Emaxi_degree-Node[i].edges.size());
+            // cerr<<i<<" "<<max_val-Node[i].edges.size()<<" "<<Emaxi_degree<<" "<<Node[i].edges.size()<<endl;
+            score_list.add(i,max_val-Node[i].edges.size());
         }
     }
+
     int cnt = 0;
     int cur_p = 0;
     for(int i = 0; i < p; i++) part_node.push_back(unordered_map<int,int>());
@@ -178,6 +185,7 @@ void solve(int n,int m,string path, int p,double sheild = 0,string method = "ent
         cerr<<"sheild:"<<sheild<<" "<<pos<<" "<<total_edge<<endl;
     
         clock_t beg_time = clock();
+
         while(cnt < n){   
             cnt ++; 
             int add_node = score_list.top();
@@ -205,6 +213,7 @@ void solve(int n,int m,string path, int p,double sheild = 0,string method = "ent
                 cur_p += 1;
             }
         }
+
     }
     clock_t end_time = clock();
     int k_1 = 0;

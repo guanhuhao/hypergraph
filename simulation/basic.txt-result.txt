@@ -1,4 +1,0 @@
-
-dataset:wiki_new.txt n:4571 m:4131
-p,total_msg,cross_msg,distribute_time,compute_time,communicate_time,send_time,recv_time,total_time
-2, 393941, 181189, 118.33, 468.57, 1256.2, 810.03, 446.17, 1724.77

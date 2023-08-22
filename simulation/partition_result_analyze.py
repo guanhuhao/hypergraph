@@ -1,17 +1,17 @@
 from ctypes import sizeof
 import os
 import re
-
-data_path = os.getcwd()+"/test_data/"
+current_path = os.path.dirname(os.path.abspath(__file__))
+data_path = current_path+"/test_data/"
 # p = 1
-method_list = ["basic.txt","anti-basic.txt","entropy.txt","HYPE.txt","MinMax.txt","KaHypar.txt"]
-# method_list = ["KaHypar.txt"]
+# method_list = ["basic.txt","anti-basic.txt","entropy.txt","HYPE.txt","MinMax.txt","KaHypar.txt"]
+method_list = ["KaHypar.txt"]
 dataset_list = [
-    "wiki_new.txt",         "wiki_new.txt-swap.txt",\
-    "out.dbpedia-location", "out.dbpedia-location-swap.txt",\
-    "out.github",           "out.github-swap.txt",\
-    "out.actor-movie",      "out.actor-movie-swap.txt",\
-    "out.dbpedia-team",     "out.dbpedia-team-swap.txt",\
+    # "wiki_new.txt",         "wiki_new.txt-swap.txt",\
+    # "out.dbpedia-location", "out.dbpedia-location-swap.txt",\
+    # "out.github",           "out.github-swap.txt",\
+    # "out.actor-movie",      "out.actor-movie-swap.txt",\
+    # "out.dbpedia-team",     "out.dbpedia-team-swap.txt",\
     ]
 
 

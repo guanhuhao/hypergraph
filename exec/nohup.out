@@ -1,0 +1,3390 @@
+# dataset:../data/wiki_new.txt n:4571 m:4136
+# p , k-1 , partition time , total time 
+2,3066,242,242
+4,7759,313,313
+8,14055,476,476
+16,20969,728,728
+32,28260,1016,1016
+64,36862,1692,1692
+
+# dataset:../data/wiki_new.txt-swap.txt n:4136 m:4571
+# p , k-1 , partition time , total time 
+2,3259,207,207
+4,8029,245,245
+8,14319,326,326
+16,22134,482,482
+32,30555,633,633
+64,39481,867,867
+
+# dataset:../data/out.dbpedia-location n:172096 m:53412
+# p , k-1 , partition time , total time 
+2,3540,910,910
+4,5501,918,918
+8,5975,997,997
+16,5951,1088,1088
+32,6269,1242,1242
+64,6771,1490,1490
+
+# dataset:../data/out.dbpedia-location-swap.txt n:53412 m:172096
+# p , k-1 , partition time , total time 
+2,8864,490,490
+4,19576,480,480
+8,27360,478,478
+16,33058,480,480
+32,38676,504,504
+64,42096,492,492
+
+# dataset:../data/out.github n:56524 m:120872
+# p , k-1 , partition time , total time 
+2,4164,789,789
+4,12920,771,771
+8,25694,864,864
+16,41045,1027,1027
+32,57677,1287,1287
+64,74551,1764,1764
+
+# dataset:../data/out.github-swap.txt n:120872 m:56524
+# p , k-1 , partition time , total time 
+2,11665,992,992
+4,20394,994,994
+8,25576,1039,1039
+16,34512,1158,1158
+32,45419,1311,1311
+64,58360,1618,1618
+
+# dataset:../data/out.actor-movie n:127828 m:383645
+# p , k-1 , partition time , total time 
+2,59289,2580,2580
+4,121827,3243,3243
+8,162914,3846,3846
+16,211708,3949,3949
+32,248688,4455,4455
+64,296336,5218,5218
+
+# dataset:../data/out.actor-movie-swap.txt n:383645 m:127828
+# p , k-1 , partition time , total time 
+2,43557,3139,3139
+4,68579,3339,3339
+8,119934,4022,4022
+16,179600,4567,4567
+32,235263,5016,5016
+64,278243,5665,5665
+
+# dataset:../data/out.dbpedia-team n:901171 m:34466
+# p , k-1 , partition time , total time 
+2,16129,4664,4664
+4,16847,5391,5391
+8,19317,4994,4994
+16,28122,5744,5744
+32,40237,8018,8018
+64,52182,10492,10492
+
+# dataset:../data/out.dbpedia-team-swap.txt n:34466 m:901171
+# p , k-1 , partition time , total time 
+2,8044,1799,1799
+4,21705,1830,1830
+8,49051,1818,1818
+16,80891,1914,1914
+32,108790,1982,1982
+64,120109,2011,2011
+
+# dataset:../data/wiki_new.txt n:4571 m:4136
+# p , k-1 , partition time , total time 
+2,2453,293,293
+4,7194,367,367
+8,13808,502,502
+16,20825,744,744
+32,28445,1123,1123
+64,36673,1703,1703
+
+# dataset:../data/wiki_new.txt-swap.txt n:4136 m:4571
+# p , k-1 , partition time , total time 
+2,2905,300,300
+4,7914,282,282
+8,14485,342,342
+16,21964,407,407
+32,30564,528,528
+64,39438,868,868
+
+# dataset:../data/out.dbpedia-location n:172096 m:53412
+# p , k-1 , partition time , total time 
+2,1228,1128,1128
+4,4037,1218,1218
+8,5607,1115,1115
+16,5763,1171,1171
+32,6232,1289,1289
+64,6584,1488,1488
+
+# dataset:../data/out.dbpedia-location-swap.txt n:53412 m:172096
+# p , k-1 , partition time , total time 
+2,15091,508,508
+4,20296,506,506
+8,28096,512,512
+16,33643,518,518
+32,39246,525,525
+64,41968,561,561
+
+# dataset:../data/out.github n:56524 m:120872
+# p , k-1 , partition time , total time 
+2,6569,1170,1170
+4,13242,1122,1122
+8,25698,936,936
+16,40956,1041,1041
+32,57491,1282,1282
+64,74516,1704,1704
+
+# dataset:../data/out.github-swap.txt n:120872 m:56524
+# p , k-1 , partition time , total time 
+2,9871,1112,1112
+4,19772,1106,1106
+8,25319,1227,1227
+16,34390,1285,1285
+32,45331,1463,1463
+64,58280,1663,1663
+
+# dataset:../data/out.actor-movie n:127828 m:383645
+# p , k-1 , partition time , total time 
+2,42474,2851,2851
+4,113496,3054,3054
+8,159183,3425,3425
+16,208273,4034,4034
+32,246255,4565,4565
+64,294115,5334,5334
+
+# dataset:../data/out.actor-movie-swap.txt n:383645 m:127828
+# p , k-1 , partition time , total time 
+2,25716,3602,3602
+4,67842,3670,3670
+8,119015,4053,4053
+16,180480,4775,4775
+32,231801,5550,5550
+64,280842,6004,6004
+
+# dataset:../data/out.dbpedia-team n:901171 m:34466
+# p , k-1 , partition time , total time 
+2,2833,5074,5074
+4,11465,5443,5443
+8,19298,5625,5625
+16,28135,6575,6575
+32,39819,9248,9248
+64,51325,10907,10907
+
+# dataset:../data/out.dbpedia-team-swap.txt n:34466 m:901171
+# p , k-1 , partition time , total time 
+2,10432,1870,1870
+4,22847,1866,1866
+8,49557,1941,1941
+16,81134,1948,1948
+32,107797,2067,2067
+64,121190,2079,2079
+
+# dataset:../data/wiki_new.txt n:4571 m:4136
+# p , k-1 , partition time , total time 
+2,2988,243,243
+4,7522,312,312
+8,13223,459,459
+16,19725,711,711
+32,27261,1086,1086
+64,35105,1336,1336
+
+# dataset:../data/wiki_new.txt-swap.txt n:4136 m:4571
+# p , k-1 , partition time , total time 
+2,3216,163,163
+4,7882,194,194
+8,14036,252,252
+16,21637,352,352
+32,29947,496,496
+64,39025,680,680
+
+# dataset:../data/out.dbpedia-location n:172096 m:53412
+# p , k-1 , partition time , total time 
+2,338,738,738
+4,995,799,799
+8,1955,925,925
+16,2188,1086,1086
+32,2265,1282,1282
+64,2556,1638,1638
+
+# dataset:../data/out.dbpedia-location-swap.txt n:53412 m:172096
+# p , k-1 , partition time , total time 
+2,7837,450,450
+4,19478,449,449
+8,26426,451,451
+16,32763,458,458
+32,36805,461,461
+64,40170,495,496
+
+# dataset:../data/out.github n:56524 m:120872
+# p , k-1 , partition time , total time 
+2,2417,724,724
+4,11473,739,739
+8,23229,829,829
+16,37540,997,997
+32,53104,1281,1281
+64,68886,1783,1783
+
+# dataset:../data/out.github-swap.txt n:120872 m:56524
+# p , k-1 , partition time , total time 
+2,5998,907,907
+4,17318,926,926
+8,23684,1024,1025
+16,31461,1150,1150
+32,41558,1359,1359
+64,54208,1708,1708
+
+# dataset:../data/out.actor-movie n:127828 m:383645
+# p , k-1 , partition time , total time 
+2,52008,2542,2542
+4,104483,2906,2906
+8,148701,3379,3379
+16,191760,3964,3964
+32,223492,4764,4764
+64,266455,5258,5258
+
+# dataset:../data/out.actor-movie-swap.txt n:383645 m:127828
+# p , k-1 , partition time , total time 
+2,30945,3433,3433
+4,64493,3435,3435
+8,110524,3850,3850
+16,165353,4477,4477
+32,222027,5225,5225
+64,261215,5757,5757
+
+# dataset:../data/out.dbpedia-team n:901171 m:34466
+# p , k-1 , partition time , total time 
+2,1969,4602,4602
+4,5618,5071,5071
+8,10460,5516,5516
+16,23633,7103,7103
+32,32359,10388,10388
+64,44354,13887,13887
+
+# dataset:../data/out.dbpedia-team-swap.txt n:34466 m:901171
+# p , k-1 , partition time , total time 
+2,7864,1800,1800
+4,22626,1817,1817
+8,48969,1846,1846
+16,79201,1918,1918
+32,105794,1986,1986
+64,119482,2052,2052
+
+begin solve ../data/wiki_new.txt
+load data ok!
+runtime:168
+par:0 size:2260 edge:3637
+par:1 size:2306 edge:3345
+------------
+begin solve ../data/wiki_new.txt
+load data ok!
+runtime:239
+par:0 size:1108 edge:3111
+par:1 size:1153 edge:2882
+par:2 size:1153 edge:2787
+par:3 size:1152 edge:2462
+------------
+begin solve ../data/wiki_new.txt
+load data ok!
+runtime:344
+par:0 size:535 edge:2371
+par:1 size:576 edge:2274
+par:2 size:576 edge:2252
+par:3 size:575 edge:2212
+par:4 size:579 edge:2236
+par:5 size:580 edge:2151
+par:6 size:572 edge:1886
+par:7 size:573 edge:1773
+------------
+begin solve ../data/wiki_new.txt
+load data ok!
+runtime:502
+par:0 size:246 edge:1789
+par:1 size:285 edge:1695
+par:2 size:291 edge:1703
+par:3 size:278 edge:1622
+par:4 size:291 edge:1883
+par:5 size:284 edge:1630
+par:6 size:291 edge:1860
+par:7 size:288 edge:1643
+par:8 size:291 edge:1705
+par:9 size:292 edge:1705
+par:10 size:291 edge:1576
+par:11 size:279 edge:1401
+par:12 size:291 edge:1799
+par:13 size:292 edge:1577
+par:14 size:289 edge:1469
+par:15 size:287 edge:1251
+------------
+begin solve ../data/wiki_new.txt
+load data ok!
+runtime:719
+par:0 size:100 edge:1158
+par:1 size:142 edge:1231
+par:2 size:139 edge:1165
+par:3 size:145 edge:1380
+par:4 size:146 edge:1326
+par:5 size:146 edge:1410
+par:6 size:140 edge:1217
+par:7 size:146 edge:1476
+par:8 size:146 edge:1261
+par:9 size:145 edge:1367
+par:10 size:146 edge:1340
+par:11 size:146 edge:1338
+par:12 size:144 edge:1275
+par:13 size:146 edge:1485
+par:14 size:145 edge:1132
+par:15 size:145 edge:1358
+par:16 size:141 edge:1133
+par:17 size:146 edge:1303
+par:18 size:136 edge:1108
+par:19 size:145 edge:1139
+par:20 size:145 edge:1230
+par:21 size:145 edge:1203
+par:22 size:146 edge:1190
+par:23 size:145 edge:1192
+par:24 size:145 edge:1241
+par:25 size:145 edge:1138
+par:26 size:145 edge:1053
+par:27 size:146 edge:1327
+par:28 size:141 edge:1080
+par:29 size:145 edge:980
+par:30 size:138 edge:915
+par:31 size:145 edge:1090
+------------
+begin solve ../data/wiki_new.txt
+load data ok!
+runtime:697
+par:0 size:27 edge:517
+par:1 size:72 edge:861
+par:2 size:72 edge:1003
+par:3 size:72 edge:1028
+par:4 size:72 edge:871
+par:5 size:72 edge:1048
+par:6 size:72 edge:1176
+par:7 size:72 edge:938
+par:8 size:72 edge:820
+par:9 size:72 edge:773
+par:10 size:72 edge:905
+par:11 size:72 edge:843
+par:12 size:72 edge:1105
+par:13 size:72 edge:897
+par:14 size:72 edge:1033
+par:15 size:72 edge:985
+par:16 size:72 edge:1034
+par:17 size:72 edge:995
+par:18 size:72 edge:885
+par:19 size:72 edge:1035
+par:20 size:72 edge:860
+par:21 size:72 edge:831
+par:22 size:72 edge:883
+par:23 size:72 edge:990
+par:24 size:72 edge:907
+par:25 size:72 edge:979
+par:26 size:72 edge:969
+par:27 size:72 edge:818
+par:28 size:72 edge:884
+par:29 size:72 edge:907
+par:30 size:72 edge:949
+par:31 size:72 edge:771
+par:32 size:72 edge:836
+par:33 size:72 edge:781
+par:34 size:72 edge:876
+par:35 size:72 edge:888
+par:36 size:72 edge:1033
+par:37 size:72 edge:752
+par:38 size:72 edge:975
+par:39 size:72 edge:1004
+par:40 size:72 edge:917
+par:41 size:72 edge:948
+par:42 size:72 edge:901
+par:43 size:72 edge:945
+par:44 size:72 edge:885
+par:45 size:72 edge:798
+par:46 size:72 edge:946
+par:47 size:73 edge:849
+par:48 size:72 edge:890
+par:49 size:72 edge:1008
+par:50 size:72 edge:878
+par:51 size:72 edge:823
+par:52 size:72 edge:886
+par:53 size:72 edge:1032
+par:54 size:72 edge:1081
+par:55 size:72 edge:779
+par:56 size:72 edge:921
+par:57 size:72 edge:733
+par:58 size:72 edge:1031
+par:59 size:72 edge:818
+par:60 size:72 edge:933
+par:61 size:72 edge:827
+par:62 size:73 edge:865
+par:63 size:73 edge:931
+------------
+begin solve ../data/wiki_new.txt-swap.txt
+load data ok!
+runtime:135
+par:0 size:2075 edge:4536
+par:1 size:2056 edge:3867
+------------
+begin solve ../data/wiki_new.txt-swap.txt
+load data ok!
+runtime:182
+par:0 size:1030 edge:4260
+par:1 size:1048 edge:4434
+par:2 size:1046 edge:3792
+par:3 size:1007 edge:2821
+------------
+begin solve ../data/wiki_new.txt-swap.txt
+load data ok!
+runtime:255
+par:0 size:519 edge:3618
+par:1 size:521 edge:3599
+par:2 size:523 edge:3622
+par:3 size:516 edge:3077
+par:4 size:523 edge:3635
+par:5 size:523 edge:3531
+par:6 size:523 edge:3038
+par:7 size:483 edge:1548
+------------
+begin solve ../data/wiki_new.txt-swap.txt
+load data ok!
+runtime:397
+par:0 size:238 edge:3190
+par:1 size:273 edge:3082
+par:2 size:232 edge:2260
+par:3 size:241 edge:2328
+par:4 size:249 edge:2380
+par:5 size:273 edge:3749
+par:6 size:273 edge:3260
+par:7 size:273 edge:3172
+par:8 size:252 edge:2171
+par:9 size:273 edge:2236
+par:10 size:260 edge:2482
+par:11 size:273 edge:2934
+par:12 size:241 edge:1435
+par:13 size:253 edge:1466
+par:14 size:253 edge:1125
+par:15 size:274 edge:1768
+------------
+begin solve ../data/wiki_new.txt-swap.txt
+load data ok!
+runtime:516
+par:0 size:89 edge:862
+par:1 size:130 edge:2039
+par:2 size:130 edge:1593
+par:3 size:131 edge:2600
+par:4 size:131 edge:2820
+par:5 size:131 edge:3057
+par:6 size:130 edge:1918
+par:7 size:130 edge:2012
+par:8 size:131 edge:2266
+par:9 size:130 edge:2014
+par:10 size:131 edge:2379
+par:11 size:130 edge:1317
+par:12 size:131 edge:1746
+par:13 size:131 edge:2409
+par:14 size:131 edge:3066
+par:15 size:130 edge:1553
+par:16 size:131 edge:2100
+par:17 size:130 edge:1928
+par:18 size:130 edge:1439
+par:19 size:130 edge:1782
+par:20 size:130 edge:1137
+par:21 size:129 edge:1307
+par:22 size:130 edge:1357
+par:23 size:130 edge:1827
+par:24 size:130 edge:1373
+par:25 size:130 edge:1420
+par:26 size:131 edge:1632
+par:27 size:131 edge:963
+par:28 size:131 edge:1689
+par:29 size:130 edge:948
+par:30 size:130 edge:985
+par:31 size:131 edge:1215
+------------
+begin solve ../data/wiki_new.txt-swap.txt
+load data ok!
+runtime:803
+par:0 size:29 edge:615
+par:1 size:70 edge:1582
+par:2 size:69 edge:1388
+par:3 size:46 edge:648
+par:4 size:47 edge:683
+par:5 size:71 edge:1622
+par:6 size:71 edge:1394
+par:7 size:71 edge:2571
+par:8 size:53 edge:880
+par:9 size:63 edge:1134
+par:10 size:61 edge:816
+par:11 size:70 edge:1334
+par:12 size:70 edge:1748
+par:13 size:71 edge:2070
+par:14 size:65 edge:1236
+par:15 size:59 edge:1028
+par:16 size:60 edge:824
+par:17 size:51 edge:743
+par:18 size:47 edge:558
+par:19 size:71 edge:1436
+par:20 size:70 edge:1662
+par:21 size:71 edge:1852
+par:22 size:49 edge:715
+par:23 size:71 edge:1888
+par:24 size:71 edge:1435
+par:25 size:50 edge:538
+par:26 size:70 edge:1610
+par:27 size:53 edge:898
+par:28 size:66 edge:1094
+par:29 size:71 edge:1476
+par:30 size:67 edge:1083
+par:31 size:67 edge:1012
+par:32 size:51 edge:530
+par:33 size:55 edge:793
+par:34 size:53 edge:731
+par:35 size:71 edge:2275
+par:36 size:70 edge:1066
+par:37 size:66 edge:935
+par:38 size:61 edge:1041
+par:39 size:71 edge:1814
+par:40 size:71 edge:1815
+par:41 size:60 edge:1036
+par:42 size:63 edge:773
+par:43 size:66 edge:831
+par:44 size:61 edge:738
+par:45 size:67 edge:843
+par:46 size:70 edge:875
+par:47 size:70 edge:1510
+par:48 size:70 edge:1701
+par:49 size:65 edge:823
+par:50 size:69 edge:927
+par:51 size:71 edge:1643
+par:52 size:71 edge:895
+par:53 size:66 edge:795
+par:54 size:70 edge:1402
+par:55 size:66 edge:730
+par:56 size:71 edge:983
+par:57 size:71 edge:1265
+par:58 size:71 edge:1534
+par:59 size:69 edge:569
+par:60 size:71 edge:1435
+par:61 size:71 edge:862
+par:62 size:71 edge:1177
+par:63 size:71 edge:1529
+------------
+begin solve ../data/out.dbpedia-location
+load data ok!
+runtime:633
+par:0 size:85185 edge:30959
+par:1 size:86906 edge:30872
+------------
+begin solve ../data/out.dbpedia-location
+load data ok!
+runtime:768
+par:0 size:41733 edge:17455
+par:1 size:43452 edge:17296
+par:2 size:43453 edge:17367
+par:3 size:43453 edge:17584
+------------
+begin solve ../data/out.dbpedia-location
+load data ok!
+runtime:987
+par:0 size:20006 edge:9718
+par:1 size:21726 edge:9789
+par:2 size:21725 edge:9921
+par:3 size:21727 edge:9403
+par:4 size:21726 edge:9740
+par:5 size:21727 edge:9618
+par:6 size:21727 edge:9203
+par:7 size:21727 edge:9902
+------------
+begin solve ../data/out.dbpedia-location
+load data ok!
+runtime:1387
+par:0 size:9143 edge:5316
+par:1 size:10860 edge:5916
+par:2 size:10863 edge:5879
+par:3 size:10863 edge:5606
+par:4 size:10864 edge:5715
+par:5 size:10863 edge:5270
+par:6 size:10863 edge:5443
+par:7 size:10863 edge:5353
+par:8 size:10863 edge:5280
+par:9 size:10863 edge:5078
+par:10 size:10863 edge:5224
+par:11 size:10864 edge:5216
+par:12 size:10864 edge:5194
+par:13 size:10864 edge:5333
+par:14 size:10864 edge:5229
+par:15 size:10864 edge:5279
+------------
+begin solve ../data/out.dbpedia-location
+load data ok!
+runtime:2520
+par:0 size:3711 edge:2796
+par:1 size:5431 edge:3598
+par:2 size:5429 edge:3532
+par:3 size:5430 edge:3477
+par:4 size:5432 edge:3524
+par:5 size:5431 edge:3521
+par:6 size:5431 edge:3475
+par:7 size:5431 edge:3306
+par:8 size:5432 edge:3298
+par:9 size:5431 edge:3330
+par:10 size:5430 edge:3265
+par:11 size:5432 edge:3316
+par:12 size:5432 edge:3227
+par:13 size:5432 edge:3196
+par:14 size:5432 edge:3187
+par:15 size:5432 edge:3135
+par:16 size:5432 edge:3132
+par:17 size:5432 edge:3129
+par:18 size:5432 edge:3104
+par:19 size:5432 edge:3193
+par:20 size:5432 edge:3192
+par:21 size:5432 edge:3091
+par:22 size:5432 edge:3063
+par:23 size:5432 edge:3161
+par:24 size:5432 edge:2926
+par:25 size:5432 edge:3053
+par:26 size:5432 edge:3053
+par:27 size:5432 edge:3077
+par:28 size:5432 edge:3134
+par:29 size:5432 edge:3030
+par:30 size:5432 edge:2971
+par:31 size:5432 edge:3215
+------------
+begin solve ../data/out.dbpedia-location
+load data ok!
+runtime:2850
+par:0 size:996 edge:1063
+par:1 size:2715 edge:2320
+par:2 size:2714 edge:2275
+par:3 size:2715 edge:2257
+par:4 size:2713 edge:2320
+par:5 size:2714 edge:2265
+par:6 size:2714 edge:2289
+par:7 size:2716 edge:2240
+par:8 size:2715 edge:2303
+par:9 size:2715 edge:2192
+par:10 size:2715 edge:2252
+par:11 size:2715 edge:2229
+par:12 size:2715 edge:2285
+par:13 size:2715 edge:2221
+par:14 size:2715 edge:2257
+par:15 size:2715 edge:2233
+par:16 size:2715 edge:2218
+par:17 size:2715 edge:2157
+par:18 size:2716 edge:2211
+par:19 size:2715 edge:2191
+par:20 size:2715 edge:2126
+par:21 size:2715 edge:2224
+par:22 size:2715 edge:2151
+par:23 size:2716 edge:2206
+par:24 size:2715 edge:2185
+par:25 size:2715 edge:2105
+par:26 size:2716 edge:2135
+par:27 size:2715 edge:2137
+par:28 size:2716 edge:2168
+par:29 size:2715 edge:2107
+par:30 size:2715 edge:2142
+par:31 size:2716 edge:2079
+par:32 size:2716 edge:2149
+par:33 size:2716 edge:2079
+par:34 size:2716 edge:2154
+par:35 size:2716 edge:2147
+par:36 size:2717 edge:2133
+par:37 size:2716 edge:2077
+par:38 size:2716 edge:2153
+par:39 size:2716 edge:2161
+par:40 size:2716 edge:2102
+par:41 size:2716 edge:2117
+par:42 size:2717 edge:2063
+par:43 size:2717 edge:2133
+par:44 size:2717 edge:2120
+par:45 size:2716 edge:2147
+par:46 size:2716 edge:2122
+par:47 size:2716 edge:2114
+par:48 size:2717 edge:2085
+par:49 size:2716 edge:2080
+par:50 size:2716 edge:2099
+par:51 size:2717 edge:2100
+par:52 size:2717 edge:2047
+par:53 size:2717 edge:2127
+par:54 size:2717 edge:2063
+par:55 size:2717 edge:2143
+par:56 size:2716 edge:2108
+par:57 size:2717 edge:2115
+par:58 size:2717 edge:2053
+par:59 size:2717 edge:2131
+par:60 size:2717 edge:2115
+par:61 size:2717 edge:2118
+par:62 size:2717 edge:2066
+par:63 size:2717 edge:2137
+------------
+begin solve ../data/out.dbpedia-location-swap.txt
+load data ok!
+runtime:692
+par:0 size:26436 edge:117878
+par:1 size:26971 edge:78360
+------------
+begin solve ../data/out.dbpedia-location-swap.txt
+load data ok!
+runtime:822
+par:0 size:12953 edge:63288
+par:1 size:13482 edge:69081
+par:2 size:13485 edge:47272
+par:3 size:13487 edge:30606
+------------
+begin solve ../data/out.dbpedia-location-swap.txt
+load data ok!
+runtime:1149
+par:0 size:6211 edge:33575
+par:1 size:6746 edge:58476
+par:2 size:6720 edge:25625
+par:3 size:6746 edge:27307
+par:4 size:6746 edge:21692
+par:5 size:6746 edge:22633
+par:6 size:6746 edge:26152
+par:7 size:6746 edge:16583
+------------
+begin solve ../data/out.dbpedia-location-swap.txt
+load data ok!
+runtime:1663
+par:0 size:2837 edge:14783
+par:1 size:3371 edge:17401
+par:2 size:3372 edge:23292
+par:3 size:3371 edge:14514
+par:4 size:3370 edge:20635
+par:5 size:3371 edge:30298
+par:6 size:3371 edge:13035
+par:7 size:3371 edge:11570
+par:8 size:3372 edge:15583
+par:9 size:3372 edge:10935
+par:10 size:3370 edge:11547
+par:11 size:3371 edge:13563
+par:12 size:3372 edge:11926
+par:13 size:3372 edge:8567
+par:14 size:3372 edge:8240
+par:15 size:3372 edge:8779
+------------
+begin solve ../data/out.dbpedia-location-swap.txt
+load data ok!
+runtime:2228
+par:0 size:1154 edge:8550
+par:1 size:1689 edge:13059
+par:2 size:1659 edge:6544
+par:3 size:1672 edge:6602
+par:4 size:1689 edge:11616
+par:5 size:1679 edge:6562
+par:6 size:1683 edge:8527
+par:7 size:1681 edge:6704
+par:8 size:1682 edge:8544
+par:9 size:1689 edge:23258
+par:10 size:1687 edge:8783
+par:11 size:1689 edge:8371
+par:12 size:1687 edge:9025
+par:13 size:1683 edge:5904
+par:14 size:1678 edge:7621
+par:15 size:1682 edge:7168
+par:16 size:1689 edge:6284
+par:17 size:1689 edge:5540
+par:18 size:1689 edge:6592
+par:19 size:1689 edge:6976
+par:20 size:1689 edge:14775
+par:21 size:1689 edge:9632
+par:22 size:1689 edge:6953
+par:23 size:1689 edge:4298
+par:24 size:1689 edge:4359
+par:25 size:1689 edge:6499
+par:26 size:1689 edge:7860
+par:27 size:1689 edge:5152
+par:28 size:1689 edge:3832
+par:29 size:1689 edge:4247
+par:30 size:1689 edge:3401
+par:31 size:1689 edge:5427
+------------
+begin solve ../data/out.dbpedia-location-swap.txt
+load data ok!
+runtime:2424
+par:0 size:309 edge:2175
+par:1 size:842 edge:3878
+par:2 size:843 edge:4605
+par:3 size:841 edge:3482
+par:4 size:844 edge:2978
+par:5 size:844 edge:7527
+par:6 size:844 edge:9517
+par:7 size:843 edge:3386
+par:8 size:842 edge:3648
+par:9 size:843 edge:4502
+par:10 size:842 edge:2976
+par:11 size:841 edge:4668
+par:12 size:841 edge:6579
+par:13 size:842 edge:4028
+par:14 size:842 edge:6164
+par:15 size:844 edge:17751
+par:16 size:841 edge:4170
+par:17 size:843 edge:3193
+par:18 size:844 edge:4160
+par:19 size:842 edge:4034
+par:20 size:843 edge:4139
+par:21 size:841 edge:4379
+par:22 size:844 edge:5532
+par:23 size:843 edge:2842
+par:24 size:844 edge:5287
+par:25 size:841 edge:3150
+par:26 size:843 edge:3698
+par:27 size:842 edge:4195
+par:28 size:842 edge:2529
+par:29 size:843 edge:2795
+par:30 size:841 edge:2507
+par:31 size:842 edge:2859
+par:32 size:842 edge:5237
+par:33 size:841 edge:5025
+par:34 size:843 edge:3162
+par:35 size:842 edge:2942
+par:36 size:842 edge:2872
+par:37 size:844 edge:4275
+par:38 size:841 edge:2855
+par:39 size:841 edge:3381
+par:40 size:842 edge:3062
+par:41 size:842 edge:4337
+par:42 size:844 edge:6740
+par:43 size:841 edge:4496
+par:44 size:841 edge:3835
+par:45 size:843 edge:3059
+par:46 size:844 edge:2440
+par:47 size:844 edge:3485
+par:48 size:844 edge:3112
+par:49 size:844 edge:5955
+par:50 size:844 edge:4256
+par:51 size:844 edge:3985
+par:52 size:844 edge:2742
+par:53 size:844 edge:3241
+par:54 size:844 edge:4004
+par:55 size:844 edge:3619
+par:56 size:844 edge:4928
+par:57 size:844 edge:3947
+par:58 size:844 edge:4457
+par:59 size:844 edge:3038
+par:60 size:844 edge:2745
+par:61 size:844 edge:2424
+par:62 size:844 edge:2832
+par:63 size:844 edge:3692
+------------
+begin solve ../data/out.github
+load data ok!
+runtime:990
+par:0 size:27977 edge:87732
+par:1 size:28542 edge:44447
+------------
+begin solve ../data/out.github
+load data ok!
+runtime:1142
+par:0 size:13706 edge:55439
+par:1 size:14271 edge:49585
+par:2 size:14271 edge:23756
+par:3 size:14271 edge:22290
+------------
+begin solve ../data/out.github
+load data ok!
+runtime:1609
+par:0 size:6570 edge:32131
+par:1 size:7136 edge:42035
+par:2 size:7133 edge:17469
+par:3 size:7136 edge:23267
+par:4 size:7136 edge:15126
+par:5 size:7136 edge:17278
+par:6 size:7136 edge:12146
+par:7 size:7136 edge:13630
+------------
+begin solve ../data/out.github
+load data ok!
+runtime:2304
+par:0 size:3002 edge:15718
+par:1 size:3567 edge:24414
+par:2 size:3568 edge:19076
+par:3 size:3568 edge:15585
+par:4 size:3568 edge:26169
+par:5 size:3566 edge:9011
+par:6 size:3568 edge:14926
+par:7 size:3568 edge:8904
+par:8 size:3568 edge:7771
+par:9 size:3568 edge:8346
+par:10 size:3568 edge:8161
+par:11 size:3568 edge:7375
+par:12 size:3568 edge:11468
+par:13 size:3568 edge:7436
+par:14 size:3568 edge:7918
+par:15 size:3568 edge:6991
+------------
+begin solve ../data/out.github
+load data ok!
+runtime:2719
+par:0 size:1218 edge:6844
+par:1 size:1783 edge:11851
+par:2 size:1784 edge:15518
+par:3 size:1782 edge:6995
+par:4 size:1784 edge:10774
+par:5 size:1784 edge:14792
+par:6 size:1784 edge:11006
+par:7 size:1784 edge:16667
+par:8 size:1784 edge:6017
+par:9 size:1784 edge:7321
+par:10 size:1784 edge:7598
+par:11 size:1784 edge:10560
+par:12 size:1784 edge:7710
+par:13 size:1784 edge:6447
+par:14 size:1784 edge:5140
+par:15 size:1784 edge:5500
+par:16 size:1784 edge:4936
+par:17 size:1784 edge:5468
+par:18 size:1784 edge:6888
+par:19 size:1784 edge:5367
+par:20 size:1784 edge:5440
+par:21 size:1784 edge:4738
+par:22 size:1784 edge:5267
+par:23 size:1784 edge:4632
+par:24 size:1784 edge:5303
+par:25 size:1784 edge:5734
+par:26 size:1784 edge:5617
+par:27 size:1784 edge:4555
+par:28 size:1784 edge:4733
+par:29 size:1784 edge:4817
+par:30 size:1784 edge:4639
+par:31 size:1784 edge:4292
+------------
+begin solve ../data/out.github
+load data ok!
+runtime:3183
+par:0 size:326 edge:1803
+par:1 size:892 edge:5021
+par:2 size:892 edge:7277
+par:3 size:891 edge:5228
+par:4 size:892 edge:7006
+par:5 size:892 edge:6204
+par:6 size:891 edge:4327
+par:7 size:892 edge:10229
+par:8 size:892 edge:4594
+par:9 size:892 edge:4748
+par:10 size:892 edge:8160
+par:11 size:892 edge:5152
+par:12 size:892 edge:7615
+par:13 size:892 edge:4396
+par:14 size:892 edge:4099
+par:15 size:892 edge:4650
+par:16 size:892 edge:4048
+par:17 size:891 edge:4108
+par:18 size:892 edge:4791
+par:19 size:892 edge:3990
+par:20 size:892 edge:4299
+par:21 size:892 edge:4317
+par:22 size:892 edge:4027
+par:23 size:892 edge:3761
+par:24 size:892 edge:4439
+par:25 size:892 edge:3423
+par:26 size:892 edge:4029
+par:27 size:892 edge:4184
+par:28 size:892 edge:3763
+par:29 size:892 edge:4494
+par:30 size:892 edge:4214
+par:31 size:892 edge:4107
+par:32 size:892 edge:4835
+par:33 size:892 edge:3650
+par:34 size:892 edge:3426
+par:35 size:892 edge:5144
+par:36 size:892 edge:4062
+par:37 size:892 edge:3504
+par:38 size:892 edge:3869
+par:39 size:892 edge:3437
+par:40 size:892 edge:4396
+par:41 size:892 edge:6409
+par:42 size:892 edge:4212
+par:43 size:892 edge:3798
+par:44 size:892 edge:4518
+par:45 size:892 edge:4484
+par:46 size:892 edge:4074
+par:47 size:892 edge:4633
+par:48 size:892 edge:3711
+par:49 size:892 edge:3525
+par:50 size:892 edge:4171
+par:51 size:892 edge:3099
+par:52 size:892 edge:4179
+par:53 size:892 edge:3790
+par:54 size:892 edge:3407
+par:55 size:892 edge:4022
+par:56 size:892 edge:3089
+par:57 size:892 edge:3420
+par:58 size:892 edge:4044
+par:59 size:892 edge:3993
+par:60 size:892 edge:3940
+par:61 size:892 edge:3637
+par:62 size:892 edge:3773
+par:63 size:892 edge:3936
+------------
+begin solve ../data/out.github-swap.txt
+load data ok!
+runtime:773
+par:0 size:59830 edge:40959
+par:1 size:61037 edge:34288
+------------
+begin solve ../data/out.github-swap.txt
+load data ok!
+runtime:1033
+par:0 size:29314 edge:30189
+par:1 size:30509 edge:18557
+par:2 size:30521 edge:18523
+par:3 size:30523 edge:19204
+------------
+begin solve ../data/out.github-swap.txt
+load data ok!
+runtime:1369
+par:0 size:14051 edge:19981
+par:1 size:15260 edge:24773
+par:2 size:15256 edge:11534
+par:3 size:15260 edge:13192
+par:4 size:15260 edge:11786
+par:5 size:15260 edge:10711
+par:6 size:15260 edge:10481
+par:7 size:15260 edge:11464
+------------
+begin solve ../data/out.github-swap.txt
+load data ok!
+runtime:1988
+par:0 size:6424 edge:13005
+par:1 size:7631 edge:21046
+par:2 size:7615 edge:8261
+par:3 size:7629 edge:11650
+par:4 size:7626 edge:6871
+par:5 size:7628 edge:9495
+par:6 size:7633 edge:14426
+par:7 size:7626 edge:6522
+par:8 size:7631 edge:7623
+par:9 size:7630 edge:6674
+par:10 size:7632 edge:8738
+par:11 size:7631 edge:6852
+par:12 size:7632 edge:6782
+par:13 size:7633 edge:6154
+par:14 size:7633 edge:6291
+par:15 size:7633 edge:6828
+------------
+begin solve ../data/out.github-swap.txt
+load data ok!
+runtime:2792
+par:0 size:2606 edge:6623
+par:1 size:3815 edge:11451
+par:2 size:3814 edge:5225
+par:3 size:3815 edge:8373
+par:4 size:3815 edge:10406
+par:5 size:3814 edge:5134
+par:6 size:3815 edge:10048
+par:7 size:3814 edge:8018
+par:8 size:3814 edge:6080
+par:9 size:3815 edge:4729
+par:10 size:3815 edge:13049
+par:11 size:3815 edge:4384
+par:12 size:3815 edge:4562
+par:13 size:3815 edge:5161
+par:14 size:3815 edge:5330
+par:15 size:3815 edge:4244
+par:16 size:3815 edge:4384
+par:17 size:3815 edge:4833
+par:18 size:3815 edge:5315
+par:19 size:3815 edge:12953
+par:20 size:3815 edge:3947
+par:21 size:3815 edge:4832
+par:22 size:3815 edge:4383
+par:23 size:3815 edge:4655
+par:24 size:3815 edge:4158
+par:25 size:3815 edge:4305
+par:26 size:3815 edge:4194
+par:27 size:3815 edge:3985
+par:28 size:3815 edge:4383
+par:29 size:3815 edge:4673
+par:30 size:3815 edge:4586
+par:31 size:3815 edge:5098
+------------
+begin solve ../data/out.github-swap.txt
+load data ok!
+runtime:3148
+par:0 size:699 edge:1547
+par:1 size:1906 edge:4071
+par:2 size:1907 edge:6229
+par:3 size:1908 edge:10575
+par:4 size:1908 edge:10937
+par:5 size:1907 edge:4390
+par:6 size:1907 edge:4502
+par:7 size:1906 edge:4973
+par:8 size:1907 edge:4094
+par:9 size:1906 edge:4204
+par:10 size:1907 edge:3889
+par:11 size:1908 edge:7412
+par:12 size:1908 edge:7304
+par:13 size:1908 edge:4760
+par:14 size:1906 edge:3643
+par:15 size:1906 edge:3460
+par:16 size:1906 edge:3884
+par:17 size:1906 edge:4042
+par:18 size:1906 edge:3947
+par:19 size:1907 edge:4358
+par:20 size:1907 edge:3883
+par:21 size:1906 edge:3331
+par:22 size:1907 edge:3872
+par:23 size:1906 edge:3928
+par:24 size:1908 edge:3706
+par:25 size:1907 edge:3332
+par:26 size:1907 edge:3444
+par:27 size:1907 edge:4170
+par:28 size:1906 edge:3631
+par:29 size:1907 edge:3394
+par:30 size:1908 edge:3614
+par:31 size:1908 edge:3797
+par:32 size:1907 edge:3619
+par:33 size:1908 edge:3741
+par:34 size:1908 edge:3694
+par:35 size:1907 edge:4276
+par:36 size:1908 edge:3870
+par:37 size:1908 edge:4640
+par:38 size:1908 edge:3821
+par:39 size:1908 edge:3386
+par:40 size:1908 edge:3703
+par:41 size:1908 edge:4211
+par:42 size:1908 edge:3799
+par:43 size:1908 edge:3139
+par:44 size:1908 edge:2835
+par:45 size:1908 edge:4228
+par:46 size:1908 edge:3388
+par:47 size:1908 edge:3312
+par:48 size:1908 edge:3655
+par:49 size:1908 edge:4583
+par:50 size:1908 edge:4879
+par:51 size:1908 edge:3212
+par:52 size:1908 edge:3274
+par:53 size:1908 edge:3423
+par:54 size:1908 edge:5180
+par:55 size:1908 edge:4714
+par:56 size:1908 edge:3486
+par:57 size:1908 edge:3505
+par:58 size:1908 edge:3625
+par:59 size:1908 edge:3721
+par:60 size:1908 edge:3954
+par:61 size:1908 edge:3501
+par:62 size:1908 edge:3192
+par:63 size:1908 edge:4301
+------------
+begin solve ../data/out.actor-movie
+load data ok!
+runtime:2700
+par:0 size:63272 edge:250803
+par:1 size:64551 edge:212215
+------------
+begin solve ../data/out.actor-movie
+load data ok!
+runtime:3840
+par:0 size:30998 edge:154879
+par:1 size:32276 edge:160075
+par:2 size:32275 edge:125343
+par:3 size:32274 edge:109276
+------------
+begin solve ../data/out.actor-movie
+load data ok!
+runtime:5232
+par:0 size:14865 edge:80345
+par:1 size:16130 edge:102699
+par:2 size:16134 edge:79452
+par:3 size:16144 edge:104295
+par:4 size:16139 edge:79525
+par:5 size:16134 edge:76095
+par:6 size:16136 edge:58003
+par:7 size:16141 edge:56105
+------------
+begin solve ../data/out.actor-movie
+load data ok!
+runtime:7368
+par:0 size:6791 edge:48590
+par:1 size:8069 edge:67760
+par:2 size:8069 edge:49656
+par:3 size:8069 edge:68196
+par:4 size:8069 edge:44121
+par:5 size:8069 edge:63030
+par:6 size:8069 edge:50120
+par:7 size:8069 edge:61229
+par:8 size:8068 edge:44470
+par:9 size:8069 edge:41153
+par:10 size:8069 edge:44185
+par:11 size:8069 edge:40461
+par:12 size:8069 edge:41860
+par:13 size:8068 edge:36328
+par:14 size:8069 edge:36144
+par:15 size:8068 edge:34473
+------------
+begin solve ../data/out.actor-movie
+load data ok!
+runtime:11858
+par:0 size:2756 edge:23019
+par:1 size:4034 edge:32033
+par:2 size:4034 edge:34857
+par:3 size:4034 edge:32386
+par:4 size:4035 edge:36609
+par:5 size:4035 edge:35034
+par:6 size:4034 edge:33041
+par:7 size:4034 edge:31758
+par:8 size:4035 edge:32062
+par:9 size:4034 edge:31014
+par:10 size:4034 edge:32951
+par:11 size:4034 edge:33026
+par:12 size:4035 edge:29533
+par:13 size:4034 edge:30083
+par:14 size:4034 edge:32538
+par:15 size:4034 edge:33639
+par:16 size:4035 edge:31190
+par:17 size:4034 edge:30369
+par:18 size:4035 edge:37084
+par:19 size:4034 edge:25550
+par:20 size:4035 edge:27603
+par:21 size:4034 edge:26359
+par:22 size:4034 edge:25942
+par:23 size:4035 edge:24375
+par:24 size:4034 edge:25127
+par:25 size:4035 edge:24275
+par:26 size:4035 edge:26154
+par:27 size:4034 edge:24511
+par:28 size:4035 edge:24097
+par:29 size:4035 edge:22005
+par:30 size:4034 edge:21553
+par:31 size:4035 edge:20952
+------------
+begin solve ../data/out.actor-movie
+load data ok!
+runtime:11823
+par:0 size:739 edge:7067
+par:1 size:2017 edge:18311
+par:2 size:2017 edge:19150
+par:3 size:2017 edge:19254
+par:4 size:2017 edge:18095
+par:5 size:2018 edge:18712
+par:6 size:2018 edge:18180
+par:7 size:2017 edge:18929
+par:8 size:2017 edge:20628
+par:9 size:2017 edge:18276
+par:10 size:2018 edge:18889
+par:11 size:2017 edge:18493
+par:12 size:2018 edge:17537
+par:13 size:2017 edge:17521
+par:14 size:2018 edge:21230
+par:15 size:2017 edge:19445
+par:16 size:2017 edge:18981
+par:17 size:2017 edge:19135
+par:18 size:2018 edge:16962
+par:19 size:2017 edge:18855
+par:20 size:2017 edge:18026
+par:21 size:2017 edge:18042
+par:22 size:2017 edge:18527
+par:23 size:2017 edge:19057
+par:24 size:2017 edge:18980
+par:25 size:2017 edge:18052
+par:26 size:2017 edge:17099
+par:27 size:2018 edge:18461
+par:28 size:2017 edge:17223
+par:29 size:2017 edge:19768
+par:30 size:2017 edge:18115
+par:31 size:2017 edge:17532
+par:32 size:2017 edge:19552
+par:33 size:2017 edge:16916
+par:34 size:2017 edge:16437
+par:35 size:2017 edge:18039
+par:36 size:2018 edge:17779
+par:37 size:2017 edge:17320
+par:38 size:2018 edge:17221
+par:39 size:2017 edge:17732
+par:40 size:2017 edge:18646
+par:41 size:2017 edge:18752
+par:42 size:2018 edge:17622
+par:43 size:2017 edge:16751
+par:44 size:2017 edge:17503
+par:45 size:2017 edge:16529
+par:46 size:2017 edge:15947
+par:47 size:2017 edge:17052
+par:48 size:2017 edge:16888
+par:49 size:2017 edge:17858
+par:50 size:2017 edge:17305
+par:51 size:2017 edge:17273
+par:52 size:2017 edge:16335
+par:53 size:2017 edge:16255
+par:54 size:2017 edge:16245
+par:55 size:2017 edge:16608
+par:56 size:2018 edge:15721
+par:57 size:2018 edge:15763
+par:58 size:2017 edge:16297
+par:59 size:2018 edge:16067
+par:60 size:2017 edge:15931
+par:61 size:2017 edge:15209
+par:62 size:2017 edge:15460
+par:63 size:2017 edge:16017
+------------
+begin solve ../data/out.actor-movie-swap.txt
+load data ok!
+runtime:2916
+par:0 size:189903 edge:121690
+par:1 size:193737 edge:86875
+------------
+begin solve ../data/out.actor-movie-swap.txt
+load data ok!
+runtime:3915
+par:0 size:93033 edge:104793
+par:1 size:96869 edge:95816
+par:2 size:96869 edge:59673
+par:3 size:96869 edge:43722
+------------
+begin solve ../data/out.actor-movie-swap.txt
+load data ok!
+runtime:5532
+par:0 size:44598 edge:78731
+par:1 size:48434 edge:87724
+par:2 size:48434 edge:58190
+par:3 size:48435 edge:54323
+par:4 size:48434 edge:48423
+par:5 size:48435 edge:37314
+par:6 size:48435 edge:27627
+par:7 size:48435 edge:27608
+------------
+begin solve ../data/out.actor-movie-swap.txt
+load data ok!
+runtime:9185
+par:0 size:20381 edge:50417
+par:1 size:24217 edge:68565
+par:2 size:24218 edge:62831
+par:3 size:24217 edge:50585
+par:4 size:24217 edge:41199
+par:5 size:24217 edge:35147
+par:6 size:24217 edge:35593
+par:7 size:24217 edge:34419
+par:8 size:24217 edge:33869
+par:9 size:24217 edge:25936
+par:10 size:24218 edge:24648
+par:11 size:24217 edge:21128
+par:12 size:24218 edge:21888
+par:13 size:24217 edge:20847
+par:14 size:24218 edge:19422
+par:15 size:24217 edge:18953
+------------
+begin solve ../data/out.actor-movie-swap.txt
+load data ok!
+runtime:12087
+par:0 size:8272 edge:23077
+par:1 size:12108 edge:52436
+par:2 size:12109 edge:34603
+par:3 size:12107 edge:42319
+par:4 size:12108 edge:36717
+par:5 size:12109 edge:33862
+par:6 size:12109 edge:38077
+par:7 size:12109 edge:29928
+par:8 size:12108 edge:29917
+par:9 size:12108 edge:24362
+par:10 size:12109 edge:25860
+par:11 size:12108 edge:21344
+par:12 size:12109 edge:27165
+par:13 size:12109 edge:31203
+par:14 size:12109 edge:22514
+par:15 size:12108 edge:19916
+par:16 size:12108 edge:21195
+par:17 size:12108 edge:17700
+par:18 size:12109 edge:19878
+par:19 size:12108 edge:17866
+par:20 size:12109 edge:16761
+par:21 size:12109 edge:17725
+par:22 size:12109 edge:16492
+par:23 size:12109 edge:16921
+par:24 size:12109 edge:15663
+par:25 size:12109 edge:16440
+par:26 size:12109 edge:16652
+par:27 size:12109 edge:15962
+par:28 size:12109 edge:14775
+par:29 size:12109 edge:15474
+par:30 size:12109 edge:15287
+par:31 size:12109 edge:14678
+------------
+begin solve ../data/out.actor-movie-swap.txt
+load data ok!
+runtime:14650
+par:0 size:2218 edge:6433
+par:1 size:6054 edge:19141
+par:2 size:6055 edge:26007
+par:3 size:6054 edge:18732
+par:4 size:6054 edge:20911
+par:5 size:6054 edge:24995
+par:6 size:6054 edge:23870
+par:7 size:6055 edge:31897
+par:8 size:6054 edge:19612
+par:9 size:6054 edge:20395
+par:10 size:6055 edge:18009
+par:11 size:6054 edge:20210
+par:12 size:6054 edge:28292
+par:13 size:6054 edge:19549
+par:14 size:6054 edge:16928
+par:15 size:6054 edge:18393
+par:16 size:6054 edge:20106
+par:17 size:6054 edge:15092
+par:18 size:6054 edge:16519
+par:19 size:6054 edge:16584
+par:20 size:6054 edge:15808
+par:21 size:6054 edge:18319
+par:22 size:6054 edge:16710
+par:23 size:6054 edge:16526
+par:24 size:6054 edge:16534
+par:25 size:6054 edge:17071
+par:26 size:6054 edge:16869
+par:27 size:6054 edge:14665
+par:28 size:6054 edge:15500
+par:29 size:6054 edge:16042
+par:30 size:6054 edge:15954
+par:31 size:6054 edge:16322
+par:32 size:6054 edge:15660
+par:33 size:6054 edge:16031
+par:34 size:6055 edge:15144
+par:35 size:6054 edge:14840
+par:36 size:6054 edge:14029
+par:37 size:6055 edge:15262
+par:38 size:6054 edge:14822
+par:39 size:6054 edge:15160
+par:40 size:6054 edge:15330
+par:41 size:6055 edge:15756
+par:42 size:6055 edge:14478
+par:43 size:6055 edge:15164
+par:44 size:6054 edge:14835
+par:45 size:6054 edge:13911
+par:46 size:6054 edge:14589
+par:47 size:6055 edge:15428
+par:48 size:6054 edge:14005
+par:49 size:6055 edge:13768
+par:50 size:6055 edge:13921
+par:51 size:6054 edge:15180
+par:52 size:6055 edge:14869
+par:53 size:6054 edge:14744
+par:54 size:6055 edge:14464
+par:55 size:6054 edge:14346
+par:56 size:6054 edge:13750
+par:57 size:6055 edge:14014
+par:58 size:6055 edge:13499
+par:59 size:6055 edge:13214
+par:60 size:6055 edge:12720
+par:61 size:6055 edge:13603
+par:62 size:6055 edge:13473
+par:63 size:6055 edge:13787
+------------
+begin solve ../data/out.dbpedia-team
+load data ok!
+runtime:3207
+par:0 size:446077 edge:27944
+par:1 size:455089 edge:20296
+------------
+begin solve ../data/out.dbpedia-team
+load data ok!
+runtime:5000
+par:0 size:218533 edge:22038
+par:1 size:227544 edge:17430
+par:2 size:227544 edge:14351
+par:3 size:227545 edge:12523
+------------
+begin solve ../data/out.dbpedia-team
+load data ok!
+runtime:5564
+par:0 size:104761 edge:16772
+par:1 size:113772 edge:14613
+par:2 size:113772 edge:12483
+par:3 size:113772 edge:11196
+par:4 size:113772 edge:10262
+par:5 size:113772 edge:9369
+par:6 size:113772 edge:8886
+par:7 size:113773 edge:8310
+------------
+begin solve ../data/out.dbpedia-team
+load data ok!
+runtime:7576
+par:0 size:47875 edge:12253
+par:1 size:56886 edge:11783
+par:2 size:56886 edge:10506
+par:3 size:56886 edge:9577
+par:4 size:56886 edge:9016
+par:5 size:56886 edge:8391
+par:6 size:56886 edge:8236
+par:7 size:56886 edge:7818
+par:8 size:56886 edge:7604
+par:9 size:56886 edge:7263
+par:10 size:56886 edge:7268
+par:11 size:56886 edge:7144
+par:12 size:56886 edge:7100
+par:13 size:56886 edge:6827
+par:14 size:56886 edge:6737
+par:15 size:56887 edge:6677
+------------
+begin solve ../data/out.dbpedia-team
+load data ok!
+runtime:10879
+par:0 size:19432 edge:8050
+par:1 size:28443 edge:9146
+par:2 size:28443 edge:8507
+par:3 size:28443 edge:7850
+par:4 size:28443 edge:7608
+par:5 size:28443 edge:7318
+par:6 size:28443 edge:7059
+par:7 size:28443 edge:7012
+par:8 size:28443 edge:6910
+par:9 size:28443 edge:6750
+par:10 size:28443 edge:6701
+par:11 size:28443 edge:6511
+par:12 size:28443 edge:6461
+par:13 size:28443 edge:6487
+par:14 size:28443 edge:6394
+par:15 size:28443 edge:6287
+par:16 size:28443 edge:6428
+par:17 size:28443 edge:6279
+par:18 size:28443 edge:6369
+par:19 size:28443 edge:6155
+par:20 size:28443 edge:6291
+par:21 size:28443 edge:6124
+par:22 size:28443 edge:6037
+par:23 size:28443 edge:6075
+par:24 size:28443 edge:6067
+par:25 size:28443 edge:6049
+par:26 size:28443 edge:6044
+par:27 size:28443 edge:6009
+par:28 size:28443 edge:5906
+par:29 size:28443 edge:5890
+par:30 size:28443 edge:6039
+par:31 size:28444 edge:5832
+------------
+begin solve ../data/out.dbpedia-team
+load data ok!
+runtime:12776
+par:0 size:5210 edge:3842
+par:1 size:14221 edge:6883
+par:2 size:14221 edge:6536
+par:3 size:14221 edge:6482
+par:4 size:14221 edge:6170
+par:5 size:14221 edge:6145
+par:6 size:14221 edge:6137
+par:7 size:14221 edge:5992
+par:8 size:14221 edge:5886
+par:9 size:14221 edge:5950
+par:10 size:14221 edge:5911
+par:11 size:14221 edge:5891
+par:12 size:14221 edge:5879
+par:13 size:14221 edge:5823
+par:14 size:14221 edge:5899
+par:15 size:14221 edge:5912
+par:16 size:14221 edge:5860
+par:17 size:14221 edge:5844
+par:18 size:14221 edge:5786
+par:19 size:14221 edge:5802
+par:20 size:14221 edge:5721
+par:21 size:14221 edge:5712
+par:22 size:14221 edge:5699
+par:23 size:14221 edge:5649
+par:24 size:14221 edge:5701
+par:25 size:14221 edge:5729
+par:26 size:14221 edge:5749
+par:27 size:14221 edge:5807
+par:28 size:14222 edge:5624
+par:29 size:14221 edge:5637
+par:30 size:14221 edge:5680
+par:31 size:14222 edge:5727
+par:32 size:14221 edge:5713
+par:33 size:14222 edge:5618
+par:34 size:14222 edge:5851
+par:35 size:14222 edge:5699
+par:36 size:14222 edge:5710
+par:37 size:14222 edge:5526
+par:38 size:14222 edge:5702
+par:39 size:14222 edge:5765
+par:40 size:14222 edge:5613
+par:41 size:14222 edge:5693
+par:42 size:14222 edge:5644
+par:43 size:14222 edge:5652
+par:44 size:14222 edge:5760
+par:45 size:14222 edge:5647
+par:46 size:14222 edge:5621
+par:47 size:14222 edge:5815
+par:48 size:14222 edge:5593
+par:49 size:14222 edge:5608
+par:50 size:14222 edge:5642
+par:51 size:14222 edge:5709
+par:52 size:14222 edge:5622
+par:53 size:14222 edge:5698
+par:54 size:14222 edge:5592
+par:55 size:14222 edge:5508
+par:56 size:14222 edge:5704
+par:57 size:14222 edge:5632
+par:58 size:14222 edge:5566
+par:59 size:14222 edge:5653
+par:60 size:14222 edge:5539
+par:61 size:14222 edge:5480
+par:62 size:14222 edge:5620
+par:63 size:14222 edge:5553
+------------
+begin solve ../data/out.dbpedia-team-swap.txt
+load data ok!
+runtime:2263
+par:0 size:17059 edge:561505
+par:1 size:17402 edge:381262
+------------
+begin solve ../data/out.dbpedia-team-swap.txt
+load data ok!
+runtime:3076
+par:0 size:8434 edge:326315
+par:1 size:8779 edge:390487
+par:2 size:8471 edge:176825
+par:3 size:8777 edge:93624
+------------
+begin solve ../data/out.dbpedia-team-swap.txt
+load data ok!
+runtime:4149
+par:0 size:4008 edge:164943
+par:1 size:4353 edge:273490
+par:2 size:4349 edge:151028
+par:3 size:4348 edge:153446
+par:4 size:4344 edge:136976
+par:5 size:4353 edge:89138
+par:6 size:4353 edge:52045
+par:7 size:4353 edge:40651
+------------
+begin solve ../data/out.dbpedia-team-swap.txt
+load data ok!
+runtime:6019
+par:0 size:1832 edge:80851
+par:1 size:2170 edge:105337
+par:2 size:2175 edge:123639
+par:3 size:2176 edge:101994
+par:4 size:2176 edge:157635
+par:5 size:2174 edge:83771
+par:6 size:2176 edge:89566
+par:7 size:2176 edge:46565
+par:8 size:2177 edge:71060
+par:9 size:2176 edge:37603
+par:10 size:2174 edge:47121
+par:11 size:2175 edge:62041
+par:12 size:2176 edge:31667
+par:13 size:2176 edge:29547
+par:14 size:2176 edge:23306
+par:15 size:2176 edge:31096
+------------
+begin solve ../data/out.dbpedia-team-swap.txt
+load data ok!
+runtime:8714
+par:0 size:743 edge:24102
+par:1 size:1088 edge:68368
+par:2 size:1088 edge:69017
+par:3 size:1088 edge:52460
+par:4 size:1087 edge:44143
+par:5 size:1088 edge:50966
+par:6 size:1088 edge:54824
+par:7 size:1088 edge:34184
+par:8 size:1088 edge:55313
+par:9 size:1088 edge:35759
+par:10 size:1088 edge:33190
+par:11 size:1088 edge:51446
+par:12 size:1087 edge:35820
+par:13 size:1087 edge:43553
+par:14 size:1087 edge:46232
+par:15 size:1088 edge:37252
+par:16 size:1086 edge:25468
+par:17 size:1087 edge:32360
+par:18 size:1088 edge:53506
+par:19 size:1088 edge:34401
+par:20 size:1088 edge:63084
+par:21 size:1088 edge:39749
+par:22 size:1087 edge:31094
+par:23 size:1087 edge:24054
+par:24 size:1087 edge:20958
+par:25 size:1088 edge:18262
+par:26 size:1088 edge:21547
+par:27 size:1088 edge:17584
+par:28 size:1088 edge:18511
+par:29 size:1088 edge:17626
+par:30 size:1088 edge:19863
+par:31 size:1088 edge:17311
+------------
+begin solve ../data/out.dbpedia-team-swap.txt
+load data ok!
+runtime:10036
+par:0 size:199 edge:7636
+par:1 size:544 edge:22982
+par:2 size:543 edge:23900
+par:3 size:544 edge:41253
+par:4 size:541 edge:28324
+par:5 size:544 edge:26098
+par:6 size:544 edge:30098
+par:7 size:543 edge:22679
+par:8 size:542 edge:18514
+par:9 size:544 edge:15633
+par:10 size:543 edge:28429
+par:11 size:543 edge:18713
+par:12 size:543 edge:26187
+par:13 size:544 edge:22100
+par:14 size:544 edge:29516
+par:15 size:544 edge:15333
+par:16 size:544 edge:22838
+par:17 size:544 edge:15804
+par:18 size:544 edge:24400
+par:19 size:544 edge:19239
+par:20 size:544 edge:31337
+par:21 size:544 edge:35765
+par:22 size:544 edge:17973
+par:23 size:544 edge:27645
+par:24 size:544 edge:30410
+par:25 size:544 edge:14335
+par:26 size:544 edge:19760
+par:27 size:544 edge:15035
+par:28 size:544 edge:15368
+par:29 size:544 edge:18138
+par:30 size:544 edge:14451
+par:31 size:544 edge:24392
+par:32 size:544 edge:15111
+par:33 size:544 edge:25212
+par:34 size:544 edge:15259
+par:35 size:544 edge:24223
+par:36 size:544 edge:22799
+par:37 size:544 edge:20586
+par:38 size:544 edge:16795
+par:39 size:544 edge:22963
+par:40 size:544 edge:19223
+par:41 size:544 edge:17308
+par:42 size:544 edge:16232
+par:43 size:544 edge:22560
+par:44 size:544 edge:14302
+par:45 size:544 edge:18208
+par:46 size:544 edge:18365
+par:47 size:544 edge:15741
+par:48 size:544 edge:20277
+par:49 size:544 edge:14367
+par:50 size:544 edge:15497
+par:51 size:544 edge:22263
+par:52 size:544 edge:9448
+par:53 size:544 edge:9846
+par:54 size:544 edge:17815
+par:55 size:544 edge:15872
+par:56 size:544 edge:18207
+par:57 size:544 edge:18055
+par:58 size:544 edge:17483
+par:59 size:544 edge:14329
+par:60 size:544 edge:12704
+par:61 size:544 edge:15143
+par:62 size:544 edge:21020
+par:63 size:544 edge:11041
+------------
+rm: cannot remove '../data/*partition*': No such file or directory
+3844
+3176
+sum:7020
+max partition:2283
+min partition:2283
+3422
+3082
+2658
+2348
+sum:11510
+max partition:1142
+min partition:1141
+2769
+2884
+2660
+2407
+2191
+2083
+1896
+1511
+sum:18401
+max partition:571
+min partition:570
+1600
+2283
+2313
+2246
+2090
+2132
+1785
+1840
+1769
+1628
+1594
+1539
+1450
+1333
+1100
+892
+sum:27594
+max partition:286
+min partition:285
+1080
+1083
+1704
+1788
+1714
+1699
+1658
+1584
+1398
+1418
+1468
+1534
+1433
+1445
+1355
+1231
+1373
+1269
+1213
+1321
+1091
+1104
+1097
+977
+1022
+889
+945
+815
+751
+832
+554
+440
+sum:39285
+max partition:143
+min partition:142
+713
+1110
+1259
+1094
+727
+780
+1249
+1034
+1300
+1141
+1096
+1239
+1199
+1220
+1142
+1088
+1031
+1031
+1075
+1039
+889
+915
+1014
+956
+965
+837
+997
+862
+855
+880
+952
+773
+860
+826
+873
+918
+959
+867
+869
+720
+743
+780
+824
+777
+697
+614
+683
+637
+657
+646
+651
+665
+447
+536
+547
+611
+522
+498
+422
+523
+342
+365
+298
+192
+sum:53031
+max partition:72
+min partition:71
+4549
+3699
+sum:8248
+max partition:2066
+min partition:2065
+4469
+4015
+3539
+2235
+sum:14258
+max partition:1033
+min partition:1032
+4200
+4059
+3575
+3502
+3333
+2537
+2089
+898
+sum:24193
+max partition:517
+min partition:516
+3931
+3412
+3501
+2896
+3039
+2561
+3261
+2653
+2636
+2278
+2430
+1998
+1488
+1382
+606
+320
+sum:38392
+max partition:259
+min partition:258
+3671
+3204
+2400
+2766
+2257
+2571
+1904
+2018
+1716
+1913
+2426
+1964
+2398
+1744
+1906
+2265
+1664
+1476
+2232
+1924
+1240
+1632
+1423
+1122
+1001
+1068
+961
+851
+536
+282
+139
+177
+sum:54851
+max partition:130
+min partition:129
+3366
+1929
+2053
+1879
+1381
+1346
+1536
+2054
+1755
+1397
+1524
+1122
+2399
+1103
+1084
+1282
+1563
+1359
+1493
+1329
+1351
+1247
+1563
+1023
+1117
+1251
+1131
+1147
+1765
+1038
+726
+988
+1894
+1034
+947
+1329
+1206
+862
+1196
+971
+1047
+1089
+628
+1026
+792
+1032
+941
+711
+856
+700
+836
+611
+447
+677
+416
+384
+346
+366
+285
+182
+76
+79
+78
+89
+sum:70434
+max partition:65
+min partition:64
+24982
+29732
+sum:54714
+max partition:86040
+min partition:86039
+15428
+10040
+8454
+21798
+sum:55720
+max partition:43020
+min partition:43019
+8089
+7384
+6458
+4892
+4112
+3765
+7925
+14169
+sum:56794
+max partition:21510
+min partition:21509
+4133
+3896
+4079
+3428
+3884
+3222
+2541
+2268
+2119
+2155
+1966
+2302
+3240
+4507
+5876
+8325
+sum:57941
+max partition:10755
+min partition:10754
+1940
+2543
+1769
+1701
+2029
+2053
+1882
+2512
+1441
+1487
+1983
+1412
+1412
+1475
+1031
+986
+1379
+1120
+1042
+966
+961
+1230
+1089
+1204
+1532
+2003
+2667
+1900
+2707
+3064
+3518
+4801
+sum:58839
+max partition:5378
+min partition:5377
+1007
+998
+1096
+879
+1077
+898
+1457
+1207
+807
+878
+906
+1063
+1238
+1234
+623
+819
+889
+837
+1188
+1116
+911
+682
+818
+786
+918
+630
+818
+620
+605
+496
+695
+637
+613
+559
+591
+536
+552
+486
+628
+617
+542
+603
+586
+363
+468
+629
+523
+633
+553
+823
+862
+1035
+1097
+1349
+1353
+704
+1489
+1285
+1494
+1641
+1658
+1879
+2363
+2428
+sum:59775
+max partition:2689
+min partition:2688
+143233
+56385
+sum:199618
+max partition:26704
+min partition:26703
+123212
+36582
+35876
+20734
+sum:216404
+max partition:13352
+min partition:13351
+110863
+22270
+17842
+19004
+23146
+12844
+11194
+9562
+sum:226725
+max partition:6676
+min partition:6675
+99672
+18039
+11524
+10910
+7606
+10286
+10267
+8790
+10977
+12310
+7230
+5632
+5877
+5327
+4872
+4696
+sum:234015
+max partition:3338
+min partition:3337
+89261
+15727
+10528
+7592
+6159
+5322
+5846
+5174
+3520
+4018
+5085
+5239
+5026
+5267
+3965
+4822
+5200
+5808
+7384
+4915
+3934
+3298
+2730
+2899
+2907
+2968
+2403
+2925
+2569
+2305
+2135
+2561
+sum:239492
+max partition:1669
+min partition:1668
+67375
+28651
+9085
+7020
+5889
+4815
+4008
+3417
+2995
+3172
+3303
+2102
+3626
+2219
+2636
+2343
+2025
+1458
+1822
+2202
+2232
+2870
+2606
+2599
+2479
+2639
+2383
+2901
+1928
+2071
+2235
+2585
+2305
+2900
+2666
+3151
+4420
+2902
+2745
+2172
+1908
+2122
+1780
+1414
+1464
+1267
+1236
+1661
+1465
+1449
+1599
+1358
+1123
+1287
+1490
+1427
+1312
+1254
+1122
+1182
+1092
+1044
+1389
+1172
+sum:246569
+max partition:835
+min partition:834
+91474
+34081
+sum:125555
+max partition:28260
+min partition:28259
+71645
+32252
+14076
+20072
+sum:138045
+max partition:14130
+min partition:14129
+50177
+35787
+22174
+12713
+7298
+7096
+10462
+9599
+sum:155306
+max partition:7065
+min partition:7064
+32651
+27863
+23614
+18188
+14426
+10968
+8210
+5772
+4059
+3143
+3331
+3820
+4305
+6233
+5154
+4469
+sum:176206
+max partition:3533
+min partition:3532
+19934
+17243
+19341
+15548
+14411
+13407
+11198
+10593
+8992
+7399
+6837
+5869
+4835
+4169
+3024
+2673
+2357
+1904
+1565
+1586
+1623
+1732
+1863
+1983
+2034
+2289
+2994
+3275
+2646
+2454
+2327
+2146
+sum:200251
+max partition:1767
+min partition:1766
+11467
+12780
+10765
+11545
+9726
+9225
+10632
+9752
+8489
+8417
+7772
+6999
+6469
+6511
+6109
+5843
+5276
+5239
+5044
+4400
+3981
+3365
+3422
+3046
+2711
+2709
+2417
+2138
+1950
+1672
+1506
+1441
+1294
+1082
+972
+909
+807
+829
+806
+794
+829
+839
+866
+857
+912
+920
+964
+988
+1017
+1046
+1024
+1218
+1496
+1529
+1624
+1609
+1352
+1324
+1229
+1206
+1168
+1153
+1071
+1078
+sum:227630
+max partition:884
+min partition:883
+36927
+30519
+sum:67446
+max partition:60434
+min partition:60433
+33834
+12270
+9938
+21359
+sum:77401
+max partition:30217
+min partition:30216
+30304
+14299
+9241
+6454
+4509
+5846
+8294
+13209
+sum:92156
+max partition:15109
+min partition:15108
+26821
+13803
+10814
+8504
+6738
+5688
+4213
+3611
+2578
+2235
+2705
+3281
+3726
+4556
+6075
+7109
+sum:112457
+max partition:7555
+min partition:7554
+22732
+14004
+10625
+8110
+7386
+7153
+6248
+5132
+4910
+3897
+3807
+3164
+3027
+2243
+2125
+1867
+1575
+1293
+1091
+1288
+1277
+1535
+1608
+1613
+1741
+1997
+2223
+2435
+2864
+3222
+3391
+3704
+sum:139287
+max partition:3778
+min partition:3777
+18926
+12534
+9591
+7909
+7298
+7102
+5941
+4792
+5319
+5003
+4469
+4368
+4097
+3652
+3007
+3791
+2194
+2801
+2231
+2505
+1974
+2350
+2354
+1740
+1838
+1632
+1466
+1269
+1382
+1207
+1102
+929
+869
+833
+704
+688
+649
+590
+563
+685
+606
+615
+720
+782
+810
+782
+835
+795
+907
+897
+1021
+1003
+1047
+1157
+1161
+1237
+1378
+1483
+1528
+1693
+1678
+1732
+1815
+1904
+sum:169940
+max partition:1889
+min partition:1888
+322249
+96683
+sum:418932
+max partition:63912
+min partition:63911
+250903
+121068
+70899
+41418
+sum:484288
+max partition:31956
+min partition:31955
+168949
+123068
+84356
+63026
+47026
+40304
+21888
+24523
+sum:573140
+max partition:15978
+min partition:15977
+94887
+92349
+82614
+66634
+50771
+43554
+41421
+35199
+31936
+28260
+25947
+24033
+17438
+11896
+8830
+16562
+sum:672331
+max partition:7989
+min partition:7988
+52001
+47811
+53365
+52258
+48857
+47107
+39029
+36714
+28148
+29715
+29717
+22956
+25153
+22511
+22568
+20428
+19093
+18342
+18378
+15584
+16426
+16689
+15092
+15600
+12575
+10262
+8873
+7693
+5730
+3389
+8164
+8506
+sum:778734
+max partition:3995
+min partition:3994
+29117
+23195
+28894
+26512
+27626
+31868
+25547
+27904
+24302
+24691
+28089
+23123
+24527
+21806
+13069
+21838
+18619
+17375
+16979
+17907
+17151
+15136
+9556
+15195
+13040
+12570
+10589
+14366
+14013
+13617
+12347
+11464
+12474
+10931
+10520
+11484
+10021
+10388
+10410
+9623
+10769
+8144
+10588
+9795
+9753
+8606
+9486
+9882
+8894
+7849
+7985
+7571
+6461
+1884
+6493
+5825
+5088
+5098
+4464
+3883
+3211
+4644
+4760
+3812
+sum:882828
+max partition:1998
+min partition:1997
+122525
+40254
+sum:162779
+max partition:191820
+min partition:191820
+115533
+53418
+22054
+23992
+sum:214997
+max partition:95910
+min partition:95910
+87457
+74630
+47196
+28017
+16392
+10182
+11059
+13419
+sum:288352
+max partition:47955
+min partition:47955
+68535
+56920
+59825
+48997
+39317
+28992
+22295
+16799
+12698
+8841
+5912
+4960
+4993
+5917
+9066
+4829
+sum:398896
+max partition:23978
+min partition:23977
+48039
+44045
+41896
+38298
+44357
+40277
+37072
+32410
+27180
+24551
+20689
+18010
+15178
+15500
+11749
+9590
+8464
+7228
+6050
+4637
+3948
+3013
+2385
+2943
+2691
+2337
+2941
+3415
+6078
+2976
+2306
+2403
+sum:532656
+max partition:11989
+min partition:11988
+33337
+22309
+22373
+29845
+30954
+21450
+18272
+24085
+25645
+28823
+20335
+31668
+24060
+19743
+24729
+19577
+15302
+18368
+15517
+15353
+12818
+13559
+11283
+10973
+10566
+9989
+8376
+8476
+7319
+7066
+6317
+6137
+5765
+4469
+4865
+3426
+3534
+3163
+2766
+2642
+2238
+2021
+1811
+1551
+1539
+1449
+1440
+1136
+1412
+1383
+1109
+1327
+1327
+1502
+1680
+1949
+3294
+2966
+1605
+1172
+1229
+1170
+1193
+1151
+sum:643908
+max partition:5995
+min partition:5994
+24645
+15317
+sum:39962
+max partition:450565
+min partition:450565
+20830
+9406
+4522
+11751
+sum:46509
+max partition:225283
+min partition:225282
+16860
+10543
+7271
+5193
+3457
+2068
+1409
+10415
+sum:57216
+max partition:112642
+min partition:112641
+13001
+10042
+7903
+6422
+5131
+4531
+3350
+3453
+2717
+1737
+1723
+1029
+516
+732
+2201
+8323
+sum:72811
+max partition:56321
+min partition:56320
+9000
+8135
+7348
+6859
+5914
+5509
+4636
+4297
+3668
+3232
+3275
+2908
+3018
+2388
+2465
+2120
+1830
+1502
+1702
+1132
+1121
+789
+891
+513
+361
+209
+203
+453
+919
+1330
+2598
+5815
+sum:96140
+max partition:28161
+min partition:28160
+5484
+5502
+5300
+5817
+5192
+4608
+4474
+4641
+4467
+3989
+3455
+3884
+2866
+3495
+3185
+2799
+3159
+2879
+2576
+2361
+2480
+2084
+2117
+1822
+1614
+1908
+1230
+1675
+1784
+830
+1360
+1303
+1575
+1523
+1242
+812
+655
+848
+1106
+764
+774
+729
+194
+672
+581
+456
+418
+349
+284
+254
+174
+162
+115
+86
+227
+287
+431
+509
+658
+737
+1037
+1415
+2844
+3032
+sum:125290
+max partition:14081
+min partition:14080
+825068
+91564
+sum:916632
+max partition:17231
+min partition:17230
+725927
+128339
+37195
+54186
+sum:945647
+max partition:8616
+min partition:8615
+473222
+308542
+101667
+24860
+19586
+17918
+39309
+15521
+sum:1000625
+max partition:4308
+min partition:4307
+214335
+237123
+229839
+143994
+71262
+42887
+12184
+10036
+11389
+8891
+9190
+8524
+16363
+22581
+7943
+7305
+sum:1053846
+max partition:2154
+min partition:2153
+94130
+156680
+135919
+121989
+160418
+92560
+73311
+49401
+37736
+31088
+23695
+10762
+6167
+5720
+5027
+12439
+5576
+4709
+4501
+4220
+4663
+5186
+4006
+4637
+7352
+9908
+18082
+4011
+4246
+3868
+3348
+3899
+sum:1109254
+max partition:1077
+min partition:1076
+60467
+74656
+78712
+53931
+73301
+101576
+69419
+50709
+49506
+59477
+48358
+60646
+30097
+35570
+33594
+35482
+21967
+32418
+15266
+12438
+12286
+9350
+7877
+4018
+3139
+2618
+2420
+3618
+3142
+2279
+2864
+2390
+2789
+2116
+2477
+2372
+2372
+2297
+2012
+2538
+2077
+2698
+2646
+1758
+1733
+1993
+2203
+2359
+3216
+3619
+4138
+5921
+13567
+4266
+1795
+2339
+2201
+2057
+2091
+1911
+1824
+1615
+1644
+2210
+sum:1144445
+max partition:539
+min partition:538
+./cmd basic 2>result-basic.txt
+./cmd anti-basic 2>result-anti-basic.txt
+./cmd entropy 2>result-entropy.txt
+./MinMax
+path: ../data/
+dataset: wiki_new.txt
+path: ../data/
+dataset: wiki_new.txt
+path: ../data/
+dataset: wiki_new.txt
+path: ../data/
+dataset: wiki_new.txt
+path: ../data/
+dataset: wiki_new.txt
+path: ../data/
+dataset: wiki_new.txt
+path: ../data/
+dataset: wiki_new.txt-swap.txt
+path: ../data/
+dataset: wiki_new.txt-swap.txt
+path: ../data/
+dataset: wiki_new.txt-swap.txt
+path: ../data/
+dataset: wiki_new.txt-swap.txt
+path: ../data/
+dataset: wiki_new.txt-swap.txt
+path: ../data/
+dataset: wiki_new.txt-swap.txt
+path: ../data/
+dataset: out.dbpedia-location
+path: ../data/
+dataset: out.dbpedia-location
+path: ../data/
+dataset: out.dbpedia-location
+path: ../data/
+dataset: out.dbpedia-location
+path: ../data/
+dataset: out.dbpedia-location
+path: ../data/
+dataset: out.dbpedia-location
+path: ../data/
+dataset: out.dbpedia-location-swap.txt
+path: ../data/
+dataset: out.dbpedia-location-swap.txt
+path: ../data/
+dataset: out.dbpedia-location-swap.txt
+path: ../data/
+dataset: out.dbpedia-location-swap.txt
+path: ../data/
+dataset: out.dbpedia-location-swap.txt
+path: ../data/
+dataset: out.dbpedia-location-swap.txt
+path: ../data/
+dataset: out.github
+path: ../data/
+dataset: out.github
+path: ../data/
+dataset: out.github
+path: ../data/
+dataset: out.github
+path: ../data/
+dataset: out.github
+path: ../data/
+dataset: out.github
+path: ../data/
+dataset: out.github-swap.txt
+path: ../data/
+dataset: out.github-swap.txt
+path: ../data/
+dataset: out.github-swap.txt
+path: ../data/
+dataset: out.github-swap.txt
+path: ../data/
+dataset: out.github-swap.txt
+path: ../data/
+dataset: out.github-swap.txt
+path: ../data/
+dataset: out.actor-movie
+path: ../data/
+dataset: out.actor-movie
+path: ../data/
+dataset: out.actor-movie
+path: ../data/
+dataset: out.actor-movie
+path: ../data/
+dataset: out.actor-movie
+path: ../data/
+dataset: out.actor-movie
+path: ../data/
+dataset: out.actor-movie-swap.txt
+path: ../data/
+dataset: out.actor-movie-swap.txt
+path: ../data/
+dataset: out.actor-movie-swap.txt
+path: ../data/
+dataset: out.actor-movie-swap.txt
+path: ../data/
+dataset: out.actor-movie-swap.txt
+path: ../data/
+dataset: out.actor-movie-swap.txt
+path: ../data/
+dataset: out.dbpedia-team
+path: ../data/
+dataset: out.dbpedia-team
+path: ../data/
+dataset: out.dbpedia-team
+path: ../data/
+dataset: out.dbpedia-team
+path: ../data/
+dataset: out.dbpedia-team
+path: ../data/
+dataset: out.dbpedia-team
+path: ../data/
+dataset: out.dbpedia-team-swap.txt
+path: ../data/
+dataset: out.dbpedia-team-swap.txt
+path: ../data/
+dataset: out.dbpedia-team-swap.txt
+path: ../data/
+dataset: out.dbpedia-team-swap.txt
+path: ../data/
+dataset: out.dbpedia-team-swap.txt
+path: ../data/
+dataset: out.dbpedia-team-swap.txt
+stdbuf -o0 ./KaHyPar -h ./KaHypar-mid-data -k 2 -e 0.03 -o km1 -m direct -p ./config/km1_kKaHyPar_sea20.ini -w true  1>./KaHypar.log
+stdbuf -o0 ./KaHyPar -h ./KaHypar-mid-data -k 4 -e 0.03 -o km1 -m direct -p ./config/km1_kKaHyPar_sea20.ini -w true  1>./KaHypar.log
+stdbuf -o0 ./KaHyPar -h ./KaHypar-mid-data -k 8 -e 0.03 -o km1 -m direct -p ./config/km1_kKaHyPar_sea20.ini -w true  1>./KaHypar.log
+stdbuf -o0 ./KaHyPar -h ./KaHypar-mid-data -k 16 -e 0.03 -o km1 -m direct -p ./config/km1_kKaHyPar_sea20.ini -w true  1>./KaHypar.log
+stdbuf -o0 ./KaHyPar -h ./KaHypar-mid-data -k 32 -e 0.03 -o km1 -m direct -p ./config/km1_kKaHyPar_sea20.ini -w true  1>./KaHypar.log
+stdbuf -o0 ./KaHyPar -h ./KaHypar-mid-data -k 64 -e 0.03 -o km1 -m direct -p ./config/km1_kKaHyPar_sea20.ini -w true  1>./KaHypar.log
+stdbuf -o0 ./KaHyPar -h ./KaHypar-mid-data -k 2 -e 0.03 -o km1 -m direct -p ./config/km1_kKaHyPar_sea20.ini -w true  1>./KaHypar.log
+stdbuf -o0 ./KaHyPar -h ./KaHypar-mid-data -k 4 -e 0.03 -o km1 -m direct -p ./config/km1_kKaHyPar_sea20.ini -w true  1>./KaHypar.log
+stdbuf -o0 ./KaHyPar -h ./KaHypar-mid-data -k 8 -e 0.03 -o km1 -m direct -p ./config/km1_kKaHyPar_sea20.ini -w true  1>./KaHypar.log
+stdbuf -o0 ./KaHyPar -h ./KaHypar-mid-data -k 16 -e 0.03 -o km1 -m direct -p ./config/km1_kKaHyPar_sea20.ini -w true  1>./KaHypar.log
+stdbuf -o0 ./KaHyPar -h ./KaHypar-mid-data -k 32 -e 0.03 -o km1 -m direct -p ./config/km1_kKaHyPar_sea20.ini -w true  1>./KaHypar.log
+stdbuf -o0 ./KaHyPar -h ./KaHypar-mid-data -k 64 -e 0.03 -o km1 -m direct -p ./config/km1_kKaHyPar_sea20.ini -w true  1>./KaHypar.log
+stdbuf -o0 ./KaHyPar -h ./KaHypar-mid-data -k 2 -e 0.03 -o km1 -m direct -p ./config/km1_kKaHyPar_sea20.ini -w true  1>./KaHypar.log
+stdbuf -o0 ./KaHyPar -h ./KaHypar-mid-data -k 4 -e 0.03 -o km1 -m direct -p ./config/km1_kKaHyPar_sea20.ini -w true  1>./KaHypar.log
+stdbuf -o0 ./KaHyPar -h ./KaHypar-mid-data -k 8 -e 0.03 -o km1 -m direct -p ./config/km1_kKaHyPar_sea20.ini -w true  1>./KaHypar.log
+stdbuf -o0 ./KaHyPar -h ./KaHypar-mid-data -k 16 -e 0.03 -o km1 -m direct -p ./config/km1_kKaHyPar_sea20.ini -w true  1>./KaHypar.log
+stdbuf -o0 ./KaHyPar -h ./KaHypar-mid-data -k 32 -e 0.03 -o km1 -m direct -p ./config/km1_kKaHyPar_sea20.ini -w true  1>./KaHypar.log
+stdbuf -o0 ./KaHyPar -h ./KaHypar-mid-data -k 64 -e 0.03 -o km1 -m direct -p ./config/km1_kKaHyPar_sea20.ini -w true  1>./KaHypar.log
+stdbuf -o0 ./KaHyPar -h ./KaHypar-mid-data -k 2 -e 0.03 -o km1 -m direct -p ./config/km1_kKaHyPar_sea20.ini -w true  1>./KaHypar.log
+stdbuf -o0 ./KaHyPar -h ./KaHypar-mid-data -k 4 -e 0.03 -o km1 -m direct -p ./config/km1_kKaHyPar_sea20.ini -w true  1>./KaHypar.log
+stdbuf -o0 ./KaHyPar -h ./KaHypar-mid-data -k 8 -e 0.03 -o km1 -m direct -p ./config/km1_kKaHyPar_sea20.ini -w true  1>./KaHypar.log
+stdbuf -o0 ./KaHyPar -h ./KaHypar-mid-data -k 16 -e 0.03 -o km1 -m direct -p ./config/km1_kKaHyPar_sea20.ini -w true  1>./KaHypar.log
+stdbuf -o0 ./KaHyPar -h ./KaHypar-mid-data -k 32 -e 0.03 -o km1 -m direct -p ./config/km1_kKaHyPar_sea20.ini -w true  1>./KaHypar.log
+stdbuf -o0 ./KaHyPar -h ./KaHypar-mid-data -k 64 -e 0.03 -o km1 -m direct -p ./config/km1_kKaHyPar_sea20.ini -w true  1>./KaHypar.log
+stdbuf -o0 ./KaHyPar -h ./KaHypar-mid-data -k 2 -e 0.03 -o km1 -m direct -p ./config/km1_kKaHyPar_sea20.ini -w true  1>./KaHypar.log
+stdbuf -o0 ./KaHyPar -h ./KaHypar-mid-data -k 4 -e 0.03 -o km1 -m direct -p ./config/km1_kKaHyPar_sea20.ini -w true  1>./KaHypar.log
+stdbuf -o0 ./KaHyPar -h ./KaHypar-mid-data -k 8 -e 0.03 -o km1 -m direct -p ./config/km1_kKaHyPar_sea20.ini -w true  1>./KaHypar.log
+stdbuf -o0 ./KaHyPar -h ./KaHypar-mid-data -k 16 -e 0.03 -o km1 -m direct -p ./config/km1_kKaHyPar_sea20.ini -w true  1>./KaHypar.log
+stdbuf -o0 ./KaHyPar -h ./KaHypar-mid-data -k 32 -e 0.03 -o km1 -m direct -p ./config/km1_kKaHyPar_sea20.ini -w true  1>./KaHypar.log
+stdbuf -o0 ./KaHyPar -h ./KaHypar-mid-data -k 64 -e 0.03 -o km1 -m direct -p ./config/km1_kKaHyPar_sea20.ini -w true  1>./KaHypar.log
+stdbuf -o0 ./KaHyPar -h ./KaHypar-mid-data -k 2 -e 0.03 -o km1 -m direct -p ./config/km1_kKaHyPar_sea20.ini -w true  1>./KaHypar.log
+stdbuf -o0 ./KaHyPar -h ./KaHypar-mid-data -k 4 -e 0.03 -o km1 -m direct -p ./config/km1_kKaHyPar_sea20.ini -w true  1>./KaHypar.log
+stdbuf -o0 ./KaHyPar -h ./KaHypar-mid-data -k 8 -e 0.03 -o km1 -m direct -p ./config/km1_kKaHyPar_sea20.ini -w true  1>./KaHypar.log
+stdbuf -o0 ./KaHyPar -h ./KaHypar-mid-data -k 16 -e 0.03 -o km1 -m direct -p ./config/km1_kKaHyPar_sea20.ini -w true  1>./KaHypar.log
+stdbuf -o0 ./KaHyPar -h ./KaHypar-mid-data -k 32 -e 0.03 -o km1 -m direct -p ./config/km1_kKaHyPar_sea20.ini -w true  1>./KaHypar.log
+stdbuf -o0 ./KaHyPar -h ./KaHypar-mid-data -k 64 -e 0.03 -o km1 -m direct -p ./config/km1_kKaHyPar_sea20.ini -w true  1>./KaHypar.log
+stdbuf -o0 ./KaHyPar -h ./KaHypar-mid-data -k 2 -e 0.03 -o km1 -m direct -p ./config/km1_kKaHyPar_sea20.ini -w true  1>./KaHypar.log
+stdbuf -o0 ./KaHyPar -h ./KaHypar-mid-data -k 4 -e 0.03 -o km1 -m direct -p ./config/km1_kKaHyPar_sea20.ini -w true  1>./KaHypar.log
+stdbuf -o0 ./KaHyPar -h ./KaHypar-mid-data -k 8 -e 0.03 -o km1 -m direct -p ./config/km1_kKaHyPar_sea20.ini -w true  1>./KaHypar.log
+stdbuf -o0 ./KaHyPar -h ./KaHypar-mid-data -k 16 -e 0.03 -o km1 -m direct -p ./config/km1_kKaHyPar_sea20.ini -w true  1>./KaHypar.log
+stdbuf -o0 ./KaHyPar -h ./KaHypar-mid-data -k 32 -e 0.03 -o km1 -m direct -p ./config/km1_kKaHyPar_sea20.ini -w true  1>./KaHypar.log
+stdbuf -o0 ./KaHyPar -h ./KaHypar-mid-data -k 64 -e 0.03 -o km1 -m direct -p ./config/km1_kKaHyPar_sea20.ini -w true  1>./KaHypar.log
+stdbuf -o0 ./KaHyPar -h ./KaHypar-mid-data -k 2 -e 0.03 -o km1 -m direct -p ./config/km1_kKaHyPar_sea20.ini -w true  1>./KaHypar.log
+stdbuf -o0 ./KaHyPar -h ./KaHypar-mid-data -k 4 -e 0.03 -o km1 -m direct -p ./config/km1_kKaHyPar_sea20.ini -w true  1>./KaHypar.log
+stdbuf -o0 ./KaHyPar -h ./KaHypar-mid-data -k 8 -e 0.03 -o km1 -m direct -p ./config/km1_kKaHyPar_sea20.ini -w true  1>./KaHypar.log
+stdbuf -o0 ./KaHyPar -h ./KaHypar-mid-data -k 16 -e 0.03 -o km1 -m direct -p ./config/km1_kKaHyPar_sea20.ini -w true  1>./KaHypar.log
+stdbuf -o0 ./KaHyPar -h ./KaHypar-mid-data -k 32 -e 0.03 -o km1 -m direct -p ./config/km1_kKaHyPar_sea20.ini -w true  1>./KaHypar.log
+stdbuf -o0 ./KaHyPar -h ./KaHypar-mid-data -k 64 -e 0.03 -o km1 -m direct -p ./config/km1_kKaHyPar_sea20.ini -w true  1>./KaHypar.log
+stdbuf -o0 ./KaHyPar -h ./KaHypar-mid-data -k 2 -e 0.03 -o km1 -m direct -p ./config/km1_kKaHyPar_sea20.ini -w true  1>./KaHypar.log
+Traceback (most recent call last):
+  File "/raid/guan/hypergraph/exec/runtest.py", line 144, in <module>
+    if method == "KaHyPar"  :   run_KaHyPar(path,dataset,p,generate_scheme)
+  File "/raid/guan/hypergraph/exec/runtest.py", line 56, in run_KaHyPar
+    k_1 = re.match("(.*)\(k-1\)          \(minimize\) = (\d+)",content,flags=re.S).group(2)
+AttributeError: 'NoneType' object has no attribute 'group'

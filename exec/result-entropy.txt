@@ -1,0 +1,491 @@
+entropy
+outlog:../data/
+parameters:
+n:4571 m:4136 path:../data/wiki_new.txt p:2 output:../simulation/test_data/2/wiki_new.txt/entropy.txt
+method:entropy
+sheild:1545 0 119235
+parameter:
+p:2
+k-1: 2988 runtime:243(ms)
+----------
+parameters:
+n:4571 m:4136 path:../data/wiki_new.txt p:4 output:../simulation/test_data/4/wiki_new.txt/entropy.txt
+method:entropy
+sheild:1545 0 119235
+parameter:
+p:4
+k-1: 7522 runtime:312(ms)
+----------
+parameters:
+n:4571 m:4136 path:../data/wiki_new.txt p:8 output:../simulation/test_data/8/wiki_new.txt/entropy.txt
+method:entropy
+sheild:1545 0 119235
+parameter:
+p:8
+k-1: 13223 runtime:459(ms)
+----------
+parameters:
+n:4571 m:4136 path:../data/wiki_new.txt p:16 output:../simulation/test_data/16/wiki_new.txt/entropy.txt
+method:entropy
+sheild:1545 0 119235
+parameter:
+p:16
+k-1: 19725 runtime:711(ms)
+----------
+parameters:
+n:4571 m:4136 path:../data/wiki_new.txt p:32 output:../simulation/test_data/32/wiki_new.txt/entropy.txt
+method:entropy
+sheild:1545 0 119235
+parameter:
+p:32
+k-1: 27261 runtime:1086(ms)
+----------
+parameters:
+n:4571 m:4136 path:../data/wiki_new.txt p:64 output:../simulation/test_data/64/wiki_new.txt/entropy.txt
+method:entropy
+sheild:1545 0 119235
+parameter:
+p:64
+k-1: 35105 runtime:1336(ms)
+----------
+outlog:../data/
+parameters:
+n:4136 m:4571 path:../data/wiki_new.txt-swap.txt p:2 output:../simulation/test_data/2/wiki_new.txt-swap.txt/entropy.txt
+method:entropy
+sheild:294 0 119235
+parameter:
+p:2
+k-1: 3216 runtime:163(ms)
+----------
+parameters:
+n:4136 m:4571 path:../data/wiki_new.txt-swap.txt p:4 output:../simulation/test_data/4/wiki_new.txt-swap.txt/entropy.txt
+method:entropy
+sheild:294 0 119235
+parameter:
+p:4
+k-1: 7882 runtime:194(ms)
+----------
+parameters:
+n:4136 m:4571 path:../data/wiki_new.txt-swap.txt p:8 output:../simulation/test_data/8/wiki_new.txt-swap.txt/entropy.txt
+method:entropy
+sheild:294 0 119235
+parameter:
+p:8
+k-1: 14036 runtime:252(ms)
+----------
+parameters:
+n:4136 m:4571 path:../data/wiki_new.txt-swap.txt p:16 output:../simulation/test_data/16/wiki_new.txt-swap.txt/entropy.txt
+method:entropy
+sheild:294 0 119235
+parameter:
+p:16
+k-1: 21637 runtime:352(ms)
+----------
+parameters:
+n:4136 m:4571 path:../data/wiki_new.txt-swap.txt p:32 output:../simulation/test_data/32/wiki_new.txt-swap.txt/entropy.txt
+method:entropy
+sheild:294 0 119235
+parameter:
+p:32
+k-1: 29947 runtime:496(ms)
+----------
+parameters:
+n:4136 m:4571 path:../data/wiki_new.txt-swap.txt p:64 output:../simulation/test_data/64/wiki_new.txt-swap.txt/entropy.txt
+method:entropy
+sheild:294 0 119235
+parameter:
+p:64
+k-1: 39025 runtime:680(ms)
+----------
+outlog:../data/
+parameters:
+n:172096 m:53412 path:../data/out.dbpedia-location p:2 output:../simulation/test_data/2/out.dbpedia-location/entropy.txt
+method:entropy
+sheild:12189 0 293697
+parameter:
+p:2
+k-1: 338 runtime:738(ms)
+----------
+parameters:
+n:172096 m:53412 path:../data/out.dbpedia-location p:4 output:../simulation/test_data/4/out.dbpedia-location/entropy.txt
+method:entropy
+sheild:12189 0 293697
+parameter:
+p:4
+k-1: 995 runtime:799(ms)
+----------
+parameters:
+n:172096 m:53412 path:../data/out.dbpedia-location p:8 output:../simulation/test_data/8/out.dbpedia-location/entropy.txt
+method:entropy
+sheild:12189 0 293697
+parameter:
+p:8
+k-1: 1955 runtime:925(ms)
+----------
+parameters:
+n:172096 m:53412 path:../data/out.dbpedia-location p:16 output:../simulation/test_data/16/out.dbpedia-location/entropy.txt
+method:entropy
+sheild:12189 0 293697
+parameter:
+p:16
+k-1: 2188 runtime:1086(ms)
+----------
+parameters:
+n:172096 m:53412 path:../data/out.dbpedia-location p:32 output:../simulation/test_data/32/out.dbpedia-location/entropy.txt
+method:entropy
+sheild:12189 0 293697
+parameter:
+p:32
+k-1: 2265 runtime:1282(ms)
+----------
+parameters:
+n:172096 m:53412 path:../data/out.dbpedia-location p:64 output:../simulation/test_data/64/out.dbpedia-location/entropy.txt
+method:entropy
+sheild:12189 0 293697
+parameter:
+p:64
+k-1: 2556 runtime:1638(ms)
+----------
+outlog:../data/
+parameters:
+n:53412 m:172096 path:../data/out.dbpedia-location-swap.txt p:2 output:../simulation/test_data/2/out.dbpedia-location-swap.txt/entropy.txt
+method:entropy
+sheild:28 0 293697
+parameter:
+p:2
+k-1: 7837 runtime:450(ms)
+----------
+parameters:
+n:53412 m:172096 path:../data/out.dbpedia-location-swap.txt p:4 output:../simulation/test_data/4/out.dbpedia-location-swap.txt/entropy.txt
+method:entropy
+sheild:28 0 293697
+parameter:
+p:4
+k-1: 19478 runtime:449(ms)
+----------
+parameters:
+n:53412 m:172096 path:../data/out.dbpedia-location-swap.txt p:8 output:../simulation/test_data/8/out.dbpedia-location-swap.txt/entropy.txt
+method:entropy
+sheild:28 0 293697
+parameter:
+p:8
+k-1: 26426 runtime:451(ms)
+----------
+parameters:
+n:53412 m:172096 path:../data/out.dbpedia-location-swap.txt p:16 output:../simulation/test_data/16/out.dbpedia-location-swap.txt/entropy.txt
+method:entropy
+sheild:28 0 293697
+parameter:
+p:16
+k-1: 32763 runtime:458(ms)
+----------
+parameters:
+n:53412 m:172096 path:../data/out.dbpedia-location-swap.txt p:32 output:../simulation/test_data/32/out.dbpedia-location-swap.txt/entropy.txt
+method:entropy
+sheild:28 0 293697
+parameter:
+p:32
+k-1: 36805 runtime:461(ms)
+----------
+parameters:
+n:53412 m:172096 path:../data/out.dbpedia-location-swap.txt p:64 output:../simulation/test_data/64/out.dbpedia-location-swap.txt/entropy.txt
+method:entropy
+sheild:28 0 293697
+parameter:
+p:64
+k-1: 40170 runtime:495(ms)
+----------
+outlog:../data/
+parameters:
+n:56524 m:120872 path:../data/out.github p:2 output:../simulation/test_data/2/out.github/entropy.txt
+method:entropy
+sheild:3675 0 440237
+parameter:
+p:2
+k-1: 2417 runtime:724(ms)
+----------
+parameters:
+n:56524 m:120872 path:../data/out.github p:4 output:../simulation/test_data/4/out.github/entropy.txt
+method:entropy
+sheild:3675 0 440237
+parameter:
+p:4
+k-1: 11473 runtime:739(ms)
+----------
+parameters:
+n:56524 m:120872 path:../data/out.github p:8 output:../simulation/test_data/8/out.github/entropy.txt
+method:entropy
+sheild:3675 0 440237
+parameter:
+p:8
+k-1: 23229 runtime:829(ms)
+----------
+parameters:
+n:56524 m:120872 path:../data/out.github p:16 output:../simulation/test_data/16/out.github/entropy.txt
+method:entropy
+sheild:3675 0 440237
+parameter:
+p:16
+k-1: 37540 runtime:997(ms)
+----------
+parameters:
+n:56524 m:120872 path:../data/out.github p:32 output:../simulation/test_data/32/out.github/entropy.txt
+method:entropy
+sheild:3675 0 440237
+parameter:
+p:32
+k-1: 53104 runtime:1281(ms)
+----------
+parameters:
+n:56524 m:120872 path:../data/out.github p:64 output:../simulation/test_data/64/out.github/entropy.txt
+method:entropy
+sheild:3675 0 440237
+parameter:
+p:64
+k-1: 68886 runtime:1783(ms)
+----------
+outlog:../data/
+parameters:
+n:120872 m:56524 path:../data/out.github-swap.txt p:2 output:../simulation/test_data/2/out.github-swap.txt/entropy.txt
+method:entropy
+sheild:884 0 440237
+parameter:
+p:2
+k-1: 5998 runtime:907(ms)
+----------
+parameters:
+n:120872 m:56524 path:../data/out.github-swap.txt p:4 output:../simulation/test_data/4/out.github-swap.txt/entropy.txt
+method:entropy
+sheild:884 0 440237
+parameter:
+p:4
+k-1: 17318 runtime:926(ms)
+----------
+parameters:
+n:120872 m:56524 path:../data/out.github-swap.txt p:8 output:../simulation/test_data/8/out.github-swap.txt/entropy.txt
+method:entropy
+sheild:884 0 440237
+parameter:
+p:8
+k-1: 23684 runtime:1024(ms)
+----------
+parameters:
+n:120872 m:56524 path:../data/out.github-swap.txt p:16 output:../simulation/test_data/16/out.github-swap.txt/entropy.txt
+method:entropy
+sheild:884 0 440237
+parameter:
+p:16
+k-1: 31461 runtime:1150(ms)
+----------
+parameters:
+n:120872 m:56524 path:../data/out.github-swap.txt p:32 output:../simulation/test_data/32/out.github-swap.txt/entropy.txt
+method:entropy
+sheild:884 0 440237
+parameter:
+p:32
+k-1: 41558 runtime:1359(ms)
+----------
+parameters:
+n:120872 m:56524 path:../data/out.github-swap.txt p:64 output:../simulation/test_data/64/out.github-swap.txt/entropy.txt
+method:entropy
+sheild:884 0 440237
+parameter:
+p:64
+k-1: 54208 runtime:1708(ms)
+----------
+outlog:../data/
+parameters:
+n:127828 m:383645 path:../data/out.actor-movie p:2 output:../simulation/test_data/2/out.actor-movie/entropy.txt
+method:entropy
+sheild:646 0 1470404
+parameter:
+p:2
+k-1: 52008 runtime:2542(ms)
+----------
+parameters:
+n:127828 m:383645 path:../data/out.actor-movie p:4 output:../simulation/test_data/4/out.actor-movie/entropy.txt
+method:entropy
+sheild:646 0 1470404
+parameter:
+p:4
+k-1: 104483 runtime:2906(ms)
+----------
+parameters:
+n:127828 m:383645 path:../data/out.actor-movie p:8 output:../simulation/test_data/8/out.actor-movie/entropy.txt
+method:entropy
+sheild:646 0 1470404
+parameter:
+p:8
+k-1: 148701 runtime:3379(ms)
+----------
+parameters:
+n:127828 m:383645 path:../data/out.actor-movie p:16 output:../simulation/test_data/16/out.actor-movie/entropy.txt
+method:entropy
+sheild:646 0 1470404
+parameter:
+p:16
+k-1: 191760 runtime:3964(ms)
+----------
+parameters:
+n:127828 m:383645 path:../data/out.actor-movie p:32 output:../simulation/test_data/32/out.actor-movie/entropy.txt
+method:entropy
+sheild:646 0 1470404
+parameter:
+p:32
+k-1: 223492 runtime:4764(ms)
+----------
+parameters:
+n:127828 m:383645 path:../data/out.actor-movie p:64 output:../simulation/test_data/64/out.actor-movie/entropy.txt
+method:entropy
+sheild:646 0 1470404
+parameter:
+p:64
+k-1: 266455 runtime:5258(ms)
+----------
+outlog:../data/
+parameters:
+n:383645 m:127828 path:../data/out.actor-movie-swap.txt p:2 output:../simulation/test_data/2/out.actor-movie-swap.txt/entropy.txt
+method:entropy
+sheild:294 0 1470404
+parameter:
+p:2
+k-1: 30945 runtime:3433(ms)
+----------
+parameters:
+n:383645 m:127828 path:../data/out.actor-movie-swap.txt p:4 output:../simulation/test_data/4/out.actor-movie-swap.txt/entropy.txt
+method:entropy
+sheild:294 0 1470404
+parameter:
+p:4
+k-1: 64493 runtime:3435(ms)
+----------
+parameters:
+n:383645 m:127828 path:../data/out.actor-movie-swap.txt p:8 output:../simulation/test_data/8/out.actor-movie-swap.txt/entropy.txt
+method:entropy
+sheild:294 0 1470404
+parameter:
+p:8
+k-1: 110524 runtime:3850(ms)
+----------
+parameters:
+n:383645 m:127828 path:../data/out.actor-movie-swap.txt p:16 output:../simulation/test_data/16/out.actor-movie-swap.txt/entropy.txt
+method:entropy
+sheild:294 0 1470404
+parameter:
+p:16
+k-1: 165353 runtime:4477(ms)
+----------
+parameters:
+n:383645 m:127828 path:../data/out.actor-movie-swap.txt p:32 output:../simulation/test_data/32/out.actor-movie-swap.txt/entropy.txt
+method:entropy
+sheild:294 0 1470404
+parameter:
+p:32
+k-1: 222027 runtime:5225(ms)
+----------
+parameters:
+n:383645 m:127828 path:../data/out.actor-movie-swap.txt p:64 output:../simulation/test_data/64/out.actor-movie-swap.txt/entropy.txt
+method:entropy
+sheild:294 0 1470404
+parameter:
+p:64
+k-1: 261215 runtime:5757(ms)
+----------
+outlog:../data/
+parameters:
+n:901171 m:34466 path:../data/out.dbpedia-team p:2 output:../simulation/test_data/2/out.dbpedia-team/entropy.txt
+method:entropy
+sheild:2671 0 1366466
+parameter:
+p:2
+k-1: 1969 runtime:4602(ms)
+----------
+parameters:
+n:901171 m:34466 path:../data/out.dbpedia-team p:4 output:../simulation/test_data/4/out.dbpedia-team/entropy.txt
+method:entropy
+sheild:2671 0 1366466
+parameter:
+p:4
+k-1: 5618 runtime:5071(ms)
+----------
+parameters:
+n:901171 m:34466 path:../data/out.dbpedia-team p:8 output:../simulation/test_data/8/out.dbpedia-team/entropy.txt
+method:entropy
+sheild:2671 0 1366466
+parameter:
+p:8
+k-1: 10460 runtime:5516(ms)
+----------
+parameters:
+n:901171 m:34466 path:../data/out.dbpedia-team p:16 output:../simulation/test_data/16/out.dbpedia-team/entropy.txt
+method:entropy
+sheild:2671 0 1366466
+parameter:
+p:16
+k-1: 23633 runtime:7103(ms)
+----------
+parameters:
+n:901171 m:34466 path:../data/out.dbpedia-team p:32 output:../simulation/test_data/32/out.dbpedia-team/entropy.txt
+method:entropy
+sheild:2671 0 1366466
+parameter:
+p:32
+k-1: 32359 runtime:10388(ms)
+----------
+parameters:
+n:901171 m:34466 path:../data/out.dbpedia-team p:64 output:../simulation/test_data/64/out.dbpedia-team/entropy.txt
+method:entropy
+sheild:2671 0 1366466
+parameter:
+p:64
+k-1: 44354 runtime:13887(ms)
+----------
+outlog:../data/
+parameters:
+n:34466 m:901171 path:../data/out.dbpedia-team-swap.txt p:2 output:../simulation/test_data/2/out.dbpedia-team-swap.txt/entropy.txt
+method:entropy
+sheild:17 0 1366466
+parameter:
+p:2
+k-1: 7864 runtime:1800(ms)
+----------
+parameters:
+n:34466 m:901171 path:../data/out.dbpedia-team-swap.txt p:4 output:../simulation/test_data/4/out.dbpedia-team-swap.txt/entropy.txt
+method:entropy
+sheild:17 0 1366466
+parameter:
+p:4
+k-1: 22626 runtime:1817(ms)
+----------
+parameters:
+n:34466 m:901171 path:../data/out.dbpedia-team-swap.txt p:8 output:../simulation/test_data/8/out.dbpedia-team-swap.txt/entropy.txt
+method:entropy
+sheild:17 0 1366466
+parameter:
+p:8
+k-1: 48969 runtime:1846(ms)
+----------
+parameters:
+n:34466 m:901171 path:../data/out.dbpedia-team-swap.txt p:16 output:../simulation/test_data/16/out.dbpedia-team-swap.txt/entropy.txt
+method:entropy
+sheild:17 0 1366466
+parameter:
+p:16
+k-1: 79201 runtime:1918(ms)
+----------
+parameters:
+n:34466 m:901171 path:../data/out.dbpedia-team-swap.txt p:32 output:../simulation/test_data/32/out.dbpedia-team-swap.txt/entropy.txt
+method:entropy
+sheild:17 0 1366466
+parameter:
+p:32
+k-1: 105794 runtime:1986(ms)
+----------
+parameters:
+n:34466 m:901171 path:../data/out.dbpedia-team-swap.txt p:64 output:../simulation/test_data/64/out.dbpedia-team-swap.txt/entropy.txt
+method:entropy
+sheild:17 0 1366466
+parameter:
+p:64
+k-1: 119482 runtime:2052(ms)
+----------

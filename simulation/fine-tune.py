@@ -2,12 +2,15 @@ from ctypes import sizeof
 import os
 import re
 from math import log
-
+import time
 def printInfo(part_vertex,part_edge):
     cal = []
     com = []
-    print("vertex:",[(i,len(part_vertex[i])) for i in range(p)]," max:",max([ len(part_vertex[i]) for i in range(p)]), " min:",min([ len(part_vertex[i]) for i in range(p)]))
-    print("edge:",[(i,len(part_edge[i])) for i in range(p)]," max:",max([ len(part_edge[i]) for i in range(p)]), " min:",min([ len(part_edge[i]) for i in range(p)]))
+    tmp = [(i,len(part_vertex[i])) for i in range(p)]
+    print("vertex:",tmp," max:",max([ j for i,j in tmp ]), " min:",min([j for i,j in tmp])," sum:",sum([j for i,j in tmp]))
+    tmp = [(i,len(part_edge[i])) for i in range(p)]
+    print("edge:",tmp," max:",max([ j for i,j in tmp ]), " min:",min([j for i,j in tmp])," sum:",sum([j for i,j in tmp]))
+
     for i in range(p):
         cnt = 0
         for v_id in part_vertex[i]:
@@ -15,14 +18,45 @@ def printInfo(part_vertex,part_edge):
             # if v_id not in part_vertex[i]: continue
             cnt += len(HyperVertex[v_id])
         cal.append((i,cnt))
-    print("cal:",cal," max:",max([i[1] for i in cal]), " min:",min([i[1] for i in cal]))
+    print("cal:",cal," max:",max([i[1] for i in cal]), " min:",min([i[1] for i in cal])," sum:",sum([i[1] for i in cal]))
 
     for i in range(len(part_edge)):
         tmp = 0
         for e_id in part_edge[i]:
             tmp += cross_edge[e_id] - 1
         com.append((i,tmp))
-    print("com:",com," max:",max([i[1] for i in com]), " min:",min([i[1] for i in com]))
+    print("com:",com," max:",max([i[1] for i in com]), " min:",min([i[1] for i in com])," sum:",sum([i[1] for i in  com]))
+
+def check(part_edge,cross_edge):
+        check_part_edge = [{} for i in range(p)]  # check part_edge
+        for v_id, edges in HyperVertex.items():
+            for e_id in edges:
+                if e_id not in check_part_edge[Partition[v_id]].keys() : 
+                    check_part_edge[Partition[v_id]][e_id] = 0
+                check_part_edge[Partition[v_id]][e_id] += 1  
+
+        for p_id in range(p):
+            for e_id,value in part_edge[p_id].items():
+                if part_edge[p_id][e_id] != check_part_edge[p_id][e_id]:
+                    print("error! e_id:",e_id," A:",part_edge[p_id][e_id]," B:",check_part_edge[p_id][e_id])
+
+        check_cross_edge = {}
+        for e_id,nodes in HyperEdge.items():
+            st = set()
+            check_cross_edge[e_id] = 0
+            for v_id in nodes:
+                if Partition[v_id] not in st:
+                    st.add(Partition[v_id])
+                    check_cross_edge[e_id] += 1
+
+
+        for e_id,val in cross_edge.items():
+            if val != check_cross_edge[e_id]:
+                print("e_id:",e_id," fact:",check_cross_edge[e_id]," predict:",val)
+                print("cross_edge error!")
+                break
+
+
 
 
 data_path = os.getcwd()+"/test_data/"
@@ -38,8 +72,8 @@ dataset_list = [
     ]
 method_list = ["entropy.txt"]
 dataset_list =  [
-    # "wiki_new.txt"
-     "out.dbpedia-location"
+    "wiki_new.txt"
+    #  "out.dbpedia-location"
     ]
 
 # "out.actor-movie","out.actor-movie-swap.txt","out.dbpedia-location",\
@@ -59,6 +93,7 @@ for method in method_list:
             Partition = {}
             cross_edge = {}
             comm = {}
+            cal = {}
             part_edge = [{} for i in range(p)]
             part_vertex = [set() for i in range(p)]
             v_path = data_path + str(p) + "/" + dataset + "/vertex_info.txt"
@@ -100,63 +135,53 @@ for method in method_list:
                     tmp += cross_edge[e_id] - 1
                 comm[i] = tmp
             print("input: ",max(comm.values())," ",min(comm.values()))
-            rec = 1000000
-            while True :
-                # print(comm.items())
-                lst = sorted(comm.items(),key = lambda x:-x[1])
-                max_p = lst[0][0]
-                min_p = lst[-1][0]
-                if (comm[max_p] - comm[min_p]) / comm[max_p] < 0.1: break
-                lst = []
-                # for v_id in part_vertex[max_p]:
-                #     sum = 0
-                #     if v_id not in HyperVertex.keys() : continue
-                #     for e_id in HyperVertex[v_id]:
-                #         sum += -log(len(HyperEdge[e_id])/1000)/len(HyperVertex[v_id])
-                #     lst.append((v_id,sum))
 
-                # print("max_p:",max_p," min_p:",min_p)
-                # if rec < (comm[max_p]-comm[min_p]) / comm[max_p] : break
-                # rec =  (comm[max_p]-comm[min_p]) / comm[max_p]
-                # lst = sorted(lst, key = lambda x:-x[1])
+            for i in range(p):
+                cnt = 0
+                for v_id in part_vertex[i]:
+                    if v_id not in HyperVertex : continue
+                    cnt += len(HyperVertex[v_id])
+                cal[i] = cnt
+            # print("cal:",cal," max:",max([i[1] for i in cal]), " min:",min([i[1] for i in cal]))
+
+
+            beg_time = time.time()
+            while True :
+                for i in range(p):
+                    cnt = 0
+                    for v_id in part_vertex[i]:
+                        if v_id not in HyperVertex : continue
+                        cnt += len(HyperVertex[v_id])
+                    cal[i] = cnt
+                # print("cal:",cal," max:",max([i[1] for i in cal]), " min:",min([i[1] for i in cal]))
+
+                lst = sorted(cal.items(),key = lambda x:-x[1])
+                max_p = lst[0][0]
                 move_set = []
-                # move_set.append(lst[-1][0])
-                # lst.pop()
-                # rec = 0
-                # for p_id in range(p):
-                #     if p_id == max_p : continue
-                #     for e_id in HyperVertex[move_set[0]]:
-                #         if e_id in part_edge[p_id].keys():
-                #             sum += -log(len(HyperEdge[e_id])/10000) 
-                #     if sum > rec:
-                #         rec = sum
-                #         min_p = p_id
-                flag = 0
+                delta = [0 for i in range(p)]
+
                 for v_id in part_vertex[max_p]:
-                    if flag != 0 : break
                     for p_id in range(max_p,p):
                         if p_id == max_p : continue
                         if v_id not in HyperVertex.keys(): continue
+                        if cal[max_p] + delta[max_p] - len(HyperVertex[v_id]) < cal[p_id] + delta[p_id] +  len(HyperVertex[v_id]) : continue
                         flagg = 0
                         for e_id in HyperVertex[v_id]:
                             if e_id not in part_edge[p_id]: 
                                 flagg = 1
                                 break
                         if flagg == 1: continue
-                        flag = 1
-                        min_p = p_id
-                        move_set.append(v_id)
+                        move_set.append((p_id,v_id))
+
+                        delta[max_p] += -len(HyperVertex[v_id])
+                        delta[p_id] += len(HyperVertex[v_id])
                         break
-                if flag == 0: break
                 
                 printInfo(part_vertex,part_edge)
-
-                print("max_p:",max_p," min_p:",min_p," v_id:",move_set[0])
+                if len(move_set) == 0 : break
+                # print("max_p:",max_p," min_p:",min_p," v_id:",move_set[0])
                 test_cnt = 0
-                for v_id in move_set:
-                    for e_id in HyperVertex[v_id]:
-                        if e_id not in part_edge[max_p].keys():
-                            print("error! e_id:",e_id," p_id:",max_p)
+                for p_id,v_id in move_set:
                     for e_id in HyperVertex[v_id]:
                         part_edge[max_p][e_id] -= 1
                         if part_edge[max_p][e_id] == 0:
@@ -164,38 +189,40 @@ for method in method_list:
                             test_cnt += cross_edge[e_id] - 1
                             cross_edge[e_id] -= 1
                             part_edge[max_p].pop(e_id)
-                            # if e_id in part_edge[max_p].keys() : print("__________________________________________")
                             for p_id in range(p):
                                 if e_id in part_edge[p_id].keys():
                                     # if p_id == max_p: print("find error")
                                     comm[p_id] -= 1
-                # print("test_cnt:",test_cnt)
                 
-                for v_id in move_set:
+                for min_p,v_id in move_set:
                     for e_id in HyperVertex[v_id]:
                         if e_id not in part_edge[min_p].keys():
                             cross_edge[e_id] += 1
                             comm[min_p] += cross_edge[e_id] - 1
                             for p_id in range(p):
                                 if e_id in part_edge[p_id].keys():
-                                    # if p_id == max_p : print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
                                     comm[p_id] += 1
                             part_edge[min_p][e_id] = 0
                         part_edge[min_p][e_id] += 1
                 
-                for v_id in move_set:
+                for min_p,v_id in move_set:
                     Partition[v_id] = min_p
+                    # print("max_p:",max_p," p_id:",Partition[v_id]," v_id:",v_id)
                     part_vertex[max_p].remove(v_id)
                     part_vertex[min_p].add(v_id)
+            print("optimation 1:",int((time.time()-beg_time)*100)/100,"(s)")
+            
 
+            beg_time = time.time()
+
+            
             while True :
                 lst = sorted(comm.items(),key = lambda x:-x[1])
                 move_set = []
                 max_p = lst[0][0]
                 min_p = -1
-                lst = sorted([(i,j)for i,j in part_edge[max_p].items()],key = lambda x:x[1])
-                # for e_id,_ in lst:
-                for e_id in part_edge[max_p].keys():
+                lst = sorted([(i,j)for i,j in part_edge[max_p].items()],key = lambda x:-x[1])
+                for e_id,_ in lst:
                     if part_edge[max_p][e_id] > 15 : continue 
                     min_p = -1
                     st = set()
@@ -227,10 +254,6 @@ for method in method_list:
                                 # print("test2:",2 * cross_edge[ee_id] - 2)
 
                         if gain - loss > rec :
-                        # tmp = [i for i in comm]
-
-                        # if comm[max_p] - gain/2 > comm[p_id] + loss/2 :
-                            # print("dict:",dic)
                             rec = gain - loss
                             min_p = p_id
                             break
@@ -285,65 +308,69 @@ for method in method_list:
                     part_vertex[max_p].remove(v_id)
                     part_vertex[min_p].add(v_id)
 
-                
-                # break
-        
             while True :
+                test_sum1 = 0
+                test_sum2 = 0
                 lst = sorted(comm.items(),key = lambda x:-x[1])
                 move_set = []
                 max_p = lst[0][0]
-                min_p = lst[-1][0]
-                mini_loss = 100000000
-                sel_eid = -1
-                for e_id in part_edge[max_p].keys():
-                    # if part_edge[max_p][e_id] > 15 : continue 
-                    # min_p = -1
+                min_p = -1
+                lst = sorted([(i,j)for i,j in part_edge[max_p].items()],key = lambda x:-x[1])
+                rec = 0
+                for e_id,_ in lst:
+                    if part_edge[max_p][e_id] > 15 : continue 
+                    min_p = -1
                     st = set()
                     dic = {}
                     gain = 0
                     for v_id in HyperEdge[e_id]:
                         # if v_id not in part_vertex[max_p]: continue
                         if Partition[v_id] != max_p : continue
+                        st.add(v_id)
                         if v_id not in HyperEdge.keys() : continue
                         for edge in HyperVertex[v_id]:
                             if edge not in dic.keys() : dic[edge] = 0  
                             dic[edge] += 1
 
                     for ee_id,cnt in dic.items():
-                        if cnt == part_edge[max_p][ee_id] : 
-                            # print("test1:",2 * cross_edge[ee_id] - 2)
-                            gain += cross_edge[ee_id] - 1
+                        if cnt == part_edge[max_p][ee_id] and cross_edge[ee_id] !=0: 
+                            gain += 2 * cross_edge[ee_id] - 2
                             dic[ee_id] = 0
+                    rec = 0
+                    for p_id in range(max_p,p):
+                        if p_id == max_p: continue
+                        loss = 0
+                        for ee_id,cnt in dic.items():
+                            if ee_id not in part_edge[p_id]:
+                                if cross_edge[ee_id] == 0: continue
+                                if cnt == 0 :
+                                    loss += 2 * cross_edge[ee_id] - 2
+                                else : loss += 2 * cross_edge[ee_id]
+                                # print("test2:",2 * cross_edge[ee_id] - 2)
 
-                    loss = 0
-                    for ee_id,cnt in dic.items():
-                        if ee_id not in part_edge[min_p]:
-                            if dic[ee_id] == 0:
-                                loss += cross_edge[ee_id] - 1
-                            else :
-                                loss += cross_edge[ee_id]
-                                gain -= 1
-                    if gain <= 0 : continue
-                    # print("test3:",loss," ",gain)
-                    
-                    if loss < mini_loss and comm[min_p] + loss < comm[max_p] - gain:
-                        sel_eid = e_id
-                        mini_loss = loss
-
-                if sel_eid == -1 : break
-
-                # print("final:",rec," gain:",gain," loss:",loss," num_edge:",len(part_edge[min_p]))
-                for v_id in HyperEdge[sel_eid] :
-                    if Partition[v_id] != max_p : continue
-                    move_set.append(v_id)
-                    break
+                        if gain - loss > rec :
+                            rec = gain - loss
+                            min_p = p_id
+                            # break
+                    if min_p != -1 : 
+                        print("final:",rec," gain:",gain," loss:",loss," num_edge:",part_edge[min_p][e_id])
+                        for v_id in HyperEdge[e_id] :
+                            if Partition[v_id] != max_p : continue
+                            move_set.append(v_id)
+                        break
                 
                     
                 if min_p == -1 : break
                 
                 printInfo(part_vertex,part_edge)
 
-                print("max_p:",max_p," min_p:",min_p," mini_loss:",mini_loss)
+                for i in range(len(part_edge)):
+                    tmp = 0
+                    for e_id in part_edge[i]:
+                        tmp += cross_edge[e_id] - 1
+                    test_sum1 += tmp
+
+                print("max_p:",max_p," min_p:",min_p," v_id:",move_set[0])
                 test_cnt = 0
                 for v_id in move_set:
                     # print("v part:",Partition[v_id])
@@ -381,7 +408,117 @@ for method in method_list:
                     Partition[v_id] = min_p
                     part_vertex[max_p].remove(v_id)
                     part_vertex[min_p].add(v_id)
+                # break
+                for i in range(len(part_edge)):
+                    tmp = 0
+                    for e_id in part_edge[i]:
+                        tmp += cross_edge[e_id] - 1
+                    test_sum2 += tmp
+
+                check(part_edge,cross_edge)
+
+                if test_sum1 - test_sum2 != rec :
+                    print("fact:",test_sum1 - test_sum2," predict:",rec)
+                    break
+
+            print("optimation 2:",int((time.time()-beg_time)*100)/100,"(s)")
+
+            # beg_time = time.time()
+            # while True :
+            #     lst = sorted(comm.items(),key = lambda x:-x[1])
+            #     move_set = []
+            #     max_p = lst[0][0]
+            #     min_p = lst[-1][0]
+            #     mini_loss = 100000000
+            #     sel_eid = -1
+            #     for e_id in part_edge[max_p].keys():
+            #         # if part_edge[max_p][e_id] > 15 : continue 
+            #         # min_p = -1
+            #         st = set()
+            #         dic = {}
+            #         gain = 0
+            #         for v_id in HyperEdge[e_id]:
+            #             # if v_id not in part_vertex[max_p]: continue
+            #             if Partition[v_id] != max_p : continue
+            #             if v_id not in HyperEdge.keys() : continue
+            #             for edge in HyperVertex[v_id]:
+            #                 if edge not in dic.keys() : dic[edge] = 0  
+            #                 dic[edge] += 1
+
+            #         for ee_id,cnt in dic.items():
+            #             if cnt == part_edge[max_p][ee_id] : 
+            #                 # print("test1:",2 * cross_edge[ee_id] - 2)
+            #                 gain += cross_edge[ee_id] - 1
+            #                 dic[ee_id] = 0
+
+            #         loss = 0
+            #         for ee_id,cnt in dic.items():
+            #             if ee_id not in part_edge[min_p]:
+            #                 if dic[ee_id] == 0:
+            #                     loss += cross_edge[ee_id] - 1
+            #                 else :
+            #                     loss += cross_edge[ee_id]
+            #                     gain -= 1
+            #         if gain <= 0 : continue
+            #         # print("test3:",loss," ",gain)
+                    
+            #         if loss < mini_loss and comm[min_p] + loss < comm[max_p] - gain:
+            #             sel_eid = e_id
+            #             mini_loss = loss
+
+            #     if sel_eid == -1 : break
+
+            #     # print("final:",rec," gain:",gain," loss:",loss," num_edge:",len(part_edge[min_p]))
+            #     for v_id in HyperEdge[sel_eid] :
+            #         if Partition[v_id] != max_p : continue
+            #         move_set.append(v_id)
+            #         break
                 
+                    
+            #     if min_p == -1 : break
+                
+            #     printInfo(part_vertex,part_edge)
+
+            #     print("max_p:",max_p," min_p:",min_p," mini_loss:",mini_loss)
+            #     test_cnt = 0
+            #     for v_id in move_set:
+            #         # print("v part:",Partition[v_id])
+            #         for e_id in HyperVertex[v_id]:
+            #             # print(part_edge[max_p].keys())
+            #             if e_id not in part_edge[max_p].keys():
+            #                 print("error! e_id:",e_id," p_id:",max_p)
+            #         for e_id in HyperVertex[v_id]:
+            #             part_edge[max_p][e_id] -= 1
+            #             if part_edge[max_p][e_id] == 0:
+            #                 comm[max_p] -= cross_edge[e_id] - 1
+            #                 test_cnt += cross_edge[e_id] - 1
+            #                 cross_edge[e_id] -= 1
+            #                 part_edge[max_p].pop(e_id)
+            #                 # if e_id in part_edge[max_p].keys() : print("__________________________________________")
+            #                 for p_id in range(p):
+            #                     if e_id in part_edge[p_id].keys():
+            #                         # if p_id == max_p: print("find error")
+            #                         comm[p_id] -= 1
+            #     # print("test_cnt:",test_cnt)
+                
+            #     for v_id in move_set:
+            #         for e_id in HyperVertex[v_id]:
+            #             if e_id not in part_edge[min_p].keys():
+            #                 cross_edge[e_id] += 1
+            #                 comm[min_p] += cross_edge[e_id] - 1
+            #                 for p_id in range(p):
+            #                     if e_id in part_edge[p_id].keys():
+            #                         # if p_id == max_p : print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+            #                         comm[p_id] += 1
+            #                 part_edge[min_p][e_id] = 0
+            #             part_edge[min_p][e_id] += 1
+                
+            #     for v_id in move_set:
+            #         Partition[v_id] = min_p
+            #         part_vertex[max_p].remove(v_id)
+            #         part_vertex[min_p].add(v_id)
+                
+            # print("optimation 3:",int((time.time()-beg_time)*100)/100,"(s)")
 
             printInfo(part_vertex,part_edge)
             break

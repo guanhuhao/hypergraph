@@ -1,0 +1,75 @@
+
+data_set:wiki_new.txt n:4566 m:4131
+ p , k-1 , partition time , total time  
+2,1976,None,2991
+4,4855,None,5185
+8,8884,None,8986
+16,14109,None,17203
+32,22796,None,9836
+64,31649,None,14425
+
+data_set:wiki_new.txt-swap.txt n:4131 m:4566
+ p , k-1 , partition time , total time  
+2,2848,None,2763
+4,6857,None,5997
+8,10841,None,11117
+16,16934,None,20673
+32,27068,None,9543
+64,36310,None,12308
+
+data_set:out.dbpedia-location n:172091 m:53407
+ p , k-1 , partition time , total time  
+2,108,None,11495
+4,269,None,25491
+8,431,None,27614
+16,746,None,48266
+32,1025,None,65848
+64,1410,None,76854
+
+data_set:out.dbpedia-location-swap.txt n:53407 m:172091
+ p , k-1 , partition time , total time  
+2,544,None,3157
+4,810,None,3470
+8,4105,None,6199
+16,9014,None,8885
+32,13061,None,11486
+64,16522,None,13787
+
+data_set:out.github n:56519 m:120867
+ p , k-1 , partition time , total time  
+2,1339,None,43848
+4,8528,None,164482
+8,18967,None,365062
+16,32060,None,514121
+32,45064,None,490785
+64,59304,None,401765
+
+data_set:out.github-swap.txt n:120867 m:56519
+ p , k-1 , partition time , total time  
+2,3735,None,134611
+4,11712,None,515073
+8,20569,None,915224
+16,28637,None,1210250
+32,39714,None,994084
+64,49197,None,951956
+
+data_set:out.actor-movie n:127823 m:383640
+ p , k-1 , partition time , total time  
+2,11400,None,52479
+4,21848,None,205075
+8,44149,None,456526
+16,76105,None,764548
+32,110764,None,1032339
+64,161609,None,1711200
+
+data_set:out.actor-movie-swap.txt n:383640 m:127823
+ p , k-1 , partition time , total time  
+2,11471,None,120211
+4,28412,None,1980710
+8,44751,None,2367600
+16,65438,None,4219840
+32,101086,None,6303120
+64,140597,None,8662830
+
+data_set:out.dbpedia-team n:901166 m:34461
+ p , k-1 , partition time , total time  

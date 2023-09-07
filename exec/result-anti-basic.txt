@@ -6,7 +6,7 @@ method:anti-basic
 sheild:1545 0 119235
 parameter:
 p:2
-k-1: 2453 runtime:293(ms)
+k-1: 2453 runtime:317(ms)
 ----------
 parameters:
 n:4571 m:4136 path:../data/wiki_new.txt p:4 output:../simulation/test_data/4/wiki_new.txt/anti-basic.txt
@@ -14,7 +14,7 @@ method:anti-basic
 sheild:1545 0 119235
 parameter:
 p:4
-k-1: 7194 runtime:367(ms)
+k-1: 7194 runtime:366(ms)
 ----------
 parameters:
 n:4571 m:4136 path:../data/wiki_new.txt p:8 output:../simulation/test_data/8/wiki_new.txt/anti-basic.txt
@@ -22,7 +22,7 @@ method:anti-basic
 sheild:1545 0 119235
 parameter:
 p:8
-k-1: 13808 runtime:502(ms)
+k-1: 13808 runtime:487(ms)
 ----------
 parameters:
 n:4571 m:4136 path:../data/wiki_new.txt p:16 output:../simulation/test_data/16/wiki_new.txt/anti-basic.txt
@@ -30,7 +30,7 @@ method:anti-basic
 sheild:1545 0 119235
 parameter:
 p:16
-k-1: 20825 runtime:744(ms)
+k-1: 20825 runtime:813(ms)
 ----------
 parameters:
 n:4571 m:4136 path:../data/wiki_new.txt p:32 output:../simulation/test_data/32/wiki_new.txt/anti-basic.txt
@@ -38,7 +38,7 @@ method:anti-basic
 sheild:1545 0 119235
 parameter:
 p:32
-k-1: 28445 runtime:1123(ms)
+k-1: 28445 runtime:1165(ms)
 ----------
 parameters:
 n:4571 m:4136 path:../data/wiki_new.txt p:64 output:../simulation/test_data/64/wiki_new.txt/anti-basic.txt
@@ -46,7 +46,7 @@ method:anti-basic
 sheild:1545 0 119235
 parameter:
 p:64
-k-1: 36673 runtime:1703(ms)
+k-1: 36673 runtime:1768(ms)
 ----------
 outlog:../data/
 parameters:
@@ -55,7 +55,7 @@ method:anti-basic
 sheild:294 0 119235
 parameter:
 p:2
-k-1: 2905 runtime:300(ms)
+k-1: 2905 runtime:278(ms)
 ----------
 parameters:
 n:4136 m:4571 path:../data/wiki_new.txt-swap.txt p:4 output:../simulation/test_data/4/wiki_new.txt-swap.txt/anti-basic.txt
@@ -63,7 +63,7 @@ method:anti-basic
 sheild:294 0 119235
 parameter:
 p:4
-k-1: 7914 runtime:282(ms)
+k-1: 7914 runtime:272(ms)
 ----------
 parameters:
 n:4136 m:4571 path:../data/wiki_new.txt-swap.txt p:8 output:../simulation/test_data/8/wiki_new.txt-swap.txt/anti-basic.txt
@@ -71,7 +71,7 @@ method:anti-basic
 sheild:294 0 119235
 parameter:
 p:8
-k-1: 14485 runtime:342(ms)
+k-1: 14485 runtime:333(ms)
 ----------
 parameters:
 n:4136 m:4571 path:../data/wiki_new.txt-swap.txt p:16 output:../simulation/test_data/16/wiki_new.txt-swap.txt/anti-basic.txt
@@ -79,7 +79,7 @@ method:anti-basic
 sheild:294 0 119235
 parameter:
 p:16
-k-1: 21964 runtime:407(ms)
+k-1: 21964 runtime:454(ms)
 ----------
 parameters:
 n:4136 m:4571 path:../data/wiki_new.txt-swap.txt p:32 output:../simulation/test_data/32/wiki_new.txt-swap.txt/anti-basic.txt
@@ -87,7 +87,7 @@ method:anti-basic
 sheild:294 0 119235
 parameter:
 p:32
-k-1: 30564 runtime:528(ms)
+k-1: 30564 runtime:621(ms)
 ----------
 parameters:
 n:4136 m:4571 path:../data/wiki_new.txt-swap.txt p:64 output:../simulation/test_data/64/wiki_new.txt-swap.txt/anti-basic.txt
@@ -95,7 +95,7 @@ method:anti-basic
 sheild:294 0 119235
 parameter:
 p:64
-k-1: 39438 runtime:868(ms)
+k-1: 39438 runtime:850(ms)
 ----------
 outlog:../data/
 parameters:
@@ -104,7 +104,7 @@ method:anti-basic
 sheild:12189 0 293697
 parameter:
 p:2
-k-1: 1228 runtime:1128(ms)
+k-1: 1228 runtime:1339(ms)
 ----------
 parameters:
 n:172096 m:53412 path:../data/out.dbpedia-location p:4 output:../simulation/test_data/4/out.dbpedia-location/anti-basic.txt
@@ -112,7 +112,7 @@ method:anti-basic
 sheild:12189 0 293697
 parameter:
 p:4
-k-1: 4037 runtime:1218(ms)
+k-1: 4037 runtime:1442(ms)
 ----------
 parameters:
 n:172096 m:53412 path:../data/out.dbpedia-location p:8 output:../simulation/test_data/8/out.dbpedia-location/anti-basic.txt
@@ -120,7 +120,7 @@ method:anti-basic
 sheild:12189 0 293697
 parameter:
 p:8
-k-1: 5607 runtime:1115(ms)
+k-1: 5607 runtime:1474(ms)
 ----------
 parameters:
 n:172096 m:53412 path:../data/out.dbpedia-location p:16 output:../simulation/test_data/16/out.dbpedia-location/anti-basic.txt
@@ -128,7 +128,7 @@ method:anti-basic
 sheild:12189 0 293697
 parameter:
 p:16
-k-1: 5763 runtime:1171(ms)
+k-1: 5763 runtime:1654(ms)
 ----------
 parameters:
 n:172096 m:53412 path:../data/out.dbpedia-location p:32 output:../simulation/test_data/32/out.dbpedia-location/anti-basic.txt
@@ -136,7 +136,7 @@ method:anti-basic
 sheild:12189 0 293697
 parameter:
 p:32
-k-1: 6232 runtime:1289(ms)
+k-1: 6232 runtime:1835(ms)
 ----------
 parameters:
 n:172096 m:53412 path:../data/out.dbpedia-location p:64 output:../simulation/test_data/64/out.dbpedia-location/anti-basic.txt
@@ -144,7 +144,7 @@ method:anti-basic
 sheild:12189 0 293697
 parameter:
 p:64
-k-1: 6584 runtime:1488(ms)
+k-1: 6584 runtime:2029(ms)
 ----------
 outlog:../data/
 parameters:
@@ -153,7 +153,7 @@ method:anti-basic
 sheild:28 0 293697
 parameter:
 p:2
-k-1: 15091 runtime:508(ms)
+k-1: 15091 runtime:750(ms)
 ----------
 parameters:
 n:53412 m:172096 path:../data/out.dbpedia-location-swap.txt p:4 output:../simulation/test_data/4/out.dbpedia-location-swap.txt/anti-basic.txt
@@ -161,7 +161,7 @@ method:anti-basic
 sheild:28 0 293697
 parameter:
 p:4
-k-1: 20296 runtime:506(ms)
+k-1: 20296 runtime:771(ms)
 ----------
 parameters:
 n:53412 m:172096 path:../data/out.dbpedia-location-swap.txt p:8 output:../simulation/test_data/8/out.dbpedia-location-swap.txt/anti-basic.txt
@@ -169,7 +169,7 @@ method:anti-basic
 sheild:28 0 293697
 parameter:
 p:8
-k-1: 28096 runtime:512(ms)
+k-1: 28096 runtime:729(ms)
 ----------
 parameters:
 n:53412 m:172096 path:../data/out.dbpedia-location-swap.txt p:16 output:../simulation/test_data/16/out.dbpedia-location-swap.txt/anti-basic.txt
@@ -177,7 +177,7 @@ method:anti-basic
 sheild:28 0 293697
 parameter:
 p:16
-k-1: 33643 runtime:518(ms)
+k-1: 33643 runtime:771(ms)
 ----------
 parameters:
 n:53412 m:172096 path:../data/out.dbpedia-location-swap.txt p:32 output:../simulation/test_data/32/out.dbpedia-location-swap.txt/anti-basic.txt
@@ -185,7 +185,7 @@ method:anti-basic
 sheild:28 0 293697
 parameter:
 p:32
-k-1: 39246 runtime:525(ms)
+k-1: 39246 runtime:759(ms)
 ----------
 parameters:
 n:53412 m:172096 path:../data/out.dbpedia-location-swap.txt p:64 output:../simulation/test_data/64/out.dbpedia-location-swap.txt/anti-basic.txt
@@ -193,7 +193,7 @@ method:anti-basic
 sheild:28 0 293697
 parameter:
 p:64
-k-1: 41968 runtime:561(ms)
+k-1: 41968 runtime:756(ms)
 ----------
 outlog:../data/
 parameters:
@@ -202,7 +202,7 @@ method:anti-basic
 sheild:3675 0 440237
 parameter:
 p:2
-k-1: 6569 runtime:1170(ms)
+k-1: 6569 runtime:1300(ms)
 ----------
 parameters:
 n:56524 m:120872 path:../data/out.github p:4 output:../simulation/test_data/4/out.github/anti-basic.txt
@@ -210,7 +210,7 @@ method:anti-basic
 sheild:3675 0 440237
 parameter:
 p:4
-k-1: 13242 runtime:1122(ms)
+k-1: 13242 runtime:1333(ms)
 ----------
 parameters:
 n:56524 m:120872 path:../data/out.github p:8 output:../simulation/test_data/8/out.github/anti-basic.txt
@@ -218,7 +218,7 @@ method:anti-basic
 sheild:3675 0 440237
 parameter:
 p:8
-k-1: 25698 runtime:936(ms)
+k-1: 25698 runtime:1316(ms)
 ----------
 parameters:
 n:56524 m:120872 path:../data/out.github p:16 output:../simulation/test_data/16/out.github/anti-basic.txt
@@ -226,7 +226,7 @@ method:anti-basic
 sheild:3675 0 440237
 parameter:
 p:16
-k-1: 40956 runtime:1041(ms)
+k-1: 40956 runtime:1441(ms)
 ----------
 parameters:
 n:56524 m:120872 path:../data/out.github p:32 output:../simulation/test_data/32/out.github/anti-basic.txt
@@ -234,7 +234,7 @@ method:anti-basic
 sheild:3675 0 440237
 parameter:
 p:32
-k-1: 57491 runtime:1282(ms)
+k-1: 57491 runtime:1965(ms)
 ----------
 parameters:
 n:56524 m:120872 path:../data/out.github p:64 output:../simulation/test_data/64/out.github/anti-basic.txt
@@ -242,7 +242,7 @@ method:anti-basic
 sheild:3675 0 440237
 parameter:
 p:64
-k-1: 74516 runtime:1704(ms)
+k-1: 74516 runtime:2497(ms)
 ----------
 outlog:../data/
 parameters:
@@ -251,7 +251,7 @@ method:anti-basic
 sheild:884 0 440237
 parameter:
 p:2
-k-1: 9871 runtime:1112(ms)
+k-1: 9871 runtime:1665(ms)
 ----------
 parameters:
 n:120872 m:56524 path:../data/out.github-swap.txt p:4 output:../simulation/test_data/4/out.github-swap.txt/anti-basic.txt
@@ -259,7 +259,7 @@ method:anti-basic
 sheild:884 0 440237
 parameter:
 p:4
-k-1: 19772 runtime:1106(ms)
+k-1: 19772 runtime:1639(ms)
 ----------
 parameters:
 n:120872 m:56524 path:../data/out.github-swap.txt p:8 output:../simulation/test_data/8/out.github-swap.txt/anti-basic.txt
@@ -267,7 +267,7 @@ method:anti-basic
 sheild:884 0 440237
 parameter:
 p:8
-k-1: 25319 runtime:1227(ms)
+k-1: 25319 runtime:1637(ms)
 ----------
 parameters:
 n:120872 m:56524 path:../data/out.github-swap.txt p:16 output:../simulation/test_data/16/out.github-swap.txt/anti-basic.txt
@@ -275,7 +275,7 @@ method:anti-basic
 sheild:884 0 440237
 parameter:
 p:16
-k-1: 34390 runtime:1285(ms)
+k-1: 34390 runtime:1817(ms)
 ----------
 parameters:
 n:120872 m:56524 path:../data/out.github-swap.txt p:32 output:../simulation/test_data/32/out.github-swap.txt/anti-basic.txt
@@ -283,7 +283,7 @@ method:anti-basic
 sheild:884 0 440237
 parameter:
 p:32
-k-1: 45331 runtime:1463(ms)
+k-1: 45331 runtime:2067(ms)
 ----------
 parameters:
 n:120872 m:56524 path:../data/out.github-swap.txt p:64 output:../simulation/test_data/64/out.github-swap.txt/anti-basic.txt
@@ -291,7 +291,7 @@ method:anti-basic
 sheild:884 0 440237
 parameter:
 p:64
-k-1: 58280 runtime:1663(ms)
+k-1: 58280 runtime:2520(ms)
 ----------
 outlog:../data/
 parameters:
@@ -300,7 +300,7 @@ method:anti-basic
 sheild:646 0 1470404
 parameter:
 p:2
-k-1: 42474 runtime:2851(ms)
+k-1: 42474 runtime:4220(ms)
 ----------
 parameters:
 n:127828 m:383645 path:../data/out.actor-movie p:4 output:../simulation/test_data/4/out.actor-movie/anti-basic.txt
@@ -308,7 +308,7 @@ method:anti-basic
 sheild:646 0 1470404
 parameter:
 p:4
-k-1: 113496 runtime:3054(ms)
+k-1: 113496 runtime:4578(ms)
 ----------
 parameters:
 n:127828 m:383645 path:../data/out.actor-movie p:8 output:../simulation/test_data/8/out.actor-movie/anti-basic.txt
@@ -316,7 +316,7 @@ method:anti-basic
 sheild:646 0 1470404
 parameter:
 p:8
-k-1: 159183 runtime:3425(ms)
+k-1: 159183 runtime:5294(ms)
 ----------
 parameters:
 n:127828 m:383645 path:../data/out.actor-movie p:16 output:../simulation/test_data/16/out.actor-movie/anti-basic.txt
@@ -324,7 +324,7 @@ method:anti-basic
 sheild:646 0 1470404
 parameter:
 p:16
-k-1: 208273 runtime:4034(ms)
+k-1: 208273 runtime:5950(ms)
 ----------
 parameters:
 n:127828 m:383645 path:../data/out.actor-movie p:32 output:../simulation/test_data/32/out.actor-movie/anti-basic.txt
@@ -332,7 +332,7 @@ method:anti-basic
 sheild:646 0 1470404
 parameter:
 p:32
-k-1: 246255 runtime:4565(ms)
+k-1: 246255 runtime:6543(ms)
 ----------
 parameters:
 n:127828 m:383645 path:../data/out.actor-movie p:64 output:../simulation/test_data/64/out.actor-movie/anti-basic.txt
@@ -340,7 +340,7 @@ method:anti-basic
 sheild:646 0 1470404
 parameter:
 p:64
-k-1: 294115 runtime:5334(ms)
+k-1: 294115 runtime:7354(ms)
 ----------
 outlog:../data/
 parameters:
@@ -349,7 +349,7 @@ method:anti-basic
 sheild:294 0 1470404
 parameter:
 p:2
-k-1: 25716 runtime:3602(ms)
+k-1: 25716 runtime:5419(ms)
 ----------
 parameters:
 n:383645 m:127828 path:../data/out.actor-movie-swap.txt p:4 output:../simulation/test_data/4/out.actor-movie-swap.txt/anti-basic.txt
@@ -357,7 +357,7 @@ method:anti-basic
 sheild:294 0 1470404
 parameter:
 p:4
-k-1: 67842 runtime:3670(ms)
+k-1: 67842 runtime:5506(ms)
 ----------
 parameters:
 n:383645 m:127828 path:../data/out.actor-movie-swap.txt p:8 output:../simulation/test_data/8/out.actor-movie-swap.txt/anti-basic.txt
@@ -365,7 +365,7 @@ method:anti-basic
 sheild:294 0 1470404
 parameter:
 p:8
-k-1: 119015 runtime:4053(ms)
+k-1: 119015 runtime:6115(ms)
 ----------
 parameters:
 n:383645 m:127828 path:../data/out.actor-movie-swap.txt p:16 output:../simulation/test_data/16/out.actor-movie-swap.txt/anti-basic.txt
@@ -373,7 +373,7 @@ method:anti-basic
 sheild:294 0 1470404
 parameter:
 p:16
-k-1: 180480 runtime:4775(ms)
+k-1: 180480 runtime:6855(ms)
 ----------
 parameters:
 n:383645 m:127828 path:../data/out.actor-movie-swap.txt p:32 output:../simulation/test_data/32/out.actor-movie-swap.txt/anti-basic.txt
@@ -381,7 +381,7 @@ method:anti-basic
 sheild:294 0 1470404
 parameter:
 p:32
-k-1: 231801 runtime:5550(ms)
+k-1: 231801 runtime:8019(ms)
 ----------
 parameters:
 n:383645 m:127828 path:../data/out.actor-movie-swap.txt p:64 output:../simulation/test_data/64/out.actor-movie-swap.txt/anti-basic.txt
@@ -389,7 +389,7 @@ method:anti-basic
 sheild:294 0 1470404
 parameter:
 p:64
-k-1: 280842 runtime:6004(ms)
+k-1: 280842 runtime:9146(ms)
 ----------
 outlog:../data/
 parameters:
@@ -398,7 +398,7 @@ method:anti-basic
 sheild:2671 0 1366466
 parameter:
 p:2
-k-1: 2833 runtime:5074(ms)
+k-1: 2833 runtime:8177(ms)
 ----------
 parameters:
 n:901171 m:34466 path:../data/out.dbpedia-team p:4 output:../simulation/test_data/4/out.dbpedia-team/anti-basic.txt
@@ -406,7 +406,7 @@ method:anti-basic
 sheild:2671 0 1366466
 parameter:
 p:4
-k-1: 11465 runtime:5443(ms)
+k-1: 11465 runtime:10045(ms)
 ----------
 parameters:
 n:901171 m:34466 path:../data/out.dbpedia-team p:8 output:../simulation/test_data/8/out.dbpedia-team/anti-basic.txt
@@ -414,7 +414,7 @@ method:anti-basic
 sheild:2671 0 1366466
 parameter:
 p:8
-k-1: 19298 runtime:5625(ms)
+k-1: 19298 runtime:10804(ms)
 ----------
 parameters:
 n:901171 m:34466 path:../data/out.dbpedia-team p:16 output:../simulation/test_data/16/out.dbpedia-team/anti-basic.txt
@@ -422,7 +422,7 @@ method:anti-basic
 sheild:2671 0 1366466
 parameter:
 p:16
-k-1: 28135 runtime:6575(ms)
+k-1: 28135 runtime:13367(ms)
 ----------
 parameters:
 n:901171 m:34466 path:../data/out.dbpedia-team p:32 output:../simulation/test_data/32/out.dbpedia-team/anti-basic.txt
@@ -430,7 +430,7 @@ method:anti-basic
 sheild:2671 0 1366466
 parameter:
 p:32
-k-1: 39819 runtime:9248(ms)
+k-1: 39819 runtime:17171(ms)
 ----------
 parameters:
 n:901171 m:34466 path:../data/out.dbpedia-team p:64 output:../simulation/test_data/64/out.dbpedia-team/anti-basic.txt
@@ -438,7 +438,7 @@ method:anti-basic
 sheild:2671 0 1366466
 parameter:
 p:64
-k-1: 51325 runtime:10907(ms)
+k-1: 51325 runtime:17908(ms)
 ----------
 outlog:../data/
 parameters:
@@ -447,7 +447,7 @@ method:anti-basic
 sheild:17 0 1366466
 parameter:
 p:2
-k-1: 10432 runtime:1870(ms)
+k-1: 10432 runtime:2563(ms)
 ----------
 parameters:
 n:34466 m:901171 path:../data/out.dbpedia-team-swap.txt p:4 output:../simulation/test_data/4/out.dbpedia-team-swap.txt/anti-basic.txt
@@ -455,7 +455,7 @@ method:anti-basic
 sheild:17 0 1366466
 parameter:
 p:4
-k-1: 22847 runtime:1866(ms)
+k-1: 22847 runtime:2573(ms)
 ----------
 parameters:
 n:34466 m:901171 path:../data/out.dbpedia-team-swap.txt p:8 output:../simulation/test_data/8/out.dbpedia-team-swap.txt/anti-basic.txt
@@ -463,7 +463,7 @@ method:anti-basic
 sheild:17 0 1366466
 parameter:
 p:8
-k-1: 49557 runtime:1941(ms)
+k-1: 49557 runtime:2432(ms)
 ----------
 parameters:
 n:34466 m:901171 path:../data/out.dbpedia-team-swap.txt p:16 output:../simulation/test_data/16/out.dbpedia-team-swap.txt/anti-basic.txt
@@ -471,7 +471,7 @@ method:anti-basic
 sheild:17 0 1366466
 parameter:
 p:16
-k-1: 81134 runtime:1948(ms)
+k-1: 81134 runtime:2608(ms)
 ----------
 parameters:
 n:34466 m:901171 path:../data/out.dbpedia-team-swap.txt p:32 output:../simulation/test_data/32/out.dbpedia-team-swap.txt/anti-basic.txt
@@ -479,7 +479,7 @@ method:anti-basic
 sheild:17 0 1366466
 parameter:
 p:32
-k-1: 107797 runtime:2067(ms)
+k-1: 107797 runtime:2862(ms)
 ----------
 parameters:
 n:34466 m:901171 path:../data/out.dbpedia-team-swap.txt p:64 output:../simulation/test_data/64/out.dbpedia-team-swap.txt/anti-basic.txt
@@ -487,5 +487,5 @@ method:anti-basic
 sheild:17 0 1366466
 parameter:
 p:64
-k-1: 121190 runtime:2079(ms)
+k-1: 121190 runtime:2785(ms)
 ----------

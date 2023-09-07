@@ -2,10 +2,10 @@ import os
 import re
 current_path = os.path.dirname(os.path.abspath(__file__))
 dataset_list = [
-    "wiki_new.txt",                                                             "wiki_new.txt-swap.txt",\
-    "out.dbpedia-location", "out.dbpedia-location-swap.txt",\
-    "out.github",           "out.github-swap.txt",\
-    "out.actor-movie",      "out.actor-movie-swap.txt",\
+    # "wiki_new.txt",         "wiki_new.txt-swap.txt",\
+    # "out.dbpedia-location", "out.dbpedia-location-swap.txt",\
+    # "out.github",           "out.github-swap.txt",\
+    # "out.actor-movie",      "out.actor-movie-swap.txt",\
     "out.dbpedia-team",     "out.dbpedia-team-swap.txt",\
     ]
 method_list = ["basic","anti-basic","entropy","MinMax","HYPE","KaHyPar","random"]
@@ -31,7 +31,7 @@ def run_KaHyPar(path, dataset, p, generate_scheme=False):
             if edges.get(v) == None : edges[v] = []
             edges[v].append(u)
             
-    with open("./KaHypar-mid-data","w") as f:
+    with open("./KaHyPar-mid-data","w") as f:
         f.write(str(max(dic_e))+" "+str(max(dic_n))+"\n")
         for i in range(max(dic_e)):
             if edges.get(i) == None : edges[i] = [1]
@@ -40,13 +40,13 @@ def run_KaHyPar(path, dataset, p, generate_scheme=False):
                 else : f.write(str(edges[i][j]))
             f.write("\n")
 
-    cmd = "stdbuf -o0 ./KaHyPar -h ./KaHypar-mid-data -k " + str(p) +" -e 0.03 -o km1 -m direct -p ./config/km1_kKaHyPar_sea20.ini -w true  1>./KaHypar.log" # run partition algorithm
+    cmd = "stdbuf -o0 ./KaHyPar -h ./KaHyPar-mid-data -k " + str(p) +" -e 0.03 -o km1 -m direct -p ./config/km1_kKaHyPar_sea20.ini -w true  1>./KaHyPar.log" # run partition algorithm
     print(cmd)
     os.system(cmd)
 
-    content = open("./KaHypar.log","r").read() # analyze and record partition time/quaility 
+    content = open("./KaHyPar.log","r").read() # analyze and record partition time/quaility 
     result = open("result-KaHyPar.txt","a")
-    with open("./KaHypar-mid-data","r") as f:
+    with open("./KaHyPar-mid-data","r") as f:
         m,n = f.readline()[0:-1].split(" ")
     
     if p == 2:
@@ -62,19 +62,19 @@ def run_KaHyPar(path, dataset, p, generate_scheme=False):
     result.close()
 
     if generate_scheme == True:
-        scheme_path = "../simulation/test_data/"+str(p)+"/"+dataset+"/KaHypar.txt" # generate partition scheme
+        scheme_path = "../simulation/test_data/"+str(p)+"/"+dataset+"/KaHyPar.txt" # generate partition scheme
         result_file = open(scheme_path,"w")
         result_file.close()
 
         result_file = open(scheme_path,"a")
-        with open("KaHypar-mid-data.part"+str(p)+".epsilon0.03.seed-1.KaHyPar","r") as f:
+        with open("KaHyPar-mid-data.part"+str(p)+".epsilon0.03.seed-1.KaHyPar","r") as f:
             ll = 1
             for line in f: 
                 par = int(line)
                 result_file.write(str(ll)+" "+str(par)+"\n")
                 ll += 1
 
-    os.system("rm *KaHypar-mid-data*")
+    os.system("rm *KaHyPar-mid-data*")
 
 
 def run_HYPE(path, dataset, p, generate_scheme=False):
@@ -125,7 +125,7 @@ def run_HYPE(path, dataset, p, generate_scheme=False):
 os.system("rm *result-*")
 for method in method_list:
     path = "../data/"
-    generate_scheme = False
+    generate_scheme = True
 
     if method == "basic" or method == "anti-basic" or method == "entropy" or method == "random":
         print("./cmd "+method+" 2>result-"+method+".txt")

@@ -12,10 +12,10 @@
 *******************************************************************************
 Partitioning Parameters:
   Hypergraph:                         ./KaHypar-mid-data
-  Partition File:                     ./KaHypar-mid-data.part2.epsilon0.03.seed-1.KaHyPar
+  Partition File:                     ./KaHypar-mid-data.part32.epsilon0.03.seed-1.KaHyPar
   Mode:                               direct
   Objective:                          km1
-  k:                                  2
+  k:                                  32
   epsilon:                            0.03
   seed:                               -1
   # V-cycles:                         0
@@ -23,8 +23,8 @@ Partitioning Parameters:
   hyperedge size ignore threshold:    1000
   hyperedge size removal threshold:   50000
   use individual block weights:       false
-  L_opt:                              450583
-  L_max:                              464100
+  L_opt:                              3778
+  L_max:                              3891
 -------------------------------------------------------------------------------
 Preprocessing Parameters:
   enable deduplication:               false
@@ -51,9 +51,9 @@ Coarsening Parameters:
   Algorithm:                          ml_style
   max-allowed-weight-multiplier:      1
   contraction-limit-multiplier:       160
-  hypernode weight fraction:          0.003125
-  max. allowed hypernode weight:      2817
-  contraction limit:                  320
+  hypernode weight fraction:          0.000195313
+  max. allowed hypernode weight:      24
+  contraction limit:                  5120
   Rating Parameters:
     Rating Function:                  heavy_edge
     Use Community Structure:          true

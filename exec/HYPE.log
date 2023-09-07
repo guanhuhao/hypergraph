@@ -7,21 +7,21 @@ the neighbourhood heuristic of a node will be cached
 if sset is emtpy, new nodes will be selected: next-best
 ----------------------------------------------------------------------------
 parsing graph ...
-graph parsed in 1609 milliseconds
+graph parsed in 2761 milliseconds
 #Nodes:	34461
 #HyperEdges:	901130
 ----------------------------------------------------------------------------
 partitioning graph
-partitioning done in 748 milliseconds
+partitioning done in 1687 milliseconds
 ----------------------------------------------------------------------------
 sum of external degrees: 329944
 Hyperedges cut: 86629
 K-1: 243315
 node balancing: 0.00185529
 edge balancing: 0.984101
-parsing time: 1609
-partition time: 748
-total time: 2357
+parsing time: 2761
+partition time: 1687
+total time: 4448
 ----------------------------------------------------------------------------
 writing partitions ...
 ----------------------------------------------------------------------------

@@ -1,0 +1,386 @@
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
++                    _  __     _   _       ____                               + 
++                   | |/ /__ _| | | |_   _|  _ \ __ _ _ __                    + 
++                   | ' // _` | |_| | | | | |_) / _` | '__|                   + 
++                   | . \ (_| |  _  | |_| |  __/ (_| | |                      + 
++                   |_|\_\__,_|_| |_|\__, |_|   \__,_|_|                      + 
++                                    |___/                                    + 
++                 Karlsruhe Hypergraph Partitioning Framework                 + 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+*******************************************************************************
+*                            Partitioning Context                             *
+*******************************************************************************
+Partitioning Parameters:
+  Hypergraph:                         ./KaHyPar-mid-data
+  Partition File:                     ./KaHyPar-mid-data.part64.epsilon0.03.seed-1.KaHyPar
+  Mode:                               direct
+  Objective:                          km1
+  k:                                  64
+  epsilon:                            0.03
+  seed:                               -1
+  # V-cycles:                         0
+  time limit:                         -1s
+  hyperedge size ignore threshold:    1000
+  hyperedge size removal threshold:   50000
+  use individual block weights:       false
+  L_opt:                              539
+  L_max:                              555
+-------------------------------------------------------------------------------
+Preprocessing Parameters:
+  enable deduplication:               false
+  enable min hash sparsifier:         true
+  enable community detection:         true
+-------------------------------------------------------------------------------
+MinHash Sparsifier Parameters:
+  max hyperedge size:                 1200
+  max cluster size:                   10
+  min cluster size:                   2
+  number of hash functions:           5
+  number of combined hash functions:  100
+  active at median net size >=:       28
+  sparsifier is active:               false
+-------------------------------------------------------------------------------
+Community Detection Parameters:
+  use community detection in IP:      true
+  maximum louvain-pass iterations:    100
+  minimum quality improvement:        0.0001
+  graph edge weight:                  uniform
+  reuse community structure:          false
+-------------------------------------------------------------------------------
+Coarsening Parameters:
+  Algorithm:                          ml_style
+  max-allowed-weight-multiplier:      1
+  contraction-limit-multiplier:       160
+  hypernode weight fraction:          9.76563e-05
+  max. allowed hypernode weight:      4
+  contraction limit:                  10240
+  Rating Parameters:
+    Rating Function:                  heavy_edge
+    Use Community Structure:          true
+    Heavy Node Penalty:               no_penalty
+    Acceptance Policy:                best_prefer_unmatched
+    Partition Policy:                 normal
+    Fixed Vertex Acceptance Policy:   fixed_vertex_allowed
+-------------------------------------------------------------------------------
+Initial Partitioning Parameters:
+  # IP trials:                        20
+  Mode:                               recursive
+  Technique:                          multilevel
+  Algorithm:                          pool
+  Bin Packing algorithm:              worst_fit
+    early restart on infeasible:      true
+    late restart on infeasible:       true
+IP Coarsening:                        
+Coarsening Parameters:
+  Algorithm:                          ml_style
+  max-allowed-weight-multiplier:      1
+  contraction-limit-multiplier:       150
+  hypernode weight fraction:          determined before IP
+  max. allowed hypernode weight:      determined before IP
+  contraction limit:                  determined before IP
+  Rating Parameters:
+    Rating Function:                  heavy_edge
+    Use Community Structure:          true
+    Heavy Node Penalty:               no_penalty
+    Acceptance Policy:                best_prefer_unmatched
+    Partition Policy:                 normal
+    Fixed Vertex Acceptance Policy:   fixed_vertex_allowed
+IP Local Search:                      
+Local Search Parameters:
+  Algorithm:                          twoway_fm
+  iterations per level:               2147483647
+  stopping rule:                      simple
+  max. # fruitless moves:             50
+  Flow Refinement Parameters:
+    execution policy:                 UNDEFINED
+-------------------------------------------------------------------------------
+Local Search Parameters:
+  Algorithm:                          kway_fm_hyperflow_cutter_km1
+  iterations per level:               2147483647
+  stopping rule:                      adaptive_opt
+  adaptive stopping alpha:            1
+  Flow Refinement Parameters:
+    execution policy:                 exponential
+-------------------------------------------------------------------------------
+ 
+******************************************************************************** 
+*                             Partitioning Result                              * 
+******************************************************************************** 
+Objectives: 
+Hyperedge Cut  (minimize) = 42848 
+SOED           (minimize) = 108916 
+(k-1)          (minimize) = 66068 
+Absorption     (maximize) = 97949.8 
+Imbalance                 = 0.0296846 
+
+Partition sizes and weights:  
+|part  0 | = 555  w(  0 ) = 555 
+|part  1 | = 555  w(  1 ) = 555 
+|part  2 | = 555  w(  2 ) = 555 
+|part  3 | = 539  w(  3 ) = 539 
+|part  4 | = 553  w(  4 ) = 553 
+|part  5 | = 555  w(  5 ) = 555 
+|part  6 | = 545  w(  6 ) = 545 
+|part  7 | = 555  w(  7 ) = 555 
+|part  8 | = 555  w(  8 ) = 555 
+|part  9 | = 403  w(  9 ) = 403 
+|part 10 | = 552  w( 10 ) = 552 
+|part 11 | = 555  w( 11 ) = 555 
+|part 12 | = 555  w( 12 ) = 555 
+|part 13 | = 555  w( 13 ) = 555 
+|part 14 | = 555  w( 14 ) = 555 
+|part 15 | = 534  w( 15 ) = 534 
+|part 16 | = 555  w( 16 ) = 555 
+|part 17 | = 555  w( 17 ) = 555 
+|part 18 | = 555  w( 18 ) = 555 
+|part 19 | = 555  w( 19 ) = 555 
+|part 20 | = 555  w( 20 ) = 555 
+|part 21 | = 342  w( 21 ) = 342 
+|part 22 | = 555  w( 22 ) = 555 
+|part 23 | = 554  w( 23 ) = 554 
+|part 24 | = 555  w( 24 ) = 555 
+|part 25 | = 555  w( 25 ) = 555 
+|part 26 | = 535  w( 26 ) = 535 
+|part 27 | = 551  w( 27 ) = 551 
+|part 28 | = 555  w( 28 ) = 555 
+|part 29 | = 554  w( 29 ) = 554 
+|part 30 | = 554  w( 30 ) = 554 
+|part 31 | = 555  w( 31 ) = 555 
+|part 32 | = 555  w( 32 ) = 555 
+|part 33 | = 555  w( 33 ) = 555 
+|part 34 | = 551  w( 34 ) = 551 
+|part 35 | = 478  w( 35 ) = 478 
+|part 36 | = 555  w( 36 ) = 555 
+|part 37 | = 554  w( 37 ) = 554 
+|part 38 | = 552  w( 38 ) = 552 
+|part 39 | = 555  w( 39 ) = 555 
+|part 40 | = 555  w( 40 ) = 555 
+|part 41 | = 554  w( 41 ) = 554 
+|part 42 | = 555  w( 42 ) = 555 
+|part 43 | = 520  w( 43 ) = 520 
+|part 44 | = 555  w( 44 ) = 555 
+|part 45 | = 482  w( 45 ) = 482 
+|part 46 | = 555  w( 46 ) = 555 
+|part 47 | = 551  w( 47 ) = 551 
+|part 48 | = 530  w( 48 ) = 530 
+|part 49 | = 546  w( 49 ) = 546 
+|part 50 | = 434  w( 50 ) = 434 
+|part 51 | = 529  w( 51 ) = 529 
+|part 52 | = 532  w( 52 ) = 532 
+|part 53 | = 555  w( 53 ) = 555 
+|part 54 | = 521  w( 54 ) = 521 
+|part 55 | = 531  w( 55 ) = 531 
+|part 56 | = 555  w( 56 ) = 555 
+|part 57 | = 554  w( 57 ) = 554 
+|part 58 | = 530  w( 58 ) = 530 
+|part 59 | = 513  w( 59 ) = 513 
+|part 60 | = 532  w( 60 ) = 532 
+|part 61 | = 535  w( 61 ) = 535 
+|part 62 | = 533  w( 62 ) = 533 
+|part 63 | = 533  w( 63 ) = 533 
+
+Timings: 
+Partition time                     = 124.313 s 
+  + Preprocessing                  = 0.815072 s 
+    | min hash sparsifier          = 0 s 
+    | community detection          = 0.815072 s 
+  + Coarsening                     = 0.356279 s 
+  + Initial Partitioning           = 56.5681 s 
+    + Coarsening                   = 1.51366 s 
+          | bisection 1 ( 0 , 63 )        = 0.672748 s 
+          | bisection 2 ( 32 , 63 )        = 0.114338 s 
+          | bisection 3 ( 48 , 63 )        = 0.00218167 s 
+          | bisection 4 ( 56 , 63 )        = 0.00125346 s 
+          | bisection 5 ( 60 , 63 )        = 6.4558e-05 s 
+          | bisection 6 ( 62 , 63 )        = 1.6451e-05 s 
+          | bisection 7 ( 60 , 61 )        = 1.5574e-05 s 
+          | bisection 8 ( 56 , 59 )        = 0.000683016 s 
+          | bisection 9 ( 58 , 59 )        = 3.1155e-05 s 
+          | bisection 10 ( 56 , 57 )        = 0.000332615 s 
+          | bisection 11 ( 48 , 55 )        = 0.000267935 s 
+          | bisection 12 ( 52 , 55 )        = 9.6109e-05 s 
+          | bisection 13 ( 54 , 55 )        = 1.9125e-05 s 
+          | bisection 14 ( 52 , 53 )        = 2.4534e-05 s 
+          | bisection 15 ( 48 , 51 )        = 9.6931e-05 s 
+          | bisection 16 ( 50 , 51 )        = 2.8903e-05 s 
+          | bisection 17 ( 48 , 49 )        = 1.9664e-05 s 
+          | bisection 18 ( 32 , 47 )        = 0.107002 s 
+          | bisection 19 ( 40 , 47 )        = 0.0524427 s 
+          | bisection 20 ( 44 , 47 )        = 0.00244909 s 
+          | bisection 21 ( 46 , 47 )        = 0.000695936 s 
+          | bisection 22 ( 44 , 45 )        = 0.000496852 s 
+          | bisection 23 ( 40 , 43 )        = 0.0207742 s 
+          | bisection 24 ( 42 , 43 )        = 0.000959619 s 
+          | bisection 25 ( 40 , 41 )        = 0.00549911 s 
+          | bisection 26 ( 32 , 39 )        = 0.0101164 s 
+          | bisection 27 ( 36 , 39 )        = 0.00313798 s 
+          | bisection 28 ( 38 , 39 )        = 0.000643224 s 
+          | bisection 29 ( 36 , 37 )        = 0.000559475 s 
+          | bisection 30 ( 32 , 35 )        = 0.00475267 s 
+          | bisection 31 ( 34 , 35 )        = 0.000103252 s 
+          | bisection 32 ( 32 , 33 )        = 0.00105188 s 
+          | bisection 33 ( 0 , 31 )        = 0.212602 s 
+          | bisection 34 ( 16 , 31 )        = 0.0709206 s 
+          | bisection 35 ( 24 , 31 )        = 0.0247705 s 
+          | bisection 36 ( 28 , 31 )        = 0.00970676 s 
+          | bisection 37 ( 30 , 31 )        = 0.000953382 s 
+          | bisection 38 ( 28 , 29 )        = 0.0021661 s 
+          | bisection 39 ( 24 , 27 )        = 0.00574223 s 
+          | bisection 40 ( 26 , 27 )        = 0.000478122 s 
+          | bisection 41 ( 24 , 25 )        = 0.00111056 s 
+          | bisection 42 ( 16 , 23 )        = 0.0292145 s 
+          | bisection 43 ( 20 , 23 )        = 0.00445092 s 
+          | bisection 44 ( 22 , 23 )        = 0.000587618 s 
+          | bisection 45 ( 20 , 21 )        = 0.00106689 s 
+          | bisection 46 ( 16 , 19 )        = 0.00486374 s 
+          | bisection 47 ( 18 , 19 )        = 0.00101721 s 
+          | bisection 48 ( 16 , 17 )        = 0.00117091 s 
+          | bisection 49 ( 0 , 15 )        = 0.0709895 s 
+          | bisection 50 ( 8 , 15 )        = 0.0185013 s 
+          | bisection 51 ( 12 , 15 )        = 0.00562192 s 
+          | bisection 52 ( 14 , 15 )        = 0.00069228 s 
+          | bisection 53 ( 12 , 13 )        = 0.00172372 s 
+          | bisection 54 ( 8 , 11 )        = 0.00317166 s 
+          | bisection 55 ( 10 , 11 )        = 0.000556549 s 
+          | bisection 56 ( 8 , 9 )        = 0.000315902 s 
+          | bisection 57 ( 0 , 7 )        = 0.0233752 s 
+          | bisection 58 ( 4 , 7 )        = 0.00508383 s 
+          | bisection 59 ( 6 , 7 )        = 0.000347082 s 
+          | bisection 60 ( 4 , 5 )        = 0.00177026 s 
+          | bisection 61 ( 0 , 3 )        = 0.0061887 s 
+          | bisection 62 ( 2 , 3 )        = 0.000800588 s 
+          | bisection 63 ( 0 , 1 )        = 0.000795519 s 
+    + Initial Partitioning         = 45.5912 s 
+          | bisection 1 ( 0 , 63 )        = 9.40924 s 
+          | bisection 2 ( 32 , 63 )        = 3.29497 s 
+          | bisection 3 ( 48 , 63 )        = 0.13389 s 
+          | bisection 4 ( 56 , 63 )        = 0.106657 s 
+          | bisection 5 ( 60 , 63 )        = 0.0216923 s 
+          | bisection 6 ( 62 , 63 )        = 0.0108184 s 
+          | bisection 7 ( 60 , 61 )        = 0.011197 s 
+          | bisection 8 ( 56 , 59 )        = 0.138836 s 
+          | bisection 9 ( 58 , 59 )        = 0.0321769 s 
+          | bisection 10 ( 56 , 57 )        = 0.107086 s 
+          | bisection 11 ( 48 , 55 )        = 0.0445725 s 
+          | bisection 12 ( 52 , 55 )        = 0.0254099 s 
+          | bisection 13 ( 54 , 55 )        = 0.0157775 s 
+          | bisection 14 ( 52 , 53 )        = 0.019981 s 
+          | bisection 15 ( 48 , 51 )        = 0.0333384 s 
+          | bisection 16 ( 50 , 51 )        = 0.0219114 s 
+          | bisection 17 ( 48 , 49 )        = 0.0171277 s 
+          | bisection 18 ( 32 , 47 )        = 1.93011 s 
+          | bisection 19 ( 40 , 47 )        = 1.82736 s 
+          | bisection 20 ( 44 , 47 )        = 0.251478 s 
+          | bisection 21 ( 46 , 47 )        = 0.180955 s 
+          | bisection 22 ( 44 , 45 )        = 0.155413 s 
+          | bisection 23 ( 40 , 43 )        = 1.45616 s 
+          | bisection 24 ( 42 , 43 )        = 0.331678 s 
+          | bisection 25 ( 40 , 41 )        = 1.15323 s 
+          | bisection 26 ( 32 , 39 )        = 0.371992 s 
+          | bisection 27 ( 36 , 39 )        = 0.267988 s 
+          | bisection 28 ( 38 , 39 )        = 0.175795 s 
+          | bisection 29 ( 36 , 37 )        = 0.160254 s 
+          | bisection 30 ( 32 , 35 )        = 0.318799 s 
+          | bisection 31 ( 34 , 35 )        = 0.0680524 s 
+          | bisection 32 ( 32 , 33 )        = 0.266909 s 
+          | bisection 33 ( 0 , 31 )        = 5.60555 s 
+          | bisection 34 ( 16 , 31 )        = 1.46575 s 
+          | bisection 35 ( 24 , 31 )        = 0.935361 s 
+          | bisection 36 ( 28 , 31 )        = 0.650693 s 
+          | bisection 37 ( 30 , 31 )        = 0.241658 s 
+          | bisection 38 ( 28 , 29 )        = 0.496843 s 
+          | bisection 39 ( 24 , 27 )        = 0.534295 s 
+          | bisection 40 ( 26 , 27 )        = 0.150588 s 
+          | bisection 41 ( 24 , 25 )        = 0.516022 s 
+          | bisection 42 ( 16 , 23 )        = 0.950051 s 
+          | bisection 43 ( 20 , 23 )        = 0.366706 s 
+          | bisection 44 ( 22 , 23 )        = 0.175852 s 
+          | bisection 45 ( 20 , 21 )        = 0.273802 s 
+          | bisection 46 ( 16 , 19 )        = 0.45084 s 
+          | bisection 47 ( 18 , 19 )        = 0.268713 s 
+          | bisection 48 ( 16 , 17 )        = 0.30438 s 
+          | bisection 49 ( 0 , 15 )        = 3.15198 s 
+          | bisection 50 ( 8 , 15 )        = 1.28241 s 
+          | bisection 51 ( 12 , 15 )        = 0.551316 s 
+          | bisection 52 ( 14 , 15 )        = 0.218206 s 
+          | bisection 53 ( 12 , 13 )        = 0.36607 s 
+          | bisection 54 ( 8 , 11 )        = 0.452696 s 
+          | bisection 55 ( 10 , 11 )        = 0.309039 s 
+          | bisection 56 ( 8 , 9 )        = 0.131223 s 
+          | bisection 57 ( 0 , 7 )        = 1.01437 s 
+          | bisection 58 ( 4 , 7 )        = 0.55904 s 
+          | bisection 59 ( 6 , 7 )        = 0.244549 s 
+          | bisection 60 ( 4 , 5 )        = 0.342463 s 
+          | bisection 61 ( 0 , 3 )        = 0.52518 s 
+          | bisection 62 ( 2 , 3 )        = 0.349024 s 
+          | bisection 63 ( 0 , 1 )        = 0.345655 s 
+    + Local Search                 = 6.24505 s 
+          | bisection 1 ( 0 , 63 )        = 2.02501 s 
+          | bisection 2 ( 32 , 63 )        = 0.405451 s 
+          | bisection 3 ( 48 , 63 )        = 0.000739952 s 
+          | bisection 4 ( 56 , 63 )        = 0.000417335 s 
+          | bisection 5 ( 60 , 63 )        = 1.9797e-05 s 
+          | bisection 6 ( 62 , 63 )        = 8.625e-06 s 
+          | bisection 7 ( 60 , 61 )        = 8.878e-06 s 
+          | bisection 8 ( 56 , 59 )        = 0.0021015 s 
+          | bisection 9 ( 58 , 59 )        = 2.2661e-05 s 
+          | bisection 10 ( 56 , 57 )        = 5.1702e-05 s 
+          | bisection 11 ( 48 , 55 )        = 8.9699e-05 s 
+          | bisection 12 ( 52 , 55 )        = 3.5371e-05 s 
+          | bisection 13 ( 54 , 55 )        = 1.2033e-05 s 
+          | bisection 14 ( 52 , 53 )        = 1.3468e-05 s 
+          | bisection 15 ( 48 , 51 )        = 5.0926e-05 s 
+          | bisection 16 ( 50 , 51 )        = 1.331e-05 s 
+          | bisection 17 ( 48 , 49 )        = 1.2265e-05 s 
+          | bisection 18 ( 32 , 47 )        = 0.420382 s 
+          | bisection 19 ( 40 , 47 )        = 0.603853 s 
+          | bisection 20 ( 44 , 47 )        = 0.0118994 s 
+          | bisection 21 ( 46 , 47 )        = 0.000441996 s 
+          | bisection 22 ( 44 , 45 )        = 0.000157091 s 
+          | bisection 23 ( 40 , 43 )        = 0.213737 s 
+          | bisection 24 ( 42 , 43 )        = 0.000171538 s 
+          | bisection 25 ( 40 , 41 )        = 0.00200926 s 
+          | bisection 26 ( 32 , 39 )        = 0.0926471 s 
+          | bisection 27 ( 36 , 39 )        = 0.0227483 s 
+          | bisection 28 ( 38 , 39 )        = 0.000251689 s 
+          | bisection 29 ( 36 , 37 )        = 0.000383442 s 
+          | bisection 30 ( 32 , 35 )        = 0.0446088 s 
+          | bisection 31 ( 34 , 35 )        = 9.9056e-05 s 
+          | bisection 32 ( 32 , 33 )        = 0.000742268 s 
+          | bisection 33 ( 0 , 31 )        = 1.04555 s 
+          | bisection 34 ( 16 , 31 )        = 0.317566 s 
+          | bisection 35 ( 24 , 31 )        = 0.13263 s 
+          | bisection 36 ( 28 , 31 )        = 0.0155233 s 
+          | bisection 37 ( 30 , 31 )        = 0.000163293 s 
+          | bisection 38 ( 28 , 29 )        = 0.000280805 s 
+          | bisection 39 ( 24 , 27 )        = 0.0498913 s 
+          | bisection 40 ( 26 , 27 )        = 0.000123637 s 
+          | bisection 41 ( 24 , 25 )        = 0.000322707 s 
+          | bisection 42 ( 16 , 23 )        = 0.144104 s 
+          | bisection 43 ( 20 , 23 )        = 0.0247343 s 
+          | bisection 44 ( 22 , 23 )        = 5.0523e-05 s 
+          | bisection 45 ( 20 , 21 )        = 0.000260194 s 
+          | bisection 46 ( 16 , 19 )        = 0.0340609 s 
+          | bisection 47 ( 18 , 19 )        = 0.000255233 s 
+          | bisection 48 ( 16 , 17 )        = 0.000245163 s 
+          | bisection 49 ( 0 , 15 )        = 0.304565 s 
+          | bisection 50 ( 8 , 15 )        = 0.0974176 s 
+          | bisection 51 ( 12 , 15 )        = 0.0296253 s 
+          | bisection 52 ( 14 , 15 )        = 5.8878e-05 s 
+          | bisection 53 ( 12 , 13 )        = 0.000463905 s 
+          | bisection 54 ( 8 , 11 )        = 0.0224042 s 
+          | bisection 55 ( 10 , 11 )        = 0.0001344 s 
+          | bisection 56 ( 8 , 9 )        = 0.000124729 s 
+          | bisection 57 ( 0 , 7 )        = 0.106797 s 
+          | bisection 58 ( 4 , 7 )        = 0.0206469 s 
+          | bisection 59 ( 6 , 7 )        = 9.8467e-05 s 
+          | bisection 60 ( 4 , 5 )        = 0.00045257 s 
+          | bisection 61 ( 0 , 3 )        = 0.0480096 s 
+          | bisection 62 ( 2 , 3 )        = 0.000106731 s 
+          | bisection 63 ( 0 , 1 )        = 0.000195457 s 
+  + Local Search                   = 66.0806 s 
+           | flow refinement       = 57.3836  s 
+  + Postprocessing                 = 0 s 
+    | undo sparsifier              = 0 s 
+ 
+ 

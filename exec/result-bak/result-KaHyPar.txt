@@ -1,0 +1,105 @@
+
+data_set:wiki_new.txt n:4566 m:4131
+ p , k-1 , partition time , total time  
+2,1976,None,3982
+4,4855,None,5915
+8,8884,None,10200
+16,14109,None,20477
+32,22796,None,14516
+64,31649,None,15307
+128,42050,None,19787
+256,55021,None,28248
+
+data_set:wiki_new.txt-swap.txt n:4131 m:4566
+ p , k-1 , partition time , total time  
+2,2848,None,3164
+4,6857,None,7307
+8,10841,None,13992
+16,16934,None,24161
+32,27068,None,12346
+64,36310,None,16227
+128,46648,None,21289
+256,57385,None,28337
+
+data_set:out.dbpedia-location n:172091 m:53407
+ p , k-1 , partition time , total time  
+2,108,None,18720
+4,269,None,35915
+8,431,None,39502
+16,746,None,86376
+32,1025,None,122852
+64,1410,None,123969
+128,1919,None,185606
+256,2554,None,234430
+
+data_set:out.dbpedia-location-swap.txt n:53407 m:172091
+ p , k-1 , partition time , total time  
+2,544,None,3558
+4,810,None,4639
+8,4105,None,7934
+16,9014,None,11633
+32,13061,None,16215
+64,16522,None,17310
+128,22023,None,20185
+256,27601,None,24205
+
+data_set:out.github n:56519 m:120867
+ p , k-1 , partition time , total time  
+2,1339,None,68989
+4,8528,None,231359
+8,18967,None,412708
+16,32060,None,763109
+32,45064,None,924331
+64,59304,None,578603
+128,74587,None,643066
+256,93501,None,727947
+
+data_set:out.github-swap.txt n:120867 m:56519
+ p , k-1 , partition time , total time  
+2,3735,None,234053
+4,11712,None,642430
+8,20569,None,1223660
+16,65438,None,6450700
+32,101086,None,10522600
+64,140597,None,16647099
+128,195082,None,15084800
+256,267822,None,15985200
+
+data_set:out.dbpedia-team n:901166 m:34461
+ p , k-1 , partition time , total time  
+2,3093,None,987740
+4,4784,None,1146400
+8,7835,None,1807790
+16,10770,None,2892580
+16,10770,None,2990920
+32,15441,None,6674230
+64,21043,None,10513800
+128,29417,None,14437700
+256,40466,None,23286700
+
+data_set:out.dbpedia-team-swap.txt n:34461 m:901166
+ p , k-1 , partition time , total time  
+2,9483,None,149744
+4,19905,None,67812
+8,31487,None,49091
+16,40488,None,64499
+32,53856,None,91509
+64,66068,None,128768
+128,82062,None,133896
+256,105144,None,90484
+
+data_set:out.dblp-author n:1953085 m:5624219
+ p , k-1 , partition time , total time  
+2,206551,None,18029000
+4,401620,None,222036000
+8,560823,None,28645100
+16,760533,None,48363900
+32,934851,None,35949300
+64,1100174,None,18115800
+128,1236033,None,13009200
+256,1346750,None,8847460
+
+data_set:out.dblp-author-swap.txt n:5623931 m:1953085
+ p , k-1 , partition time , total time  
+2,65389,None,77542800
+4,133645,None,200183000

@@ -63,16 +63,14 @@ std::map<int,int> MinMax(std::string path,int n,int m,int K,int s,string output 
             }
         }
         for(auto &x:nets[n_id]) part_edge[p].insert(x);
-        
+        // cerr<<2<<endl;
         V[p]++;
+        // cerr<<output<<endl;
         if(output != "None"){
             fprintf(result,"%d %d\n",n_id,p); 
-            // for(auto &e_id:nets[n_id]){
-            // fprintf(result,"%d %d %d\n",n_id,p);
-            // // fprintf(result,"%d %d %d\n",e_id+n,n_id,p);
-            // }
         }
         n2p[n_id] = p;
+        // cerr<<3<<endl;
         if(p == pmin){
             for(int i=0;i<K;i++){
                 if(V[i]<V[pmin]) pmin = i;
@@ -85,15 +83,15 @@ std::map<int,int> MinMax(std::string path,int n,int m,int K,int s,string output 
     clock_t tot_time = (end-beg)*1000/CLOCKS_PER_SEC;
     int k_1 = 0;
     for(int i=0;i<K;i++){
-        std::cerr<<"par:"<<i<<" size:"<<V[i]<<" edge:"<<part_edge[i].size()<<std::endl;
+        // std::cerr<<"par:"<<i<<" size:"<<V[i]<<" edge:"<<part_edge[i].size()<<std::endl;
         k_1 += part_edge[i].size();
     }
     if(K == 2) {
-        cout<<"# MIN-MAX  - dataset:"<<filename<<" n:"<<n<<" m:"<<m<<endl;
+        cout<<"\n# MIN-MAX  - dataset:"<<filename<<" n:"<<n<<" m:"<<m<<endl;
         cout<<"# p , k-1 ,  total time "<<endl; 
     }
-    cout<<K<<","<<k_1-m<<","<<tot_time<<endl;
-    cout<<endl;
+    cout<<K<<","<<k_1-m<<", ,"<<tot_time<<endl;
+    // cout<<endl;
     return n2p;
 }
 
@@ -120,88 +118,99 @@ std::map<int,std::vector<int> > E2N(std::string filename){
 vector<int> nn,mm;
 vector<string> filename;
 void init_data(){
-    nn.push_back( 4566 );
-    mm.push_back( 4131 );
-    filename.push_back( "../data/wiki_new.txt" );
+    // nn.push_back( 4566 );
+    // mm.push_back( 4131 );
+    // filename.push_back( "wiki_new.txt" );
 
-    nn.push_back( 4131 );
-    mm.push_back( 4566 );
-    filename.push_back( "../data/wiki_new.txt-swap.txt" );
+    // nn.push_back( 4131 );
+    // mm.push_back( 4566 );
+    // filename.push_back( "wiki_new.txt-swap.txt" );
 
-    nn.push_back( 172091 );
-    mm.push_back( 53407 );
-    filename.push_back( "../data/out.dbpedia-location" );
+    // nn.push_back( 172091 );
+    // mm.push_back( 53407 );
+    // filename.push_back( "out.dbpedia-location" );
 
-    nn.push_back( 53407 ); //use
-    mm.push_back( 172091 );
-    filename.push_back( "../data/out.dbpedia-location-swap.txt" );
+    // nn.push_back( 53407 ); //use
+    // mm.push_back( 172091 );
+    // filename.push_back( "out.dbpedia-location-swap.txt" );
 
-    nn.push_back( 56519 );
-    mm.push_back( 120867 );
-    filename.push_back( "../data/out.github" );
+    // nn.push_back( 56519 );
+    // mm.push_back( 120867 );
+    // filename.push_back( "out.github" );
 
-    nn.push_back( 120867 );
-    mm.push_back( 56519 );
-    filename.push_back( "../data/out.github-swap.txt" );
+    // nn.push_back( 120867 );
+    // mm.push_back( 56519 );
+    // filename.push_back( "out.github-swap.txt" );
 
-    nn.push_back( 127823 );
-    mm.push_back( 383640 );
-    filename.push_back( "../data/out.actor-movie" );
+    // nn.push_back( 127823 );
+    // mm.push_back( 383640 );
+    // filename.push_back( "out.actor-movie" );
 
-    nn.push_back( 383640 ); // use
-    mm.push_back( 127823 );
-    filename.push_back( "../data/out.actor-movie-swap.txt" );
+    // nn.push_back( 383640 ); // use
+    // mm.push_back( 127823 );
+    // filename.push_back( "out.actor-movie-swap.txt" );
 
-    nn.push_back( 901166 );
-    mm.push_back( 34461 );
-    filename.push_back( "../data/out.dbpedia-team" );
+    // nn.push_back( 901166 );
+    // mm.push_back( 34461 );
+    // filename.push_back( "out.dbpedia-team" );
 
-    nn.push_back( 34461 ); //use
-    mm.push_back( 901166 );
-    filename.push_back( "../data/out.dbpedia-team-swap.txt" );
+    // nn.push_back( 34461 ); //use
+    // mm.push_back( 901166 );
+    // filename.push_back( "out.dbpedia-team-swap.txt" );
 
-
-    // nn.push_back( 1953085 );// use
-    // mm.push_back( 5624219 );
-    // filename.push_back( "../data/out.dblp-author" );
+    nn.push_back( 1953085 );// use
+    mm.push_back( 5624219 );
+    filename.push_back( "out.dblp-author" );
 
     // nn.push_back( 5623931 );
     // mm.push_back( 1953085 );
-    // filename.push_back( "../data/out.dblp-author-swap.txt" );
+    // filename.push_back( "out.dblp-author-swap.txt" );
 
-    // nn.push_back( 2783196 );
-    // mm.push_back( 8730857 );
-    // filename.push_back( "../data/out.orkut-groupmemberships" );
+    // nn.push_back( 781265  );// use
+    // mm.push_back( 283911   );
+    // filename.push_back( "reuters.txt" );
 
-    // nn.push_back( 8730857 );
-    // mm.push_back( 2783196 );
-    // filename.push_back( "../data/out.orkut-groupmemberships-swap.txt" );
+    // nn.push_back( 283911 );
+    // mm.push_back( 781265 );
+    // filename.push_back( "reuters-swap.txt" );
 
     // nn.push_back( 27665730 );
     // mm.push_back( 12756244 );
-    // filename.push_back( "../data/out.trackers" );
+    // filename.push_back( "out.trackers" );
 
     // nn.push_back( 12756244 );
     // mm.push_back( 27665730 );
-    // filename.push_back( "../data/out.trackers-swap.txt" );
+    // filename.push_back( "out.trackers-swap.txt" );
 
-    // nn.push_back( 10000000 );
-    // mm.push_back( 10000000 );
-    // filename.push_back( "../data/rand-n10M-m10M-e100M" );
+    nn.push_back( 2783196 );
+    mm.push_back( 8730857 );
+    filename.push_back( "out.orkut-groupmemberships" );
+
+    // nn.push_back( 8730857 );
+    // mm.push_back( 2783196 );
+    // filename.push_back( "out.orkut-groupmemberships-swap.txt" );
+
+    nn.push_back( 8116897  );
+    mm.push_back( 42640545 );
+    filename.push_back( "enwiki.txt" );
+
+    // nn.push_back( 42640545 );
+    // mm.push_back( 8116897  );
+    // filename.push_back( "enwiki-swap.txt" );
 
 }
 void unit_test(){ // diffrent dataset and p
     init_data();
     freopen("./MIN-MAX_result.txt","w",stdout);
     for(int i=0;i<nn.size();i++){
-        cerr<<"begin solve "<<filename[i]<<endl;
+        // cerr<<"begin solve "<<"../data/" + filename[i]<<endl;
         int n = nn[i];
         int m = mm[i];
-        string f = filename[i];
+        string f = "../data/" + filename[i];
         for(int j=2;j<=64;j*=2){
             MinMax(f,n,m,j,int(n*0.01/j));
-            cerr<<j<<" ok!"<<endl;
-            cerr<<"------------"<<endl;
+            // cerr<<j<<" ok!"<<endl;
+            // cerr<<"------------"<<endl;
         } 
     }
 }
@@ -209,11 +218,12 @@ void unit_test2(){ // generate par result
     init_data();
     freopen("./result-MinMax.txt","w",stdout);
     for(int i=0;i<nn.size();i++){
-        for(int p =2;p<=64;p*=2){
-            cerr<<"begin solve "<<filename[i]<<endl;
+        for(int p =2;p<=256;p*=2){
+            // if(i==0 && p< 64) p = 64;
+            // cerr<<"begin solve "<<"../data/" + filename[i]<<endl;
             int n = nn[i];
             int m = mm[i];
-            string f = filename[i];
+            string f = "../data/" + filename[i];
             // int p = 16;
 
             string result_path = f;
@@ -224,9 +234,9 @@ void unit_test2(){ // generate par result
             }
             reverse(filename.begin(),filename.end());
             result_path = "../simulation/test_data/"+to_string(p)+"/"+filename+"/MinMax.txt";
-
-            MinMax(f,n,m,p,int(n*0.01),result_path);
-            cerr<<"------------"<<endl;
+            result_path = "None";
+            MinMax(f,n,m,p,int(n*0.01/p),result_path);
+            // cerr<<"------------"<<endl;
         }
     }
 }

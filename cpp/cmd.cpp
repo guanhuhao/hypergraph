@@ -1,3 +1,4 @@
+#pragma GCC optimize(2)
 #include <bits/stdc++.h>
 #include <cmath>
 #include <stdlib.h>
@@ -182,7 +183,7 @@ void solve(int n,int m,string path, int p,double sheild = 0,string method = "ent
         while(c>0) c -= edge_degree[pos++];
         
         sheild = edge_degree[pos];
-        cerr<<"sheild:"<<sheild<<" "<<pos<<" "<<total_edge<<endl;
+        // cerr<<"sheild:"<<sheild<<" "<<pos<<" "<<total_edge<<endl;
     
         clock_t beg_time = clock();
 
@@ -281,7 +282,7 @@ void unit_single(){
         n = nn[i]+5;
         m = mm[i]+5;
         cerr<<n<<" "<<m<<endl;
-        string path = filename[i];
+        string path = "../data/" + filename[i];
         cout<<"# dataset:"<<path<<" n:"<<n<<" m:"<<m<<endl;
         cout<<"# p , k-1 , partition time , total time "<<endl; 
         for(int p=16; p<=16;p*=2){
@@ -298,7 +299,7 @@ void unit_basic(){
         n = nn[i]+5;
         m = mm[i]+5;
         cerr<<n<<" "<<m<<endl;
-        string path = filename[i];
+        string path = "../data/" + filename[i];
         cout<<"# dataset:"<<path<<" n:"<<n<<" m:"<<m<<endl;
         cout<<"# p , k-1 , partition time , total time "<<endl; 
         for(int p=2; p<=64;p*=2){
@@ -317,7 +318,7 @@ void unit_entropy(){
         n = nn[i]+5;
         m = mm[i]+5;
         cerr<<n<<" "<<m<<endl;
-        string path = filename[i];
+        string path = "../data/" + filename[i];
         cout<<"# dataset:"<<path<<" n:"<<n<<" m:"<<m<<endl;
         cout<<"# p , k-1 , partition time , total time "<<endl; 
         for(int p=2; p<=64;p*=2){
@@ -331,7 +332,7 @@ void get_partition_result(string method="entropy"){
     for(int i=0;i<nn.size();i++){
         n = nn[i]+5;
         m = mm[i]+5;
-        string path = filename[i];
+        string path = "../data/" + filename[i];
         // cerr<<n<<" "<<m<<endl;
         Node = new HyperNode[n];
         Edge = new HyperEdge[m];
@@ -343,7 +344,7 @@ void get_partition_result(string method="entropy"){
         // for(int i=0;i<10;i++) cout<<edge_degree[i]<<" ";
         // cout<<endl;
 
-        cout<<"# dataset:"<<path<<" n:"<<n<<" m:"<<m<<endl;
+        cout<<"# dataset:"<<filename[i]<<" n:"<<n<<" m:"<<m<<endl;
         cout<<"# p , k-1 , partition time , total time "<<endl; 
 
         string result_path = path;
@@ -356,9 +357,10 @@ void get_partition_result(string method="entropy"){
         cerr<<"outlog:"<<result_path<<endl;
 
         // int p = 8;
-        for(int p=2; p<=64;p*=2){
-            int sheild_heavy_node = 0.2;
-            result_path = "../simulation/test_data/"+to_string(p)+"/"+filename+"/"+method+".txt";
+        for(int p=2; p<=256;p*=2){
+            double sheild_heavy_node = 0;
+            result_path = "/raid/guan/large-cluster/comm/test_data/"+to_string(p)+"/"+filename+"/"+method+".txt";
+            result_path = "None";
             solve(n,m,path,p,sheild_heavy_node,method,result_path);
         }
         cout<<endl;
@@ -371,7 +373,7 @@ void sheild_select(){
     for(int i=0;i<nn.size();i++){
         n = nn[i]+5;
         m = mm[i]+5;
-        string path = filename[i];
+        string path = "../data/" + filename[i];
         // cerr<<n<<" "<<m<<endl;
         Node = new HyperNode[n];
         Edge = new HyperEdge[m];
@@ -407,80 +409,92 @@ void sheild_select(){
 }
 
 void load_dataset(){
-    nn.push_back( 4566 );
-    mm.push_back( 4131 );
-    filename.push_back( "../data/wiki_new.txt" );
+   // nn.push_back( 4566 );
+    // mm.push_back( 4131 );
+    // filename.push_back( "wiki_new.txt" );
 
-    nn.push_back( 4131 );
-    mm.push_back( 4566 );
-    filename.push_back( "../data/wiki_new.txt-swap.txt" );
+    // nn.push_back( 4131 );
+    // mm.push_back( 4566 );
+    // filename.push_back( "wiki_new.txt-swap.txt" );
 
-    nn.push_back( 172091 );
-    mm.push_back( 53407 );
-    filename.push_back( "../data/out.dbpedia-location" );
+    // nn.push_back( 172091 );
+    // mm.push_back( 53407 );
+    // filename.push_back( "out.dbpedia-location" );
 
-    nn.push_back( 53407 ); //use
-    mm.push_back( 172091 );
-    filename.push_back( "../data/out.dbpedia-location-swap.txt" );
+    // nn.push_back( 53407 ); //use
+    // mm.push_back( 172091 );
+    // filename.push_back( "out.dbpedia-location-swap.txt" );
 
     nn.push_back( 56519 );
     mm.push_back( 120867 );
-    filename.push_back( "../data/out.github" );
+    filename.push_back( "out.github" );
 
     nn.push_back( 120867 );
     mm.push_back( 56519 );
-    filename.push_back( "../data/out.github-swap.txt" );
+    filename.push_back( "out.github-swap.txt" );
 
     nn.push_back( 127823 );
     mm.push_back( 383640 );
-    filename.push_back( "../data/out.actor-movie" );
+    filename.push_back( "out.actor-movie" );
 
     nn.push_back( 383640 ); // use
     mm.push_back( 127823 );
-    filename.push_back( "../data/out.actor-movie-swap.txt" );
+    filename.push_back( "out.actor-movie-swap.txt" );
 
-    nn.push_back( 901166 );
-    mm.push_back( 34461 );
-    filename.push_back( "../data/out.dbpedia-team" );
+    // nn.push_back( 901166 );
+    // mm.push_back( 34461 );
+    // filename.push_back( "out.dbpedia-team" );
 
-    nn.push_back( 34461 ); //use
-    mm.push_back( 901166 );
-    filename.push_back( "../data/out.dbpedia-team-swap.txt" );
+    // nn.push_back( 34461 ); //use
+    // mm.push_back( 901166 );
+    // filename.push_back( "out.dbpedia-team-swap.txt" );
 
+    nn.push_back( 1953085 );// use
+    mm.push_back( 5624219 );
+    filename.push_back( "out.dblp-author" );
 
-    // nn.push_back( 1953085 );// use
-    // mm.push_back( 5624219 );
-    // filename.push_back( "../data/out.dblp-author" );
+    nn.push_back( 5623931 );
+    mm.push_back( 1953085 );
+    filename.push_back( "out.dblp-author-swap.txt" );
 
-    // nn.push_back( 5623931 );
-    // mm.push_back( 1953085 );
-    // filename.push_back( "../data/out.dblp-author-swap.txt" );
+    nn.push_back( 781265  );// use
+    mm.push_back( 283911   );
+    filename.push_back( "reuters.txt" );
 
-    // nn.push_back( 2783196 );
-    // mm.push_back( 8730857 );
-    // filename.push_back( "../data/out.orkut-groupmemberships" );
+    nn.push_back( 283911 );
+    mm.push_back( 781265 );
+    filename.push_back( "reuters-swap.txt" );
 
-    // nn.push_back( 8730857 );
-    // mm.push_back( 2783196 );
-    // filename.push_back( "../data/out.orkut-groupmemberships-swap.txt" );
+    nn.push_back( 27665730 );
+    mm.push_back( 12756244 );
+    filename.push_back( "out.trackers" );
 
-    // nn.push_back( 27665730 );
-    // mm.push_back( 12756244 );
-    // filename.push_back( "../data/out.trackers" );
+    nn.push_back( 12756244 );
+    mm.push_back( 27665730 );
+    filename.push_back( "out.trackers-swap.txt" );
 
-    // nn.push_back( 12756244 );
-    // mm.push_back( 27665730 );
-    // filename.push_back( "../data/out.trackers-swap.txt" );
+    nn.push_back( 2783196 );
+    mm.push_back( 8730857 );
+    filename.push_back( "out.orkut-groupmemberships" );
 
-    // nn.push_back( 10000000 );
-    // mm.push_back( 10000000 );
-    // filename.push_back( "../data/rand-n10M-m10M-e100M" );
+    nn.push_back( 8730857 );
+    mm.push_back( 2783196 );
+    filename.push_back( "out.orkut-groupmemberships-swap.txt" );
+
+    nn.push_back( 8116897  );
+    mm.push_back( 42640545 );
+    filename.push_back( "enwiki.txt" );
+
+    nn.push_back( 42640545 );
+    mm.push_back( 8116897  );
+    filename.push_back( "enwiki-swap.txt" );
 
 }
 
 int main(int argc,char *argv[]){
     string method;
     method = argv[1];
+    // method = "basic";
     cerr<<method<<endl;
     load_dataset();
     // unit_single();

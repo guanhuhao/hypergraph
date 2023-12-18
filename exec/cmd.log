@@ -1,0 +1,5 @@
+parameters:
+dataset:../data/out.dblp-author	n:1953086	m:5624220
+method:entropy	p:64	sheild:0.2
+save partitionFile:None
+test1

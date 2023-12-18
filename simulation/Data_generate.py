@@ -1,13 +1,19 @@
 import os
 import re
 current_path = os.path.dirname(os.path.abspath(__file__))
-data_path = current_path+"/../data/"
+out_path = "/back-up/large-cluster/comm/test_data/"
+data_path = current_path + "/../data/"
 dataset_list = [
-    "wiki_new.txt",         "wiki_new.txt-swap.txt",\
-    "out.dbpedia-location", "out.dbpedia-location-swap.txt",\
-    "out.github",           "out.github-swap.txt",\
-    "out.actor-movie",      "out.actor-movie-swap.txt",\
-    "out.dbpedia-team",     "out.dbpedia-team-swap.txt",\
+    # "wiki_new.txt",         "wiki_new.txt-swap.txt",\
+    # "out.dbpedia-location", "out.dbpedia-location-swap.txt",\
+    "out.github",         #  "out.github-swap.txt",\
+    # "out.actor-movie",      "out.actor-movie-swap.txt",\
+    # "out.dbpedia-team",     "out.dbpedia-team-swap.txt",\
+    "out.dblp-author",    #  "out.dblp-author-swap.txt",\
+    # "out.trackers",         "out.trackers-swap.txt",\
+    # "out.orkut-groupmemberships",   "out.orkut-groupmemberships-swap.txt"\
+    # "enwiki.txt",  
+    # "enwiki-swap.txt"
     ]
 
 for file in dataset_list:
@@ -40,10 +46,11 @@ for file in dataset_list:
     while(p<64):
         p *= 2
         print("generate result p=",p)
-        if os.path.exists(current_path + "/test_data/"+str(p)) == False:
-            os.mkdir(current_path + "/test_data/"+str(p))
-        if os.path.exists(current_path + "/test_data/"+str(p)+"/"+str(file)) == False:
-            os.mkdir(current_path + "/test_data/"+str(p)+"/"+str(file))
+        if os.path.exists(out_path+str(p)+"/"+str(file)) == False:
+            os.makedirs(out_path+str(p)+"/"+str(file))
+        
+        print("cur path:",out_path+str(p)+"/"+str(file))
+
             
         with open(current_path + "/test_data/"+str(p)+"/"+str(file)+"/vertex_info.txt","w") as outfile:
             for v_id,edges in HyperVertex.items():

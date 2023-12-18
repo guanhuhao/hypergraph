@@ -1,0 +1,28 @@
+----------------------------------------------------------------------------
+Partitioning Graph: ../data/out.dbpedia-team-swap.txt
+into 32 partitions
+max secondary set size: 10
+while the secondary set expantion, the biggest 0% of edges will be ignored
+the neighbourhood heuristic of a node will be cached
+if sset is emtpy, new nodes will be selected: next-best
+----------------------------------------------------------------------------
+parsing graph ...
+graph parsed in 1612 milliseconds
+#Nodes:	34461
+#HyperEdges:	901130
+----------------------------------------------------------------------------
+partitioning graph
+partitioning done in 830 milliseconds
+----------------------------------------------------------------------------
+sum of external degrees: 298793
+Hyperedges cut: 90669
+K-1: 208124
+node balancing: 0.000928505
+edge balancing: 0.97913
+parsing time: 1612
+partition time: 830
+total time: 2442
+----------------------------------------------------------------------------
+writing partitions ...
+----------------------------------------------------------------------------
+done

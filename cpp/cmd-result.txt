@@ -1,0 +1,6 @@
+parameters:
+dataset:out.github	n:56530	m:120869
+method:entropy	p:16	sheild:0
+logFile:./cmd-result.txt
+save partitionFile:None
+test1

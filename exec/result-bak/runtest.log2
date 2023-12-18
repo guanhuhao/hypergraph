@@ -1,0 +1,138 @@
+# dataset:../data/wiki_new.txt n:4571 m:4136
+# p , k-1 , partition time , total time
+2,3418,27,27
+4,9149,27,27
+8,17769,28,28
+16,29997,30,30
+32,45071,33,33
+
+# dataset:../data/wiki_new.txt-swap.txt n:4136 m:4571
+# p , k-1 , partition time , total time
+2,4477,26,26
+4,12827,27,27
+8,26535,29,29
+16,45276,32,32
+32,65726,35,35
+
+# dataset:../data/out.dbpedia-location n:172096 m:53412
+# p , k-1 , partition time , total time
+2,15263,168,168
+4,32243,172,172
+8,50998,179,179
+16,70823,170,170
+32,91411,154,154
+
+# dataset:../data/out.dbpedia-location-swap.txt n:53412 m:172096
+# p , k-1 , partition time , total time
+2,52233,143,143
+4,84239,145,145
+8,101140,147,147
+16,111587,144,144
+32,115986,143,143
+
+# dataset:../data/out.github n:56524 m:120872
+# p , k-1 , partition time , total time
+2,27713,158,158
+4,57082,166,166
+8,89336,173,173
+16,122503,176,176
+32,156765,175,175
+
+# dataset:../data/out.github-swap.txt n:120872 m:56524
+# p , k-1 , partition time , total time
+2,26364,154,154
+4,60968,161,161
+8,104587,169,169
+16,155987,175,175
+32,210152,181,181
+
+# dataset:../data/out.actor-movie n:127828 m:383645
+# p , k-1 , partition time , total time
+2,107811,518,518
+4,239097,541,541
+8,391814,591,591
+16,555642,617,617
+32,713170,658,658
+
+# dataset:../data/out.actor-movie-swap.txt n:383645 m:127828
+# p , k-1 , partition time , total time
+2,110161,507,507
+4,284923,543,543
+8,513884,590,590
+16,758335,658,658
+32,971177,712,712
+
+# dataset:../data/out.dbpedia-team n:901171 m:34466
+# p , k-1 , partition time , total time
+2,20807,548,548
+4,51877,600,600
+8,100328,605,605
+16,173252,640,640
+32,275924,845,845
+
+# dataset:../data/out.dbpedia-team-swap.txt n:34466 m:901171
+# p , k-1 , partition time , total time
+2,93809,639,639
+4,207199,628,628
+8,307566,637,637
+16,376956,654,654
+32,418094,646,646
+
+# dataset:../data/out.dblp-author n:1953090 m:5624224
+# p , k-1 , partition time , total time
+2,2096353,8617,8617
+4,3877403,9358,9358
+8,5090116,9879,9879
+16,5817432,10738,10738
+32,6221282,10892,10892
+
+# dataset:../data/out.dblp-author-swap.txt n:5623936 m:1953090
+# p , k-1 , partition time , total time
+2,1335833,8552,8552
+4,2692100,9371,9371
+8,4066579,10708,10708
+16,5429035,11613,11613
+32,6716922,12103,12103
+
+# dataset:../data/out.orkut-groupmemberships n:2783201 m:8730862
+# p , k-1 , partition time , total time
+2,5728549,109983,109983
+4,13881104,120530,120530
+8,24521462,126567,126567
+16,37420851,135656,135656
+32,52339004,143475,143475
+
+# dataset:../data/out.orkut-groupmemberships-swap.txt n:8730862 m:2783201
+# p , k-1 , partition time , total time
+2,2597763,112457,112457
+4,7350394,121316,121316
+8,15528732,128784,128784
+16,28796285,134767,134767
+32,49280995,143782,143782
+
+# dataset:../data/out.trackers n:27665735 m:12756249
+# p , k-1 , partition time , total time
+2,3634820,63436,63436
+4,7714804,69101,69101
+8,12128895,74893,74893
+16,16692255,78380,78380
+32,21547376,80797,80797
+
+# dataset:../data/out.trackers-swap.txt n:12756249 m:27665735
+# p , k-1 , partition time , total time
+2,13290587,70027,70027
+4,30287374,76923,76923
+8,46537882,83246,83246
+16,57654137,86803,86803
+32,67804436,86295,86295
+
+path: ../data/   dataset: wiki_new.txt
+path: ../data/   dataset: wiki_new.txt-swap.txt
+path: ../data/   dataset: out.dbpedia-location
+path: ../data/   dataset: out.dbpedia-location-swap.txt
+path: ../data/   dataset: out.github
+path: ../data/   dataset: out.github-swap.txt
+path: ../data/   dataset: out.actor-movie
+path: ../data/   dataset: out.actor-movie-swap.txt
+path: ../data/   dataset: out.dbpedia-team
+path: ../data/   dataset: out.dbpedia-team-swap.txt

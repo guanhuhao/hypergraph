@@ -1,0 +1,233 @@
+INFO:     synchronous_engine.hpp(start:1299): Iteration counter will only output every 5 seconds.
+INFO:     synchronous_engine.hpp(start:1315): 0: Starting iteration: 0
+INFO:     synchronous_engine.hpp(start:1318): timestamp: 0
+INFO:     synchronous_engine.hpp(start:1365):   Active vertices: 1
+INFO:     synchronous_engine.hpp(start:1414):    Running Aggregators
+INFO:     synchronous_engine.hpp(start:1315): 0: Starting iteration: 1
+INFO:     synchronous_engine.hpp(start:1318): timestamp: 0.399994
+INFO:     synchronous_engine.hpp(start:1365):   Active vertices: 4
+INFO:     synchronous_engine.hpp(start:1414):    Running Aggregators
+INFO:     synchronous_engine.hpp(start:1315): 0: Starting iteration: 2
+INFO:     synchronous_engine.hpp(start:1318): timestamp: 0.699997
+INFO:     synchronous_engine.hpp(start:1365):   Active vertices: 17
+INFO:     synchronous_engine.hpp(start:1414):    Running Aggregators
+INFO:     synchronous_engine.hpp(start:1315): 0: Starting iteration: 3
+INFO:     synchronous_engine.hpp(start:1318): timestamp: 1.09999
+INFO:     synchronous_engine.hpp(start:1365):   Active vertices: 381
+INFO:     synchronous_engine.hpp(start:1414):    Running Aggregators
+INFO:     synchronous_engine.hpp(start:1315): 0: Starting iteration: 4
+INFO:     synchronous_engine.hpp(start:1318): timestamp: 1.39999
+INFO:     synchronous_engine.hpp(start:1365):   Active vertices: 733
+INFO:     synchronous_engine.hpp(start:1414):    Running Aggregators
+INFO:     synchronous_engine.hpp(start:1315): 0: Starting iteration: 5
+INFO:     synchronous_engine.hpp(start:1318): timestamp: 1.8
+INFO:     synchronous_engine.hpp(start:1365):   Active vertices: 676
+INFO:     synchronous_engine.hpp(start:1414):    Running Aggregators
+INFO:     synchronous_engine.hpp(start:1315): 0: Starting iteration: 6
+INFO:     synchronous_engine.hpp(start:1318): timestamp: 2.39999
+INFO:     synchronous_engine.hpp(start:1365):   Active vertices: 33536
+INFO:     synchronous_engine.hpp(start:1414):    Running Aggregators
+INFO:     synchronous_engine.hpp(start:1315): 0: Starting iteration: 7
+INFO:     synchronous_engine.hpp(start:1318): timestamp: 2.8
+INFO:     synchronous_engine.hpp(start:1365):   Active vertices: 55449
+INFO:     synchronous_engine.hpp(start:1414):    Running Aggregators
+INFO:     synchronous_engine.hpp(start:1315): 0: Starting iteration: 8
+INFO:     synchronous_engine.hpp(start:1318): timestamp: 5.89999
+INFO:     synchronous_engine.hpp(start:1365):   Active vertices: 36022
+INFO:     synchronous_engine.hpp(start:1414):    Running Aggregators
+INFO:     synchronous_engine.hpp(start:1315): 0: Starting iteration: 9
+INFO:     synchronous_engine.hpp(start:1318): timestamp: 11.8
+INFO:     synchronous_engine.hpp(start:1365):   Active vertices: 117770
+INFO:     synchronous_engine.hpp(start:1414):    Running Aggregators
+INFO:     synchronous_engine.hpp(start:1315): 0: Starting iteration: 10
+INFO:     synchronous_engine.hpp(start:1318): timestamp: 12.2
+INFO:     synchronous_engine.hpp(start:1365):   Active vertices: 138698
+INFO:     synchronous_engine.hpp(start:1414):    Running Aggregators
+INFO:     synchronous_engine.hpp(start:1315): 0: Starting iteration: 11
+INFO:     synchronous_engine.hpp(start:1318): timestamp: 17.9
+INFO:     synchronous_engine.hpp(start:1365):   Active vertices: 64911
+INFO:     synchronous_engine.hpp(start:1414):    Running Aggregators
+INFO:     synchronous_engine.hpp(start:1315): 0: Starting iteration: 12
+INFO:     synchronous_engine.hpp(start:1318): timestamp: 24.5
+INFO:     synchronous_engine.hpp(start:1365):   Active vertices: 49160
+INFO:     synchronous_engine.hpp(start:1414):    Running Aggregators
+INFO:     synchronous_engine.hpp(start:1315): 0: Starting iteration: 13
+INFO:     synchronous_engine.hpp(start:1318): timestamp: 24.8
+INFO:     synchronous_engine.hpp(start:1365):   Active vertices: 38000
+INFO:     synchronous_engine.hpp(start:1414):    Running Aggregators
+INFO:     synchronous_engine.hpp(start:1315): 0: Starting iteration: 14
+INFO:     synchronous_engine.hpp(start:1318): timestamp: 26.9
+INFO:     synchronous_engine.hpp(start:1365):   Active vertices: 25919
+INFO:     synchronous_engine.hpp(start:1414):    Running Aggregators
+INFO:     synchronous_engine.hpp(start:1315): 0: Starting iteration: 15
+INFO:     synchronous_engine.hpp(start:1318): timestamp: 29.3
+INFO:     synchronous_engine.hpp(start:1365):   Active vertices: 8538
+INFO:     synchronous_engine.hpp(start:1414):    Running Aggregators
+INFO:     synchronous_engine.hpp(start:1315): 0: Starting iteration: 16
+INFO:     synchronous_engine.hpp(start:1318): timestamp: 29.7
+INFO:     synchronous_engine.hpp(start:1365):   Active vertices: 4710
+INFO:     synchronous_engine.hpp(start:1414):    Running Aggregators
+INFO:     synchronous_engine.hpp(start:1315): 0: Starting iteration: 17
+INFO:     synchronous_engine.hpp(start:1318): timestamp: 30.3
+INFO:     synchronous_engine.hpp(start:1365):   Active vertices: 3140
+INFO:     synchronous_engine.hpp(start:1414):    Running Aggregators
+INFO:     synchronous_engine.hpp(start:1315): 0: Starting iteration: 18
+INFO:     synchronous_engine.hpp(start:1318): timestamp: 30.8
+INFO:     synchronous_engine.hpp(start:1365):   Active vertices: 1511
+INFO:     synchronous_engine.hpp(start:1414):    Running Aggregators
+INFO:     synchronous_engine.hpp(start:1315): 0: Starting iteration: 19
+INFO:     synchronous_engine.hpp(start:1318): timestamp: 31.1
+INFO:     synchronous_engine.hpp(start:1365):   Active vertices: 935
+INFO:     synchronous_engine.hpp(start:1414):    Running Aggregators
+INFO:     synchronous_engine.hpp(start:1315): 0: Starting iteration: 20
+INFO:     synchronous_engine.hpp(start:1318): timestamp: 31.5
+INFO:     synchronous_engine.hpp(start:1365):   Active vertices: 633
+INFO:     synchronous_engine.hpp(start:1414):    Running Aggregators
+INFO:     synchronous_engine.hpp(start:1315): 0: Starting iteration: 21
+INFO:     synchronous_engine.hpp(start:1318): timestamp: 31.9
+INFO:     synchronous_engine.hpp(start:1365):   Active vertices: 181
+INFO:     synchronous_engine.hpp(start:1414):    Running Aggregators
+INFO:     synchronous_engine.hpp(start:1315): 0: Starting iteration: 22
+INFO:     synchronous_engine.hpp(start:1318): timestamp: 32.3
+INFO:     synchronous_engine.hpp(start:1365):   Active vertices: 165
+INFO:     synchronous_engine.hpp(start:1414):    Running Aggregators
+INFO:     synchronous_engine.hpp(start:1315): 0: Starting iteration: 23
+INFO:     synchronous_engine.hpp(start:1318): timestamp: 32.7
+INFO:     synchronous_engine.hpp(start:1365):   Active vertices: 133
+INFO:     synchronous_engine.hpp(start:1414):    Running Aggregators
+INFO:     synchronous_engine.hpp(start:1315): 0: Starting iteration: 24
+INFO:     synchronous_engine.hpp(start:1318): timestamp: 33
+INFO:     synchronous_engine.hpp(start:1365):   Active vertices: 25
+INFO:     synchronous_engine.hpp(start:1414):    Running Aggregators
+INFO:     synchronous_engine.hpp(start:1315): 0: Starting iteration: 25
+INFO:     synchronous_engine.hpp(start:1318): timestamp: 33.4
+INFO:     synchronous_engine.hpp(start:1365):   Active vertices: 16
+INFO:     synchronous_engine.hpp(start:1414):    Running Aggregators
+INFO:     synchronous_engine.hpp(start:1315): 0: Starting iteration: 26
+INFO:     synchronous_engine.hpp(start:1318): timestamp: 33.7
+INFO:     synchronous_engine.hpp(start:1365):   Active vertices: 12
+INFO:     synchronous_engine.hpp(start:1414):    Running Aggregators
+INFO:     synchronous_engine.hpp(start:1315): 0: Starting iteration: 27
+INFO:     synchronous_engine.hpp(start:1318): timestamp: 34.1
+INFO:     synchronous_engine.hpp(start:1365):   Active vertices: 3
+INFO:     synchronous_engine.hpp(start:1414):    Running Aggregators
+INFO:     synchronous_engine.hpp(start:1315): 0: Starting iteration: 28
+INFO:     synchronous_engine.hpp(start:1318): timestamp: 34.4
+INFO:     synchronous_engine.hpp(start:1365):   Active vertices: 0
+INFO:     synchronous_engine.hpp(start:1426): 28 iterations completed.
+Updates: 581279
+INFO:     synchronous_engine.hpp(start:1443): Compute Balance: 0.170689 0.124307 0.140902 0.153362 0.144192 0.143698 0.138908 0.11941
+Finished Running engine in 34.6 seconds.
+INFO:     distributed_graph.hpp(finalize:713): Distributed graph: enter finalize
+INFO:     distributed_graph.hpp(finalize:713): Distributed graph: enter finalize
+INFO:     distributed_graph.hpp(finalize:713): Distributed graph: enter finalize
+INFO:     distributed_graph.hpp(finalize:713): Distributed graph: enter finalize
+INFO:     distributed_graph.hpp(finalize:713): Distributed graph: enter finalize
+INFO:     distributed_graph.hpp(finalize:713): Distributed graph: enter finalize
+INFO:     distributed_graph.hpp(finalize:713): Distributed graph: enter finalize
+INFO:     distributed_graph.hpp(finalize:713): Distributed graph: enter finalize
+INFO:     distributed_ingress_base.hpp(finalize:213): Finalizing Graph...
+INFO:     distributed_ingress_base.hpp(finalize:258): Skipping Graph Finalization because no changes happened...
+INFO:     distributed_ingress_base.hpp(finalize:258): Skipping Graph Finalization because no changes happened...
+INFO:     distributed_ingress_base.hpp(finalize:258): Skipping Graph Finalization because no changes happened...
+INFO:     distributed_ingress_base.hpp(finalize:258): Skipping Graph Finalization because no changes happened...
+INFO:     distributed_ingress_base.hpp(finalize:258): Skipping Graph Finalization because no changes happened...
+INFO:     distributed_ingress_base.hpp(finalize:258): Skipping Graph Finalization because no changes happened...
+INFO:     distributed_ingress_base.hpp(finalize:258): Skipping Graph Finalization because no changes happened...
+INFO:     distributed_ingress_base.hpp(finalize:258): Skipping Graph Finalization because no changes happened...
+INFO:     distributed_graph.hpp(save_to_posixfs:1909): Saving to file: /home/result/out.1_of_8
+INFO:     distributed_graph.hpp(save_to_posixfs:1909): Saving to file: /home/result/out.3_of_8
+INFO:     distributed_graph.hpp(save_to_posixfs:1909): Saving to file: /home/result/out.2_of_8
+INFO:     distributed_graph.hpp(save_to_posixfs:1909): Saving to file: /home/result/out.5_of_8
+INFO:     distributed_graph.hpp(save_to_posixfs:1909): Saving to file: /home/result/out.7_of_8
+INFO:     distributed_graph.hpp(save_to_posixfs:1909): Saving to file: /home/result/out.4_of_8
+INFO:     distributed_graph.hpp(save_to_posixfs:1909): Saving to file: /home/result/out.6_of_8
+INFO:     distributed_graph.hpp(save_to_posixfs:1909): Saving to file: /home/result/out.8_of_8
+INFO:     dc.cpp(~distributed_control:166): Shutting down distributed control
+INFO:     dc.cpp(~distributed_control:166): Shutting down distributed control
+INFO:     dc.cpp(~distributed_control:166): Shutting down distributed control
+INFO:     dc.cpp(~distributed_control:166): Shutting down distributed control
+INFO:     dc.cpp(~distributed_control:166): Shutting down distributed control
+INFO:     dc.cpp(~distributed_control:166): Shutting down distributed control
+INFO:     dc.cpp(~distributed_control:166): Shutting down distributed control
+INFO:     dc.cpp(~distributed_control:166): Shutting down distributed control
+INFO:     dc_tcp_comm.cpp(close:247): Closing listening socket
+INFO:     dc_tcp_comm.cpp(send_loop:653): Send loop Stopped
+INFO:     dc_tcp_comm.cpp(close:267): Closing outgoing sockets
+INFO:     dc_tcp_comm.cpp(receive_loop:594): Receive loop Stopped
+INFO:     dc_tcp_comm.cpp(close:285): Closing incoming sockets
+INFO:     dc_tcp_comm.cpp(close:247): Closing listening socket
+INFO:     dc_tcp_comm.cpp(close:247): Closing listening socket
+INFO:     dc_tcp_comm.cpp(send_loop:653): Send loop Stopped
+INFO:     dc_tcp_comm.cpp(close:247): Closing listening socket
+INFO:     dc_tcp_comm.cpp(send_loop:653): Send loop Stopped
+INFO:     dc_tcp_comm.cpp(close:247): Closing listening socket
+INFO:     dc_tcp_comm.cpp(send_loop:653): Send loop Stopped
+INFO:     dc_tcp_comm.cpp(close:267): Closing outgoing sockets
+INFO:     dc_tcp_comm.cpp(close:247): Closing listening socket
+INFO:     dc_tcp_comm.cpp(close:267): Closing outgoing sockets
+INFO:     dc_tcp_comm.cpp(send_loop:653): Send loop Stopped
+INFO:     dc_tcp_comm.cpp(receive_loop:594): Receive loop Stopped
+INFO:     dc_tcp_comm.cpp(receive_loop:594): Receive loop Stopped
+INFO:     dc_tcp_comm.cpp(close:267): Closing outgoing sockets
+INFO:     dc_tcp_comm.cpp(send_loop:653): Send loop Stopped
+INFO:     dc_tcp_comm.cpp(close:285): Closing incoming sockets
+INFO:     dc_tcp_comm.cpp(close:267): Closing outgoing sockets
+INFO:     dc.cpp(~distributed_control:198): Bytes Sent: 20418294
+INFO:     dc.cpp(~distributed_control:199): Calls Sent: 2655
+INFO:     dc.cpp(~distributed_control:200): Network Sent: 21206459
+INFO:     dc.cpp(~distributed_control:201): Bytes Received: 6804223
+INFO:     dc.cpp(~distributed_control:202): Calls Received: 2439
+INFO:     dc_tcp_comm.cpp(close:285): Closing incoming sockets
+INFO:     dc.cpp(~distributed_control:198): Bytes Sent: 4922993
+INFO:     dc.cpp(~distributed_control:199): Calls Sent: 2002
+INFO:     dc.cpp(~distributed_control:200): Network Sent: 4954351
+INFO:     dc.cpp(~distributed_control:201): Bytes Received: 6846298
+INFO:     dc.cpp(~distributed_control:202): Calls Received: 2054
+INFO:     dc_tcp_comm.cpp(close:247): Closing listening socket
+INFO:     dc_tcp_comm.cpp(send_loop:653): Send loop Stopped
+INFO:     dc_tcp_comm.cpp(close:267): Closing outgoing sockets
+INFO:     dc_tcp_comm.cpp(receive_loop:594): Receive loop Stopped
+INFO:     dc_tcp_comm.cpp(close:285): Closing incoming sockets
+INFO:     dc.cpp(~distributed_control:198): Bytes Sent: 4936388
+INFO:     dc.cpp(~distributed_control:199): Calls Sent: 2018
+INFO:     dc.cpp(~distributed_control:200): Network Sent: 4967746
+INFO:     dc.cpp(~distributed_control:201): Bytes Received: 6872827
+INFO:     dc.cpp(~distributed_control:202): Calls Received: 2028
+INFO:     dc.cpp(~distributed_control:198): Bytes Sent: 4886620
+INFO:     dc.cpp(~distributed_control:199): Calls Sent: 2102
+INFO:     dc.cpp(~distributed_control:200): Network Sent: 4917978
+INFO:     dc.cpp(~distributed_control:201): Bytes Received: 6805173
+INFO:     dc.cpp(~distributed_control:202): Calls Received: 2018
+INFO:     dc_tcp_comm.cpp(close:267): Closing outgoing sockets
+INFO:     dc_tcp_comm.cpp(receive_loop:594): Receive loop Stopped
+INFO:     dc_tcp_comm.cpp(close:285): Closing incoming sockets
+INFO:     dc_tcp_comm.cpp(receive_loop:594): Receive loop Stopped
+INFO:     dc_tcp_comm.cpp(close:285): Closing incoming sockets
+INFO:     dc_tcp_comm.cpp(receive_loop:594): Receive loop Stopped
+INFO:     dc_tcp_comm.cpp(close:285): Closing incoming sockets
+INFO:     dc.cpp(~distributed_control:198): Bytes Sent: 4903507
+INFO:     dc.cpp(~distributed_control:199): Calls Sent: 2085
+INFO:     dc.cpp(~distributed_control:200): Network Sent: 4934865
+INFO:     dc.cpp(~distributed_control:201): Bytes Received: 6814680
+INFO:     dc.cpp(~distributed_control:202): Calls Received: 2006
+INFO:     dc.cpp(~distributed_control:198): Bytes Sent: 4905323
+INFO:     dc.cpp(~distributed_control:199): Calls Sent: 2123
+INFO:     dc.cpp(~distributed_control:200): Network Sent: 4936681
+INFO:     dc.cpp(~distributed_control:201): Bytes Received: 6842568
+INFO:     dc.cpp(~distributed_control:202): Calls Received: 2017
+INFO:     dc.cpp(~distributed_control:198): Bytes Sent: 4878597
+INFO:     dc.cpp(~distributed_control:199): Calls Sent: 1615
+INFO:     dc.cpp(~distributed_control:200): Network Sent: 4909955
+INFO:     dc.cpp(~distributed_control:201): Bytes Received: 6824630
+INFO:     dc.cpp(~distributed_control:202): Calls Received: 2084
+INFO:     dc_tcp_comm.cpp(close:247): Closing listening socket
+INFO:     dc_tcp_comm.cpp(send_loop:653): Send loop Stopped
+INFO:     dc_tcp_comm.cpp(close:267): Closing outgoing sockets
+INFO:     dc_tcp_comm.cpp(receive_loop:594): Receive loop Stopped
+INFO:     dc_tcp_comm.cpp(close:285): Closing incoming sockets
+INFO:     dc.cpp(~distributed_control:198): Bytes Sent: 4888537
+INFO:     dc.cpp(~distributed_control:199): Calls Sent: 2069
+INFO:     dc.cpp(~distributed_control:200): Network Sent: 4919895
+INFO:     dc.cpp(~distributed_control:201): Bytes Received: 6801884
+INFO:     dc.cpp(~distributed_control:202): Calls Received: 2023

@@ -1,0 +1,10 @@
+parameters:
+dataset:../data/out.dbpedia-location-swap.txt	n:53408	m:172092
+method:entropy	p:32	sheild:0.2
+logFile:./cmd-resul
+save partitionFile:None
+test1
+test2
+123
+runtime:281ms
+k-1:34049

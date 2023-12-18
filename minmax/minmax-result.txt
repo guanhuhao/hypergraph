@@ -1,0 +1,7 @@
+parameters:
+dataset:../data/out.github	n:56530	m:120869
+p:16	balance:0.05
+logFile:./minmax-result.txt
+save partitionFile:None
+k-1: 70535
+runtime: 2308

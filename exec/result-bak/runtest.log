@@ -1,0 +1,544 @@
+# dataset:../data/wiki_new.txt n:4571 m:4136
+# p , k-1 , partition time , total time 
+2,3030,68,68
+4,7619,85,85
+8,13653,119,119
+16,19929,170,170
+32,27438,245,245
+
+# dataset:../data/wiki_new.txt-swap.txt n:4136 m:4571
+# p , k-1 , partition time , total time 
+2,3266,62,62
+4,7969,71,71
+8,14404,90,90
+16,21878,101,101
+32,30352,123,123
+
+# dataset:../data/out.dbpedia-location n:172096 m:53412
+# p , k-1 , partition time , total time 
+2,3002,275,275
+4,2921,277,277
+8,3000,281,281
+16,3613,290,290
+32,4007,296,296
+
+# dataset:../data/out.dbpedia-location-swap.txt n:53412 m:172096
+# p , k-1 , partition time , total time 
+2,7697,199,199
+4,19248,198,198
+8,26672,196,196
+16,30667,195,195
+32,34305,197,197
+
+# dataset:../data/out.github n:56524 m:120872
+# p , k-1 , partition time , total time 
+2,3813,278,278
+4,12230,281,281
+8,24144,295,295
+16,39248,319,319
+32,56049,362,362
+
+# dataset:../data/out.github-swap.txt n:120872 m:56524
+# p , k-1 , partition time , total time 
+2,11328,330,330
+4,19867,349,349
+8,25410,346,346
+16,34944,368,368
+32,47911,408,408
+
+# dataset:../data/out.actor-movie n:127828 m:383645
+# p , k-1 , partition time , total time 
+2,52983,1004,1004
+4,112773,1070,1070
+8,154542,1138,1138
+16,197347,1211,1211
+32,238765,1295,1295
+
+# dataset:../data/out.actor-movie-swap.txt n:383645 m:127828
+# p , k-1 , partition time , total time 
+2,37941,1156,1156
+4,69982,1165,1165
+8,122220,1270,1270
+16,191784,1421,1421
+32,250713,1591,1591
+
+# dataset:../data/out.dbpedia-team n:901171 m:34466
+# p , k-1 , partition time , total time 
+2,9141,1661,1661
+4,12516,1763,1763
+8,18967,1737,1737
+16,27592,2041,2041
+32,39606,2428,2428
+
+# dataset:../data/out.dbpedia-team-swap.txt n:34466 m:901171
+# p , k-1 , partition time , total time 
+2,9453,829,829
+4,24536,834,834
+8,53113,849,849
+16,83226,861,861
+32,110856,849,849
+
+# dataset:../data/out.dblp-author n:1953090 m:5624224
+# p , k-1 , partition time , total time 
+2,455340,14724,14724
+4,932162,14665,14665
+8,1406026,14495,14495
+16,1889999,14184,14184
+32,2274883,13862,13862
+
+# dataset:../data/out.dblp-author-swap.txt n:5623936 m:1953090
+# p , k-1 , partition time , total time 
+2,712231,20301,20301
+4,986676,21579,21579
+8,1109320,22909,22909
+16,1304100,23984,23984
+32,1489922,23511,23511
+
+# dataset:../data/out.orkut-groupmemberships n:2783201 m:8730862
+# p , k-1 , partition time , total time 
+2,1439981,336151,336151
+4,5659010,386047,386047
+8,12270938,514436,514436
+16,20462463,746544,746544
+32,29984676,1173056,1173056
+
+# dataset:../data/out.orkut-groupmemberships-swap.txt n:8730862 m:2783201
+# p , k-1 , partition time , total time 
+2,1277990,328245,328245
+4,3282748,356158,356158
+8,5917134,402891,402891
+16,9661962,501745,501745
+32,14599328,656123,656123
+
+# dataset:../data/out.trackers n:27665735 m:12756249
+# p , k-1 , partition time , total time 
+2,428212,204054,204054
+4,1100511,237408,237408
+8,1818414,301481,301481
+16,2631359,424019,424019
+32,3501279,658903,658903
+
+# dataset:../data/out.trackers-swap.txt n:12756249 m:27665735
+# p , k-1 , partition time , total time 
+2,121365,136137,136137
+4,1653000,138066,138066
+8,2712872,139442,139442
+16,3848010,142952,142952
+32,5207822,149824,149824
+
+# dataset:../data/wiki_new.txt n:4571 m:4136
+# p , k-1 , partition time , total time 
+2,2860,92,92
+4,7023,97,97
+8,13356,127,127
+16,19950,176,176
+32,27880,251,251
+
+# dataset:../data/wiki_new.txt-swap.txt n:4136 m:4571
+# p , k-1 , partition time , total time 
+2,3047,80,80
+4,7887,79,79
+8,14493,94,94
+16,21851,121,121
+32,30176,157,157
+
+# dataset:../data/out.dbpedia-location n:172096 m:53412
+# p , k-1 , partition time , total time 
+2,3452,398,398
+4,4812,407,407
+8,3536,415,415
+16,3614,427,427
+32,4051,438,438
+
+# dataset:../data/out.dbpedia-location-swap.txt n:53412 m:172096
+# p , k-1 , partition time , total time 
+2,15229,215,215
+4,20739,223,223
+8,27524,217,217
+16,31529,218,218
+32,33879,221,221
+
+# dataset:../data/out.github n:56524 m:120872
+# p , k-1 , partition time , total time 
+2,6476,314,314
+4,13370,300,300
+8,24767,309,309
+16,39357,335,335
+32,55903,378,378
+
+# dataset:../data/out.github-swap.txt n:120872 m:56524
+# p , k-1 , partition time , total time 
+2,11039,383,383
+4,19499,382,382
+8,25697,386,386
+16,34996,412,412
+32,47850,463,463
+
+# dataset:../data/out.actor-movie n:127828 m:383645
+# p , k-1 , partition time , total time 
+2,57628,1314,1314
+4,116880,1187,1187
+8,153890,1229,1229
+16,200920,1307,1307
+32,238510,1370,1370
+
+# dataset:../data/out.actor-movie-swap.txt n:383645 m:127828
+# p , k-1 , partition time , total time 
+2,39250,1358,1358
+4,67456,1353,1353
+8,121984,1464,1464
+16,190414,1731,1731
+32,250507,1703,1703
+
+# dataset:../data/out.dbpedia-team n:901171 m:34466
+# p , k-1 , partition time , total time 
+2,4939,1867,1867
+4,15723,2025,2025
+8,18468,2053,2053
+16,27512,2384,2384
+32,39176,2872,2872
+
+# dataset:../data/out.dbpedia-team-swap.txt n:34466 m:901171
+# p , k-1 , partition time , total time 
+2,10522,932,932
+4,25113,851,851
+8,53854,845,845
+16,83134,866,866
+32,109162,872,872
+
+# dataset:../data/out.dblp-author n:1953090 m:5624224
+# p , k-1 , partition time , total time 
+2,488726,16010,16010
+4,969257,16505,16505
+8,1445397,16020,16020
+16,1908990,16948,16948
+32,2279796,14966,14966
+
+# dataset:../data/out.dblp-author-swap.txt n:5623936 m:1953090
+# p , k-1 , partition time , total time 
+2,530250,23821,23821
+4,1019499,25252,25252
+8,1142424,25863,25863
+16,1294859,27174,27174
+32,1491940,27202,27202
+
+# dataset:../data/out.orkut-groupmemberships n:2783201 m:8730862
+# p , k-1 , partition time , total time 
+2,725370,448458,448458
+4,5424059,417469,417469
+8,12176093,526882,526882
+16,20446808,771702,771702
+32,30030771,1157058,1157058
+
+# dataset:../data/out.orkut-groupmemberships-swap.txt n:8730862 m:2783201
+# p , k-1 , partition time , total time 
+2,997680,435675,435675
+4,3127097,426309,426309
+8,5884337,441384,441384
+16,9603011,517989,517989
+32,14330049,662795,662795
+
+# dataset:../data/out.trackers n:27665735 m:12756249
+# p , k-1 , partition time , total time 
+2,484156,267192,267192
+4,1036109,293694,293694
+8,1778793,333652,333652
+16,2618295,443758,443758
+32,3495652,675615,675615
+
+# dataset:../data/out.trackers-swap.txt n:12756249 m:27665735
+# p , k-1 , partition time , total time 
+2,1330144,158129,158129
+4,1607255,154242,154242
+8,2737866,155091,155091
+16,3857293,158928,158928
+32,5202236,166394,166394
+
+# dataset:../data/wiki_new.txt n:4571 m:4136
+# p , k-1 , partition time , total time 
+2,2977,68,68
+4,7460,86,86
+8,13242,120,120
+16,19518,172,172
+32,27089,250,250
+
+# dataset:../data/wiki_new.txt-swap.txt n:4136 m:4571
+# p , k-1 , partition time , total time 
+2,3247,62,62
+4,7918,72,72
+8,14021,79,79
+16,21711,93,93
+32,30099,123,123
+
+# dataset:../data/out.dbpedia-location n:172096 m:53412
+# p , k-1 , partition time , total time 
+2,171,296,296
+4,634,287,287
+8,1432,287,287
+16,2010,295,295
+32,2467,315,315
+
+# dataset:../data/out.dbpedia-location-swap.txt n:53412 m:172096
+# p , k-1 , partition time , total time 
+2,7703,203,203
+4,19245,198,198
+8,26328,197,197
+16,31367,197,197
+32,34073,199,199
+
+# dataset:../data/out.github n:56524 m:120872
+# p , k-1 , partition time , total time 
+2,2023,272,272
+4,11462,270,270
+8,23355,287,287
+16,37376,318,318
+32,53900,375,375
+
+# dataset:../data/out.github-swap.txt n:120872 m:56524
+# p , k-1 , partition time , total time 
+2,5955,336,336
+4,17141,341,341
+8,25027,356,356
+16,33398,379,379
+32,45412,435,435
+
+# dataset:../data/out.actor-movie n:127828 m:383645
+# p , k-1 , partition time , total time 
+2,48687,1000,1000
+4,106008,1070,1070
+8,137352,1141,1141
+16,183879,1230,1230
+32,221070,1297,1297
+
+# dataset:../data/out.actor-movie-swap.txt n:383645 m:127828
+# p , k-1 , partition time , total time 
+2,25168,1164,1164
+4,66400,1182,1182
+8,114249,1300,1300
+16,176916,1437,1437
+32,238277,1601,1601
+
+# dataset:../data/out.dbpedia-team n:901171 m:34466
+# p , k-1 , partition time , total time 
+2,1970,1770,1770
+4,5745,1858,1858
+8,10100,1953,1953
+16,24455,2268,2268
+32,34840,2834,2834
+
+# dataset:../data/out.dbpedia-team-swap.txt n:34466 m:901171
+# p , k-1 , partition time , total time 
+2,9514,838,838
+4,25123,864,864
+8,53193,962,962
+16,82548,830,830
+32,108037,853,853
+
+# dataset:../data/out.dblp-author n:1953090 m:5624224
+# p , k-1 , partition time , total time 
+2,406502,16835,16835
+4,906969,15225,15225
+8,1381858,14981,14981
+16,1872469,14584,14584
+32,2250426,14424,14424
+
+# dataset:../data/out.dblp-author-swap.txt n:5623936 m:1953090
+# p , k-1 , partition time , total time 
+2,300869,21657,21657
+4,981245,22858,22858
+8,913575,24372,24372
+16,1046098,25987,25987
+32,1186135,25886,25886
+
+# dataset:../data/out.orkut-groupmemberships n:2783201 m:8730862
+# p , k-1 , partition time , total time 
+2,1282553,359224,359224
+4,5349825,417513,417513
+8,11724712,546925,546925
+16,19897207,808331,808331
+32,28434809,1233414,1233414
+
+# dataset:../data/out.orkut-groupmemberships-swap.txt n:8730862 m:2783201
+# p , k-1 , partition time , total time 
+2,1227493,352363,352363
+4,3015009,374464,374464
+8,5677452,430964,430964
+16,9223655,530521,530521
+32,13916285,731278,731278
+
+# dataset:../data/out.trackers n:27665735 m:12756249
+# p , k-1 , partition time , total time 
+2,3572,217538,217538
+4,615309,274312,274312
+8,1207529,322250,322250
+16,1906030,459032,459032
+32,2748257,741882,741882
+
+# dataset:../data/out.trackers-swap.txt n:12756249 m:27665735
+# p , k-1 , partition time , total time 
+2,36615,163744,163744
+4,1314434,162739,162739
+8,2565179,173807,173807
+16,3726530,181941,181941
+32,5027432,201315,201315
+
+load data ok!
+runtime:160
+load data ok!
+runtime:191
+load data ok!
+runtime:267
+load data ok!
+runtime:386
+load data ok!
+runtime:556
+load data ok!
+runtime:125
+load data ok!
+runtime:172
+load data ok!
+runtime:252
+load data ok!
+runtime:392
+load data ok!
+runtime:565
+load data ok!
+runtime:620
+load data ok!
+runtime:743
+load data ok!
+runtime:962
+load data ok!
+runtime:1331
+load data ok!
+runtime:1857
+load data ok!
+runtime:508
+load data ok!
+runtime:624
+load data ok!
+runtime:840
+load data ok!
+runtime:1217
+load data ok!
+runtime:2078
+load data ok!
+runtime:695
+load data ok!
+runtime:916
+load data ok!
+runtime:1261
+load data ok!
+runtime:1849
+load data ok!
+runtime:2642
+load data ok!
+runtime:760
+load data ok!
+runtime:984
+load data ok!
+runtime:1366
+load data ok!
+runtime:1935
+load data ok!
+runtime:2775
+load data ok!
+runtime:2531
+load data ok!
+runtime:3500
+load data ok!
+runtime:5084
+load data ok!
+runtime:7500
+load data ok!
+runtime:10763
+load data ok!
+runtime:2938
+load data ok!
+runtime:3948
+load data ok!
+runtime:5529
+load data ok!
+runtime:8133
+load data ok!
+runtime:11727
+load data ok!
+runtime:3331
+load data ok!
+runtime:3996
+load data ok!
+runtime:5178
+load data ok!
+runtime:7301
+load data ok!
+runtime:10486
+load data ok!
+runtime:2266
+load data ok!
+runtime:3009
+load data ok!
+runtime:4104
+load data ok!
+runtime:6361
+load data ok!
+runtime:8358
+load data ok!
+runtime:41197
+load data ok!
+runtime:60311
+load data ok!
+runtime:89961
+load data ok!
+runtime:134579
+load data ok!
+runtime:188713
+load data ok!
+runtime:43963
+load data ok!
+runtime:58788
+load data ok!
+runtime:86146
+load data ok!
+runtime:129297
+load data ok!
+runtime:187131
+load data ok!
+runtime:747319
+load data ok!
+runtime:1168830
+load data ok!
+runtime:1891103
+load data ok!
+runtime:3001499
+load data ok!
+runtime:4493507
+load data ok!
+runtime:805338
+load data ok!
+runtime:1160282
+load data ok!
+runtime:1830197
+load data ok!
+runtime:3009251
+load data ok!
+runtime:4664133
+load data ok!
+runtime:362701
+load data ok!
+runtime:477286
+load data ok!
+runtime:668961
+load data ok!
+runtime:1008115
+load data ok!
+runtime:1497677
+load data ok!
+runtime:434800
+load data ok!
+runtime:538597
+load data ok!
+runtime:789056
+load data ok!
+runtime:1200375
+load data ok!
+runtime:1824095

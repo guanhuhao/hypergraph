@@ -1,5 +1,0 @@
-parameters:
-dataset:../data/wiki_new.txt	n:4567	m:4132
-method:entropy	p:32	sheild:0
-logFile:./cmd-fun-result.txt
-save partitionFile:None

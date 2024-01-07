@@ -67,7 +67,7 @@ void parsingCmd(int argc,char *argv[]){
     int n = 56530;
     int m = 120869;
     int p = 16;
-    double balance = 0.05;
+    double balance = 0.01;
     string save = "None";
 
     for (int i = 1; i < argc; ++i) {

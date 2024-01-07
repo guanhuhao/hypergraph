@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------------
-Partitioning Graph: ../data/out.github
+Partitioning Graph: ../data/enwiki.txt
 into 256 partitions
 max secondary set size: 10
 while the secondary set expantion, the biggest 0% of edges will be ignored
@@ -7,43 +7,43 @@ the neighbourhood heuristic of a node will be cached
 if sset is emtpy, new nodes will be selected: next-best
 ----------------------------------------------------------------------------
 parsing graph ...
-graph parsed in 695 milliseconds
-#Nodes:	56519
-#HyperEdges:	120867
+graph parsed in 852645 milliseconds
+#Nodes:	8116897
+#HyperEdges:	42513754
 ----------------------------------------------------------------------------
 partitioning graph
-partitioning done in 366 milliseconds
+partitioning done in 466221 milliseconds
 ----------------------------------------------------------------------------
-sum of external degrees: 192010
-Hyperedges cut: 27599
-K-1: 164411
-node balancing: 0.00452489
-edge balancing: 0.972607
-parsing time: 695
-partition time: 366
-total time: 1061
+sum of external degrees: 52066362
+Hyperedges cut: 11732827
+K-1: 40333535
+node balancing: 3.15388e-05
+edge balancing: 0.999714
+parsing time: 852645
+partition time: 466221
+total time: 1318866
 ----------------------------------------------------------------------------
 writing partitions ...
 ----------------------------------------------------------------------------
 done
-	Command being timed: "./HYPE -f bipartite -i ../data/out.github -p 256 -o"
-	User time (seconds): 5.52
-	System time (seconds): 0.11
-	Percent of CPU this job got: 129%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:04.36
+	Command being timed: "./HYPE -f bipartite -i ../data/enwiki.txt -p 256 -o"
+	User time (seconds): 8039.26
+	System time (seconds): 1320.81
+	Percent of CPU this job got: 119%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 2:10:30
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 77136
+	Maximum resident set size (kbytes): 38006992
 	Average resident set size (kbytes): 0
-	Major (requiring I/O) page faults: 0
-	Minor (reclaiming a frame) page faults: 57465
-	Voluntary context switches: 178
-	Involuntary context switches: 633
+	Major (requiring I/O) page faults: 1
+	Minor (reclaiming a frame) page faults: 933976950
+	Voluntary context switches: 11059
+	Involuntary context switches: 956689
 	Swaps: 0
-	File system inputs: 0
-	File system outputs: 2064
+	File system inputs: 344
+	File system outputs: 125376
 	Socket messages sent: 0
 	Socket messages received: 0
 	Signals delivered: 0

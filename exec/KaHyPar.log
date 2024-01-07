@@ -1,105 +1,25 @@
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
-+                    _  __     _   _       ____                               + 
-+                   | |/ /__ _| | | |_   _|  _ \ __ _ _ __                    + 
-+                   | ' // _` | |_| | | | | |_) / _` | '__|                   + 
-+                   | . \ (_| |  _  | |_| |  __/ (_| | |                      + 
-+                   |_|\_\__,_|_| |_|\__, |_|   \__,_|_|                      + 
-+                                    |___/                                    + 
-+                 Karlsruhe Hypergraph Partitioning Framework                 + 
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
-*******************************************************************************
-*                            Partitioning Context                             *
-*******************************************************************************
-Partitioning Parameters:
-  Hypergraph:                         ./KaHyPar-mid-data
-  Partition File:                     ./KaHyPar-mid-data.part32.epsilon0.03.seed-1.KaHyPar
-  Mode:                               direct
-  Objective:                          km1
-  k:                                  32
-  epsilon:                            0.03
-  seed:                               -1
-  # V-cycles:                         0
-  time limit:                         -1s
-  hyperedge size ignore threshold:    1000
-  hyperedge size removal threshold:   50000
-  use individual block weights:       false
-  L_opt:                              1767
-  L_max:                              1820
--------------------------------------------------------------------------------
-Preprocessing Parameters:
-  enable deduplication:               false
-  enable min hash sparsifier:         true
-  enable community detection:         true
--------------------------------------------------------------------------------
-MinHash Sparsifier Parameters:
-  max hyperedge size:                 1200
-  max cluster size:                   10
-  min cluster size:                   2
-  number of hash functions:           5
-  number of combined hash functions:  100
-  active at median net size >=:       28
-  sparsifier is active:               false
--------------------------------------------------------------------------------
-Community Detection Parameters:
-  use community detection in IP:      true
-  maximum louvain-pass iterations:    100
-  minimum quality improvement:        0.0001
-  graph edge weight:                  uniform
-  reuse community structure:          false
--------------------------------------------------------------------------------
-Coarsening Parameters:
-  Algorithm:                          ml_style
-  max-allowed-weight-multiplier:      1
-  contraction-limit-multiplier:       160
-  hypernode weight fraction:          0.000195313
-  max. allowed hypernode weight:      12
-  contraction limit:                  5120
-  Rating Parameters:
-    Rating Function:                  heavy_edge
-    Use Community Structure:          true
-    Heavy Node Penalty:               no_penalty
-    Acceptance Policy:                best_prefer_unmatched
-    Partition Policy:                 normal
-    Fixed Vertex Acceptance Policy:   fixed_vertex_allowed
--------------------------------------------------------------------------------
-Initial Partitioning Parameters:
-  # IP trials:                        20
-  Mode:                               recursive
-  Technique:                          multilevel
-  Algorithm:                          pool
-  Bin Packing algorithm:              worst_fit
-    early restart on infeasible:      true
-    late restart on infeasible:       true
-IP Coarsening:                        
-Coarsening Parameters:
-  Algorithm:                          ml_style
-  max-allowed-weight-multiplier:      1
-  contraction-limit-multiplier:       150
-  hypernode weight fraction:          determined before IP
-  max. allowed hypernode weight:      determined before IP
-  contraction limit:                  determined before IP
-  Rating Parameters:
-    Rating Function:                  heavy_edge
-    Use Community Structure:          true
-    Heavy Node Penalty:               no_penalty
-    Acceptance Policy:                best_prefer_unmatched
-    Partition Policy:                 normal
-    Fixed Vertex Acceptance Policy:   fixed_vertex_allowed
-IP Local Search:                      
-Local Search Parameters:
-  Algorithm:                          twoway_fm
-  iterations per level:               2147483647
-  stopping rule:                      simple
-  max. # fruitless moves:             50
-  Flow Refinement Parameters:
-    execution policy:                 UNDEFINED
--------------------------------------------------------------------------------
-Local Search Parameters:
-  Algorithm:                          kway_fm_hyperflow_cutter_km1
-  iterations per level:               2147483647
-  stopping rule:                      adaptive_opt
-  adaptive stopping alpha:            1
-  Flow Refinement Parameters:
-    execution policy:                 exponential
--------------------------------------------------------------------------------
- 
+./KaHyPar: error while loading shared libraries: libboost_program_options.so.1.71.0: cannot open shared object file: No such file or directory
+Command exited with non-zero status 127
+	Command being timed: "./KaHyPar -h ./KaHyPar-mid-data -k 2 -e 0.03 -o km1 -m direct -p ./config/km1_kKaHyPar_sea20.ini -w true"
+	User time (seconds): 0.00
+	System time (seconds): 0.00
+	Percent of CPU this job got: 100%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.00
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 0
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 35
+	Voluntary context switches: 1
+	Involuntary context switches: 0
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 127

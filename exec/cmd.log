@@ -1,5 +1,29 @@
 parameters:
-dataset:../data/out.dblp-author	n:1953086	m:5624220
-method:entropy	p:64	sheild:0.2
+dataset:../data/enwiki.txt	n:8116898	m:42640546
+method:entropy	p:256	sheild:0.2
 save partitionFile:None
-test1
+runtime:838581ms
+k-1:20442730
+	Command being timed: "./cmd-select -n 8116898 -m 42640546 -i ../data/enwiki.txt -p 256 -method entropy -sheild 0.2 -save None"
+	User time (seconds): 846.61
+	System time (seconds): 8.34
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 14:15.09
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 15164632
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 4509646
+	Voluntary context switches: 1
+	Involuntary context switches: 3884
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 16
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

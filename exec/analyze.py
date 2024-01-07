@@ -26,7 +26,7 @@ def loadPar():
                     if line[0] > '9' or line[0] < '0' :
                         continue
                     p, k = line[:-1].split(',')[0:2]
-                    TotTime = line[:-1].split(',')[-1]
+                    TotTime = line[:-1].split(',')[3]
                     dic["method"].append(method)
                     dic["dataset"].append(dataset)
                     dic["p"].append(p)

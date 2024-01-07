@@ -5349,3 +5349,82 @@ Traceback (most recent call last):
   File "/back-up/hypergraph/exec/runtest.py", line 67, in run_KaHyPar
     k_1 = re.match("(.*)\(k-1\)          \(minimize\) = (\d+)",content,flags=re.S).group(2)
 AttributeError: 'NoneType' object has no attribute 'group'
+2023-12-20 03:23:52	: stdbuf -o0 /bin/time -v ./cmd-basic  -n 56520 -m 120868 -i ../data/out.github -p 2 -method entropy -sheild 0.2 -save None > cmd.log 2>&1
+Traceback (most recent call last):
+  File "/back-up/hypergraph/exec/runtest.py", line 278, in <module>
+    run_Our(method,n,m, path, dataset, p, sheild, generate_scheme)
+  File "/back-up/hypergraph/exec/runtest.py", line 180, in run_Our
+    k_1 = re.match("(.*)k-1:(\d+)",content,flags=re.S).group(2)
+AttributeError: 'NoneType' object has no attribute 'group'
+2023-12-19 20:07:23	: stdbuf -o0 /bin/time -v  ./MinMax-main  -i ../data/enwiki.txt -n 8116898 -m 42640546 -p 128 -save None > MinMax.log 2>&1
+2023-12-20 03:21:28	: stdbuf -o0 /bin/time -v  ./MinMax-main  -i ../data/enwiki.txt -n 8116898 -m 42640546 -p 256 -save None > MinMax.log 2>&1
+2023-12-20 14:21:02	: stdbuf -o0 /bin/time -v ./cmd-basic  -n 27665731 -m 12756245 -i ../data/out.trackers -p 2 -method entropy -sheild 0.2 -save None > cmd.log 2>&1
+2023-12-20 14:25:46	: stdbuf -o0 /bin/time -v ./cmd-basic  -n 27665731 -m 12756245 -i ../data/out.trackers -p 4 -method entropy -sheild 0.2 -save None > cmd.log 2>&1
+2023-12-20 14:30:53	: stdbuf -o0 /bin/time -v ./cmd-basic  -n 27665731 -m 12756245 -i ../data/out.trackers -p 8 -method entropy -sheild 0.2 -save None > cmd.log 2>&1
+2023-12-20 14:37:19	: stdbuf -o0 /bin/time -v ./cmd-basic  -n 27665731 -m 12756245 -i ../data/out.trackers -p 16 -method entropy -sheild 0.2 -save None > cmd.log 2>&1
+2023-12-20 14:46:54	: stdbuf -o0 /bin/time -v ./cmd-basic  -n 27665731 -m 12756245 -i ../data/out.trackers -p 32 -method entropy -sheild 0.2 -save None > cmd.log 2>&1
+2023-12-20 15:03:36	: stdbuf -o0 /bin/time -v ./cmd-basic  -n 27665731 -m 12756245 -i ../data/out.trackers -p 64 -method entropy -sheild 0.2 -save None > cmd.log 2>&1
+2023-12-20 15:37:27	: stdbuf -o0 /bin/time -v ./cmd-basic  -n 2783197 -m 8730858 -i ../data/out.orkut-groupmemberships -p 2 -method entropy -sheild 0.2 -save None > cmd.log 2>&1
+2023-12-20 15:46:35	: stdbuf -o0 /bin/time -v ./cmd-basic  -n 2783197 -m 8730858 -i ../data/out.orkut-groupmemberships -p 4 -method entropy -sheild 0.2 -save None > cmd.log 2>&1
+2023-12-20 15:59:03	: stdbuf -o0 /bin/time -v ./cmd-basic  -n 2783197 -m 8730858 -i ../data/out.orkut-groupmemberships -p 8 -method entropy -sheild 0.2 -save None > cmd.log 2>&1
+2023-12-20 16:14:17	: stdbuf -o0 /bin/time -v ./cmd-basic  -n 2783197 -m 8730858 -i ../data/out.orkut-groupmemberships -p 16 -method entropy -sheild 0.2 -save None > cmd.log 2>&1
+2023-12-20 16:38:23	: stdbuf -o0 /bin/time -v ./cmd-basic  -n 2783197 -m 8730858 -i ../data/out.orkut-groupmemberships -p 32 -method entropy -sheild 0.2 -save None > cmd.log 2>&1
+2023-12-20 17:16:08	: stdbuf -o0 /bin/time -v ./cmd-basic  -n 2783197 -m 8730858 -i ../data/out.orkut-groupmemberships -p 64 -method entropy -sheild 0.2 -save None > cmd.log 2>&1
+2023-12-20 18:23:53	: stdbuf -o0 /bin/time -v ./cmd-basic  -n 8116898 -m 42640546 -i ../data/enwiki.txt -p 2 -method entropy -sheild 0.2 -save None > cmd.log 2>&1
+2023-12-20 18:34:24	: stdbuf -o0 /bin/time -v ./cmd-basic  -n 8116898 -m 42640546 -i ../data/enwiki.txt -p 4 -method entropy -sheild 0.2 -save None > cmd.log 2>&1
+2023-12-20 18:45:27	: stdbuf -o0 /bin/time -v ./cmd-basic  -n 8116898 -m 42640546 -i ../data/enwiki.txt -p 8 -method entropy -sheild 0.2 -save None > cmd.log 2>&1
+2023-12-20 19:00:48	: stdbuf -o0 /bin/time -v ./cmd-basic  -n 8116898 -m 42640546 -i ../data/enwiki.txt -p 16 -method entropy -sheild 0.2 -save None > cmd.log 2>&1
+2023-12-20 19:13:16	: stdbuf -o0 /bin/time -v ./cmd-basic  -n 8116898 -m 42640546 -i ../data/enwiki.txt -p 32 -method entropy -sheild 0.2 -save None > cmd.log 2>&1
+2023-12-20 19:26:23	: stdbuf -o0 /bin/time -v ./cmd-basic  -n 8116898 -m 42640546 -i ../data/enwiki.txt -p 64 -method entropy -sheild 0.2 -save None > cmd.log 2>&1
+2023-12-21 03:37:18	: stdbuf -o0 /bin/time -v  ./MinMax-main  -i ../data/out.github -n 56520 -m 120868 -p 2 -save None > MinMax.log 2>&1
+2023-12-21 03:37:18	: stdbuf -o0 /bin/time -v  ./MinMax-main  -i ../data/out.github -n 56520 -m 120868 -p 4 -save None > MinMax.log 2>&1
+2023-12-21 03:37:20	: stdbuf -o0 /bin/time -v  ./MinMax-main  -i ../data/out.github -n 56520 -m 120868 -p 8 -save None > MinMax.log 2>&1
+2023-12-21 03:37:21	: stdbuf -o0 /bin/time -v  ./MinMax-main  -i ../data/out.github -n 56520 -m 120868 -p 16 -save None > MinMax.log 2>&1
+2023-12-21 03:37:24	: stdbuf -o0 /bin/time -v  ./MinMax-main  -i ../data/out.github -n 56520 -m 120868 -p 32 -save None > MinMax.log 2>&1
+2023-12-21 03:37:28	: stdbuf -o0 /bin/time -v  ./MinMax-main  -i ../data/out.github -n 56520 -m 120868 -p 64 -save None > MinMax.log 2>&1
+2023-12-21 03:37:34	: stdbuf -o0 /bin/time -v  ./MinMax-main  -i ../data/out.github -n 56520 -m 120868 -p 128 -save None > MinMax.log 2>&1
+2023-12-21 03:37:46	: stdbuf -o0 /bin/time -v  ./MinMax-main  -i ../data/out.github -n 56520 -m 120868 -p 256 -save None > MinMax.log 2>&1
+2023-12-21 03:38:39	: stdbuf -o0 /bin/time -v  ./MinMax-main  -i ../data/out.dblp-author -n 1953086 -m 5624220 -p 2 -save None > MinMax.log 2>&1
+2023-12-21 03:39:31	: stdbuf -o0 /bin/time -v  ./MinMax-main  -i ../data/out.dblp-author -n 1953086 -m 5624220 -p 4 -save None > MinMax.log 2>&1
+2023-12-21 03:40:41	: stdbuf -o0 /bin/time -v  ./MinMax-main  -i ../data/out.dblp-author -n 1953086 -m 5624220 -p 8 -save None > MinMax.log 2>&1
+2023-12-21 03:42:27	: stdbuf -o0 /bin/time -v  ./MinMax-main  -i ../data/out.dblp-author -n 1953086 -m 5624220 -p 16 -save None > MinMax.log 2>&1
+2023-12-21 03:45:25	: stdbuf -o0 /bin/time -v  ./MinMax-main  -i ../data/out.dblp-author -n 1953086 -m 5624220 -p 32 -save None > MinMax.log 2>&1
+2023-12-21 03:50:07	: stdbuf -o0 /bin/time -v  ./MinMax-main  -i ../data/out.dblp-author -n 1953086 -m 5624220 -p 64 -save None > MinMax.log 2>&1
+2023-12-21 03:58:39	: stdbuf -o0 /bin/time -v  ./MinMax-main  -i ../data/out.dblp-author -n 1953086 -m 5624220 -p 128 -save None > MinMax.log 2>&1
+2023-12-21 04:14:12	: stdbuf -o0 /bin/time -v  ./MinMax-main  -i ../data/out.dblp-author -n 1953086 -m 5624220 -p 256 -save None > MinMax.log 2>&1
+2023-12-21 04:44:01	: stdbuf -o0 /bin/time -v  ./MinMax-main  -i ../data/reuters.txt -n 781266 -m 283912 -p 2 -save None > MinMax.log 2>&1
+2023-12-21 04:45:35	: stdbuf -o0 /bin/time -v  ./MinMax-main  -i ../data/reuters.txt -n 781266 -m 283912 -p 4 -save None > MinMax.log 2>&1
+2023-12-21 04:47:53	: stdbuf -o0 /bin/time -v  ./MinMax-main  -i ../data/reuters.txt -n 781266 -m 283912 -p 8 -save None > MinMax.log 2>&1
+2023-12-21 04:51:11	: stdbuf -o0 /bin/time -v  ./MinMax-main  -i ../data/reuters.txt -n 781266 -m 283912 -p 16 -save None > MinMax.log 2>&1
+2023-12-21 04:57:16	: stdbuf -o0 /bin/time -v  ./MinMax-main  -i ../data/reuters.txt -n 781266 -m 283912 -p 32 -save None > MinMax.log 2>&1
+2023-12-21 05:08:45	: stdbuf -o0 /bin/time -v  ./MinMax-main  -i ../data/reuters.txt -n 781266 -m 283912 -p 64 -save None > MinMax.log 2>&1
+2023-12-21 05:30:55	: stdbuf -o0 /bin/time -v  ./MinMax-main  -i ../data/reuters.txt -n 781266 -m 283912 -p 128 -save None > MinMax.log 2>&1
+2023-12-21 06:16:42	: stdbuf -o0 /bin/time -v  ./MinMax-main  -i ../data/reuters.txt -n 781266 -m 283912 -p 256 -save None > MinMax.log 2>&1
+2023-12-21 08:00:14	: stdbuf -o0 /bin/time -v  ./MinMax-main  -i ../data/out.trackers -n 27665731 -m 12756245 -p 2 -save None > MinMax.log 2>&1
+2023-12-21 08:07:32	: stdbuf -o0 /bin/time -v  ./MinMax-main  -i ../data/out.trackers -n 27665731 -m 12756245 -p 4 -save None > MinMax.log 2>&1
+2023-12-21 08:16:57	: stdbuf -o0 /bin/time -v  ./MinMax-main  -i ../data/out.trackers -n 27665731 -m 12756245 -p 8 -save None > MinMax.log 2>&1
+2023-12-21 08:30:40	: stdbuf -o0 /bin/time -v  ./MinMax-main  -i ../data/out.trackers -n 27665731 -m 12756245 -p 16 -save None > MinMax.log 2>&1
+2023-12-21 08:51:54	: stdbuf -o0 /bin/time -v  ./MinMax-main  -i ../data/out.trackers -n 27665731 -m 12756245 -p 32 -save None > MinMax.log 2>&1
+2023-12-21 09:28:15	: stdbuf -o0 /bin/time -v  ./MinMax-main  -i ../data/out.trackers -n 27665731 -m 12756245 -p 64 -save None > MinMax.log 2>&1
+2023-12-21 10:34:30	: stdbuf -o0 /bin/time -v  ./MinMax-main  -i ../data/out.trackers -n 27665731 -m 12756245 -p 128 -save None > MinMax.log 2>&1
+2023-12-21 12:40:18	: stdbuf -o0 /bin/time -v  ./MinMax-main  -i ../data/out.trackers -n 27665731 -m 12756245 -p 256 -save None > MinMax.log 2>&1
+2023-12-21 16:52:08	: stdbuf -o0 /bin/time -v  ./MinMax-main  -i ../data/out.orkut-groupmemberships-swap.txt -n 8730858 -m 2783197 -p 2 -save None > MinMax.log 2>&1
+2023-12-21 17:12:17	: stdbuf -o0 /bin/time -v  ./MinMax-main  -i ../data/out.orkut-groupmemberships-swap.txt -n 8730858 -m 2783197 -p 4 -save None > MinMax.log 2>&1
+2023-12-21 17:42:15	: stdbuf -o0 /bin/time -v  ./MinMax-main  -i ../data/out.orkut-groupmemberships-swap.txt -n 8730858 -m 2783197 -p 8 -save None > MinMax.log 2>&1
+2023-12-21 18:29:16	: stdbuf -o0 /bin/time -v  ./MinMax-main  -i ../data/out.orkut-groupmemberships-swap.txt -n 8730858 -m 2783197 -p 16 -save None > MinMax.log 2>&1
+2023-12-21 20:06:17	: stdbuf -o0 /bin/time -v  ./MinMax-main  -i ../data/out.orkut-groupmemberships-swap.txt -n 8730858 -m 2783197 -p 32 -save None > MinMax.log 2>&1
+2023-12-21 22:38:46	: stdbuf -o0 /bin/time -v  ./MinMax-main  -i ../data/out.orkut-groupmemberships-swap.txt -n 8730858 -m 2783197 -p 64 -save None > MinMax.log 2>&1
+2023-12-22 02:49:00	: stdbuf -o0 /bin/time -v  ./MinMax-main  -i ../data/out.orkut-groupmemberships-swap.txt -n 8730858 -m 2783197 -p 128 -save None > MinMax.log 2>&1
+2023-12-22 10:25:17	: stdbuf -o0 /bin/time -v  ./MinMax-main  -i ../data/out.orkut-groupmemberships-swap.txt -n 8730858 -m 2783197 -p 256 -save None > MinMax.log 2>&1
+2023-12-23 02:53:07	: stdbuf -o0 /bin/time -v  ./MinMax-main  -i ../data/enwiki.txt -n 8116898 -m 42640546 -p 2 -save None > MinMax.log 2>&1
+2023-12-23 03:25:44	: stdbuf -o0 /bin/time -v  ./MinMax-main  -i ../data/enwiki.txt -n 8116898 -m 42640546 -p 4 -save None > MinMax.log 2>&1
+2023-12-23 04:08:39	: stdbuf -o0 /bin/time -v  ./MinMax-main  -i ../data/enwiki.txt -n 8116898 -m 42640546 -p 8 -save None > MinMax.log 2>&1
+2023-12-23 05:10:53	: stdbuf -o0 /bin/time -v  ./MinMax-main  -i ../data/enwiki.txt -n 8116898 -m 42640546 -p 16 -save None > MinMax.log 2>&1
+2023-12-23 06:46:29	: stdbuf -o0 /bin/time -v  ./MinMax-main  -i ../data/enwiki.txt -n 8116898 -m 42640546 -p 32 -save None > MinMax.log 2>&1
+2023-12-23 09:00:12	: stdbuf -o0 /bin/time -v  ./MinMax-main  -i ../data/enwiki.txt -n 8116898 -m 42640546 -p 64 -save None > MinMax.log 2>&1
+Traceback (most recent call last):
+  File "/back-up/hypergraph/exec/runtest.py", line 281, in <module>
+    run_MinMax(path,dataset,n,m,p,generate_scheme)
+  File "/back-up/hypergraph/exec/runtest.py", line 209, in run_MinMax
+    k_1 = re.match("(.*)k-1: (\d+)",content,flags=re.S).group(2)
+AttributeError: 'NoneType' object has no attribute 'group'

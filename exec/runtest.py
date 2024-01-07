@@ -10,17 +10,20 @@ dataset_list = [
     # "wiki_new.txt",        "wiki_new.txt-swap.txt",\
     # "out.dbpedia-location", "out.dbpedia-location-swap.txt",\
     "out.github",         #  "out.github-swap.txt",\
-    # "out.actor-movie",      "out.actor-movie-swap.txt",\
-    # "out.dbpedia-team",       "out.dbpedia-team-swap.txt",\
+    # # # # "out.actor-movie",      "out.actor-movie-swap.txt",\
+    # # # # "out.dbpedia-team",       "out.dbpedia-team-swap.txt",\
     "out.dblp-author",    #  "out.dblp-author-swap.txt",\
-    "reuters.txt",        #  "reuters-swap.txt",\
-    "out.trackers",       #  "out.trackers-swap.txt",\
-    "out.orkut-groupmemberships",  # "out.orkut-groupmemberships-swap.txt",\
+    # # "reuters.txt",        #  "reuters-swap.txt",\
+    "out.trackers",     #  "out.trackers-swap.txt",\
+    # # #"out.orkut-groupmemberships", 
+    "out.orkut-groupmemberships-swap.txt",\
     "enwiki.txt", # "enwiki-swap.txt"\
     ]
 # method_list = ["basic","anti-basic","entropy","MinMax","HYPE","KaHyPar","random","NoPar"]
 # method_list = ["basic","anti-basic","entropy","MinMax","HYPE","random","NoPar"]
-method_list = ["entropy","MinMax","HYPE","KaHyPar"]
+# method_list = ["KaHyPar"]
+method_list = ["entropy"]
+# method_list = ["BiPart"]
 # method_list = ["entropy","HYPE","KaHyPar"]
 cur_path = current_path + "/../data/"
 os.chdir(current_path)
@@ -39,7 +42,7 @@ def log(content):
 
     print(formatted_time + ": " + content)
 
-def run_KaHyPar(path, dataset, p, generate_scheme=False):
+def pre_KaHyPar(path, dataset):
     edges = {}
     dic_n = set()
     dic_e = set()
@@ -64,6 +67,7 @@ def run_KaHyPar(path, dataset, p, generate_scheme=False):
                 else : f.write(str(edges[i][j]))
             f.write("\n")
 
+def run_KaHyPar(path, dataset, p, generate_scheme=False):
     cmd = "stdbuf -o0 /bin/time -v ./KaHyPar -h ./KaHyPar-mid-data -k " + str(p) +" -e 0.03 -o km1 -m direct -p ./config/km1_kKaHyPar_sea20.ini -w true  > KaHyPar.log 2>&1" # run partition algorithm
     log(cmd)
     os.system(cmd)
@@ -99,7 +103,7 @@ def run_KaHyPar(path, dataset, p, generate_scheme=False):
                 result_file.write(str(ll)+" "+str(par)+"\n")
                 ll += 1
 
-    os.system("rm *KaHyPar-mid-data*")
+    os.system("rm *KaHyPar-mid-data.*")
 
 def run_HYPE(path, dataset, p, generate_scheme=False):
     print("path:",path,"  dataset:",dataset)
@@ -196,7 +200,7 @@ def run_MinMax(path,dataset,n,m,p, generate_scheme=False):
 
     cmdd = " -i " + path +" -n " + str(n) + " -m " + str(m) + " -p " + str(p) + " -save " + savePath 
     os.system("stdbuf -o0 /bin/time -v ./MinMax-pre " + cmdd + " > MinMax.log 2>&1")
-    print("stdbuf -o0 /bin/time -v  ./MinMax-main " + cmdd + " > MinMax.log 2>&1" )
+    log("stdbuf -o0 /bin/time -v  ./MinMax-main " + cmdd + " > MinMax.log 2>&1" )
     os.system("stdbuf -o0 /bin/time -v  ./MinMax-main " + cmdd + " > MinMax.log 2>&1" )
 
     result = open("result-MinMax.txt","a")     # analyze and record partition time/quaility 
@@ -226,17 +230,36 @@ def run_NoPar(path,dataset):
             vid = line.split()[0]
             w.write(vid+" 0\n")
 
+def run_BiPart(path, dataset, n, m, p, generate_scheme=False):
+    opt = "" 
+    balance = p/n * 2 * 100
+    if balance < 0.001 : balance = "0.001"
+    if generate_scheme == True:
+        opt = " --output --outputFile=test" 
+
+    cmd = "stdbuf -o0 /bin/time -v ./bipart-cpu -hMetisGraph -t 10 --balance="+ str(balance) + opt + \
+          " ./KaHyPar-mid-data 25 2 "+str(p) + " > BiPart.log 2>&1"
+    log(cmd)
+    os.system(cmd)
+
+    content = open("./BiPart.log","r").read() # analyze and record partition time/quaility 
+    result = open("result-BiPart.txt","a")
+    if p == 2:
+        result.write("\ndata_set:" + dataset + " n:" + str(n) + " m:" + str(m) + "\n")
+        result.write(" p , k-1 , partition time , total time  \n")
+
+    k_1 = re.match("(.*)Edge Cut,(\d+)",content,flags=re.S).group(2)
+    partition_time = "None"
+    total_time = re.match("(.*)total time:([-+]?([0-9]+(\.[0-9]+)?|\.[0-9]+))",content,flags=re.S).group(2)
+    memory_cost = re.match("(.*)Maximum resident set size \(kbytes\): (\d+)",content,flags=re.S).group(2)
+    result.write(str(p) + "," + k_1 + "," + partition_time + "," + total_time + ","+ memory_cost + "\n")
+    result.flush()
+    result.close()
+
 
 # os.system("rm *result-*")
 for method in method_list:
     path = "../data/"
-
-
-    # if method == "MinMax":
-    #     print("./"+method)
-    #     os.system("./"+method)
-    #     continue
-    
 
     for dataset in dataset_list:
         if method == "NoPar":
@@ -249,7 +272,13 @@ for method in method_list:
                 a,b = line.split()
                 n = max(n,int(a)+1)
                 m = max(m,int(b)+1)
-        p = 32
+        p = 1
+
+        if(method == "MinMax"):
+            cmdd = " -i " + path + dataset  +" -n " + str(n) + " -m " + str(m) + " -p " + str(p) 
+            os.system("stdbuf -o0 /bin/time -v ./MinMax-pre " + cmdd + " > MinMax.log 2>&1")
+        if(method == 'KaHyPar' or method == 'BiPart'):
+            pre_KaHyPar(path, dataset)
 
         while p < 256:
             p *= 2
@@ -264,7 +293,7 @@ for method in method_list:
             # continue
 
             if method == "KaHyPar"  :   
-                if dataset !=  "out.github" or dataset !=  "out.dblp-author" :
+                if dataset !=  "out.github" and dataset !=  "out.dblp-author" :
                     continue
                 run_KaHyPar(path,dataset,p,generate_scheme)
             elif method == "HYPE"   :   
@@ -273,4 +302,6 @@ for method in method_list:
                 run_Our(method,n,m, path, dataset, p, sheild, generate_scheme)
             elif method == "MinMax" :
                 run_MinMax(path,dataset,n,m,p,generate_scheme)
-            break
+            elif method == "BiPart" :
+                run_BiPart(path, dataset, n, m, p, generate_scheme)
+            # break

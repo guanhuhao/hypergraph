@@ -1,0 +1,20 @@
+
+data_set:out.github n:56519 m:120867
+ p , k-1 , partition time , total time  
+2,1339,None,87214,102488
+4,8528,None,282160,99720
+8,18967,None,529643,103676
+16,32060,None,813963,105380
+32,45064,None,849408,141008
+64,59304,None,922443,236996
+128,74587,None,845834,397648
+256,93501,None,900341,698860
+
+data_set:out.github n:56519 m:120867
+ p , k-1 , partition time , total time  
+
+data_set:out.dblp-author n:1953085 m:5624219
+ p , k-1 , partition time , total time  
+
+data_set:out.github n:56519 m:120867
+ p , k-1 , partition time , total time  

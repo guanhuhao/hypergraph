@@ -1,0 +1,14 @@
+LoneStar Benchmark Suite v6.0.0 (unknown)
+Copyright (C) 2018 The University of Texas at Austin
+http://iss.ices.utexas.edu/galois/
+
+application: BIPART
+Partitions a hypergraph into K parts and minimizing the graph cut
+http://iss.ices.utexas.edu/?p=projects/galois/benchmarks/BiPart
+
+hedges: 12756244
+nodes: 27665730
+
+number of hedges 12756244
+time to build a graph 12528
+Nodes 40421974 Edges(total, var, min, max) 140613762 5.22363e+06 0 11571952
